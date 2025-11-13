@@ -1,0 +1,3331 @@
+{
+  "sdwiki": [
+    "\u062d\u0648\u0627\u0644\u0627",
+    "\u062d\u0648\u0627\u0644\u0648",
+    "\u067e\u06bb \u068f\u0633\u0648",
+    "\u067e\u06bb\u00a0\u068f\u0633\u0648",
+    "\u0648\u068c\u064a\u06aa \u068f\u0633\u0648",
+    "\u067e\u06bb \u068f\u0633\u0646\u062f\u0627",
+    "\u062d\u0648\u0627\u0644\u0627",
+    "\u062e\u0627\u0631\u062c\u064a \u06b3\u0646\u068d\u06bb\u0627"
+  ],
+  "kuwiki": [
+    "Mijar\u00ean t\u00eakildar",
+    "\u00c7avkan\u00ee",
+    "\u00c7avkan\u00ee (ne bi kurd\u00ee ne)",
+    "Gir\u00eadan\u00ean derve",
+    "Z\u00eadetir agah\u00ee",
+    "\u00c7avkan\u00ee"
+  ],
+  "zh_yuewiki": [
+    "\u7747\u57cb",
+    "\u7747\u591a\u5572",
+    "\u53c3\u8003\u8cc7\u6599",
+    "\u53c3\u6537",
+    "\u6537",
+    "\u53c3\u8003/\u7747\u591a\u5572",
+    "\u8a3b",
+    "\u53c3\u8003\u4f86\u6e90",
+    "\u53c3\u8003",
+    "\u53c3\u8003\u6587\u737b"
+  ],
+  "hywiki": [
+    "\u054f\u0565\u057d \u0576\u0561\u0587",
+    "\u0533\u0580\u0561\u056f\u0561\u0576\u0578\u0582\u0569\u0575\u0578\u0582\u0576",
+    "\u0531\u0572\u0562\u0575\u0578\u0582\u0580\u0576\u0565\u0580",
+    "\u0531\u0580\u057f\u0561\u0584\u056b\u0576 \u0570\u0572\u0578\u0582\u0574\u0576\u0565\u0580",
+    "\u053e\u0561\u0576\u0578\u0569\u0561\u0563\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580",
+    "\u0544\u0561\u057f\u0565\u0576\u0561\u0563\u056b\u057f\u0578\u0582\u0569\u0575\u0578\u0582\u0576",
+    "\u053e\u0561\u0576\u0578\u0569\u0561\u0563\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580",
+    "\u0531\u0572\u0562\u0575\u0578\u0582\u0580\u0576\u0565\u0580"
+  ],
+  "iowiki": [
+    "Videz anke",
+    "Referi",
+    "Bibliografio",
+    "Noti",
+    "Noti e referi",
+    "Plusa artikli pri ca temo",
+    "Literaturo",
+    "Referi"
+  ],
+  "bxrwiki": [
+    "\u041d\u043e\u043c \u0437\u04af\u0439",
+    "\u041c\u04af\u043d \u04af\u0437\u044d\u0445\u044d",
+    "\u0425\u043e\u043b\u0431\u043e\u043e\u04bb\u043e\u043d",
+    "\u0417\u04af\u04af\u043b\u0442\u044d",
+    "\u0410\u0436\u0430\u0433\u043b\u0430\u043b\u0430\u0442\u0430",
+    "\u0425\u043e\u043b\u0431\u043e\u043eh\u043e\u043d"
+  ],
+  "howiki": [],
+  "zuwiki": [
+    "Amareferensi",
+    "Okuhlobene",
+    "Bheka futhi",
+    "Amanothi",
+    "References",
+    "Bhekafuthi",
+    "I-Bibliography",
+    "Imithombo",
+    "Izinkomba",
+    "Umlando"
+  ],
+  "simplewiki": [
+    "Related pages",
+    "References",
+    "References",
+    "Notes"
+  ],
+  "urwiki": [
+    "\u0645\u0632\u06cc\u062f \u062f\u06cc\u06a9\u06be\u06cc\u06d2",
+    "\u0645\u0632\u06cc\u062f \u067e\u0691\u06be\u06cc\u06d2",
+    "\u062d\u0648\u0627\u0644\u06c1 \u062c\u0627\u062a",
+    "\u0628\u06cc\u0631\u0648\u0646\u06cc \u0631\u0648\u0627\u0628\u0637",
+    "\u06a9\u062a\u0627\u0628\u06cc\u0627\u062a",
+    "\u0645\u0632\u06cc\u062f \u0628\u06cc\u0631\u0648\u0646\u06cc \u0645\u0637\u0627\u0644\u0639\u06c1",
+    "\u062f\u0648\u0633\u0631\u06d2 \u0630\u0631\u0627\u0626\u0639",
+    "\u062d\u0648\u0627\u0634\u06cc",
+    "\u062d\u0648\u0627\u0644\u06c1 \u062c\u0627\u062a"
+  ],
+  "bawiki": [
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f",
+    "\u0418\u04ab\u043a\u04d9\u0440\u043c\u04d9\u043b\u04d9\u0440 \u04bb\u04d9\u043c \u0441\u044b\u0493\u0430\u043d\u0430\u04a1\u0442\u0430\u0440",
+    "\u0421\u044b\u0493\u0430\u043d\u0430\u04a1\u0442\u0430\u0440",
+    "\u04d8\u0499\u04d9\u0431\u0438\u04d9\u0442",
+    "\u0418\u04ab\u043a\u04d9\u0440\u043c\u04d9\u043b\u04d9\u0440",
+    "\u0418\u04ab\u043a\u04d9\u0440\u043c\u04d9",
+    "\u04ba\u044b\u043b\u0442\u0430\u043d\u043c\u0430\u043b\u0430\u0440",
+    "\u0428\u0443\u043b\u0430\u0439 \u0443\u04a1 \u04a1\u0430\u0440\u0430\u0493\u044b\u0499",
+    "\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439\u0499\u0430\u0440"
+  ],
+  "zh_min_nanwiki": [
+    "Li\u00e2n-h\u014d",
+    "S\u016b-ki\u0101\u207f",
+    "Chham-chi\u00e0u",
+    "Chham-kh\u00f3 chu-li\u0101u",
+    "Chham-oa\u030dt",
+    "Chham-kh\u00f3"
+  ],
+  "lijwiki": [
+    "V\u00f4xe corel\u00e6",
+    "Interscangi",
+    "Notte",
+    "Bibliograf\u00eea",
+    "Bibliografia",
+    "Bibliograf\u00eca",
+    "Bibliugraf\u00eca",
+    "Bibliugrafia",
+    "Ancon de lettue",
+    "\u00c2tri prog\u00e8tti",
+    "N\u00f2tte"
+  ],
+  "ilowiki": [
+    "Bibliograpia",
+    "Dagiti nota",
+    "Paammo",
+    "Adu pay a mabasbasa",
+    "Dagiti nagibasaran",
+    "Kitaen pay"
+  ],
+  "cuwiki": [
+    "\u0418\u0441\u0442\u043e\u043a\u044a",
+    "\u043a\u043b\u0430\u0434\u0467\ua643\u0438",
+    "\ua641\u044c\u0440\u0438 \u0442\u0430\u043a\u044a\u0436\u0434\u0454",
+    "\u041a\u043b\u0430\u0434\u0467\ua643\u0438",
+    "\ua641\u044c\u0440\u0438 \u0442\u0430\u043a\u043e\u0436\u0434\u0454",
+    "\u0410\u0449\u0454 \u0432\u0438\u0436\u0434\u0438\u0442\u0454"
+  ],
+  "frrwiki": [
+    "Literatur",
+    "Literat\u00fc\u00fcr",
+    "Futnuuten",
+    "Kwelen",
+    "Kw\u00e4le",
+    "Literatuur",
+    "Luke uk diar"
+  ],
+  "papwiki": [
+    "Mira tambe",
+    "Wak tambe",
+    "Link eksterno",
+    "Link externo",
+    "Bibliografia",
+    "Fuente",
+    "Lista di fuente",
+    "Ense\u00f1ansa",
+    "Atmosfeer",
+    "Wak tambe"
+  ],
+  "vlswiki": [
+    "Zied ook noa",
+    "Referensjes",
+    "Referenties",
+    "Literatuur",
+    "Verwyziengn",
+    "Referenties"
+  ],
+  "mlwiki": [
+    "\u0d15\u0d42\u0d1f\u0d41\u0d24\u0d7d \u0d35\u0d3e\u0d2f\u0d28\u0d2f\u0d4d\u0d15\u0d4d\u0d15\u0d4d",
+    "\u0d05\u0d35\u0d32\u0d02\u0d2c\u0d02",
+    "\u0d15\u0d42\u0d1f\u0d41\u0d24\u0d7d \u0d35\u0d3e\u0d2f\u0d28\u0d15\u0d4d\u0d15\u0d4d",
+    "\u0d2a\u0d41\u0d31\u0d24\u0d4d\u0d24\u0d47\u0d15\u0d4d\u0d15\u0d41\u0d33\u0d4d\u0d33 \u0d15\u0d23\u0d4d\u0d23\u0d3f\u0d15\u0d7e",
+    "Further reading",
+    "\u0d07\u0d24\u0d41\u0d02 \u0d15\u0d3e\u0d23\u0d42",
+    "\u0d07\u0d24\u0d41\u0d02 \u0d15\u0d3e\u0d23\u0d41\u0d15",
+    "\u0d07\u0d35\u0d2f\u0d41\u0d02 \u0d15\u0d3e\u0d23\u0d41\u0d15",
+    "I-Bibliography",
+    "\u0d05\u0d35\u0d32\u0d02\u0d2c\u0d19\u0d4d\u0d19\u0d7e",
+    "\u0d2a\u0d30\u0d3e\u0d2e\u0d7c\u0d36\u0d19\u0d4d\u0d19\u0d7e",
+    "\u0d15\u0d41\u0d1f\u0d41\u0d24\u0d7d \u0d35\u0d3e\u0d2f\u0d28\u0d15\u0d4d\u0d15\u0d4d",
+    "\u0d31\u0d2b\u0d31\u0d7b\u0d38\u0d41\u0d15\u0d7e",
+    "\u0d15\u0d41\u0d31\u0d3f\u0d2a\u0d4d\u0d2a\u0d41\u0d15\u0d7e"
+  ],
+  "itwiki": [
+    "Voci correlate",
+    "Pagine correlate",
+    "Bibliografia",
+    "Collegamenti esterni",
+    "Collegamenti esterni",
+    "Indice",
+    "Note",
+    "Altri progetti"
+  ],
+  "ltgwiki": [
+    "N\u016bruodis",
+    "N\u016bruodis i ol\u016bti",
+    "Literatura"
+  ],
+  "cdowiki": [
+    "\u53c3\u8003\u8cc7\u6599",
+    "Ch\u0103ng-k\u014d\u0324 c\u1e73\u0306-l\u00e2iu (\u53c3\u8003\u8cc7\u6599)",
+    "\u53c2\u8003\u6587\u66f8",
+    "Ch\u0103ng-k\u014d\u0324",
+    "Ch\u0103ng-k\u014d\u0324 c\u1e73\u0306-l\u00e2iu"
+  ],
+  "fawiki": [
+    "\u062c\u0633\u062a\u0627\u0631\u0647\u0627\u06cc \u0648\u0627\u0628\u0633\u062a\u0647",
+    "\u0645\u0646\u0627\u0628\u0639",
+    "\u067e\u06cc\u0648\u0646\u062f \u0628\u0647 \u0628\u06cc\u0631\u0648\u0646",
+    "\u06a9\u062a\u0627\u0628\u200c\u0634\u0646\u0627\u0633\u06cc",
+    "\u0628\u0631\u0627\u06cc \u0645\u0637\u0627\u0644\u0639\u0647 \u0628\u06cc\u0634\u062a\u0631",
+    "\u062e\u0648\u0627\u0646\u062f\u0646 \u0628\u06cc\u0634\u062a\u0631",
+    "\u067e\u0627\u0646\u0648\u06cc\u0633",
+    "\u0645\u0646\u0627\u0628\u0639",
+    "\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u0647\u0627"
+  ],
+  "frpwiki": [
+    "Notes et r\u00e8f\u00e8rences",
+    "V\u00eare avou\u00e9c",
+    "Biblio",
+    "Liyen",
+    "Lims de def\u00f4r",
+    "R\u00e8ferences",
+    "Notes",
+    "Notes et r\u00e8ferences",
+    "Bibliografie",
+    "R\u00e8f\u00e8rences",
+    "Bibliografia"
+  ],
+  "bmwiki": [
+    "S\u025bb\u025bn minnu b\u025b tali k\u025b o la",
+    "Bibliographie",
+    "Biblio",
+    "Sababou",
+    "s\u0254r\u0254y\u0254r\u0254w ni s\u025bb\u025bnw"
+  ],
+  "avkwiki": [
+    "Bibliograf\u00eda",
+    "Vuestexa"
+  ],
+  "sahwiki": [
+    "\u041b\u0438\u0442\u044d\u0440\u044d\u0442\u0438\u0438\u0440\u044d",
+    "\u0411\u044b\u04bb\u0430\u0430\u0440\u044b\u044b\u043b\u0430\u0440",
+    "\u0421\u0438\u0433\u044d\u043b\u044d\u0440",
+    "\u0422\u0443\u04bb\u0430\u043d\u044b\u043b\u043b\u044b\u0431\u044b\u0442 \u0441\u0438\u0440",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u04e8\u043b\u0431\u04af\u0442\u0442\u044d\u0440",
+    "\u0422\u0443\u04bb\u0430\u043d\u044b\u043b\u043b\u044b\u0431\u044b\u0442 \u0441\u0438\u0440\u0434\u044d\u0440",
+    "\u04e8\u0441\u0441\u04e9 \u043c\u0430\u043d\u044b \u043a\u04e9\u0440"
+  ],
+  "lnwiki": [
+    "Mituya ya mik\u00e9",
+    "References",
+    "Etatoli",
+    "Banote mpe ba r\u00e9f\u00e9rences",
+    "Ba r\u00e9f\u00e9rences",
+    "T\u00e1l\u00e1 mp\u00e9",
+    "R\u00e9f\u00e9rence",
+    "Bibliographie ya mikanda",
+    "T\u00e1la mp\u00e9"
+  ],
+  "brwiki": [
+    "Notenno\u00f9 ha daveenno\u00f9",
+    "Liammo\u00f9 diavaez",
+    "Taolenn",
+    "Daveenno\u00f9",
+    "Pennad kar",
+    "Daveo\u00f9",
+    "Dave ha notenno\u00f9",
+    "Daveo\u00f9 ha notenno\u00f9",
+    "Gwelet ivez",
+    "Notenno\u00f9 ha daveo\u00f9",
+    "Levrlennadur",
+    "Pennado\u00f9 kar",
+    "Mammenno\u00f9",
+    "Notenno\u00f9"
+  ],
+  "nsowiki": [
+    "Further reading",
+    "See also",
+    "Lebelela gape",
+    "Dit\u0161hupet\u0161o",
+    "Bona gape",
+    "Referense"
+  ],
+  "cebwiki": [
+    "Saysay",
+    "References",
+    "Mga pakisayran",
+    "Ang mga gi basihan niini",
+    "Tinubdan"
+  ],
+  "dewiki": [
+    "Siehe auch",
+    "Einzelnachweise",
+    "Literatur",
+    "Weblinks",
+    "Quellen",
+    "Anmerkungen",
+    "Einzelnachweise",
+    "Fu\u00dfnoten"
+  ],
+  "kvwiki": [
+    "\u0412\u0438\u0434\u0437\u04e7\u0434\u04e7\u0439 \u0442\u0448\u04e7\u0442\u0448",
+    "\u042b\u0441\u0442\u04e7\u0434\u044a\u044f\u0441",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u0435\u044f\u0441",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f"
+  ],
+  "etwiki": [
+    "Vaata ka",
+    "Kirjandus",
+    "Viited",
+    "V\u00e4lislingid",
+    "Lisalugemist",
+    "Viited"
+  ],
+  "pntwiki": [
+    "\u0392\u03b9\u03b2\u03bb\u03b9\u03bf\u03b3\u03c1\u03b1\u03c6\u03af\u03b1",
+    "\u0392\u03b9\u03b2\u03bb\u03b9\u03bf\u03b3\u03c1\u03b1\u03c6\u03af\u03b1\u03bd",
+    "\u0391\u03bd\u03b1\u03c6\u03bf\u03c1\u03ac\u03bd\u03c4\u03b1\u03c2",
+    "\u0391\u03bd\u03b1\u03c6\u03bf\u03c1\u03ac\u03bd\u03c4\u03b1\u03c2 / \u0392\u03b9\u03b2\u03bb\u0384\u03b5\u03bf\u03b3\u03c1\u03b1\u03c6\u03af\u03b1",
+    "\u03a0\u03b7\u03b3\u03ad\u03c2"
+  ],
+  "kaawiki": [
+    "Qos\u0131msha qara\u0144",
+    "J\u00e1ne qara\u0144",
+    "Sonday-aq qara\u0144",
+    "Qara\u0144\u0131z",
+    "Derekler",
+    "Derek",
+    "Manba",
+    "S\u0131rtq\u0131 siltemeler",
+    "Qos\u0131msha oq\u0131w",
+    "Qos\u0131msha oq\u0131w ush\u0131n",
+    "\u00c1debiyat",
+    "\u00c1debiyatlar",
+    "Derekler"
+  ],
+  "lldwiki": [
+    "Plates colegades",
+    "C\u00ebla nce",
+    "Bibliografia",
+    "Liams",
+    "Notes",
+    "Refer\u00ebnzes",
+    "Notes"
+  ],
+  "pflwiki": [
+    "Vawais",
+    "Websaide",
+    "Literatur",
+    "Gugschd a uff",
+    "Einzelnachweise",
+    "Guck a mol:",
+    "Fu\u00dfnote",
+    "Quelle",
+    "Guggschd a uff",
+    "Siehe auch"
+  ],
+  "extwiki": [
+    "Atijus",
+    "Gu\u00edpesi tami\u00e9n",
+    "V\u00e9asi tami\u00e9n",
+    "V\u00e9a-si tami\u00e9n",
+    "Refer\u00e9ncias",
+    "Bibliograf\u00eda",
+    "Huentis",
+    "Guipa tami\u00e9n",
+    "Vea-si tami\u00e9n",
+    "Referencias",
+    "Bibliografia"
+  ],
+  "elwiki": [
+    "\u0394\u03b5\u03af\u03c4\u03b5 \u03b5\u03c0\u03af\u03c3\u03b7\u03c2",
+    "\u03a0\u03b7\u03b3\u03ad\u03c2",
+    "\u0392\u03b9\u03b2\u03bb\u03b9\u03bf\u03b3\u03c1\u03b1\u03c6\u03af\u03b1",
+    "\u0395\u03be\u03c9\u03c4\u03b5\u03c1\u03b9\u03ba\u03bf\u03af \u03c3\u03cd\u03bd\u03b4\u03b5\u03c3\u03bc\u03bf\u03b9",
+    "\u03a0\u03b1\u03c1\u03b1\u03c0\u03bf\u03bc\u03c0\u03ad\u03c2",
+    "\u0391\u03bd\u03b1\u03c6\u03bf\u03c1\u03ad\u03c2",
+    "\u0392\u03b9\u03b2\u03bb\u03b9\u03bf\u03b3\u03c1\u03b1\u03c6\u03b9\u03ba\u03ad\u03c2 \u03b1\u03bd\u03b1\u03c6\u03bf\u03c1\u03ad\u03c2",
+    "\u03a0\u03b5\u03c1\u03b1\u03b9\u03c4\u03ad\u03c1\u03c9 \u03b1\u03bd\u03ac\u03b3\u03bd\u03c9\u03c3\u03b7",
+    "\u03a3\u03b7\u03bc\u03b5\u03b9\u03ce\u03c3\u03b5\u03b9\u03c2",
+    "\u03a0\u03b1\u03c1\u03b1\u03c0\u03bf\u03bc\u03c0\u03ad\u03c2"
+  ],
+  "skrwiki": [
+    "\u062d\u0648\u0627\u0644\u06d2",
+    "\u067b\u0650\u06cc\u0627 \u0759\u06cc\u06a9\u06be\u0648",
+    "\u0645\u0632\u06cc\u062f \u0759\u06cc\u06a9\u06be\u0648",
+    "\u067b\u0627\u0647\u0631\u0644\u06d2 \u062c\u0648\u0691",
+    "\u062d\u0648\u0627\u0644\u06c1",
+    "\u067b\u06cc\u0627 \u0759\u06cc\u06a9\u06be\u0648",
+    "\u06a9\u062a\u0627\u0628\u06cc\u0627\u062a",
+    "\u062d\u0648\u0627\u0644\u06c1 \u062c\u0627\u062a"
+  ],
+  "lowiki": [
+    "\u0ead\u0ec8\u0eb2\u0e99\u0ec0\u0e9e\u0eb5\u0ec8\u0ea1\u200b\u0ec0\u0e95\u0eb5\u0ea1",
+    "\u0edd\u0eb2\u0e8d\u0ec0\u0eab\u0e94",
+    "Reference",
+    "\u0ead\u0ec9\u0eb2\u0e87\u0ead\u0eb5\u0e87",
+    "\u0ec1\u0eab\u0ebc\u0ec8\u0e87\u0ead\u0ec9\u0eb2\u0e87\u0ead\u0eb5\u0e87",
+    "\u0ead\u0ec8\u0eb2\u0e99\u0e95\u0eb7\u0ec8\u0ea1",
+    "\u0ec0\u0ead\u0e81\u0eb0\u0eaa\u0eb2\u0e99\u0ead\u0ec9\u0eb2\u0e87\u0ead\u0eb5\u0e87",
+    "\u0ead\u0ec9\u0eb2\u0e87\u0ead\u0eb4\u0e87",
+    "\u0ec0\u0e9a\u0eb4\u0ec8\u0e87\u0ec0\u0e9e\u0eb5\u0ec8\u0ea1\u0ec0\u0e95\u0eb5\u0ea1",
+    "\u0ea5\u0eb4\u0ec9\u0e87\u0e84\u0ecc\u0e9e\u0eb2\u0e8d\u0e99\u0ead\u0e81",
+    "\u0ec0\u0e9a\u0eb4\u0ec8\u0e87\u0e95\u0eb7\u0ec8\u0ea1"
+  ],
+  "be_x_oldwiki": [
+    "\u0413\u043b\u044f\u0434\u0437\u0456\u0446\u0435 \u0442\u0430\u043a\u0441\u0430\u043c\u0430",
+    "\u041a\u0440\u044b\u043d\u0456\u0446\u044b",
+    "\u041b\u0456\u0442\u0430\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0412\u043e\u043d\u043a\u0430\u0432\u044b\u044f \u0441\u043f\u0430\u0441\u044b\u043b\u043a\u0456",
+    "\u0411\u0456\u0431\u043b\u0456\u044f\u0433\u0440\u0430\u0444\u0456\u044f",
+    "\u041a\u0440\u044b\u043d\u0456\u0446\u044b \u0456 \u0437\u0430\u045e\u0432\u0430\u0433\u0456"
+  ],
+  "krcwiki": [
+    "\u0414\u0430\u0433\u044a\u044b\u0434\u0430 \u043a\u044a\u0430\u0440\u0430",
+    "\u0414\u0430\u0433\u044a\u044b\u0434\u0430 \u043a\u044a\u0430\u0440\u0430\u0433\u044a\u044b\u0437",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0410\u0434\u0430\u0431\u0438\u044f\u0442",
+    "\u0411\u0435\u043b\u0433\u0438\u043b\u0435",
+    "\u0421\u0443\u0440\u0430\u0442 \u0433\u0430\u043b\u0435\u0440\u0435\u044f",
+    "\u0413\u0430\u043b\u0435\u0440\u0435\u044f"
+  ],
+  "diqwiki": [
+    "Bibliyografiye",
+    "\u00c7\u0131mey",
+    "Link\u00ea teberi",
+    "B\u0131v\u00ean\u00ean",
+    "\u00c7\u0131me",
+    "Referansi"
+  ],
+  "hifwiki": [
+    "Aur dekho",
+    "Aur Dekho",
+    "Ii\u00a0bhi\u00a0dekho",
+    "References",
+    "Sandarbh",
+    "Sandharbh",
+    "Bibliography",
+    "Aur parrho",
+    "Further reading",
+    "References",
+    "Duusra websites"
+  ],
+  "gawiki": [
+    "F\u00e9ach freisin",
+    "F\u00e9ach Freisin",
+    "Naisc sheachtracha",
+    "Tagairt\u00ed",
+    "Tuilleadh l\u00e9itheoireachta",
+    "Leabharliosta",
+    "Tagairt\u00ed"
+  ],
+  "tcywiki": [
+    "Bibliography",
+    "\u0cac\u0cbe\u0cb9\u0ccd\u0caf \u0c95\u0cca\u0c82\u0ca1\u0cbf\u0c97\u0cb3\u0cc1",
+    "\u0c89\u0cb2\u0ccd\u0cb2\u0cc6\u0c95\u0cca\u0cb2\u0cc1",
+    "\u0c97\u0ccd\u0cb0\u0c82\u0ca5\u0cb8\u0cc2\u0c9a\u0cbf",
+    "\u0c89\u0cb2\u0ccd\u0cb2\u0cc7\u0c95\u0cca",
+    "References",
+    "\u0c89\u0cb2\u0ccd\u0cb2\u0cc7\u0c96\u0cca\u0cb2\u0cc1",
+    "See also",
+    "\u0c89\u0cb2\u0ccd\u0cb2\u0cc7\u0c95\u0cca\u0cb2\u0cc1",
+    "\u0c89\u0cb2\u0ccd\u0cb2\u0cc7\u0c96\u0c97\u0cb3\u0cc1",
+    "\u0c97\u0ccd\u0cb0\u0c82\u0ca5\u0cb8\u0cc2\u0c9a\u0cbf\u0cb2\u0cc1",
+    "\u0c89\u0cb2\u0ccd\u0cb2\u0cc7\u0c96\u0cca"
+  ],
+  "mznwiki": [
+    "\u062c\u0633\u062a\u0627\u0631\u0647\u0627\u06cc \u0648\u0627\u0628\u0633\u062a\u0647",
+    "\u0648\u0627\u0628\u0633\u062a\u0647 \u062c\u0633\u062a\u093e\u0930\u0648\u0646",
+    "\u0628\u06cc\u0631\u0648\u0646 \u0628\u06af\u0631\u062f\u0633\u062a\u0646",
+    "\u067e\u0627\u0646\u0648\u06cc\u0633",
+    "\u067e\u0647\u200c\u0646\u0648\u06cc\u0633",
+    "\u0645\u0646\u0628\u0639",
+    "\u0645\u0646\u0627\u0628\u0639",
+    "\u0645\u0645\u0628\u0639\u0626\u0648\u0646",
+    "\u0648\u06cc\u0634\u062a\u0647 \u0628\u062e\u0648\u0646\u062f\u06cc\u0646",
+    "\u0645\u0646\u0628\u0639\u0648\u0646",
+    "\u0628\u0646\u200c\u0628\u0646\u0648\u06cc\u0634\u062a"
+  ],
+  "pihwiki": [],
+  "ptwiki": [
+    "Ver tamb\u00e9m",
+    "Veja tamb\u00e9m",
+    "Refer\u00eancias",
+    "Bibliografia",
+    "Liga\u00e7\u00f5es externas",
+    "Leitura adicional",
+    "Fontes",
+    "Notas",
+    "Refer\u00eancias",
+    "Notas e refer\u00eancias"
+  ],
+  "anwiki": [
+    "Veyer tami\u00e9n",
+    "Se veiga tami\u00e9n",
+    "Referencias",
+    "Vinclos externos",
+    "Bibliograf\u00eda",
+    "Bibliografia",
+    "Notas y referencias",
+    "Notas",
+    "Referencias"
+  ],
+  "stwiki": [
+    "Lihokelo tsa kantle",
+    "Mehlodi",
+    "Mohloli",
+    "Lit\u0161upiso",
+    "Ditshupiso"
+  ],
+  "ladwiki": [
+    "Mira tambe",
+    "Wak tambe",
+    "Link eksterno",
+    "Link externo",
+    "Bibliografiya",
+    "Referensias",
+    "Bibliography",
+    "Referensias",
+    "Refrensyas"
+  ],
+  "kbpwiki": [
+    "Bibliographie"
+  ],
+  "jbowiki": [],
+  "tlywiki": [
+    "Bibliografij\u0259",
+    "References",
+    "S\u0259vonon"
+  ],
+  "twwiki": [
+    "Hw\u025b Nso",
+    "Nhwehw\u025bmu",
+    "Ns\u025bm a w\u0254de gyinaa so",
+    "Baabi a menyaa mmoa firii\u025b",
+    "Bea\u025b a menyaa mmoa firii\u025b.",
+    "Nkekaho",
+    "Hw\u025b eyi nso",
+    "Beae\u025b a menyaa mmoa firii\u025b",
+    "Bea\u025b a menyaa mmoa fii",
+    "Hw\u025b bio",
+    "Mmeae\u025b a menyaa mmoa firii\u025b",
+    "Bea\u025b a menyaa mmoa firii\u025b",
+    "Ntotoho",
+    "Beae\u025b A Menyaa Mmoa Firii\u025b",
+    "Sources a \u025bw\u0254 link no mu",
+    "Hw\u025b nso"
+  ],
+  "tetwiki": [
+    "Referensia",
+    "Refer\u00e9nsia sira",
+    "Referencia",
+    "Refer\u00eancias",
+    "Pranala luar",
+    "Nota sira no refer\u00e9nsia sira"
+  ],
+  "shnwiki": [
+    "\u1000\u103b\u1019\u103a\u1038\u1000\u102d\u102f\u1038",
+    "\u107d\u102d\u102f\u107c\u103a\u1022\u102d\u1004\u103a",
+    "\u1019\u1062\u1086\u1010\u103d\u1004\u103a\u1038"
+  ],
+  "uzwiki": [
+    "Yana qarang",
+    "Shuningdek qarang",
+    "Manbalar",
+    "Manba",
+    "Havolalar",
+    "Adabiyotlar",
+    "Bibliografiya",
+    "Qo\u02bbshimcha o\u02bbqish uchun",
+    "Qo'shimcha o'qish",
+    "O\u02bbqish uchun",
+    "Izohlar",
+    "Manbalar"
+  ],
+  "skwiki": [
+    "Pozri aj",
+    "Referencie",
+    "Extern\u00e9 odkazy",
+    "Literat\u00fara",
+    "Zdroje",
+    "Zdroj",
+    "Pou\u017eit\u00e1 literat\u00fara",
+    "\u010eal\u0161ia literat\u00fara",
+    "Referencie"
+  ],
+  "towiki": [
+    "References"
+  ],
+  "mrjwiki": [
+    "\u0421\u0441\u044b\u043b\u043a\u0438",
+    "\u0410\u0436\u0435\u0434\u043c\u04d3\u0448\u0432\u043b\u04d3"
+  ],
+  "ruewiki": [
+    "\u0416\u0440\u0456\u0434\u043b\u0430",
+    "\u0421\u043c. \u0442\u044b\u0436",
+    "\u0420\u0435\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0438",
+    "\u0417\u0430\u0437\u043d\u0430\u0447\u043a\u044b",
+    "\u0414\u0430\u043b\u0448\u0435 \u0447\u0456\u0442\u0430\u043d\u044f",
+    "\u0420\u0435\u0444\u0435\u0440\u0435\u043d\u0446\u0456\u0457",
+    "\u0416\u0435\u0440\u0435\u043b\u0430",
+    "\u0423\u0434\u043a\u043b\u0438\u043a\u043e\u0432\u0430\u043d\u044f",
+    "\u0416\u0435\u0440\u0435\u043b\u0430 \u0438 \u043e\u0434\u043a\u0430\u0437\u044b"
+  ],
+  "snwiki": [
+    "Ringai zve:",
+    "References",
+    "Mabviro eruzivo",
+    "Mabviro eruzivo:",
+    "References"
+  ],
+  "adywiki": [
+    "\u0417\u044d\u043f\u044b\u0449\u044d\u0445\u044d\u0440"
+  ],
+  "mkwiki": [
+    "\u041f\u043e\u0432\u0440\u0437\u0430\u043d\u043e",
+    "\u041d\u0430\u0434\u0432\u043e\u0440\u0435\u0448\u043d\u0438 \u0432\u0440\u0441\u043a\u0438",
+    "\u041d\u0430\u0432\u043e\u0434\u0438",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0418\u0437\u0432\u043e\u0440\u0438",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u0458\u0430",
+    "\u041a\u043e\u0440\u0438\u0441\u0442\u0435\u043d\u0430 \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u0430 \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0411\u0435\u043b\u0435\u0448\u043a\u0438",
+    "\u041d\u0430\u0432\u043e\u0434\u0438"
+  ],
+  "huwiki": [
+    "Kapcsol\u00f3d\u00f3 sz\u00f3cikkek",
+    "Kapcsol\u00f3d\u00f3 cikkek",
+    "Forr\u00e1sok",
+    "Hivatkoz\u00e1sok",
+    "Jegyzetek",
+    "Irodalom",
+    "Tov\u00e1bbi inform\u00e1ci\u00f3k",
+    "Hivatkoz\u00e1sok",
+    "Megjegyz\u00e9sek",
+    "Forr\u00e1sok",
+    "Jegyzetek"
+  ],
+  "srnwiki": [
+    "See also",
+    "Bibliography"
+  ],
+  "pwnwiki": [
+    "kaizuanan",
+    "kaizuan",
+    "kasizuan",
+    "kasizuanan"
+  ],
+  "rnwiki": [
+    "Reba kandi"
+  ],
+  "gucwiki": [
+    "Shi'ipajee sukua'ipa",
+    "Shi'ipajee sukuwa'ipa"
+  ],
+  "kwwiki": [
+    "Kevrennow a-ves",
+    "References",
+    "Devynnow",
+    "Gweller ynwedh",
+    "Pednventydnyow",
+    "Gwelewgh ynwedh"
+  ],
+  "htwiki": [
+    "Gade tou",
+    "Referans",
+    "N\u00f2t ak referans",
+    "Lyen dey\u00f2",
+    "Bibliyografi",
+    "Referans",
+    "N\u00f2t ak referans",
+    "N\u00f2t ak Referans"
+  ],
+  "vecwiki": [
+    "Voze core\u0142ae",
+    "Notasion",
+    "Varda anca",
+    "N\u00f2de",
+    "Note",
+    "References",
+    "Fonti",
+    "Altri projeti",
+    "\u0141igamenti foresti",
+    "\u0141igadure foreste",
+    "Co\u0142egamenti foresti",
+    "N\u00f2te",
+    "Bigliografia",
+    "\u0141inganbi foresti",
+    "Ligamenti foresti",
+    "Linganbi foresti",
+    "Voxe \u0142ig\u00e0e",
+    "Bibliografia"
+  ],
+  "ikwiki": [
+    "Pautat"
+  ],
+  "barwiki": [
+    "Schau aa",
+    "Literatur",
+    "Quelle",
+    "Im Netz",
+    "Beleg",
+    "Beleg"
+  ],
+  "fywiki": [
+    "Sjoch ek",
+    "Referinsjes",
+    "Keppeling om utens",
+    "Literatuer",
+    "Fierder l\u00eaze",
+    "Bibliografy",
+    "Ferwizing nei boarne",
+    "Boarnen, noaten en referinsjes"
+  ],
+  "ckbwiki": [
+    "\u0626\u06d5\u0645\u06d5\u0634 \u0628\u0628\u06cc\u0646\u06d5",
+    "\u0626\u06d5\u0645\u0627\u0646\u06d5\u0634 \u0628\u0628\u06cc\u0646\u06d5",
+    "\u062f\u0627\u0646\u06cc\u0634\u062a\u0648\u0648\u0627\u0646",
+    "\u0628\u06d5\u0633\u062a\u06d5\u0631\u06d5\u06a9\u0627\u0646",
+    "\u062a\u06ce\u0628\u06cc\u0646\u06cc\u06cc\u06d5\u06a9\u0627\u0646",
+    "\u067e\u06d5\u0631\u0627\u0648\u06ce\u0632",
+    "\u0633\u06d5\u0631\u0686\u0627\u0648\u06d5\u06a9\u0627\u0646",
+    "\u067e\u06d5\u0631\u0627\u0648\u06ce\u0632\u06d5\u06a9\u0627\u0646"
+  ],
+  "nahwiki": [
+    "No xiquitta",
+    "Nowkiya xikitta",
+    "N\u014d xiquitta",
+    "No Xiquitta",
+    "Toquiliztequitl",
+    "Tlahtolcaquiliztiloni",
+    "Neltlahtoliztli"
+  ],
+  "quwiki": [
+    "Rikuy chaymanta",
+    "Enlaces externos",
+    "Willay pukyukuna",
+    "Hawa t'inkikuna",
+    "Referenciakuna",
+    "Bibliograf\u00eda",
+    "Kaypipas qhaway",
+    "Pukyukuna"
+  ],
+  "ttwiki": [
+    "\u041c\u043e\u043d\u044b \u0434\u0430 \u043a\u0430\u0440\u0430\u0433\u044b\u0437",
+    "\u0428\u0443\u043b\u0430\u0439 \u0443\u043a \u043a\u0430\u0440\u0430\u0433\u044b\u0437",
+    "\u0418\u0441\u043a\u04d9\u0440\u043c\u04d9\u043b\u04d9\u0440",
+    "\u04d8\u0434\u04d9\u0431\u0438\u044f\u0442",
+    "\u0427\u044b\u0433\u0430\u043d\u0430\u043a\u043b\u0430\u0440",
+    "\u0422\u044b\u0448\u043a\u044b \u0441\u044b\u043b\u0442\u0430\u043c\u0430\u043b\u0430\u0440",
+    "\u0421\u044b\u043b\u0442\u0430\u043c\u0430\u043b\u0430\u0440",
+    "\u0418\u0441\u043a\u04d9\u0440\u043c\u04d9\u043b\u04d9\u0440 \u04bb\u04d9\u043c \u0447\u044b\u0433\u0430\u043d\u0430\u043a\u043b\u0430\u0440",
+    "\u0418\u0441\u043a\u04d9\u0440\u043c\u04d9\u043b\u04d9\u0440"
+  ],
+  "nnwiki": [
+    "Sj\u00e5 \u00f2g",
+    "Kjelder",
+    "Referansar",
+    "Bibliografi",
+    "Fotnotar",
+    "Referansar",
+    "Kjelder"
+  ],
+  "wawiki": [
+    "Sourdants & p\u00ee-notes",
+    "Referinces eyet sourdants",
+    "H\u00e5rd\u00eayes divintrinnes",
+    "P\u00ee-note",
+    "Sourdant",
+    "Sourdants"
+  ],
+  "pmswiki": [
+    "Vard\u00e9 \u00ebdc\u00f2",
+    "Vard\u00e9 'dc\u00f2",
+    "Lese \u00ebdc\u00f2",
+    "Anliure esterne",
+    "Bibliografia",
+    "Bibliograf\u00eca",
+    "Arferiment",
+    "N\u00f2te",
+    "Arferiment"
+  ],
+  "tlwiki": [
+    "Bibliyograpiya",
+    "Mga panlabas na link",
+    "Pinagmulan",
+    "Sanggunian",
+    "Tignan din",
+    "Mga tala",
+    "Bibliograpiya",
+    "Tingnan din",
+    "Mga Pinagkukunan",
+    "Mga sanggunian",
+    "Mga kawing panlabas",
+    "Mga Sanggunian",
+    "Tingnan rin",
+    "Mga pinagkuhanan",
+    "Mga sanggunian at tala",
+    "Talababa"
+  ],
+  "novwiki": [
+    "References",
+    "Literature",
+    "Notes",
+    "Fontes",
+    "Referos",
+    "Bibliografia"
+  ],
+  "gagwiki": [
+    "D\u0131\u015f baalant\u0131lar",
+    "T\u00fcrkiye Literaturas\u0131",
+    "D\u0131\u015f ba\u011flant\u0131lar",
+    "Kaynak\u00e7a",
+    "Kullan\u0131lm\u0131\u015f kiyatlar"
+  ],
+  "arzwiki": [
+    "\u0634\u0648\u0641 \u0643\u0645\u0627\u0646",
+    "\u0644\u064a\u0646\u0643\u0627\u062a \u0628\u0631\u0627\u0646\u064a\u0647",
+    "\u0645\u0635\u0627\u062f\u0631",
+    "\u0645\u0631\u0627\u062c\u0639",
+    "\u0627\u0642\u0631\u0627 \u0627\u0643\u062a\u0631",
+    "\u0645\u0635\u0627\u062f\u0631"
+  ],
+  "mdfwiki": [
+    "\u041a\u044f\u043b\u044c\u0432\u0430\u043b\u0441\u044c",
+    "\u041b\u044f\u0442\u0444\u0442\u0430\u043c\u0430\u0442",
+    "\u0423\u0448\u0435\u0448\u0438\u0440\u0435\u043d\u044c \u043a\u0443\u0447\u0444\u0442\u0435\u043c\u0430\u0442",
+    "\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u043e\u043d\u044c \u043b\u043e\u043f\u0430",
+    "\u0424\u044d\u0440\u044d\u043c",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u044f",
+    "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438",
+    "\u0421\u043c. \u0442\u0430\u043a\u0436\u0435",
+    "\u0421\u0441\u044b\u043b\u043a\u0438",
+    "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u044f \u0438 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438",
+    "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438 \u0438 \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0412\u043d\u0435\u0448\u043d\u0438\u0435 \u0441\u0441\u044b\u043b\u043a\u0438"
+  ],
+  "iiwiki": [],
+  "xalwiki": [
+    "\u042d\u0448\u043b\u044d\u043b",
+    "\u0417\u0430\u0430\u043b\u0442\u0441",
+    "\u041b\u0438\u043d\u043a\u0441",
+    "\u0421\u0430\u0439\u0442\u044b",
+    "\u0417\u0430\u0430\u043b\u0442",
+    "\u0417\u0430\u0430\u043b\u0442\u0430\u0441",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440"
+  ],
+  "shwiki": [
+    "Napomene",
+    "Reference",
+    "Literatura",
+    "Dodatna literatura",
+    "Bibliografija",
+    "Vanjske veze",
+    "Izvori",
+    "Povezano"
+  ],
+  "trvwiki": [
+    "References",
+    "Nkari pnegluban(\u76f8\u95dc\u689d\u76ee)"
+  ],
+  "tswiki": [
+    "Tinoti",
+    "Swikombo",
+    "Mfumo na tipolitiki",
+    "Minkhwekelo ya le handle ka Wikipediya",
+    "References",
+    "Minthsaho",
+    "Mikongomiso ya le handle",
+    "Switlhavinyeti swa le handle",
+    "Nakambe vona",
+    "Swiyelanisi",
+    "Mintshaho",
+    "Mintsaho",
+    "Hlaya leswi engetelekeke",
+    "Vona swo tala",
+    "Minkombo"
+  ],
+  "cywiki": [
+    "Gweler hefyd",
+    "Darllen pellach",
+    "Llyfryddiaeth",
+    "Cyfeiriadau a nodiadau",
+    "Cyfeiriadau",
+    "Gweler hefyd"
+  ],
+  "zghwiki": [
+    "\u2d5c\u2d30\u2d4f\u2d4f\u2d30\u2d62\u2d49\u2d4f",
+    "References",
+    "\u2d49\u2d59\u2d30\u2d56\u2d53\u2d4d\u2d4f"
+  ],
+  "pamwiki": [
+    "Lawen ya rin",
+    "Dalerayan",
+    "Panibatan",
+    "Dal\u00e9r\u00e1yan",
+    "Pikwanan",
+    "Pikuanan",
+    "Ding daler\u00e1yan",
+    "Kasusug Kilwal",
+    "References",
+    "Notes",
+    "Suglung palual",
+    "Karagdagang babasan"
+  ],
+  "maiwiki": [
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d",
+    "\u090f\u0939\u094b\u00a0\u0938\u092d\u00a0\u0926\u0947\u0916\u0940",
+    "\u092c\u093e\u0939\u094d\u092f \u091c\u0921\u0940\u0938\u092d",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d\u00a0\u0938\u093e\u092e\u0917\u094d\u0930\u0940\u0938\u092d",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0917\u094d\u0930\u0928\u094d\u0925",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u093e\u092e\u0917\u094d\u0930\u0940\u0938\u092d",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u093e\u092e\u093e\u0917\u094d\u0930\u0940\u0938\u092d",
+    "\u090f\u0939\u094b \u0938\u092d \u0926\u0947\u0916\u0940",
+    "\u091f\u093f\u092a\u094d\u092a\u0923\u0940\u0938\u092d"
+  ],
+  "ugwiki": [
+    "\u0642\u0627\u0631\u0627\u06ad",
+    "\u0642\u0627\u0631\u0627\u0644\u0633\u06c7\u0646",
+    "\u0645\u06d5\u0646\u0628\u06d5",
+    "\u0645\u06d5\u0646\u0628\u06d5\u0644\u06d5\u0631",
+    "\u0626\u06c7\u0644\u0649\u0646\u0649\u0634\u0644\u0627\u0631"
+  ],
+  "stqwiki": [
+    "Sjuch uk",
+    "Literatur",
+    "Einzelnachweise",
+    "Weblinks",
+    "Foutnooten"
+  ],
+  "dzwiki": [
+    "\u0f41\u0f74\u0f44\u0f66\u0f0b\u0f42\u0f4f\u0f74\u0f42\u0f66\u0f0d",
+    "\u0f41\u0f74\u0f44\u0f66\u0f0b\u0f42\u0f4f\u0f74\u0f42",
+    "\u0f55\u0fb1\u0f72\u0f60\u0f72\u0f0b\u0f60\u0f56\u0fb2\u0f7a\u0f63\u0f0b\u0f58\u0f50\u0f74\u0f51\u0f0d",
+    "\u0f51\u0f0b\u0f51\u0f74\u0f44\u0f0b\u0f42\u0f5f\u0f72\u0f42\u0f66\u0f0d",
+    "\u0f41\u0f74\u0f44\u0f66\u0f0b\u0f42\u0f4f\u0f74\u0f42\u0f66\u0f0d"
+  ],
+  "fiu_vrowiki": [
+    "Kaeq viil",
+    "L\u00e4tteq",
+    "Kir\u00e4nd\u00fcs"
+  ],
+  "altwiki": [
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430\u0437\u044b",
+    "\u0422\u0430\u0439\u0430\u043d\u0442\u044b\u043b\u0430\u0440",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f\u0437\u044b",
+    "\u0410\u0458\u0430\u0440\u0443\u043b\u0430\u0440"
+  ],
+  "newwiki": [
+    "\u0936\u094d\u0930\u094b\u0924",
+    "\u0932\u093f\u0927\u0902\u0938\u093e",
+    "\u0938\u094d\u0930\u094b\u0924"
+  ],
+  "rowiki": [
+    "Vezi \u0219i",
+    "Bibliografie",
+    "Leg\u0103turi externe",
+    "Referin\u021be",
+    "Surse",
+    "Surse bibliografice",
+    "Lectur\u0103 suplimentar\u0103",
+    "Lectur\u0103\u00a0suplimentar\u0103",
+    "Bibliografie suplimentar\u0103",
+    "Lecturi suplimentare",
+    "Note",
+    "Note explicative",
+    "Note",
+    "Referin\u021be"
+  ],
+  "lfnwiki": [
+    "Vide ance",
+    "Bibliografia",
+    "Referes",
+    "Refere",
+    "Fontes",
+    "Referes"
+  ],
+  "tpiwiki": [
+    "Ol Referens",
+    "Ol referens",
+    "Lukim Tu",
+    "Litorasa",
+    "Lukum tu",
+    "Referens",
+    "Lukim tu",
+    "Contents"
+  ],
+  "pdcwiki": [
+    "Seh aa",
+    "Guckt mol aa",
+    "Beweisunge",
+    "References",
+    "Gwuelle",
+    "Literatur",
+    "Literature"
+  ],
+  "eewiki": [
+    "Nyatakakatso\u0192ewo",
+    "References",
+    "Nyasiawo \u0192e tso\u0192e",
+    "Kp\u0254 esiawo h\u00e3a",
+    "Kp\u0254 esiawo h\u00e3",
+    "Nyatakaka siawo tso\u0192ewo"
+  ],
+  "mnwwiki": [
+    "Bibliography",
+    "References",
+    "Further reading",
+    "\u1015\u103c\u1004\u103a\u1015\u101c\u1004\u1037\u103a\u1001\u103a\u1019\u103b\u102c\u1038",
+    "References",
+    "Notes",
+    "\u1014\u102d\u103f\u1032"
+  ],
+  "scwiki": [
+    "Refer\u00e8ntzias",
+    "\u00c0trus progetus",
+    "Colegam\u00e8int est\u00e8ren",
+    "Culegam\u00e8int est\u00e8ren",
+    "Organizadura pol\u00ectica",
+    "Riferimentus",
+    "Riferimentos",
+    "Notas",
+    "Bibliografia"
+  ],
+  "dagwiki": [
+    "Bibliography",
+    "Further reading",
+    "External links",
+    "Sources",
+    "Notes",
+    "External links",
+    "Kundivihira",
+    "Further reading"
+  ],
+  "acewiki": [
+    "R\u00e8f\u00e8rensi",
+    "Ne",
+    "Referensi",
+    "N\u00e8",
+    "Asai teunul\u00e9h"
+  ],
+  "wuuwiki": [
+    "\u53c2\u8003",
+    "\u53c2\u89c1",
+    "\u53c2\u8003\u6587\u732e",
+    "\u5916\u90e8\u94fe\u63a5",
+    "\u53c2\u8003\u8d44\u6599",
+    "\u53c3\u8003\u8cc7\u6599",
+    "\u53c3\u8003",
+    "\u811a\u6ce8",
+    "\u53c2\u8003\u6587\u732e",
+    "\u53c2\u8003\u8d44\u6599",
+    "\u53c3\u8003\u8cc7\u6599"
+  ],
+  "bowiki": [
+    "\u0f5f\u0f72\u0f53\u0f0b\u0f50\u0f7c\u0f0b\u0f60\u0f58\u0f0b\u0f51\u0f54\u0fb1\u0f51\u0f0b\u0f42\u0f5e\u0f72\u0f0d",
+    "\u0f51\u0f0b\u0f51\u0f74\u0f44\u0f0b\u0f42\u0f5f\u0f72\u0f42\u0f66\u0f0d",
+    "\u0f41\u0f74\u0f44\u0f66\u0f0b\u0f42\u0f4f\u0f74\u0f42",
+    "\u0f55\u0fb1\u0f72\u0f0b\u0f55\u0fb1\u0f7c\u0f42\u0f66\u0f0b\u0f51\u0fb2\u0f0b\u0f58\u0f50\u0f74\u0f51\u0f0d",
+    "\u0f63\u0f74\u0f44\u0f0b\u0f41\u0f74\u0f44\u0f66\u0f0d",
+    "\u0f41\u0f74\u0f44\u0f66\u0f0b\u0f42\u0f4f\u0f74\u0f42\u0f66\u0f0d"
+  ],
+  "miwiki": [
+    "Tirohia hoki",
+    "Ng\u0101 tohutoro",
+    "Tohutoro",
+    "Hoto ki waho",
+    "R\u0101rangi tohutoro",
+    "External links",
+    "Kupu tautoko",
+    "Tohutoro"
+  ],
+  "mniwiki": [
+    "\uabc3\uabc7\uabe6\uabe1 \uabc2\uabe7\uabd0\uabdd",
+    "\uabc3\uabc7\uabe6\uabe1 \uabc2\uabe7\uabd4\uabdb\uabd0\uabdd"
+  ],
+  "guwiki": [
+    "\u0a86 \u0aaa\u0aa3 \u0a9c\u0ac1\u0a93",
+    "\u0a86\u00a0\u0aaa\u0aa3\u00a0\u0a9c\u0ac1\u0a93",
+    "\u0aac\u0abe\u0ab9\u0acd\u0aaf \u0a95\u0aa1\u0ac0\u0a93",
+    "\u0ab8\u0a82\u0aa6\u0ab0\u0acd\u0aad\u0acb",
+    "\u0ab8\u0a82\u0aa6\u0ab0\u0acd\u0aad",
+    "\u0a97\u0acd\u0ab0\u0a82\u0aa5\u0ab8\u0ac2\u0a9a\u0abf",
+    "\u0a87\u0aa4\u0ab0 \u0ab5\u0abe\u0a82\u0a9a\u0aa8",
+    "\u0aaa\u0ac2\u0ab0\u0a95 \u0ab5\u0abe\u0a9a\u0aa8",
+    "\u0ab8\u0a82\u0aa6\u0ab0\u0acd\u0aad",
+    "\u0aa8\u0acb\u0a82\u0aa7\u0acb",
+    "\u0aa8\u0acb\u0a82\u0aa7",
+    "\u0ab8\u0a82\u0aa6\u0ab0\u0acd\u0aad\u0acb"
+  ],
+  "kjwiki": [],
+  "hakwiki": [
+    "\u53c3\u8003\u8cc7\u6599",
+    "\u53c3\u8003\u6587\u737b",
+    "Chh\u00e2m-kh\u00e1u ch\u1e73\u0302-liau",
+    "Chh\u00e2m-kh\u00e1u"
+  ],
+  "amwiki": [
+    "\u12f0\u130d\u121e \u12ed\u12e9",
+    "\u1260\u1270\u1328\u121b\u122a \u12ed\u1218\u120d\u12a8\u1271",
+    "\u121b\u1323\u1240\u123b",
+    "\u1218\u12c8\u12a8\u1232\u1273",
+    "\u1218\u12c8\u12a8\u1232\u1273\u1275",
+    "\u12cb\u1262 \u121d\u1295\u132e\u127d",
+    "\u12cb\u1262 \u1218\u133d\u1203\u134d\u1275",
+    "Bibliography",
+    "\u1260\u1270\u1328\u121b\u122a \u12a0\u1295\u1265\u1265",
+    "\u121b\u1323\u1240\u123b\u12ce\u127d",
+    "\u12e8\u12cd\u132d \u121b\u12eb\u12eb\u12e3\u12ce\u127d",
+    "\u1273\u12cb\u1242 \u1230\u12ce\u127d"
+  ],
+  "orwiki": [
+    "\u0b06\u0b39\u0b41\u0b30\u0b3f \u0b26\u0b47\u0b16\u0b28\u0b4d\u0b24\u0b41",
+    "\u0b0f\u0b39\u0b3e \u0b2e\u0b27\u0b4d\u0b5f \u0b26\u0b47\u0b16\u0b28\u0b4d\u0b24\u0b41",
+    "\u0b06\u0b27\u0b3e\u0b30",
+    "\u0b2c\u0b3e\u0b39\u0b3e\u0b30 \u0b32\u0b3f\u0b19\u0b4d\u0b15",
+    "\u0b2a\u0b41\u0b28\u0b36\u0b4d\u0b1a \u0b2a\u0b20\u0b28",
+    "\u0b06\u0b27\u0b3e\u0b30"
+  ],
+  "minwiki": [
+    "Rujukan",
+    "Referensi",
+    "Bibliografi",
+    "Daftar pustaka",
+    "Pautan lua",
+    "Bacaan lanjuik",
+    "Bacoan lanjuik",
+    "Bacoan tambahan",
+    "Sumber",
+    "Kepustakaan",
+    "Catatan",
+    "Catatan kaki",
+    "Referensi",
+    "Rujuakan"
+  ],
+  "mhwiki": [],
+  "hzwiki": [],
+  "lgwiki": [
+    "Laba ne bino",
+    "Ebijuliziddwa wabweru wa Wikipedia",
+    "Ebiwandiiko ebijuliziddwa",
+    "Era laba",
+    "Laba na bino",
+    "Laba ne",
+    "Ebijuliziddwaamu",
+    "Ebijuliziddwamu",
+    "Laba era",
+    "Ebijuliziddwa",
+    "Ebiwandiiko ebikozesebwa",
+    "Laba nebino"
+  ],
+  "fonwiki": [
+    "Dodo t\u0254n",
+    "Dodo"
+  ],
+  "fowiki": [
+    "Keldu\u00e1v\u00edsingar",
+    "Hygg eisini at",
+    "Keldutilfar",
+    "V\u00ed\u00f0ari lesna\u00f0ur",
+    "Keldur"
+  ],
+  "vewiki": [
+    "References",
+    "Ndaedzi"
+  ],
+  "angwiki": [
+    "Seoh \u0113ac",
+    "S\u0113o \u0113ac",
+    "Seo eac",
+    "References",
+    "Bibliography",
+    "Fruman",
+    "Fr\u016bman",
+    "Furman",
+    "N\u014dtas"
+  ],
+  "dtywiki": [
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d\u0905\u0928",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u093e\u092e\u0917\u094d\u0930\u0940\u0905\u0928",
+    "\u092f\u094b \u0932\u0948 \u0939\u0947\u0930",
+    "\u092f\u093f\u0928\u0932\u0948 \u0939\u0947\u0930",
+    "\u092f\u094b\u00a0\u0932\u0948\u00a0\u0939\u0947\u0930",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d\u0939\u0930\u0942",
+    "\u0909\u0926\u094d\u0927\u0930\u0923",
+    "\u092f\u094b \u092a\u0928\u093f \u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+    "\u0925\u092a \u092a\u0922\u093e\u0907",
+    "\u0917\u094d\u0930\u0928\u094d\u0925\u0938\u0942\u091a\u0940",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u093e\u092e\u0917\u094d\u0930\u0940",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u093e\u092e\u0917\u094d\u0930\u0940\u0939\u0930\u0942",
+    "\u092f\u093f\u0928 \u0932\u0948 \u0939\u0947\u0930"
+  ],
+  "lezwiki": [
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u042d\u0434\u0435\u0431\u0438\u044f\u0442",
+    "\u042d\u0434\u0435\u0431\u0438\u0430\u0442",
+    "\u0411\u0430\u044f\u043d\u0430\u0440",
+    "\u042d\u043b\u044f\u0447\u04c0\u0443\u043d\u0430\u0440"
+  ],
+  "muswiki": [],
+  "slwiki": [
+    "Glej tudi",
+    "Reference",
+    "Viri in opombe",
+    "Sklici",
+    "Zunanje povezave",
+    "Literatura",
+    "Viri",
+    "Bibliografija",
+    "Opombe",
+    "Sklici in opombe",
+    "Nadaljnje branje"
+  ],
+  "biwiki": [
+    "Lukim Tu",
+    "Lukluk tu",
+    "Ol refrens",
+    "Bibliografi"
+  ],
+  "bpywiki": [
+    "\u0989\u09a4\u09cd\u09b8",
+    "\u09a8\u09cb\u099f\u09b8",
+    "\u09aa\u09be\u09a6\u099f\u09c0\u0995\u09be",
+    "\u09aa\u09be\u09b8\u09bf\u09a4\u09be"
+  ],
+  "kbdwiki": [
+    "\u0416\u0435\u0440\u0435\u043b\u0430 \u0438 \u043e\u0434\u043a\u0430\u0437\u044b",
+    "\u0413\u0443\u043b\u044a\u044b\u0442\u044d\u0433\u044a\u0443\u044d",
+    "\u0413\u0443\u043b\u044a\u044b\u0442\u044b\u0433\u044a\u0443\u044d",
+    "Gallery",
+    "\u0413\u0443\u043b\u044a\u044b\u0442\u044b\u0433\u044a\u0443\u044d\u0445\u044d\u0440",
+    "\u0413\u0443\u043b\u044a\u044b\u0442\u044d\u0433\u044a\u0443\u044d\u0445\u044d\u0440",
+    "Contents"
+  ],
+  "xmfwiki": [
+    "\u10da\u10d8\u10e2\u10d4\u10e0\u10d0\u10e2\u10e3\u10e0\u10d0",
+    "\u10d1\u10d8\u10d1\u10da\u10d8\u10dd\u10d2\u10e0\u10d0\u10e4\u10d8\u10d0",
+    "\u10e0\u10d4\u10e1\u10e3\u10e0\u10e1\u10d4\u10e4\u10d8 \u10d8\u10dc\u10e2\u10d4\u10e0\u10dc\u10d4\u10e2\u10d8\u10e1",
+    "\u10ec\u10e7\u10e3\u10d4\u10e4\u10d8",
+    "Further reading",
+    "\u10d9\u10dd\u10db\u10d4\u10dc\u10e2\u10d0\u10e0\u10d4\u10e4\u10d8",
+    "\u10e1\u10e5\u10dd\u10da\u10d8\u10dd"
+  ],
+  "bat_smgwiki": [
+    "Bibliuograp\u0117j\u0117",
+    "Literat\u016bra",
+    "\u0160alten\u0113"
+  ],
+  "kshwiki": [
+    "Literatur",
+    "Jet ze lese",
+    "Quelle un B\u00f6\u00f6scher",
+    "Qw\u00eblle",
+    "Quellen",
+    "Sick ensuure",
+    "Quelle",
+    "Woher mer dat wesse"
+  ],
+  "wowiki": [
+    "R\u00e9f\u00e9rences",
+    "Xoolal it",
+    "Karmat ak delluwaay",
+    "References",
+    "L\u00ebkkalekaay yu biti",
+    "xool it"
+  ],
+  "plwiki": [
+    "Zobacz te\u017c",
+    "Bibliografia",
+    "Literatura uzupe\u0142niaj\u0105ca",
+    "Linki zewn\u0119trzne",
+    "Uwagi",
+    "Przypisy"
+  ],
+  "anpwiki": [
+    "\u0907\u0928\u094d\u0939\u0947\u0902 \u092d\u0940 \u0926\u0947\u0916\u0947\u0902",
+    "\u0907 \u092d\u0940 \u0926\u0947\u0916\u093d",
+    "\u0908 \u092d\u0940 \u0926\u0947\u0916\u094c",
+    "\u0908 \u092d\u0940 \u0926\u0947\u0916\u093d",
+    "\u090f\u0915\u0930\u094b \u0926\u0947\u0916\u094c",
+    "\u090f\u0915\u0930\u0939\u094b \u0926\u0947\u0916\u094c",
+    "\u0907 \u092d\u0940 \u0926\u0947\u0916\u093d",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d",
+    "\u0938\u0902\u0926\u0930\u094d\u092d",
+    "\u092c\u093e\u0939\u0930\u0940 \u0915\u0921\u093c\u0940",
+    "\u092c\u093e\u0939\u0930\u0940 \u0915\u0921\u093c\u093f\u092f\u093e\u0901",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d",
+    "\u0938\u0902\u0926\u0930\u094d\u092d"
+  ],
+  "vowiki": [
+    "Literat",
+    "Noets",
+    "Jenots ve\u00fctik",
+    "Gallery",
+    "Noets"
+  ],
+  "udmwiki": [
+    "\u0423\u043b\u04e5\u0441\u044c\u0451\u0441",
+    "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u044a\u0451\u0441",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0412\u0430\u043b\u044d\u043a\u0442\u043e\u043d\u044a\u0451\u0441"
+  ],
+  "knwiki": [
+    "\u0cac\u0cbe\u0cb9\u0ccd\u0caf \u0c95\u0cca\u0c82\u0ca1\u0cbf\u0c97\u0cb3\u0cc1",
+    "\u0c97\u0ccd\u0cb0\u0c82\u0ca5\u0cb8\u0cc2\u0c9a\u0cbf",
+    "\u0c87\u0cb5\u0ca8\u0ccd\u0ca8\u0cc2 \u0ca8\u0ccb\u0ca1\u0cbf",
+    "\u0cae\u0cc2\u0cb2\u0c97\u0cb3\u0cc1",
+    "\u0c86\u0c95\u0cb0\u0c97\u0cb3\u0cc1",
+    "\u0c87\u0ca6\u0ca8\u0ccd\u0ca8\u0cc2 \u0ca8\u0ccb\u0ca1\u0cbf",
+    "\u0c89\u0cb2\u0ccd\u0cb2\u0cc7\u0c96\u0c97\u0cb3\u0cc1",
+    "\u0cb9\u0cc6\u0c9a\u0ccd\u0c9a\u0cbf\u0ca8 \u0c93\u0ca6\u0cc1",
+    "\u0cb8\u0cb9 \u0ca8\u0ccb\u0ca1\u0cbf",
+    "\u0cb9\u0cc6\u0c9a\u0ccd\u0c9a\u0cbf\u0ca8 \u0c93\u0ca6\u0cbf\u0c97\u0cbe\u0c97\u0cbf",
+    "\u0cb9\u0cc6\u0c9a\u0ccd\u0c9a\u0cbf\u0ca8 \u0c93\u0ca6\u0cbf\u0c97\u0cc6",
+    "\u0c9f\u0cbf\u0caa\u0ccd\u0caa\u0ca3\u0cbf\u0c97\u0cb3\u0cc1"
+  ],
+  "sswiki": [
+    "Emarefarensi",
+    "Caphela",
+    "Tinkomba",
+    "References",
+    "Emareferensi",
+    "IMITFOMBO YELWATI",
+    "Imibhalo lebhalwe phansi"
+  ],
+  "crwiki": [
+    "\u1405\u14aa \u146d\u1422\u146b\u1528\u1426\u1455\u14a7\u1403\u1427\u1423 \u1405\u1426\u148b:",
+    "\u00d4ma kiskeyihtamowin ohci",
+    "References"
+  ],
+  "gnwiki": [
+    "Arandukapurupyre",
+    "Mandu'apy",
+    "Mandu\u2019apy",
+    "Ehecha avei",
+    "Mandu\u2019apyku\u00e9ra",
+    "Mo\u00f5guipa os\u1ebd marandu",
+    "Joaju",
+    "Mandu'apyku\u00e9ra"
+  ],
+  "eowiki": [
+    "Vidu anka\u016d",
+    "Referencoj",
+    "Bibliografio",
+    "Eksteraj ligiloj",
+    "Notoj",
+    "Notoj kaj referencoj",
+    "Referencoj",
+    "Referencoj kaj Notoj",
+    "Notoj"
+  ],
+  "cbk_zamwiki": [
+    "Bibliography",
+    "Mira tambien",
+    "Maga referencia",
+    "References",
+    "Vide etiam",
+    "V\u00e9ase tambi\u00e9n",
+    "V\u00e9ase Tambi\u00e9n",
+    "Referencias",
+    "Bibliografia"
+  ],
+  "roa_tarawiki": [
+    "V\u00f4sce cullegate",
+    "Bibliografije",
+    "Note"
+  ],
+  "kabwiki": [
+    "Tizmilin",
+    "Imniren",
+    "Asile\u0263 n tegnit d tsuddest-is",
+    "\u1e92e\u1e5b da\u0263en",
+    "Tiwelhiwin"
+  ],
+  "iewiki": [
+    "Vide anc",
+    "Referenties",
+    "Bibliografie",
+    "Externi ligamentes",
+    "Fontes"
+  ],
+  "kiwiki": [
+    "Rora",
+    "Ning\u0129 rora",
+    "References"
+  ],
+  "koiwiki": [
+    "\u042b\u0441\u0442\u0456\u0441\u044f\u043d\u043d\u044d\u0437"
+  ],
+  "myvwiki": [
+    "\u041b\u0438\u0441\u044c\u043c.:",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430\u0441\u044c",
+    "\u041f\u043e\u0442\u043c\u043e\u043a\u0441",
+    "\u041b\u0438\u0441\u044c\u043c.",
+    "\u041b\u0438\u0441\u044c\u043c\u0430\u043f\u0440\u044f\u0442",
+    "\u0421\u0451\u0440\u043c.:"
+  ],
+  "azwiki": [
+    "H\u0259m\u00e7inin bax",
+    "M\u0259nb\u0259",
+    "M\u0259nb\u0259l\u0259r",
+    "\u018fd\u0259biyyat",
+    "\u0130stinadlar",
+    "Xarici ke\u00e7idl\u0259r",
+    "\u018flav\u0259 \u0259d\u0259biyyat",
+    "Qeydl\u0259r",
+    "\u0130stinad siyah\u0131s\u0131",
+    "M\u0259nb\u0259",
+    "\u0130stinadlar"
+  ],
+  "lrcwiki": [],
+  "zawiki": [
+    "\u53c3\u8003\u8cc7\u6599",
+    "Sawgej",
+    "Vwnzyen Doiqciuq",
+    "Literatur",
+    "Einzelnachweise",
+    "Buenyungh",
+    "Vwnzyen doxgven"
+  ],
+  "bugwiki": [
+    "Pustaka",
+    "Referensi"
+  ],
+  "arwiki": [
+    "\u0644\u0645\u0632\u064a\u062f \u0645\u0646 \u0627\u0644\u0642\u0631\u0627\u0621\u0629",
+    "\u0627\u0646\u0638\u0631 \u0623\u064a\u0636\u0627",
+    "\u0645\u0635\u0627\u062f\u0631 \u0627\u0644\u0627\u0633\u062a\u0634\u0647\u0627\u062f",
+    "\u0645\u0635\u0627\u062f\u0631",
+    "\u0627\u0644\u0645\u0635\u0627\u062f\u0631",
+    "\u0627\u0646\u0638\u0631 \u0623\u064a\u0636\u0627\u064b",
+    "\u0627\u0646\u0638\u0631 \u0623\u064a\u0636\u064b\u0627",
+    "\u0637\u0627\u0644\u0639 \u0623\u064a\u0636\u0627",
+    "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+    "\u0645\u0631\u0627\u062c\u0639",
+    "\u0645\u0631\u0627\u062c\u0639 \u0648\u0631\u0648\u0627\u0628\u0637 \u062e\u0627\u0631\u062c\u064a\u0629",
+    "\u0627\u0644\u0645\u0631\u0627\u062c\u0639",
+    "\u0642\u0631\u0627\u0621\u0629 \u0645\u062a\u0639\u0645\u0642\u0629"
+  ],
+  "astwiki": [
+    "Ver tami\u00e9n",
+    "Referencies",
+    "Bibliograf\u00eda",
+    "Enllaces esternos",
+    "Cites y Referencies",
+    "Notes",
+    "Referencies"
+  ],
+  "ngwiki": [],
+  "roa_rupwiki": [
+    "Vedz shi",
+    "Referents\u00e3",
+    "Referentse",
+    "Izvuri di nuntru",
+    "Izvuri di Nuntru",
+    "Izvuri di nafoar\u00e3",
+    "F\u00e3nt\u00e3ne",
+    "Noturi"
+  ],
+  "idwiki": [
+    "Lihat pula",
+    "Lihat juga",
+    "Referensi",
+    "Rujukan",
+    "Pranala luar",
+    "Bibliografi",
+    "Daftar pustaka",
+    "Catatan kaki",
+    "Bacaan lebih lanjut",
+    "Bacaan lanjut",
+    "Bacaan tambahan",
+    "Sumber",
+    "Referensi tambahan",
+    "Catatan kaki",
+    "Referensi",
+    "Catatan"
+  ],
+  "trwiki": [
+    "Ayr\u0131ca bak\u0131n\u0131z",
+    "Kaynak\u00e7a",
+    "D\u0131\u015f ba\u011flant\u0131lar",
+    "Kaynak",
+    "Bibliyografya",
+    "Ek okuma",
+    "Notlar",
+    "Kaynak\u00e7a"
+  ],
+  "vepwiki": [
+    "Kacu muga\u017eo",
+    "Literatur",
+    "Irdkosketused",
+    "Edesine lugemine",
+    "Homai\u010dendad"
+  ],
+  "ltwiki": [
+    "Taip pat skaitykite",
+    "\u0160altiniai",
+    "I\u0161na\u0161os",
+    "Literat\u016bra",
+    "Nuorodos",
+    "Papildomam skaitymui",
+    "Nuorodos ir \u0161altiniai",
+    "\u0160altiniai",
+    "Pastabos",
+    "I\u0161na\u0161os"
+  ],
+  "euwiki": [
+    "Ikus gainera",
+    "Ikus, gainera",
+    "Erreferentziak",
+    "Bibliografia",
+    "Kanpo estekak",
+    "Erreferentziak",
+    "Oharrak"
+  ],
+  "mgwiki": [
+    "Jereo koa",
+    "Jereo Koa",
+    "Jereo koa:",
+    "Vangio koa",
+    "Loharano",
+    "Loharano sy fanamarihana",
+    "Rohy ivelany",
+    "Tsiahy",
+    "References",
+    "Tsiahy",
+    "Jereo koa"
+  ],
+  "taywiki": [],
+  "bjnwiki": [
+    "Daftar pustaka",
+    "Bahan acuan",
+    "Pustaka",
+    "Referensi",
+    "Catatan Batis",
+    "Jujuhutan",
+    "Rujukan",
+    "Bibliografi"
+  ],
+  "yiwiki": [
+    "\u05d6\u05e2\u05d8 \u05d0\u05d5\u05d9\u05da",
+    "\u05e8\u05e2\u05e4\u05e2\u05e8\u05e2\u05e0\u05e6\u05df",
+    "\u05e7\u05d5\u05d5\u05d0\u05dc\u05df",
+    "\u05d1\u05d9\u05d1\u05dc\u05d9\u05d0\u05d2\u05e8\u05d0\u05e4\u05d9\u05e2",
+    "\u05e0\u05d0\u05b8\u05db\u05dc\u05d9\u05d9\u05e2\u05df",
+    "\u05e8\u05e2\u05e4\u05e2\u05e8\u05e2\u05e0\u05e6\u05df"
+  ],
+  "sqwiki": [
+    "Lidhje t\u00eb jashtme",
+    "Sh\u00ebnime",
+    "Burimet",
+    "Referime",
+    "Literatura",
+    "Referimet",
+    "Burime i t\u00eb dh\u00ebnave",
+    "Shiko edhe",
+    "Burime",
+    "Shiko gjithashtu",
+    "Shih edhe",
+    "Bibliografia"
+  ],
+  "kcgwiki": [
+    "Ya\u0331fang"
+  ],
+  "kswiki": [
+    "\u0645\u0632\u06cc\u062f \u0648\u0686\u06be\u0648",
+    "\u0645\u0632\u06cc\u062f \u0648\u0686\u06be\u064f\u0648\u06ba",
+    "\u0645\u0654\u0632\u06cc\u0656\u0926 \u0648\u064f\u0687\u0650\u0648",
+    "\u0628\u06cc\u06cc\u065a\u06c1\u0650 \u0648\u0650\u0686\u0655\u06be\u0648",
+    "\u0628\u06cc\u065a\u06cc\u06c1\u0650 \u0648\u0655\u0686\u0650\u06be\u0648",
+    "\u0628\u06cc\u06cc\u06c1\u065a \u0648\u064f\u0687\u0648",
+    "\u0628\u06cc\u065a\u06cc\u06c1\u0650 \u0648\u064f\u0687\u0650\u0648",
+    "\u0628\u06cc\u065a\u06cc\u06c1\u0650 \u0648\u0687\u0648",
+    "\u062d\u064e\u0648\u0627\u0644\u06c1\u0655",
+    "\u062d\u0648\u0627\u0644\u06c1 \u062c\u0627\u062a",
+    "\u062d\u064e\u0648\u0627\u0644\u06c1\u0655"
+  ],
+  "guwwiki": [
+    "Al\u1ecddl\u1eb9ndonu l\u1eb9"
+  ],
+  "srwiki": [
+    "\u0412\u0438\u0434\u0438 \u0458\u043e\u0448",
+    "Vidi jo\u0161",
+    "\u0412\u0438\u0434\u0438 \u0442\u0430\u043a\u043e\u0452\u0435",
+    "\u0420\u0435\u0444\u0435\u0440\u0435\u043d\u0446\u0435",
+    "Reference",
+    "\u0421\u043f\u043e\u0459\u0430\u0448\u045a\u0435 \u0432\u0435\u0437\u0435",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u0458\u0430",
+    "\u0414\u043e\u0434\u0430\u0442\u043d\u0430 \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0421\u0430\u0434\u0440\u0436\u0430\u0458",
+    "\u041d\u0430\u043f\u043e\u043c\u0435\u043d\u0435",
+    "\u0420\u0435\u0444\u0435\u0440\u0435\u043d\u0446\u0435"
+  ],
+  "smnwiki": [
+    "K\u00e4ldeeh",
+    "K\u00e4ldeeh"
+  ],
+  "awawiki": [
+    "\u0907\u0928\u094d\u0939\u0947\u0902 \u092d\u0940 \u0926\u0947\u0916\u0947\u0902",
+    "\u0907\u0939\u094c \u0926\u0947\u0916\u0948\u0902",
+    "\u0907\u0939\u094b \u092d\u0940 \u0926\u0947\u0916\u093e \u091c\u093e\u092f",
+    "\u0908\u0939\u094b \u092d\u0940 \u0926\u0947\u0916\u093e \u091c\u093e\u092f",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d",
+    "\u0938\u0902\u0926\u0930\u094d\u092d",
+    "\u092c\u093e\u0939\u0930\u0940 \u0915\u0921\u093c\u093f\u092f\u093e\u0901",
+    "\u0906\u0917\u0947 \u0915\u0947 \u0905\u0927\u094d\u092f\u092f\u0928 \u0915\u0947 \u0932\u093f\u090f",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d"
+  ],
+  "gurwiki": [
+    "Vis\u0254g\u0254 L\u0254ger\u0254",
+    "References",
+    "Viis\u0254g\u0254 l\u0254ger\u0254",
+    "See also",
+    "Viiseg\u0254 l\u0254ger\u0254",
+    "Viisig\u0254 L\u0254ger\u0254",
+    "External links",
+    "Viis\u0254g\u0254 L\u0254g\u025br\u0254",
+    "Viiseg\u0254 g\u0254n\u0254",
+    "Viiseg\u0254 L\u0254ger\u0254"
+  ],
+  "ruwiki": [
+    "\u0421\u043c. \u0442\u0430\u043a\u0436\u0435",
+    "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u044f",
+    "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438",
+    "\u0421\u0441\u044b\u043b\u043a\u0438",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f",
+    "\u0414\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0421\u0441\u044b\u043b\u043a\u0438",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u044f"
+  ],
+  "nvwiki": [],
+  "pagwiki": [
+    "References",
+    "Saray reperensiya",
+    "Saray reperensya",
+    "Saray pinagkunan",
+    "Book references",
+    "Saray reperensiya"
+  ],
+  "iawiki": [
+    "Vide etiam",
+    "Referentias",
+    "Bibliographia",
+    "Bibliografia",
+    "Ligamines externe",
+    "Fontes",
+    "Referentias"
+  ],
+  "avwiki": [
+    "\u0425\u0406\u0443\u0436\u0430\u0431\u0438",
+    "\u0418\u0446\u0446\u0430\u043b \u0432\u0430 \u043c\u0443\u0433\u044a\u0447\u04c0\u0432\u0430\u044f\u043b",
+    "\u0420\u0435\u0433\u04c0\u0435\u043b\u0430\u043b",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f",
+    "\u0420\u0435\u0444\u0435\u0440\u0435\u043d\u0441\u0430\u043b",
+    "\u0425I\u0443\u0436\u0430\u0431\u0438",
+    "\u041c\u0443\u0433\u044a\u0447\u04c0\u0432\u0430\u044f\u043b",
+    "\u0410\u0434\u0430\u0431\u0438\u044f\u0442",
+    "\u0425\u04c0\u0443\u0436\u0430\u0431\u0438",
+    "\u0425\u0406\u0443\u0436\u0436\u0430\u0431\u0438",
+    "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u044f"
+  ],
+  "scnwiki": [
+    "Tal\u00eca puru",
+    "Liami nterni",
+    "Lijami nterni",
+    "Bibliograf\u00eca",
+    "Bibliografia",
+    "Noti",
+    "Noti"
+  ],
+  "chrwiki": [
+    "\u13d9\u13ef\u13d7\u13e2 \u13d7\u13d5\u13ac\u13d4\u13db",
+    "\u13eb\u13d3\u13ce\u13c4\u13a2",
+    "\u13d3\u13d3\u13da\u13ac \u13aa\u13ea\u13b5",
+    "\u13af\u13aa\u13e9\u13d4 \u13be\u13cd\u13a6 \u13be\u13cd\u13c7",
+    "\u13d3\u13d3\u13da\u13ac",
+    "\u13eb\u13d3\u13ce\u13b8\u13a2"
+  ],
+  "abwiki": [
+    "\u0428\u04d9\u0430\u0445\u04d9. \u0438\u0430\u0440\u0430 \u0443\u0431\u0430\u0441",
+    "\u0428\u04d9\u0430\u0445\u04d9\u0430\u0525\u0448 \u0438\u0430\u0440\u0430Asimismo",
+    "\u0410\u0431\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u0430",
+    "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438",
+    "\u0410\u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0410\u0437\u0433\u04d9\u0430\u04ad\u0430\u049b\u04d9\u0430",
+    "\u0410\u0445\u044c\u0430\u0440\u0525\u0448\u049b\u04d9\u0430",
+    "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u044f"
+  ],
+  "thwiki": [
+    "\u0e14\u0e39\u0e40\u0e1e\u0e34\u0e48\u0e21",
+    "\u0e14\u0e39\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21",
+    "\u0e2d\u0e49\u0e32\u0e07\u0e2d\u0e34\u0e07",
+    "\u0e1a\u0e23\u0e23\u0e13\u0e32\u0e19\u0e38\u0e01\u0e23\u0e21",
+    "\u0e2d\u0e48\u0e32\u0e19\u0e40\u0e1e\u0e34\u0e48\u0e21\u0e40\u0e15\u0e34\u0e21",
+    "\u0e40\u0e0a\u0e34\u0e07\u0e2d\u0e23\u0e23\u0e16",
+    "\u0e41\u0e2b\u0e25\u0e48\u0e07\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e2d\u0e37\u0e48\u0e19",
+    "\u0e40\u0e0a\u0e34\u0e07\u0e2d\u0e23\u0e23\u0e16",
+    "\u0e2b\u0e21\u0e32\u0e22\u0e40\u0e2b\u0e15\u0e38",
+    "\u0e2d\u0e49\u0e32\u0e07\u0e2d\u0e34\u0e07"
+  ],
+  "emlwiki": [
+    "Bibliugrafia",
+    "Colegam\u00e8int est\u00e8ren",
+    "\u00c8ter prog\u00e8t",
+    "N\u00f2ti",
+    "V\u014d\u015b ligh\u00e8di",
+    "V\u00f3\u015b ligh\u00e8di",
+    "Culegam\u00e8int est\u00e8ren",
+    "Noti e refer\u00e8insi",
+    "Refer\u00e8insi"
+  ],
+  "gpewiki": [
+    "References",
+    "Read further",
+    "Bibliography",
+    "Sources",
+    "External links",
+    "References"
+  ],
+  "mswiki": [
+    "Lihat juga",
+    "Rujukan",
+    "Bacaan lanjut",
+    "Bibliografi",
+    "Pautan luar",
+    "Sumber",
+    "Bacaan tambahan",
+    "Nota",
+    "Nota",
+    "Rujukan",
+    "Nota kaki"
+  ],
+  "sewiki": [
+    "Geah\u010da maid",
+    "G\u00e1ldut",
+    "Li\u014bkkat",
+    "Bibliografiija",
+    "Girjj\u00e1la\u0161vuohta",
+    "G\u00e1ldut"
+  ],
+  "napwiki": [
+    "Vede pure",
+    "Vvoce currelate",
+    "Vvoce pariente",
+    "Bibbliografia",
+    "Bibliografia",
+    "Note",
+    "Nutarelle",
+    "Nutarelle"
+  ],
+  "madwiki": [
+    "Referensi",
+    "Sombher",
+    "Sombh\u00e8r",
+    "sombher",
+    "sombher:",
+    "\u1e0c\u00e2ftar Pustaka",
+    "Catatan kaki"
+  ],
+  "akwiki": [],
+  "lawiki": [
+    "Lege etiam",
+    "Nota",
+    "Bibliographia",
+    "Notae",
+    "Nexus externus",
+    "Fontes",
+    "Nexus externi",
+    "Plura legere si cupis"
+  ],
+  "yowiki": [
+    "\u00c0w\u1ecdn \u00ect\u1ecd\u0301kas\u00ed",
+    "\u00c0w\u1ecdn \u00cct\u1ecd\u0301kas\u00ed",
+    "Aw\u1ecdn it\u1ecdkasi",
+    "Itokasi",
+    "External links and further reading",
+    "Wo eyi naa",
+    "\u00c0w\u1ecdn \u00cct\u00f3kas\u00ed",
+    "Awon Itokasi"
+  ],
+  "pcmwiki": [
+    "Pej wey konsan dis one",
+    "Further reading",
+    "Wie dem gada di tori",
+    "References",
+    "Wia dem gada tori",
+    "Bibliografi",
+    "Referens",
+    "Wia dem gada di tori"
+  ],
+  "dinwiki": [
+    "References",
+    "K\u00e4 ye kek ya lueel",
+    "See also",
+    "Dikconari"
+  ],
+  "mywiki": [
+    "\u1006\u1000\u103a\u1005\u1015\u103a\u1016\u1010\u103a\u101b\u103e\u102f\u101b\u1014\u103a",
+    "\u1006\u1000\u103a\u1005\u1015\u103a\u1000\u103c\u100a\u1037\u103a\u101b\u103e\u102f\u101b\u1014\u103a",
+    "\u1000\u102d\u102f\u1038\u1000\u102c\u1038\u1001\u103b\u1000\u103a\u1019\u103b\u102c\u1038",
+    "\u1000\u102d\u102f\u1038\u1000\u102c\u1038",
+    "\u1015\u103c\u1004\u103a\u1015\u101c\u1004\u1037\u103a\u1019\u103b\u102c\u1038",
+    "\u1019\u103e\u1010\u103a\u1005\u102f\u1019\u103b\u102c\u1038",
+    "\u1019\u103e\u1010\u103a\u1005\u102f\u1019\u103b\u102c\u1038\u1014\u103e\u1004\u1037\u103a\u1000\u102d\u102f\u1038\u1000\u102c\u1038",
+    "Bibliography",
+    "\u1000\u102d\u102f\u1038\u1000\u102c\u1038",
+    "\u1019\u103e\u1010\u103a\u1005\u102f"
+  ],
+  "chywiki": [
+    "References"
+  ],
+  "jawiki": [
+    "\u5916\u90e8\u30ea\u30f3\u30af",
+    "\u95a2\u9023\u9805\u76ee",
+    "\u53c2\u8003\u6587\u732e",
+    "\u811a\u6ce8",
+    "\u51fa\u5178",
+    "\u76ee\u6b21",
+    "\u6ce8\u91c8",
+    "\u811a\u6ce8\u30fb\u51fa\u5178",
+    "\u53c2\u7167\u6587\u732e"
+  ],
+  "satwiki": [
+    "Bibliography",
+    "\u1c65\u1c5f.\u1c60\u1c77\u1c6d\u1c5f.\u1c5b",
+    "\u1c6f\u1c77\u1c6e\u1c70\u1c5f\u1c5b",
+    "\u1c65\u1c5f\u1c79\u1c60\u1c77\u1c6d\u1c5f\u1c79\u1c5b"
+  ],
+  "tnwiki": [
+    "Metswedi e Mengwe",
+    "References",
+    "Dipadi tse dingwe",
+    "Bona gape",
+    "Motswedi",
+    "Bona Gape",
+    "Ditshupiso",
+    "Metswedi"
+  ],
+  "omwiki": [
+    "Kanas ilaali",
+    "Akkasumas ilaali",
+    "Dabalata dubbisi",
+    "Dubbisa dabalataa",
+    "Maddawwan",
+    "Waabbii",
+    "Wabii",
+    "Madda odeeffannoo",
+    "References"
+  ],
+  "hawwiki": [
+    "N\u0101 kumole",
+    "N\u0101 k\u016bmole",
+    "E n\u0101n\u0101 ho\u02bbi",
+    "E n\u0101n\u0101 p\u016b",
+    "Loulou k\u016bwaho",
+    "K\u016bmole",
+    "N\u0101 K\u016bmole",
+    "E n\u0101n\u0101 p\u016b kekahi"
+  ],
+  "igwiki": [
+    "Isi mmalite na nt\u1ee5aka",
+    "Ebensidee",
+    "\u1ecag\u1ee5 ihe \u1ecdz\u1ecd",
+    "References",
+    "Ebenside",
+    "Edensib\u1ecba",
+    "Ihe odide",
+    "Njik\u1ecd mp\u1ee5ga",
+    "\u1eccg\u1ee5g\u1ee5 \u1ecdz\u1ecd",
+    "Edemsib\u1ecba",
+    "Edensibia",
+    "Ebem si dee",
+    "H\u1ee5kwa",
+    "Edemsibia",
+    "Nt\u1ee5aka"
+  ],
+  "nlwiki": [
+    "Zie ook",
+    "Literatuur",
+    "Bronnen",
+    "Externe link",
+    "Bibliografie",
+    "Referenties",
+    "Bronvermelding",
+    "Noten en referenties",
+    "Externe links",
+    "Controverse",
+    "Bronnen",
+    "Panorama",
+    "Noten"
+  ],
+  "oswiki": [
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u00e6",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u00e6",
+    "\u0424\u0438\u043f\u043f\u0430\u0438\u043d\u00e6\u0433\u0442\u00e6",
+    "\u0421\u043e\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0435"
+  ],
+  "warwiki": [
+    "Padugang nga barasahon",
+    "Bibliograpiya",
+    "Mga reperensya",
+    "Kitaa Gihapon",
+    "Mga kasarigan",
+    "Mga pagkukuhaan",
+    "Mga sumpay ha gawas",
+    "Dugang nga barasahon",
+    "Pinanbasaran",
+    "Mga pinambasaran",
+    "Pinanbasaran",
+    "Dugang nga barasahon",
+    "Mga pabaro",
+    "Mga kasarigan",
+    "Mga reperensya"
+  ],
+  "rmywiki": [
+    "Bibliyografiya",
+    "Xalyarimata",
+    "Dikh vi"
+  ],
+  "olowiki": [
+    "Aihies muijal",
+    "L\u00e4htiet",
+    "Huomavukset",
+    "L\u00e4htehet",
+    "Viittehet",
+    "Kirjalli\u017euttu",
+    "Ka\u010do se\u017eo",
+    "Ka\u010do vie"
+  ],
+  "lmowiki": [
+    "Bibliograf\u00eca",
+    "Riferim\u00e8ncc",
+    "Varda anca",
+    "Arda ach",
+    "Bibliograf\u00e9a",
+    "Colegam\u00e8ncc est\u00e8rni",
+    "Nutazion",
+    "Riferiment",
+    "Urganizaziun pulitiga",
+    "Galleria"
+  ],
+  "cewiki": [
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u041f\u0435\u0440\u0432\u0438\u0447\u043d\u044b\u0435 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438",
+    "\u0425\u044c\u0430\u0436\u0430 \u043a\u0445\u0438\u043d \u0430",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0411\u0438\u043b\u0433\u0430\u043b\u0434\u0430\u0445\u0430\u0440\u0448",
+    "Notes"
+  ],
+  "cvwiki": [
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438",
+    "\u0410\u0441\u0103\u0440\u0445\u0430\u0432\u0441\u0435\u043c"
+  ],
+  "dsbwiki": [
+    "N\u00f3\u017eki",
+    "Gl\u011bdaj teke",
+    "\u017dr\u011bd\u0142o",
+    "Literatura",
+    "Noty",
+    "\u017dr\u011bd\u0142a",
+    "Literatura a \u017er\u011bdla",
+    "No\u017eki",
+    "Bibliografija"
+  ],
+  "kowiki": [
+    "\uc678\ubd80 \ub9c1\ud06c",
+    "\ucd9c\ucc98",
+    "\uac01\uc8fc"
+  ],
+  "mnwiki": [
+    "\u0410\u0448\u0438\u0433\u043b\u0430\u0441\u0430\u043d \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b",
+    "\u0413\u0430\u0434\u0430\u0430\u0434 \u0445\u043e\u043b\u0431\u043e\u043b\u0442",
+    "\u042d\u0445 \u0441\u0443\u0440\u0432\u0430\u043b\u0436",
+    "\u041c\u04e9\u043d \u04af\u0437\u044d\u0445",
+    "\u041d\u043e\u043c \u0437\u04af\u0439",
+    "\u042d\u0448\u043b\u044d\u043b",
+    "\u041d\u044d\u043c\u0436 \u0443\u043d\u0448\u0438\u0445",
+    "\u042d\u0445 \u0441\u0443\u0440\u0432\u0430\u043b\u0436",
+    "\u0426\u0430\u0445\u0438\u043c \u0445\u043e\u043b\u0431\u043e\u043e\u0441",
+    "References",
+    "\u041b\u0430\u0432\u043b\u0430\u0445",
+    "\u042d\u0448\u043b\u044d\u043b",
+    "\u041b\u0430\u0432\u043b\u0430\u0445 \u0445\u043e\u043b\u0431\u043e\u043e\u0441",
+    "\u0422\u044d\u043c\u0434\u044d\u0433\u043b\u044d\u043b",
+    "\u041b\u0430\u0432\u043b\u0430\u0445 \u0431\u0438\u0447\u0438\u0433"
+  ],
+  "kgwiki": [
+    "Banoti na ba referansi",
+    "References",
+    "Mambu ya bo ke tubila"
+  ],
+  "tywiki": [
+    "Reference",
+    "Te mau puna"
+  ],
+  "bgwiki": [
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0412\u0438\u0436\u0442\u0435 \u0441\u044a\u0449\u043e",
+    "\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u0446\u0438",
+    "\u0412\u044a\u043d\u0448\u043d\u0438 \u043f\u0440\u0435\u043f\u0440\u0430\u0442\u043a\u0438",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f",
+    "\u0418\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u043d\u0430 \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0414\u043e\u043f\u044a\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u0430 \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0418\u0437\u0442\u043e\u0447\u043d\u0438\u0446\u0438",
+    "\u0421\u044a\u0434\u044a\u0440\u0436\u0430\u043d\u0438\u0435",
+    "\u0411\u0435\u043b\u0435\u0436\u043a\u0438"
+  ],
+  "lbewiki": [
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0410\u0434\u0430\u0431\u0438\u044f\u0442",
+    "\u0411\u0443\u0432\u0447\u04cf\u0438\u043d \u0431\u0430\u0432\u0443",
+    "\u0411\u0443\u0432\u0447\u04c0\u0438\u043d \u0431\u0430\u0432\u0443",
+    "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u044f"
+  ],
+  "enwiki": [
+    "Further reading",
+    "References",
+    "See also",
+    "External links",
+    "Notes"
+  ],
+  "iswiki": [
+    "Ne\u00f0anm\u00e1lsgreinar",
+    "Sj\u00e1 einnig",
+    "Heimildir",
+    "Heimild",
+    "\u00cdtarefni",
+    "Tilv\u00edsanir",
+    "Tenglar",
+    "Tilv\u00edsanir og heimildir",
+    "Tengt efni"
+  ],
+  "inhwiki": [
+    "\u0411\u0435\u043b\u0433\u0430\u043b\u0434\u0430\u044c\u043a\u043a\u0445\u0430\u0440",
+    "\u0422\u04c0\u0430\u0445\u044c\u043e\u0436\u0430\u044f\u0440\u0433\u0430\u0448",
+    "\u0422\u04c0\u0430\u0442\u043e\u0432\u0436\u0430\u043c\u0430\u0448",
+    "\u0411\u0435\u043b\u0433\u0430\u043b\u0434\u0430\u043a\u043a\u0445\u0430\u0440",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438",
+    "\u0425\u044c\u0430\u0436\u0430 \u0438\u0448\u0442\u0442\u0430",
+    "\u0411\u0430\u0445\u0430\u0440\u0445\u043e\u0439"
+  ],
+  "blkwiki": [
+    "\u1011\u1030\u108f\u1010\u1031\u102c\u1019\u103a",
+    "\u1021\u102c\u108f\u1000\u103d\u102d\u102f\uaa7b",
+    "\u101c\u102d\u1009\u1037\u103a\u1021\u1011\u1014\u103a\u108f\u1016\u102f\u1036\u108f"
+  ],
+  "tawiki": [
+    "\u0b9a\u0bbe\u0ba9\u0bcd\u0bb1\u0bc1\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b95\u0bc1\u0bb1\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bcd",
+    "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0b9f\u0bbf\u0b95\u0bcd\u0b95",
+    "\u0b87\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95",
+    "\u0b86\u0ba4\u0bbe\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
+    "\u0b87\u0ba4\u0ba9\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b95\u0bbe\u0ba3\u0bcd\u0b95",
+    "\u0b95\u0bc1\u0bb1\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bcd",
+    "\u0b89\u0b9a\u0bbe\u0ba4\u0bcd\u0ba4\u0bc1\u0ba3\u0bc8",
+    "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0bb5\u0bbe\u0b9a\u0bbf\u0b95\u0bcd\u0b95",
+    "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0b95\u0bbe\u0ba3\u0bcd\u0b95",
+    "\u0bae\u0bc7\u0bb1\u0bcd\u0b95\u0bcb\u0bb3\u0bcd\u0b95\u0bb3\u0bcd",
+    "\u0ba8\u0bc2\u0bb1\u0bcd\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bb2\u0bcd",
+    "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd",
+    "\u0b87\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b95\u0bbe\u0ba3\u0bcd\u0b95",
+    "\u0bb5\u0bc6\u0bb3\u0bbf \u0b87\u0ba3\u0bc8\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bb3\u0bcd",
+    "\u0b89\u0b9a\u0bbe\u0ba4\u0bcd\u0ba4\u0bc1\u0ba3\u0bc8\u0b95\u0bb3\u0bcd",
+    "\u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95",
+    "\u0bae\u0bc7\u0bb1\u0bcd\u0b95\u0bcb\u0bb3\u0bcd",
+    "\u0b9a\u0bbe\u0ba9\u0bcd\u0bb1\u0bc1\u0b95\u0bb3\u0bcd",
+    "\u0b87\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd"
+  ],
+  "csbwiki": [
+    "Bibliografi\u00f4",
+    "L\u00ebteratura",
+    "Prz\u00ebpise",
+    "Bibliografij\u00f4",
+    "Prz\u00ebpisczi",
+    "Prz\u00ebpis\u00eb",
+    "\u00d2bacz\u00eb t\u00e9\u017c",
+    "B\u00f9tnow\u00e9 l\u00ebnczi",
+    "Przypisy",
+    "Bibliografia"
+  ],
+  "tumwiki": [
+    "Ukaboni",
+    "Vyakulemba"
+  ],
+  "cswiki": [
+    "Reference",
+    "Extern\u00ed odkazy",
+    "Literatura",
+    "Bibliografie",
+    "Pozn\u00e1mky",
+    "Odkazy",
+    "Souvisej\u00edc\u00ed \u010dl\u00e1nky"
+  ],
+  "newiki": [
+    "\u092f\u094b \u092a\u0928\u093f \u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+    "\u092f\u094b\u00a0\u092a\u0928\u093f\u00a0\u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+    "\u092f\u0940 \u092a\u0928\u093f \u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+    "\u092f\u094b \u092a\u0928\u093f \u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938",
+    "\u092f\u0940\u00a0\u092a\u0928\u093f\u00a0\u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+    "\u0939\u0947\u0930\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
+    "\u092c\u093e\u0939\u094d\u092f \u0915\u0921\u0940\u0939\u0930\u0942",
+    "\u092c\u093e\u0939\u094d\u092f \u0932\u093f\u0919\u094d\u0915\u094d\u0938",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u093e\u092e\u0917\u094d\u0930\u0940",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u093e\u092e\u0917\u094d\u0930\u0940\u0939\u0930\u0942",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d\u0939\u0930\u0942",
+    "Citations",
+    "\u0917\u094d\u0930\u0928\u094d\u0925-\u0938\u0942\u091a\u0940",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u0942\u091a\u0940",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d \u0938\u093e\u092e\u0917\u094d\u0930\u0940\u0939\u0930\u0942",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d\u00a0\u0938\u093e\u092e\u0917\u094d\u0930\u0940\u0939\u0930\u0942",
+    "\u091f\u093f\u092a\u094d\u092a\u0923\u0940\u0939\u0930\u0942",
+    "\u092c\u093e\u0939\u094d\u092f \u0915\u0921\u0940\u0939\u0930\u0942",
+    "\u0938\u094d\u0930\u094b\u0924"
+  ],
+  "iuwiki": [
+    "\u14c7\u146d\u1676\u1550\u1555\u1483"
+  ],
+  "arywiki": [
+    "\u0646\u0648\u0637\u0627\u062a",
+    "\u0645\u0635\u0627\u062f\u0631",
+    "\u0646\u0648\u064a\u0637\u0627\u062a",
+    "\u0645\u0631\u0627\u062c\u0639",
+    "\u0634\u0648\u0641 \u062d\u062a\u0627",
+    "\u0936\u0648\u0641 \u062a\u0627",
+    "\u0634\u0648\u0641 \u062d\u062a\u0649"
+  ],
+  "cowiki": [
+    "Bibliugrafia",
+    "Note",
+    "Da veda din\u00f2",
+    "Notoj",
+    "Liami",
+    "Da vede din\u00f2",
+    "Fonte",
+    "Note \u00e8 riferenze",
+    "Da vede din\u00f9",
+    "Referenze",
+    "Noti",
+    "Ligami",
+    "Riferimenti",
+    "Bibliografia"
+  ],
+  "azbwiki": [
+    "\u0628\u06cc\u0631\u062f\u0647 \u0628\u0627\u062e",
+    "\u0647\u0645\u0686\u06cc\u0646\u06cc\u0646 \u0628\u0627\u062e",
+    "\u0642\u0627\u06cc\u0646\u0627\u0642\u0644\u0627\u0631",
+    "\u0642\u0627\u06cc\u0646\u0627\u0642\u0644\u0627\u0631:",
+    "\u0642\u0627\u06cc\u0646\u0627\u0642",
+    "\u0642\u0627\u06cc\u0646\u0627\u0642\u200c\u0644\u0627\u0631",
+    "\u0627\u0633\u062a\u0646\u0627\u062f\u0644\u0627\u0631",
+    "\u0622\u0631\u062a\u06cc\u0642 \u0627\u0648\u062e\u0648",
+    "\u0642\u0627\u06cc\u0646\u0627\u0642\u0644\u0627\u0631",
+    "\u0642\u0627\u06cc\u0646\u0627\u0642",
+    "\u0646\u0648\u062a\u0644\u0627\u0631"
+  ],
+  "zeawiki": [
+    "Zie ok",
+    "Bronnen",
+    "No\u00f4ten"
+  ],
+  "gomwiki": [
+    "\u0938\u0902\u0926\u0930\u094d\u092d",
+    "Fuddlem vachop",
+    "Gronthachi zontri[sudar]",
+    "Citations",
+    "Sandarbh",
+    "Sondorb",
+    "\u0cb8\u0c82\u0ca6\u0cb0\u0ccd\u0cad\u0ccd",
+    "\u092b\u0941\u0921\u0932\u0947\u0902 \u0935\u093e\u091a\u092a",
+    "Sondorbh"
+  ],
+  "gotwiki": [
+    "References"
+  ],
+  "dvwiki": [
+    "\u0783\u07a8\u078a\u07a6\u0783\u07a6\u0782\u07b0\u0790\u07b0",
+    "\u0783\u07a8\u078a\u07a6\u0783\u07ac\u0782\u07b0\u0790\u07b0\u078c\u07a6\u0787\u07b0",
+    "\u0783\u07ac\u078a\u07a6\u0783\u07ac\u0782\u07b0\u0790\u07b0",
+    "\u0783\u07a8\u078a\u07a6\u0783\u07ac\u0782\u07b0\u0790\u07b0",
+    "\u0783\u07ac\u078a\u07a6\u0783\u07ac\u0782\u07b0\u0790\u07b0\u078c\u07a6\u0787\u07b0",
+    "\u0784\u07a8\u0784\u07b0\u078d\u07a8\u0787\u07ae\u078e\u07b0\u0783\u07a6\u078a\u07a9",
+    "\u0789\u07a6\u0790\u07b0\u078b\u07a6\u0783\u07aa\u078c\u07a6\u0787\u07b0",
+    "\u0787\u07a8\u07a4\u07b0\u078c\u07a8\u079e\u07a7\u078b\u07aa"
+  ],
+  "tiwiki": [
+    "\u1218\u12c8\u12a8\u1232\u1273\u1275",
+    "References",
+    "\u12a8\u121d\u12a1\u12cd\u1295 \u122d\u12a0",
+    "\u12a5\u12cd\u1295 \u122d\u12a0",
+    "\u1270\u12c8\u1233\u12ba \u122d\u12a0",
+    "\u1218\u12c8\u12a8\u1232\u1273"
+  ],
+  "zhwiki": [
+    "\u53c2\u89c1",
+    "\u53c3\u898b",
+    "\u53e6\u89c1",
+    "\u76f8\u5173\u6761\u76ee",
+    "\u76f8\u95dc\u689d\u76ee",
+    "\u53c2\u8003\u6587\u732e",
+    "\u53c3\u8003\u6587\u737b",
+    "\u53c2\u8003\u8d44\u6599",
+    "\u53c3\u8003\u8cc7\u6599",
+    "\u53c2\u8003\u6765\u6e90",
+    "\u53c3\u8003\u4f86\u6e90",
+    "\u6765\u6e90",
+    "\u53c2\u8003",
+    "\u53c3\u8003",
+    "\u5916\u90e8\u94fe\u63a5",
+    "\u53c2\u8003\u4e66\u76ee",
+    "\u53c2\u8003\u6587\u732e",
+    "\u6ce8\u91ca",
+    "\u6ce8\u91cb",
+    "\u53c3\u8003\u8cc7\u6599",
+    "\u8a3b\u91cb",
+    "\u76ee\u5f55"
+  ],
+  "suwiki": [
+    "Tempo og\u00e9",
+    "Tingali og\u00e9",
+    "Rujukan",
+    "Sumber rujukan",
+    "Baca og\u00e9",
+    "Tumbu kaluar",
+    "Daptar Pabukon",
+    "Bacaan salajengna",
+    "Bibliografi",
+    "Daftar pustaka",
+    "Dicutat tina",
+    "References",
+    "Referensi jeung bacaan",
+    "Sumber",
+    "Sumber s\u00e9j\u00e9n",
+    "References",
+    "Rujukan"
+  ],
+  "bewiki": [
+    "\u041b\u0456\u0442\u0430\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0413\u043b. \u0442\u0430\u043a\u0441\u0430\u043c\u0430",
+    "\u0421\u043f\u0430\u0441\u044b\u043b\u043a\u0456",
+    "\u0417\u043d\u043e\u0441\u043a\u0456",
+    "\u041a\u0440\u044b\u043d\u0456\u0446\u044b",
+    "\u0411\u0456\u0431\u043b\u0456\u044f\u0433\u0440\u0430\u0444\u0456\u044f",
+    "\u041a\u0440\u044b\u043d\u0456\u0446\u044b",
+    "\u041b\u0456\u0442\u0430\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0417\u043d\u043e\u0441\u043a\u0456",
+    "\u0410\u0434\u043c\u0456\u043d\u0456\u0441\u0442\u0440\u0430\u0446\u044b\u0439\u043d\u044b \u043f\u0430\u0434\u0437\u0435\u043b",
+    "\u0417\u0430\u045e\u0432\u0430\u0433\u0456"
+  ],
+  "gvwiki": [
+    "Jeeagh er neesht",
+    "Jeeagh er",
+    "Lhaih neesht",
+    "Imraaghyn",
+    "Farraneyn",
+    "Farraneyn-fys",
+    "Kianglaghyn magh",
+    "Rolley lioaryn",
+    "Noteyn",
+    "Imraaghyn"
+  ],
+  "hsbwiki": [
+    "N\u00f3\u017eki",
+    "\u017d\u00f3r\u0142o",
+    "\u017d\u00f3rle",
+    "Literatura",
+    "Noty",
+    "Hlej te\u017e",
+    "\u017d\u00f3r\u0142a",
+    "Bibliografija",
+    "Wotkazy"
+  ],
+  "atjwiki": [
+    "Articles connexes"
+  ],
+  "aswiki": [
+    "\u0985\u09a4\u09bf\u09f0\u09bf\u0995\u09cd\u09a4 \u09aa\u09a0\u09a8",
+    "\u09b2\u0997\u09a4\u09c7\u00a0\u099a\u09be\u0993\u0995",
+    "\u0985\u09a7\u09bf\u0995 \u09aa\u09a2\u09bc\u0995",
+    "\u09a4\u09a5\u09cd\u09af\u0989\u09ce\u09b8",
+    "\u0986\u09f0\u09c1 \u099a\u09be\u0993\u0995",
+    "\u09a4\u09a5\u09cd\u09af \u0989\u09ce\u09b8",
+    "\u09a4\u09a5\u09cd\u09af\u00a0\u09b8\u0982\u0997\u09cd\u09f0\u09b9",
+    "\u0989\u09ce\u09b8",
+    "\u099f\u09cb\u0995\u09be",
+    "\u09a4\u09a5\u09cd\u09af \u09b8\u09c2\u09a4\u09cd\u09f0",
+    "\u09ac\u09be\u09b9\u09cd\u09af\u09bf\u0995 \u09b8\u0982\u09af\u09cb\u0997",
+    "\u09b2\u0997\u09a4\u09c7 \u099a\u09be\u0993\u0995",
+    "\u09a4\u09a5\u09cd\u09af\u09f0 \u0989\u09ce\u09b8",
+    "\u09a4\u09a5\u09cd\u09af\u09b8\u09c2\u09a4\u09cd\u09f0",
+    "\u09a4\u09a5\u09cd\u09af \u09b8\u0982\u0997\u09cd\u09f0\u09b9",
+    "\u0989\u09ce\u09b8 \u09aa\u09cd\u09f0\u09b8\u0982\u0997"
+  ],
+  "hawiki": [
+    "Hanyoyin ha\u0257i na waje",
+    "Ha\u0257in waje",
+    "Duba kuma",
+    "manazarta",
+    "References",
+    "Bayanan da aka ambata",
+    "Hanyoyin ha\u0257in waje",
+    "Manazarta;",
+    "Manazarta",
+    "Nassoshi"
+  ],
+  "afwiki": [
+    "Sien ook",
+    "Verwysings",
+    "Bronne",
+    "Bron",
+    "Bibliografie",
+    "Bronnelys",
+    "Literatuur",
+    "Lees ook",
+    "Kyk ook",
+    "Verdere leesstof",
+    "Verdere leeswerk",
+    "Aantekeninge",
+    "Verwysings"
+  ],
+  "kawiki": [
+    "\u10d8\u10ee\u10d8\u10da\u10d4\u10d7 \u10d0\u10d2\u10e0\u10d4\u10d7\u10d5\u10d4",
+    "\u10da\u10d8\u10e2\u10d4\u10e0\u10d0\u10e2\u10e3\u10e0\u10d0",
+    "\u10e0\u10d4\u10e1\u10e3\u10e0\u10e1\u10d4\u10d1\u10d8 \u10d8\u10dc\u10e2\u10d4\u10e0\u10dc\u10d4\u10e2\u10e8\u10d8",
+    "\u10d1\u10d8\u10d1\u10da\u10d8\u10dd\u10d2\u10e0\u10d0\u10e4\u10d8\u10d0",
+    "\u10ec\u10e7\u10d0\u10e0\u10dd\u10d4\u10d1\u10d8",
+    "\u10e1\u10e5\u10dd\u10da\u10d8\u10dd"
+  ],
+  "ocwiki": [
+    "Liames int\u00e8rnes",
+    "Articles ligats",
+    "Articles conn\u00e8xes",
+    "Vejatz tanben",
+    "Veire tanben",
+    "Ligams int\u00e8rnes",
+    "Refer\u00e9ncias",
+    "N\u00f2tas e refer\u00e9ncias",
+    "Lista de las esp\u00e8cias",
+    "Prov\u00e8rbis",
+    "Ent\u00e0 saber-ne m\u00e8s",
+    "N\u00f2tas",
+    "N\u00f2tas e refer\u00e9ncias",
+    "Refer\u00e9ncias",
+    "Arrem\u00e8rques"
+  ],
+  "fatwiki": [
+    "Bibliography",
+    "Further reading",
+    "Hw\u025b iyi so",
+    "Hw\u025b eyi nso",
+    "See also",
+    "Hw\u025b iyi nso",
+    "Nhw\u025bdo",
+    "Hw\u025b iyi Nso",
+    "Mboaedze"
+  ],
+  "tgwiki": [
+    "\u041d\u0438\u0433\u0430\u0440\u0435\u0434",
+    "\u0421\u0430\u0440\u0447\u0430\u0448\u043c\u0430\u04b3\u043e",
+    "\u0410\u0434\u0430\u0431\u0438\u0451\u0442",
+    "\u04b6\u0443\u0441\u0442\u043e\u0440\u04b3\u043e\u0438 \u0432\u043e\u0431\u0430\u0441\u0442\u0430",
+    "\u041c\u0430\u043d\u043e\u0431\u0435\u044a",
+    "\u041d\u0438\u0433\u0430\u0440\u0435\u0434 \u043d\u0438\u0437",
+    "\u042d\u0437\u043e\u04b3",
+    "\u041f\u0430\u0439\u0432\u0430\u043d\u0434\u04b3\u043e",
+    "\u04b2\u0430\u043c\u0447\u0443\u043d\u0438\u043d \u043d\u0438\u0433\u0430\u0440\u0435\u0434",
+    "\u0421\u0430\u0440\u0447\u0430\u0448\u043c\u0430"
+  ],
+  "nowiki": [
+    "Trykte kilder",
+    "Referanser",
+    "Litteratur",
+    "Kilder",
+    "Eksterne lenker",
+    "Bibliografi",
+    "Se ogs\u00e5",
+    "Eksterne kilder"
+  ],
+  "nrmwiki": [
+    "Vir itou",
+    "Viyiz itou",
+    "Vir \u00e9tou",
+    "Notes",
+    "R\u00e9f\u00e9rences",
+    "R\u00e9f\u00e9rinches",
+    "Notes et r\u00e9f\u00e9rences"
+  ],
+  "piwiki": [
+    "\u0938\u0928\u094d\u0926\u092c\u094d\u092d\u093e",
+    "\u0938\u0902\u0926\u092c\u094d\u092d\u093e"
+  ],
+  "siwiki": [
+    "\u0db8\u0dda\u0dc0\u0dcf\u0daf \u0db6\u0dbd\u0db1\u0dca\u0db1",
+    "\u0db8\u0dd9\u0dba\u0daf \u0db6\u0dbd\u0db1\u0dca\u0db1",
+    "\u0db8\u0dda\u0dc0\u0dcf\u0dad\u0dca \u0db6\u0dbd\u0db1\u0dca\u0db1",
+    "\u0db8\u0dda\u0d9a\u0dad\u0dca \u0db6\u0dbd\u0db1\u0dca\u0db1",
+    "\u0db8\u0dd6\u0dbd\u0dcf\u0dc1\u0dca\u200d\u0dbb",
+    "\u0dba\u0ddc\u0db8\u0dd4 \u0d9a\u0dd2\u0dbb\u0dd3\u0db8\u0dca",
+    "\u0d86\u0dc1\u0dca\u200d\u0dbb\u0dda\u0dba\u0dba\u0db1\u0dca",
+    "\u0dc3\u0da7\u0dc4\u0db1\u0dca",
+    "\u0d9c\u0dca\u200d\u0dbb\u0db1\u0dca\u0dae \u0db1\u0dcf\u0db8\u0dcf\u0dc0\u0dbd\u0dd2\u0dba",
+    "\u0d9c\u0dca\u200d\u0dbb\u0db1\u0dca\u0dae\u0dcf\u0dc0\u0dbd\u0dd2\u0dba",
+    "\u0dba\u0ddc\u0db8\u0dd4\u0dc0",
+    "\u0db8\u0dd6\u0dbd\u0dcf\u0dc1\u0dca\u200d\u0dbb",
+    "\u0dc3\u0da7\u0dc4\u0db1\u0dca",
+    "\u0d86\u0dc1\u0dca\u200d\u0dbb\u0dd2\u0dad"
+  ],
+  "bnwiki": [
+    "\u09a4\u09a5\u09cd\u09af\u09b8\u09c2\u09a4\u09cd\u09b0",
+    "\u09aa\u09be\u09a6\u099f\u09c0\u0995\u09be \u0993 \u09a4\u09a5\u09cd\u09af\u09b8\u09c2\u09a4\u09cd\u09b0",
+    "\u0986\u09b0\u09cb \u09a6\u09c7\u0996\u09c1\u09a8",
+    "\u099f\u09c0\u0995\u09be",
+    "\u09aa\u09be\u09a6\u099f\u09c0\u0995\u09be",
+    "\u0986\u09b0\u0993 \u09aa\u09a1\u09bc\u09c1\u09a8",
+    "\u0986\u09b0\u0993 \u09a6\u09c7\u0996\u09c1\u09a8",
+    "\u09ac\u09b9\u09bf\u0983\u09b8\u0982\u09af\u09cb\u0997",
+    "\u0997\u09cd\u09b0\u09a8\u09cd\u09a5\u09aa\u099e\u09cd\u099c\u09bf"
+  ],
+  "bswiki": [
+    "Tako\u0111er pogledajte",
+    "Literatura",
+    "Reference",
+    "Vanjski linkovi",
+    "Izvori",
+    "Bibliografija",
+    "Dodatna literatura",
+    "Kori\u0161tena literatura",
+    "Za dalje \u010ditanje",
+    "Reference",
+    "Napomene"
+  ],
+  "ndswiki": [
+    "Literatuur",
+    "Kiek ook bi",
+    "Enkeld Nahwiesen",
+    "Literatur",
+    "Belege",
+    "Born",
+    "Footnoten",
+    "Kiek ok",
+    "B\u00f6ker",
+    "Nawiese",
+    "Weblenken",
+    "Borns"
+  ],
+  "fiwiki": [
+    "L\u00e4hteet",
+    "Katso my\u00f6s",
+    "Kirjallisuutta",
+    "Viitteet",
+    "Aiheesta muualla",
+    "L\u00e4hteet",
+    "Huomautukset"
+  ],
+  "hrwiki": [
+    "Povezani \u010dlanci",
+    "Vidi",
+    "Bilje\u0161ke",
+    "Literatura",
+    "Dodatna literatura",
+    "Vidi jo\u0161",
+    "Izvor",
+    "Bibliografija",
+    "Izvori",
+    "Vrela"
+  ],
+  "szywiki": [
+    "malaalitin tu i hekalay atu zumaay a natinengan(\u5916\u90e8\u9023\u7d50)\u02d0",
+    "namakayniay a nasulitan nasakamuan atu natinengan (\u53c3\u8003\u8cc7\u6599)",
+    "namakayniay a nasulitan nasakamuan atu natinengan(\u53c3\u8003\u4f86\u6e90)"
+  ],
+  "frwiki": [
+    "Lien interne",
+    "Notes et r\u00e9f\u00e9rences",
+    "R\u00e9f\u00e9rences",
+    "Bibliographie",
+    "Annexes",
+    "Lien externe",
+    "Voir aussi",
+    "Liens externes",
+    "Article connexe",
+    "Notes",
+    "Liens internes",
+    "Articles connexes"
+  ],
+  "arcwiki": [
+    "\u0710\u0726 \u071a\u0719\u071d",
+    "\u0721\u0712\u0718\u0308\u0725\u0710"
+  ],
+  "tyvwiki": [
+    "\u0414\u04e9\u0441",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f",
+    "\u04af\u043d\u0434\u0435\u0437\u0438\u043d",
+    "\u0414\u0435\u043c\u0434\u0435\u0433\u043b\u0435\u043b\u0434\u0435\u0440",
+    "\u0414\u04e9\u0437\u04af\u043a",
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0422\u0430\u0439\u044b\u043b\u0431\u044b\u0440 \u043a\u0435\u0437\u0435\u043a",
+    "\u04ae\u043d\u0434\u0435\u0437\u0438\u043d",
+    "\u0414\u04e9\u0437\u04af",
+    "\u0423\u043b\u0430\u0439 \u043a\u04e9\u0440."
+  ],
+  "furwiki": [
+    "Cjale ancje",
+    "Cjale ancje:",
+    "Vi\u00f4t ancje",
+    "Bibliografie",
+    "Bibliugrafia",
+    "Notis"
+  ],
+  "swwiki": [
+    "Tazama pia",
+    "Marejeo",
+    "Angalia pia",
+    "Tanbihi",
+    "Viungo vya Nje",
+    "Viungo vya nje",
+    "Chanzo",
+    "Jisomee",
+    "Marejeo",
+    "Viungo vya nje",
+    "Tanbihi",
+    "Tazama pia"
+  ],
+  "gcrwiki": [
+    "W\u00e8 osi",
+    "N\u00f2t k\u00e9 r\u00e9f\u00e9rans",
+    "Notes et R\u00e9f\u00e9rences[modifier | modifier le code]",
+    "R\u00e9f\u00e9rences",
+    "Not k\u00e9 r\u00e9f\u00e9rans"
+  ],
+  "tkwiki": [
+    "Salgylanmalar",
+    "\u00c7e\u015fme",
+    "\u00c7e\u015fmeler",
+    "Edebi\u00fdat",
+    "\u015ee\u00fdle-de seret",
+    "Da\u015farky baglany\u015fyklar",
+    "Salgylar",
+    "Kaynag",
+    "References",
+    "Salgylanmalar"
+  ],
+  "jamwiki": [
+    "Refrans",
+    "Bibliografi",
+    "Refrens",
+    "References",
+    "Referens",
+    "Extoernal lingk",
+    "Si azwel"
+  ],
+  "rwwiki": [
+    "Inkomoko",
+    "Bibliografiya",
+    "Reba ibindi",
+    "Indanganturo",
+    "references",
+    "References",
+    "Reba kandi",
+    "Notes",
+    "Amashakiro",
+    "Inyandiko",
+    "AMASHAKIRO",
+    "Reba",
+    "Referances",
+    "Ishakiro"
+  ],
+  "klwiki": [
+    "Aamma takuuk",
+    "Najoqqutaq"
+  ],
+  "cawiki": [
+    "Bibliografia",
+    "Vegeu tamb\u00e9",
+    "Refer\u00e8ncies",
+    "Fonts",
+    "Enlla\u00e7os externs",
+    "Bibliografia complement\u00e0ria",
+    "Bibliografia addicional",
+    "Bibliografia i fonts",
+    "Enlla\u00e7os externs",
+    "Refer\u00e8ncies",
+    "Notes",
+    "Bibliografia"
+  ],
+  "kywiki": [
+    "\u041a\u043e\u043b\u0434\u043e\u043d\u0443\u043b\u0433\u0430\u043d \u0430\u0434\u0430\u0431\u0438\u044f\u0442\u0442\u0430\u0440",
+    "\u0411\u0443\u043b\u0430\u043a\u0442\u0430\u0440",
+    "\u0428\u0438\u043b\u0442\u0435\u043c\u0435\u043b\u0435\u0440",
+    "\u0410\u0434\u0430\u0431\u0438\u044f\u0442",
+    "\u0414\u0430\u0433\u044b \u043a\u0430\u0440\u0430\u04a3\u044b\u0437",
+    "\u0414\u0430\u0433\u044b \u043a\u0430\u0440\u0430",
+    "\u0414\u0430\u0433\u044b \u043e\u043a\u0443\u04a3\u0443\u0437",
+    "\u041c\u0430\u0430\u043b\u044b\u043c\u0430\u0442\u0442\u044b\u043d \u0431\u0443\u043b\u0430\u0433\u044b",
+    "\u041a\u043e\u043b\u0434\u043e\u043d\u0443\u043b\u0433\u0430\u043d \u0431\u0443\u043b\u0430\u043a",
+    "\u041a\u043e\u043b\u0434\u043e\u043d\u0443\u043b\u0433\u0430\u043d \u0431\u0443\u043b\u0430\u043a\u0442\u0430\u0440",
+    "\u041a\u043e\u043b\u0434\u043e\u043d\u0443\u043b\u0433\u0430\u043d \u0430\u0434\u0430\u0431\u0438\u044f\u0442",
+    "\u041a\u043e\u0448\u0443\u043c\u0447\u0430 \u043a\u0430\u0440\u0430\u04a3\u044b\u0437",
+    "\u0411\u0443\u043b\u0430\u043a\u0442\u0430\u0440"
+  ],
+  "glwiki": [
+    "Bibliograf\u00eda",
+    "Notas",
+    "V\u00e9xase tam\u00e9n",
+    "Ligaz\u00f3ns externas",
+    "Notas"
+  ],
+  "glkwiki": [
+    "\u062c\u0633\u062a\u0627\u0631\u0647\u0627\u06cc \u0648\u0627\u0628\u0633\u062a\u0647",
+    "\u0633\u0631\u0628\u0633"
+  ],
+  "map_bmswiki": [
+    "Deleng uga",
+    "Deleng Uga",
+    "Pirsanana uga",
+    "Lihat pula",
+    "Referensi",
+    "Rujukan",
+    "Catatan",
+    "Daftar pustaka"
+  ],
+  "ukwiki": [
+    "\u0414\u0438\u0432. \u0442\u0430\u043a\u043e\u0436",
+    "\u0414\u0436\u0435\u0440\u0435\u043b\u0430",
+    "\u041b\u0456\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u041f\u043e\u0441\u0438\u043b\u0430\u043d\u043d\u044f",
+    "\u041f\u0440\u0438\u043c\u0456\u0442\u043a\u0438",
+    "\u0411\u0456\u0431\u043b\u0456\u043e\u0433\u0440\u0430\u0444\u0456\u044f",
+    "\u0414\u0436\u0435\u0440\u0435\u043b\u0430 \u0442\u0430 \u043b\u0456\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0421\u043f\u0438\u0441\u043e\u043a \u043b\u0456\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0438",
+    "\u0414\u0436\u0435\u0440\u0435\u043b\u0430",
+    "\u041f\u043e\u0441\u0438\u043b\u0430\u043d\u043d\u044f",
+    "\u041f\u0440\u0438\u043c\u0456\u0442\u043a\u0438",
+    "\u041b\u0456\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u041a\u043e\u043c\u0435\u043d\u0442\u0430\u0440\u0456"
+  ],
+  "niawiki": [
+    "Faigi g\u00f6i",
+    "Faigi G\u00f6i Da'a",
+    "Further reading",
+    "Referensi",
+    "\u00d6si",
+    "Umbu"
+  ],
+  "dgawiki": [
+    "Bibliography",
+    "Sommo Yizie",
+    "Sommo yizie"
+  ],
+  "dawiki": [
+    "Kilder og henvisninger",
+    "Eksterne kilder/henvisninger",
+    "Eksterne henvisninger",
+    "Videre l\u00e6sning",
+    "Noter",
+    "Henvisninger",
+    "Litteratur",
+    "Kilder",
+    "Referencer",
+    "Se ogs\u00e5",
+    "Bibliografi",
+    "Kilde"
+  ],
+  "chwiki": [
+    "Referensia siha",
+    "References",
+    "Riferensia",
+    "Pranala luar",
+    "Bibliografia"
+  ],
+  "nqowiki": [
+    "\u07e6\u07df\u07cc\u07e1\u07ca\u07db\u07d9\u07cb \u07df\u07ce\u07ec",
+    "\u07e6\u07df\u07cc\u07e3\u07d0 \u07e3\u07cc\u07eb \u07e6\u07df\u07cc\u07e1\u07ca\u07db\u07d9\u07cb \u07df\u07ce\u07ec"
+  ],
+  "fjwiki": [
+    "iVurevure",
+    "Veitikina"
+  ],
+  "amiwiki": [
+    "Pacefaday a tilid(\u8a3b\u8173)",
+    "Pacefaday a Tilid(\u8a3b\u8173)",
+    "Pacefaday Tilid (\u8a3b\u91cb)[9]",
+    "Pacefaday a Tilid (\u8a3b\u8173)",
+    "Pacefaday a Tilid(\u8a3b\u8173)",
+    "Pacefaday a atilid(\u8a3b\u8173)",
+    "Pacefaday a tilid (\u8a3b\u8173)",
+    "Pihapinangan a tilid(\u8a3b\u8173)",
+    "Pili'an a tikid(\u53c3\u8003\u6587\u737b)",
+    "\u53c3\u8003\u6587\u737b[\u7de8\u8f2f]"
+  ],
+  "lvwiki": [
+    "Atsauces",
+    "Skat\u012bt ar\u012b",
+    "Literat\u016bra",
+    "\u0100r\u0113j\u0101s saites",
+    "Papildu literat\u016bra",
+    "Avoti",
+    "Piez\u012bmes un atsauces",
+    "Atsauces un piez\u012bmes",
+    "Atsauces un piez\u012bmes",
+    "Atsauces",
+    "Piez\u012bmes un atsauces"
+  ],
+  "smwiki": [
+    "Taga\u02bbi fo\u02bbi",
+    "Tagai foi i le",
+    "Fa'asinomaga",
+    "Contents"
+  ],
+  "shiwiki": [
+    "tannayin",
+    "Tisa\u0263ulin"
+  ],
+  "pawiki": [
+    "\u0a07\u0a39 \u0a35\u0a40 \u0a35\u0a47\u0a16\u0a4b",
+    "\u0a07\u0a39 \u0a35\u0a40 \u0a26\u0a47\u0a16\u0a4b",
+    "\u0a39\u0a35\u0a3e\u0a32\u0a47",
+    "\u0a2c\u0a3e\u0a39\u0a30\u0a40 \u0a32\u0a3f\u0a70\u0a15",
+    "\u0a39\u0a4b\u0a30 \u0a2a\u0a5c\u0a4d\u0a39\u0a4b",
+    "\u0a39\u0a4b\u0a30 \u0a2a\u0a5c\u0a4d\u0a39\u0a28 \u0a32\u0a08",
+    "\u0a05\u0a17\u0a3e\u0a02\u0a39 \u0a2a\u0a5c\u0a4d\u0a39\u0a4b",
+    "\u0a38\u0a30\u0a4b\u0a24",
+    "\u0a39\u0a35\u0a3e\u0a32\u0a47"
+  ],
+  "tewiki": [
+    "\u0c07\u0c35\u0c3f \u0c15\u0c42\u0c21\u0c3e \u0c1a\u0c42\u0c21\u0c02\u0c21\u0c3f",
+    "\u0c07\u0c35\u0c3f\u0c15\u0c42\u0c21\u0c3e \u0c1a\u0c42\u0c21\u0c02\u0c21\u0c3f",
+    "\u0c2c\u0c2f\u0c1f\u0c3f \u0c32\u0c3f\u0c02\u0c15\u0c41\u0c32\u0c41",
+    "\u0c2c\u0c3e\u0c39\u0c4d\u0c2f \u0c32\u0c02\u0c15\u0c46\u0c32\u0c41",
+    "\u0c2e\u0c42\u0c32\u0c3e\u0c32\u0c41",
+    "References",
+    "\u0c07\u0c35\u0c3f\u0c15\u0c42\u0c21\u0c3e \u0c1a\u0c26\u0c35\u0c02\u0c21\u0c3f",
+    "\u0c38\u0c42\u0c1a\u0c28\u0c32\u0c41",
+    "\u0c2e\u0c42\u0c32\u0c3e\u0c32\u0c41",
+    "\u0c17\u0c2e\u0c28\u0c3f\u0c15\u0c32\u0c41",
+    "\u0c2e\u0c42\u0c32\u0c3e\u0c32\u0c41, \u0c17\u0c2e\u0c28\u0c3f\u0c15\u0c32\u0c41"
+  ],
+  "sowiki": [
+    "sido Kale fiiri",
+    "Bibliography",
+    "Tixraacyo",
+    "sido kale fiiri",
+    "Xigasho",
+    "Sido kale fiiri",
+    "Ilo",
+    "Tixraac Aboorey",
+    "Tixraac",
+    "Sido Kale fiiri",
+    "Sidoo kale eeg",
+    "Waddanamha Jabaan",
+    "Tixraacyada",
+    "Sidoo kale fiiri"
+  ],
+  "scowiki": [
+    "See an aw",
+    "See an aa",
+    "References",
+    "Further readin",
+    "Bibliografie",
+    "Notes",
+    "Refrences",
+    "References",
+    "Notes",
+    "Fremmit airtins"
+  ],
+  "pnbwiki": [
+    "\u0627\u06cc\u06c1 \u0648\u06cc \u0648\u06cc\u06a9\u06be\u0648",
+    "\u06c1\u0648\u0631 \u0a35\u06cc\u06a9\u06be\u0a4b",
+    "\u062d\u0648\u0627\u0644\u06d2",
+    "\u06c1\u0648\u0631 \u062f\u06cc\u06a9\u06be\u0648",
+    "\u0628\u0627\u06c1\u0631\u0644\u06d2 \u062c\u0648\u0691",
+    "\u0627\u06cc\u06c1 \u0648\u06cc \u062f\u06cc\u06a9\u06be\u0648",
+    "\u0627\u06cc\u06c1\u06c1 \u0648\u06cc \u0648\u06cc\u06a9\u06be\u0648",
+    "\u0628\u0627\u06c1\u0631\u06cc \u0644\u0646\u06a9",
+    "\u0633\u0631\u0648\u0a24",
+    "\u0645\u0627\u062e\u0630",
+    "\u0645\u0622\u062e\u0630",
+    "\u06c1\u0648\u0631 \u067e\u0691\u06be\u0648",
+    "\u0627\u062a\u06c1 \u067e\u062a\u06c1",
+    "\u062d\u0648\u0627\u0644\u06d2"
+  ],
+  "banwiki": [
+    "Cingak malih",
+    "Cingak taler",
+    "Pranala jaba",
+    "Pustaka",
+    "Pustaka liyanan",
+    "Lis pustaka",
+    "Pustaka"
+  ],
+  "viwiki": [
+    "Tham kh\u1ea3o",
+    "Xem th\u00eam",
+    "\u0110\u1ecdc th\u00eam",
+    "Ch\u00fa th\u00edch",
+    "Th\u01b0 m\u1ee5c",
+    "Ngu\u1ed3n",
+    "Li\u00ean k\u1ebft ngo\u00e0i",
+    "Ghi ch\u00fa",
+    "T\u00e0i li\u1ec7u",
+    "Tham kh\u1ea3o",
+    "Ghi ch\u00fa",
+    "Ch\u00fa th\u00edch"
+  ],
+  "crhwiki": [
+    "At\u0131flar",
+    "Menbalar",
+    "Ba\u011flant\u0131lar",
+    "Menbalar\u0131",
+    "Qaydlar",
+    "Edebiyat",
+    "Menbalar ve edebiyat",
+    "\u0130htar",
+    "T\u00fcrkiyeni\u00f1 illeri",
+    "T\u00fcpbilgiler"
+  ],
+  "bbcwik": [],
+  "bbcwik i": [],
+  "bbcwikii": [],
+  "bbcwikiii": [],
+  "bbcwikiv": [],
+  "bbcwikv": [],
+  "bbcwikvi": [],
+  "bbcwikvii": [],
+  "bbcwikviii": [],
+  "bbcwiki": [
+    "Bibliografi",
+    "Referensi",
+    "Sumber",
+    "Pustaha"
+  ],
+  "hiwiki": [
+    "\u0907\u0928\u094d\u0939\u0947\u0902 \u092d\u0940 \u0926\u0947\u0916\u0947\u0902",
+    "\u0907\u0928\u094d\u0939\u0947\u0902\u00a0\u092d\u0940\u00a0\u0926\u0947\u0916\u0947\u0902",
+    "\u092f\u0939 \u092d\u0940 \u0926\u0947\u0916\u0947\u0902",
+    "\u092c\u093e\u0939\u0930\u0940 \u0915\u0921\u093c\u093f\u092f\u093e\u0901",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d",
+    "\u0938\u0902\u0926\u0930\u094d\u092d",
+    "References",
+    "\u092a\u0941\u0938\u094d\u0924\u0915 \u0938\u0942\u091a\u0940",
+    "\u092a\u094d\u0930\u0915\u093e\u0936\u0928",
+    "\u0938\u093e\u0939\u093f\u0924\u094d\u092f",
+    "\u0938\u094d\u0930\u094b\u0924",
+    "\u0905\u0928\u094d\u092f \u092a\u0920\u0928\u0940\u092f \u0938\u093e\u092e\u0917\u094d\u0930\u0940",
+    "\u0928\u094b\u091f\u094d\u0938",
+    "\u092f\u0939 \u0938\u092d\u0940 \u0926\u0947\u0916\u0947\u0902",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d",
+    "\u091f\u093f\u092a\u094d\u092a\u0923\u0940",
+    "\u0938\u0902\u0938\u094d\u0915\u0943\u0924\u093f"
+  ],
+  "rmwiki": [
+    "Colliaziuns",
+    "Fontaunas",
+    "Annotaziuns",
+    "Litteratura",
+    "Vesair era",
+    "Referenzas",
+    "Litteratura secundara"
+  ],
+  "aywiki": [
+    "Irpirinaka",
+    "Yatiya\u00f1a",
+    "Kaypipas qhaway",
+    "Kawkit waruqt'atasa"
+  ],
+  "hywwiki": [
+    "\u054f\u0565\u055b\u057d \u0576\u0561\u0565\u0582",
+    "\u054f\u0565\u057d \u0576\u0561\u0565\u0582",
+    "\u054f\u0565\u055b\u057d \u0546\u0561\u0565\u0582",
+    "\u054f\u0565'\u057d \u0546\u0561\u0565\u0582",
+    "\u0531\u0572\u0562\u056b\u0582\u0580\u0576\u0565\u0580",
+    "\u0533\u0580\u0561\u056f\u0561\u0576\u0578\u0582\u0569\u056b\u0582\u0576",
+    "\u0531\u0580\u057f\u0561\u0584\u056b\u0576 \u0575\u0572\u0578\u0582\u0574\u0576\u0565\u0580",
+    "\u053e\u0561\u0576\u0578\u0569\u0561\u0563\u0580\u0578\u0582\u0569\u056b\u0582\u0576\u0576\u0565\u0580",
+    "\u053e\u0561\u0576\u0585\u0569\u0561\u0563\u0580\u0578\u0582\u0569\u056b\u0582\u0576\u0576\u0565\u0580",
+    "\u053c\u0580\u0561\u0581\u0578\u0582\u0581\u056b\u0579 \u0568\u0576\u0569\u0565\u0580\u0581\u0561\u0576\u0578\u0582\u0569\u056b\u0582\u0576",
+    "\u0531\u0572\u0562\u056b\u0582\u0580\u0576\u0565\u0580",
+    "\u053e\u0561\u0576\u0585\u0569\u0561\u0563\u0580\u0578\u0582\u0569\u056b\u0582\u0576\u0576\u0565\u0580"
+  ],
+  "liwiki": [
+    "Br\u00f3nne",
+    "Br\u00f3n",
+    "Rifferensies",
+    "Zuug ouch",
+    "Rifferenties",
+    "Referentie",
+    "Referenties"
+  ],
+  "szlwiki": [
+    "Bibljografijo",
+    "Biblijografijo",
+    "Bibliografij\u014f",
+    "Przipisy",
+    "Literatura",
+    "Bibliografijo",
+    "Zob\u014fcz ty\u017c"
+  ],
+  "nywiki": [
+    "Umboni",
+    "References",
+    "Malifalensi",
+    "Onaninso",
+    "Zolemba zakunja",
+    "Zolemba",
+    "Kuwerenga kwina"
+  ],
+  "mhrwiki": [
+    "\u041b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+    "\u0411\u0438\u0431\u043b\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f",
+    "\u0412\u0430\u0436-\u0432\u043b\u0430\u043a"
+  ],
+  "hewiki": [
+    "\u05de\u05e7\u05d5\u05e8\u05d5\u05ea",
+    "\u05de\u05e8\u05d0\u05d9 \u05de\u05e7\u05d5\u05dd",
+    "\u05d1\u05d9\u05d0\u05d5\u05e8\u05d9\u05dd",
+    "\u05d4\u05e2\u05e8\u05d5\u05ea \u05e9\u05d5\u05dc\u05d9\u05d9\u05dd",
+    "\u05e8\u05d0\u05d5 \u05d2\u05dd",
+    "\u05e7\u05d9\u05e9\u05d5\u05e8\u05d9\u05dd \u05d7\u05d9\u05e6\u05d5\u05e0\u05d9\u05d9\u05dd",
+    "\u05d1\u05d9\u05d1\u05dc\u05d9\u05d5\u05d2\u05e8\u05e4\u05d9\u05d4",
+    "\u05dc\u05e7\u05e8\u05d9\u05d0\u05d4 \u05e0\u05d5\u05e1\u05e4\u05ea",
+    "\u05d3\u05de\u05d5\u05d2\u05e8\u05e4\u05d9\u05d4"
+  ],
+  "pswiki": [
+    "\u0633\u0631\u0686\u064a\u0646\u06d0",
+    "\u0633\u0631\u0686\u06cc\u0646\u06d0",
+    "\u0633\u0631\u0686\u06cc\u0646\u06cd",
+    "\u0633\u0631\u0686\u064a\u0646\u0647",
+    "\u0633\u0631\u0686\u06cc\u0646\u0647",
+    "\u0633\u0631\u0686\u064a\u0646\u06d0 \u0627\u0648 \u064a\u0627\u062f\u0627\u069a\u062a\u0648\u0646\u0647",
+    "\u062f\u0627 \u0647\u0645 \u0648\u06af\u0648\u0631\u06cd",
+    "\u062f\u0627 \u0647\u0645 \u0648\u06ab\u0648\u0631\u0626",
+    "\u0646\u0648\u0631 \u0648\u06ab\u0648\u0631\u0647",
+    "\u062a\u0693\u0644\u06d0 \u0644\u06cc\u06a9\u0646\u06d0",
+    "\u0646\u0648\u0631 \u0648\u0644\u0648\u0644\u0626",
+    "\u064a\u0627\u062f\u069a\u062a\u0648\u0646\u0647",
+    "\u062f\u0627 \u0647\u0645 \u0648\u06af\u0648\u0631\u0626",
+    "\u0633\u0631\u0686\u064a\u0646\u06d0 \u0627\u0648 \u064a\u0627\u062f\u0627\u069a\u062a\u0648\u0646\u0647.",
+    "\u0627\u0646\u0681\u0648\u0631\u062a\u0648\u0646",
+    "\u0633\u0631\u0686\u06cc\u0646\u06d0",
+    "\u0633\u0631\u0686\u064a\u0646\u06d0"
+  ],
+  "ffwiki": [
+    "Bibliography",
+    "Firooji",
+    "Hiimo\u0253e",
+    "Bibliografi",
+    "Himobe",
+    "Tuugnorgal"
+  ],
+  "eswiki": [
+    "V\u00e9ase tambi\u00e9n",
+    "Referencias",
+    "Bibliograf\u00eda",
+    "Enlaces externos",
+    "Fuentes",
+    "Notas y referencias",
+    "Lecturas adicionales",
+    "Notas",
+    "Contenidos",
+    "Bibliograf\u00eda",
+    "Referencias"
+  ],
+  "mtwiki": [
+    "Referenzi",
+    "Biblijografija",
+    "Bibljografija",
+    "Ara wkoll",
+    "Ara aktar",
+    "Iktar qari",
+    "Aktar qari",
+    "Sorsi",
+    "Letteratura",
+    "Noti",
+    "Referenzi"
+  ],
+  "aawiki": [],
+  "gdwiki": [
+    "Faic cuideachd",
+    "T\u00f9san",
+    "Iomraidhean",
+    "Tuilleadh Leughaidh",
+    "Tuilleadh leughaidh",
+    "Ceanglaichean a-mach",
+    "Leabhar-chl\u00e0r",
+    "Iomraidhean"
+  ],
+  "pcdwiki": [
+    "Notes pi r\u00e9f\u00e9rinches",
+    "Bibliografie",
+    "Notes",
+    "R\u00e9f\u00e9rences",
+    "R\u00e9f\u00e9rinches",
+    "Notes et r\u00e9f\u00e9rences",
+    "Notes et pi r\u00e9f\u00e9rinches",
+    "Vir itou",
+    "Vir \u00e9tou",
+    "Notes pi r\u00e9f\u00e9rinches"
+  ],
+  "lbwiki": [
+    "Kuckt och",
+    "Literatur",
+    "Referenzen",
+    "Um Spaweck",
+    "Referenzen an Notten",
+    "Bibliographie",
+    "Referenzen",
+    "Referenzen an Notten"
+  ],
+  "sawiki": [
+    "\u0905\u0927\u093f\u0915\u0902 \u092a\u0920\u0928\u092e\u094d",
+    "\u0905\u0917\u094d\u0930\u093f\u092e\u093e\u0927\u094d\u092f\u092f\u0928\u093e\u0930\u094d\u0925\u092e\u094d",
+    "\u0905\u092a\u093f \u0926\u094d\u0930\u0937\u094d\u091f\u0935\u094d\u092f\u092e\u094d",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d\u093e\u0903",
+    "\u0938\u092e\u094d\u092c\u0926\u094d\u0927\u093e\u0903 \u0932\u0947\u0916\u093e\u0903",
+    "\u092c\u093e\u0939\u094d\u092f\u0938\u092e\u094d\u092a\u0930\u094d\u0915\u093e\u0903",
+    "\u092c\u093e\u0939\u094d\u092f\u0938\u0902\u092a\u0930\u094d\u0915\u0924\u0928\u094d\u0924\u0941\u0903",
+    "\u0905\u0927\u093f\u0915\u0935\u093e\u091a\u0928\u093e\u092f",
+    "\u0905\u0927\u093f\u0915\u092a\u0920\u0928\u093e\u092f",
+    "\u092c\u093e\u0939\u094d\u092f\u0938\u092e\u094d\u092a\u0930\u094d\u0915\u0924\u0928\u094d\u0924\u0941\u0903",
+    "List  Wikipedias",
+    "\u092c\u093e\u0939\u094d\u092f\u093e\u0928\u0941\u092c\u0928\u094d\u0927\u0903",
+    "\u0938\u0928\u094d\u0926\u0930\u094d\u092d\u0903",
+    "\u0909\u0926\u094d\u0927\u0930\u0923\u092e\u094d",
+    "\u091f\u093f\u092a\u094d\u092a\u0923\u0940",
+    "\u0905\u092a\u093f \u092a\u0936\u094d\u092f\u0924\u0941"
+  ],
+  "mrwiki": [
+    "\u0939\u0947 \u0938\u0941\u0926\u094d\u0927\u093e \u092a\u0939\u093e",
+    "\u0939\u0947\u0939\u0940 \u092a\u093e\u0939\u093e",
+    "\u0939\u0947\u0939\u0940 \u092c\u0918\u093e",
+    "\u0938\u0902\u0926\u0930\u094d\u092d",
+    "\u0938\u0902\u0926\u0930\u094d\u092d \u0935 \u0928\u094b\u0902\u0926\u0940",
+    "\u0938\u0902\u0926\u0930\u094d\u092d \u0938\u0942\u091a\u0940:",
+    "\u0938\u0902\u0926\u0930\u094d\u092d\u0917\u094d\u0930\u0902\u0925",
+    "\u0938\u094d\u0930\u094b\u0924",
+    "\u0928\u094b\u091f\u094d\u0938",
+    "\u0938\u0902\u0926\u0930\u094d\u092d \u0906\u0923\u093f \u0928\u094b\u0902\u0926\u0940",
+    "\u0938\u0902\u0926\u0930\u094d\u092d",
+    "\u091f\u093f\u092a\u093e"
+  ],
+  "krwiki": [],
+  "kkwiki": [
+    "\u0414\u0435\u0440\u0435\u043a\u043a\u04e9\u0437\u0434\u0435\u0440",
+    "\u0422\u0430\u0493\u044b \u049b\u0430\u0440\u0430\u04a3\u044b\u0437",
+    "\u0421\u0456\u043b\u0442\u0435\u043c\u0435\u043b\u0435\u0440",
+    "\u04d8\u0434\u0435\u0431\u0438\u0435\u0442",
+    "\u0406\u0448\u043a\u0456 \u0441\u0456\u043b\u0442\u0435\u043c\u0435\u043b\u0435\u0440",
+    "\u0414\u0435\u0440\u0435\u043a\u043a\u04e9\u0437\u0434\u0435\u0440:",
+    "\u0414\u0435\u0440\u0435\u043a\u04e9\u0437\u0434\u0435\u0440",
+    "\u0420\u04e9\u043b\u0434\u0435\u0440\u0434\u0435",
+    "\u041c\u0430\u0440\u0430\u043f\u0430\u0442\u0442\u0430\u0440\u044b",
+    "\u0422\u0430\u0493\u044b \u049b\u0430\u0440\u0430\u043d\u044b\u0437:",
+    "\u0421\u0456\u043b\u0442\u0435\u043c\u0435",
+    "\u04d8\u0434\u0435\u0431\u0438\u0435\u0442\u0442\u0435\u0440",
+    "\u041f\u0430\u0439\u0434\u0430\u043b\u0430\u043d\u0493\u0430\u043d \u04d9\u0434\u0435\u0431\u0438\u0442\u0442\u0435\u0440",
+    "\u0414\u0435\u0440\u0435\u043a\u043a\u04e9\u0437\u0434\u0435\u0440",
+    "\u0415\u0441\u043a\u0435\u0440\u0442\u043f\u0435\u043b\u0435\u0440"
+  ],
+  "ganwiki": [
+    "\u5225\u55f0\u689d\u76ee",
+    "\u5225\u55f0\u9805\u76ee",
+    "\u53c3\u8003\u8cc7\u6599",
+    "\u53c3\u8003",
+    "\u53c3\u8003\u55f0\u66f8",
+    "\u8a3b\u8173",
+    "\u6ce8\u811a",
+    "\u53c3\u8003\u8cc7\u6599",
+    "\u53c3\u8003"
+  ],
+  "chowiki": [],
+  "kmwiki": [
+    "\u1780\u17c6\u178e\u178f\u17cb\u1785\u17c6\u178e\u17b6\u17c6",
+    "\u179f\u17bc\u1798\u1798\u17be\u179b\u1795\u1784\u178a\u17c2\u179a",
+    "\u1780\u17c6\u178e\u178f\u17cb",
+    "Further reading",
+    "\u17af\u1780\u179f\u17b6\u179a\u200b\u1799\u17c4\u1784\u200b",
+    "References",
+    "\u1780\u17c6\u178e\u178f\u17cb\u1785\u17c6\u178e\u17b6\u17c6 \u1793\u17b7\u1784\u17af\u1780\u179f\u17b6\u179a\u1799\u17c4\u1784",
+    "\u179f\u17bc\u1798\u200b\u1798\u17be\u179b\u200b\u1795\u1784\u200b\u178a\u17c2\u179a",
+    "\u1794\u17d2\u179a\u1797\u1796",
+    "\u1780\u17b6\u179a\u178a\u1780\u179f\u17d2\u179a\u1784\u17cb",
+    "\u179f\u17c0\u179c\u1797\u17c5\u17a2\u17b6\u1793\u1794\u1793\u17d2\u1790\u17c2\u1798",
+    "\u1798\u17be\u179b\u1795\u1784\u178a\u17c2\u179a",
+    "\u17af\u1780\u179f\u17b6\u179a\u1799\u17c4\u1784",
+    "\u1782\u1793\u17d2\u1790\u1793\u17b7\u1791\u17d2\u1791\u17c1\u179f"
+  ],
+  "alswiki": [
+    "Litratuur",
+    "Lueg au",
+    "L\u00ecter\u00e0t\u00fc\u00fcr",
+    "Weblink",
+    "Litratur",
+    "Literatur",
+    "Fuessnote",
+    "Einzeln\u00f5chwys",
+    "Fua\u00dfnota",
+    "Referanza",
+    "Ainzelnoohwiisa",
+    "Quelle",
+    "Fue\u00dfnote",
+    "Fuessnoote",
+    "Liddratuur"
+  ],
+  "bclwiki": [
+    "Toltolan",
+    "Mga toltolan",
+    "Mga Toltolan",
+    "Bibliograpiya",
+    "Hilingon pa",
+    "Hilingon man",
+    "Panluwas na takod",
+    "Mga panluwas na takod",
+    "Reperensya",
+    "Mga Reperensya",
+    "Dugang na pagbasa",
+    "Iba pang babasahon",
+    "Susugan",
+    "Kataytayan nin mga ladawan",
+    "Toltolan"
+  ],
+  "svwiki": [
+    "Se \u00e4ven",
+    "K\u00e4llor",
+    "Kommentarer",
+    "Externa l\u00e4nkar",
+    "Anm\u00e4rkningar",
+    "Noter",
+    "Vidare l\u00e4sning",
+    "Tryckta k\u00e4llor",
+    "Litteratur",
+    "Referenser",
+    "Bibliografi"
+  ],
+  "mwlwiki": [
+    "Biblografie",
+    "Lhiga\u00e7ones sternas",
+    "Liga\u00e7\u00f5es externas",
+    "Refr\u00e9ncias",
+    "Refer\u00eancias",
+    "Ber Tamien",
+    "Bibliografie",
+    "Liga\u00e7ones sternas",
+    "Notas",
+    "Ber tamien",
+    "Bibliografia"
+  ],
+  "gorwiki": [
+    "Referensi",
+    "Lihat pula",
+    "Galeri",
+    "Daputari pustaka",
+    "Daftar pustaka",
+    "Pranala luar",
+    "Po'ombuta mobaca",
+    "Referensi"
+  ],
+  "jvwiki": [
+    "Deleng Uga",
+    "Deleng uga",
+    "Paripustaka",
+    "Cathetan suku",
+    "R\u00e9fer\u00e8nsi",
+    "Uga delengen",
+    "Cathetan sikil",
+    "Referensi",
+    "Bibliografi",
+    "Prat\u00e9laning isi",
+    "Wigati",
+    "Waca uga",
+    "Pranala njaba",
+    "Refrensi",
+    "Ugi pirsani",
+    "Sitiran",
+    "Deloken sisan",
+    "Uga delengan",
+    "Prat\u00e9lan pustaka",
+    "Rujukan"
+  ],
+  "sgwiki": [
+    "Asource nga na ambeti",
+    "L\u00efnd\u00efpa"
+  ],
+  "nds_nlwiki": [
+    "Lieste van verwiezingen",
+    "Geboren",
+    "Verwiezings",
+    "Bronnen",
+    "Zee ok",
+    "Rifferenties",
+    "Referensies",
+    "Zie oek",
+    "Gebeurtenissen",
+    "Bron",
+    "Verwiezing"
+  ],
+  "xhwiki": [
+    "Bona kwakho",
+    "Iimbekiselo",
+    "Iireferensi",
+    "Imithombo",
+    "References",
+    "iReference",
+    "Related pages",
+    "Ukufunda ngakumbi",
+    "Ukuqhubeka kokufunda",
+    "References",
+    "Izalathiso"
+  ],
+  "bhwiki": [
+    "\u0907\u0939\u094b \u0926\u0947\u0916\u0932 \u091c\u093e\u092f",
+    "\u0907\u0939\u094b\u00a0\u0926\u0947\u0916\u0932\u00a0\u091c\u093e\u092f",
+    "\u0905\u0909\u0930\u0940 \u092a\u0922\u093c\u0947 \u0916\u093e\u0924\u093f\u0930",
+    "\u0938\u0902\u0926\u0930\u094d\u092d",
+    "\u0938\u0902\u0926\u0930\u094d\u092d",
+    "\u0928\u094b\u091f"
+  ],
+  "zh_classicalwiki": [
+    "\u66f8\u76ee",
+    "\u517c\u67e5",
+    "\u53e6\u898b",
+    "\u6ce8",
+    "\u5099\u8003",
+    "\u6537",
+    "\u53c3",
+    "\u51fa\u5178",
+    "\u64da",
+    "\u5f15\u64da"
+  ],
+  "be-taraskwiki": [
+    "\u0417\u0430\u045e\u0432\u0430\u0433\u0456",
+    "\u041a\u0440\u044b\u043d\u0456\u0446\u044b",
+    "\u041b\u0456\u0442\u0430\u0440\u0430\u0442\u0443\u0440\u0430"
+  ],
+  "bewwiki": [
+    "Ruju'an",
+    "Catetan"
+  ],
+  "btmwiki": [
+    "Referensi",
+    "Sumberna"
+  ],
+  "dtpwiki": [
+    "Nuut",
+    "Sajara",
+    "Sukuon"
+  ],
+  "ibawiki": [
+    "Nota",
+    "Penyanding",
+    "Malin",
+    "Penerang",
+    "Kereban sanding"
+  ],
+  "kgewiki": [
+    "Rujukan"
+  ],
+  "nbwiki": [
+    "Fotnoter",
+    "Referanser"
+  ],
+  "roa-tarawiki": [
+    "Note",
+    "Collegaminde fore a Uicchip\u00e8die"
+  ],
+  "rskwiki": [
+    "\u0420\u0435\u0444\u0435\u0440\u0435\u043d\u0446\u0438"
+  ],
+  "sylwiki": [
+    "\ua81f\ua807"
+  ],
+  "yuewiki": [
+    "\u6537",
+    "\u53c3\u8003",
+    "\u51fa\u9762\u7db2\u9801",
+    "\u8a3b"
+  ],
+  "bdrwiki": [
+    "Tungan metelak"
+  ],
+  "kncwiki": [
+    "Laminat\u01dd",
+    "Lamint\u01dd",
+    "Bayin awo be"
+  ],
+  "nrwiki": [
+    "Iinkhombo",
+    "Iinkomba"
+  ],
+  "tddwiki": [
+    "\u1959\u196b\u1952 \u195f\u1964\u1952",
+    "\u1956\u1964 \u195f\u1963\u1952\u1972 \u195f\u1964\u1952"
+  ],
+  "sgswiki": [
+    "\u0160alten\u0113"
+  ],
+  "nds-nlwiki": [
+    "Rifferenties"
+  ],
+  "iglwiki": [
+    "References"
+  ],
+  "map-bmswiki": [
+    "Referensi"
+  ],
+  "lzhwiki": [
+    "\u5f15\u64da"
+  ],
+  "nanwiki": [
+    "Chham-kh\u00f3 chu-li\u0101u",
+    "Ch\u00f9-k\u00e1i"
+  ],
+  "vrowiki": [
+    "L\u00e4tteq"
+  ],
+  "nupwiki": [
+    "Santatun"
+  ]
+}
