@@ -23,7 +23,10 @@ def login_and_store() -> str:
     username = WMF_USER
     password = WMF_PASS
     if not username or not password:
-        print("Set WMF_USER and WMF_PASS constants at the top of the script.", file=sys.stderr)
+        print(
+            "Set WMF_USER and WMF_PASS constants at the top of the script.",
+            file=sys.stderr,
+        )
         sys.exit(1)
     resp = requests.post(
         f"{AUTH_BASE}/login",
@@ -50,7 +53,10 @@ def load_access_token() -> str:
 
 
 def auth_headers() -> dict:
-    return {"Authorization": f"Bearer {load_access_token()}", "Accept": "application/json"}
+    return {
+        "Authorization": f"Bearer {load_access_token()}",
+        "Accept": "application/json",
+    }
 
 
 def list_latest_ns0_snapshots():
@@ -67,7 +73,9 @@ def list_latest_ns0_snapshots():
         ],
         "filters": [{"field": "namespace.identifier", "value": 0}],
     }
-    r = requests.post(f"{API_BASE}/snapshots", json=payload, headers=auth_headers(), timeout=120)
+    r = requests.post(
+        f"{API_BASE}/snapshots", json=payload, headers=auth_headers(), timeout=120
+    )
     if not r.ok:
         print("List snapshots failed:", r.status_code, r.text[:500], file=sys.stderr)
         sys.exit(3)
@@ -127,5 +135,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
