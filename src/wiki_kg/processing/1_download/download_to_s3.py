@@ -13,7 +13,7 @@ S3_DESTINATION = "s3://wikipedia-bucket/wikipedia/raw_html_dumps/"
 # Files are relative to this script directory
 HERE = Path(__file__).resolve().parent
 SNAPSHOTS_PATH = HERE / "available_snapshots.json"
-TOKEN_PATH = HERE / "wm_enterprise_token.json"
+TOKEN_PATH = HERE / "token.json"
 
 with SNAPSHOTS_PATH.open() as f:
     snapshots = json.load(f)
