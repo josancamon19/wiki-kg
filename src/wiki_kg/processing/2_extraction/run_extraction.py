@@ -4,7 +4,11 @@
 
 from datatrove.pipeline.base import PipelineStep
 from pathlib import Path
+import os
 from dotenv import load_dotenv
+
+from typing import List, Dict, Any
+
 
 load_dotenv()
 
@@ -144,13 +148,6 @@ class WikipediaReader(PipelineStep):
         for filepath in files_shard:
             for doc in iter_docs(iter_jsonl(filepath)):
                 yield doc
-
-
-import json
-import re
-from typing import List, Dict, Any
-
-from datatrove.pipeline.base import PipelineStep
 
 
 class WikipediaParser(PipelineStep):
@@ -2031,7 +2028,6 @@ class WikipediaParser(PipelineStep):
 
         with ExtractorSandbox(
             timeout=self.timeout,
-            wamup_text=Document(text="", id="__warmup__", metadata={}),
         ) as extractor:
             for doc in data:
                 self.stat_update("total")
@@ -2083,6 +2079,8 @@ if __name__ == "__main__":
         if wiki.removesuffix("_namespace_0").endswith("wiki")
     ]
     print(wikis)
+
+    from datatrove.executor.local import LocalPipelineExecutor
     from datatrove.executor.slurm import SlurmPipelineExecutor
 
     for wiki in wikis:
@@ -2090,20 +2088,35 @@ if __name__ == "__main__":
         print(f"{GCP_RAW_PREFIX}/{wiki}")
         # Use underlying filesystem to avoid DirFileSystem path issues
         files = len(wiki_df.fs.ls(wiki_df.path, detail=False))
-        SlurmPipelineExecutor(
+
+        # if use_local:
+        # Local execution (no Slurm needed)
+        LocalPipelineExecutor(
             pipeline=[
                 WikipediaReader(wiki),
                 WikipediaParser(wiki),
-                JsonlWriter(f"{GCP_PARSED_PREFIX}{wiki}"),
+                JsonlWriter(f"{GCP_PARSED_PREFIX}/{wiki}"),
             ],
             tasks=files,
-            time=SLURM_TIME,
-            partition=SLURM_PARTITION,
-            cpus_per_task=SLURM_CPUS_PER_TASK,
-            job_name=f"wkp_{wiki}",
-            qos=SLURM_QOS,
+            workers=os.cpu_count(),  # Use as number of parallel workers
             logging_dir=str(LOGGING_DIR / wiki),
-            sbatch_args={
-                "mem-per-cpu": SLURM_MEM_PER_CPU,
-            },
         ).run()
+        # else:
+        #     # Slurm execution (requires HPC cluster with Slurm)
+        #     SlurmPipelineExecutor(
+        #         pipeline=[
+        #             WikipediaReader(wiki),
+        #             WikipediaParser(wiki),
+        #             JsonlWriter(f"{GCP_PARSED_PREFIX}/{wiki}"),
+        #         ],
+        #         tasks=files,
+        #         time=SLURM_TIME,
+        #         partition=SLURM_PARTITION,
+        #         cpus_per_task=SLURM_CPUS_PER_TASK,
+        #         job_name=f"wkp_{wiki}",
+        #         qos=SLURM_QOS,
+        #         logging_dir=str(LOGGING_DIR / wiki),
+        #         sbatch_args={
+        #             "mem-per-cpu": SLURM_MEM_PER_CPU,
+        #         },
+        #     ).run()
