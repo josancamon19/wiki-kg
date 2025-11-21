@@ -30,24 +30,29 @@ load_dotenv()
 TARGET_LENGTH = 6200 * 4  # ~24,800 characters, mean tokens
 LENGTH_TOLERANCE = 200  # +- 50 tokens from mean
 NUM_ARTICLES = 10  # estimate with n articles
-MAX_CONCURRENT = 5  # Maximum number of articles to process in parallel
+MAX_CONCURRENT = 32  # Maximum number of articles to process in parallel
 OUTPUT_DIR = Path("analysis/kggen_estimates/articles")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+fw = load_dataset(
+    "josancamon/finewiki",
+    name="default",
+    split="en",
+    streaming=True,
+)
 
-def find_suitable_articles(
-    dataset, target_length: int, tolerance: int, num_articles: int
-) -> List[Dict[str, Any]]:
+
+def find_suitable_articles() -> List[Dict[str, Any]]:
     """Find articles with text length close to target_length."""
     suitable_articles = []
-    min_length = target_length - tolerance
-    max_length = target_length + tolerance
+    min_length = TARGET_LENGTH - LENGTH_TOLERANCE
+    max_length = TARGET_LENGTH + LENGTH_TOLERANCE
 
     print(
-        f"Looking for {num_articles} articles with length between {min_length} and {max_length} characters..."
+        f"Looking for {NUM_ARTICLES} articles with length between {min_length} and {max_length} characters..."
     )
 
-    for article in dataset:
+    for article in fw:
         text_length = len(article["text"])
 
         if min_length <= text_length <= max_length:
@@ -63,7 +68,7 @@ def find_suitable_articles(
                 f"  Found: {article.get('title', 'Unknown')} (ID: {article['id']}, Length: {text_length})"
             )
 
-            if len(suitable_articles) >= num_articles:
+            if len(suitable_articles) >= NUM_ARTICLES:
                 break
 
     print(f"\nFound {len(suitable_articles)} suitable articles")
@@ -257,15 +262,6 @@ async def main_async():
     print("KGGen Estimation Script - Parallel Processing")
     print("=" * 80)
 
-    # Load dataset
-    print("\nLoading FineWiki dataset...")
-    fw = load_dataset(
-        "josancamon/finewiki",
-        name="default",
-        split="en",
-        streaming=True,
-    )
-    print("✅ Dataset loaded")
     articles = find_suitable_articles(fw, TARGET_LENGTH, LENGTH_TOLERANCE, NUM_ARTICLES)
 
     if len(articles) < NUM_ARTICLES:
@@ -294,98 +290,88 @@ async def main_async():
     print("SUMMARY REPORT - DEDUPLICATION COMPARISON")
     print("=" * 80)
 
-    # Calculate overall statistics
-    if all_results:
-        n = len(all_results)
+    n = len(all_results)
 
-        # Extraction stats
-        avg_extraction_time = (
-            sum(r["timing"]["extraction_seconds"] for r in all_results) / n
-        )
-        avg_entities_extracted = (
-            sum(r["extraction"]["entities"] for r in all_results) / n
-        )
-        avg_relations_extracted = (
-            sum(r["extraction"]["relations"] for r in all_results) / n
-        )
-        avg_extraction_tokens = (
-            sum(r["extraction"]["tokens"]["total_tokens"] for r in all_results) / n
-        )
+    # Extraction stats
+    avg_extraction_time = (
+        sum(r["timing"]["extraction_seconds"] for r in all_results) / n
+    )
+    avg_entities_extracted = sum(r["extraction"]["entities"] for r in all_results) / n
+    avg_relations_extracted = sum(r["extraction"]["relations"] for r in all_results) / n
+    avg_extraction_tokens = (
+        sum(r["extraction"]["tokens"]["total_tokens"] for r in all_results) / n
+    )
 
-        # SEMHASH stats
-        avg_semhash_time = (
-            sum(r["timing"]["semhash_dedup_seconds"] for r in all_results) / n
-        )
-        avg_semhash_entities = (
-            sum(r["semhash_dedup"]["entities"] for r in all_results) / n
-        )
-        avg_semhash_relations = (
-            sum(r["semhash_dedup"]["relations"] for r in all_results) / n
-        )
-        avg_semhash_entity_cleanup = (
-            sum(r["semhash_dedup"]["entity_cleanup_percent"] for r in all_results) / n
-        )
-        avg_semhash_relation_cleanup = (
-            sum(r["semhash_dedup"]["relation_cleanup_percent"] for r in all_results) / n
-        )
-        avg_semhash_tokens = (
-            sum(r["semhash_dedup"]["tokens"]["total_tokens"] for r in all_results) / n
-        )
+    # SEMHASH stats
+    avg_semhash_time = (
+        sum(r["timing"]["semhash_dedup_seconds"] for r in all_results) / n
+    )
+    avg_semhash_entities = sum(r["semhash_dedup"]["entities"] for r in all_results) / n
+    avg_semhash_relations = (
+        sum(r["semhash_dedup"]["relations"] for r in all_results) / n
+    )
+    avg_semhash_entity_cleanup = (
+        sum(r["semhash_dedup"]["entity_cleanup_percent"] for r in all_results) / n
+    )
+    avg_semhash_relation_cleanup = (
+        sum(r["semhash_dedup"]["relation_cleanup_percent"] for r in all_results) / n
+    )
+    avg_semhash_tokens = (
+        sum(r["semhash_dedup"]["tokens"]["total_tokens"] for r in all_results) / n
+    )
 
-        # FULL stats
-        avg_full_time = sum(r["timing"]["full_dedup_seconds"] for r in all_results) / n
-        avg_full_entities = sum(r["full_dedup"]["entities"] for r in all_results) / n
-        avg_full_relations = sum(r["full_dedup"]["relations"] for r in all_results) / n
-        avg_full_entity_cleanup = (
-            sum(r["full_dedup"]["entity_cleanup_percent"] for r in all_results) / n
-        )
-        avg_full_relation_cleanup = (
-            sum(r["full_dedup"]["relation_cleanup_percent"] for r in all_results) / n
-        )
-        avg_full_tokens = (
-            sum(r["full_dedup"]["tokens"]["total_tokens"] for r in all_results) / n
-        )
+    # FULL stats
+    avg_full_time = sum(r["timing"]["full_dedup_seconds"] for r in all_results) / n
+    avg_full_entities = sum(r["full_dedup"]["entities"] for r in all_results) / n
+    avg_full_relations = sum(r["full_dedup"]["relations"] for r in all_results) / n
+    avg_full_entity_cleanup = (
+        sum(r["full_dedup"]["entity_cleanup_percent"] for r in all_results) / n
+    )
+    avg_full_relation_cleanup = (
+        sum(r["full_dedup"]["relation_cleanup_percent"] for r in all_results) / n
+    )
+    avg_full_tokens = (
+        sum(r["full_dedup"]["tokens"]["total_tokens"] for r in all_results) / n
+    )
 
-        stats = {
-            "total_wall_time_seconds": total_time,
-            "extraction": {
-                "avg_time_seconds": avg_extraction_time,
-                "avg_entities": avg_entities_extracted,
-                "avg_relations": avg_relations_extracted,
-                "avg_tokens": avg_extraction_tokens,
-            },
-            "semhash_dedup": {
-                "avg_time_seconds": avg_semhash_time,
-                "avg_entities": avg_semhash_entities,
-                "avg_relations": avg_semhash_relations,
-                "avg_entity_cleanup_percent": avg_semhash_entity_cleanup,
-                "avg_relation_cleanup_percent": avg_semhash_relation_cleanup,
-                "avg_tokens": avg_semhash_tokens,
-            },
-            "full_dedup": {
-                "avg_time_seconds": avg_full_time,
-                "avg_entities": avg_full_entities,
-                "avg_relations": avg_full_relations,
-                "avg_entity_cleanup_percent": avg_full_entity_cleanup,
-                "avg_relation_cleanup_percent": avg_full_relation_cleanup,
-                "avg_tokens": avg_full_tokens,
-            },
-            "comparison": {
-                "time_difference_seconds": avg_full_time - avg_semhash_time,
-                "time_difference_percent": (
-                    (avg_full_time - avg_semhash_time) / avg_semhash_time * 100
-                )
-                if avg_semhash_time > 0
-                else 0,
-                "entity_cleanup_difference_percent": avg_full_entity_cleanup
-                - avg_semhash_entity_cleanup,
-                "relation_cleanup_difference_percent": avg_full_relation_cleanup
-                - avg_semhash_relation_cleanup,
-                "token_difference": avg_full_tokens - avg_semhash_tokens,
-            },
-        }
-    else:
-        stats = {}
+    stats = {
+        "total_wall_time_seconds": total_time,
+        "extraction": {
+            "avg_time_seconds": avg_extraction_time,
+            "avg_entities": avg_entities_extracted,
+            "avg_relations": avg_relations_extracted,
+            "avg_tokens": avg_extraction_tokens,
+        },
+        "semhash_dedup": {
+            "avg_time_seconds": avg_semhash_time,
+            "avg_entities": avg_semhash_entities,
+            "avg_relations": avg_semhash_relations,
+            "avg_entity_cleanup_percent": avg_semhash_entity_cleanup,
+            "avg_relation_cleanup_percent": avg_semhash_relation_cleanup,
+            "avg_tokens": avg_semhash_tokens,
+        },
+        "full_dedup": {
+            "avg_time_seconds": avg_full_time,
+            "avg_entities": avg_full_entities,
+            "avg_relations": avg_full_relations,
+            "avg_entity_cleanup_percent": avg_full_entity_cleanup,
+            "avg_relation_cleanup_percent": avg_full_relation_cleanup,
+            "avg_tokens": avg_full_tokens,
+        },
+        "comparison": {
+            "time_difference_seconds": avg_full_time - avg_semhash_time,
+            "time_difference_percent": (
+                (avg_full_time - avg_semhash_time) / avg_semhash_time * 100
+            )
+            if avg_semhash_time > 0
+            else 0,
+            "entity_cleanup_difference_percent": avg_full_entity_cleanup
+            - avg_semhash_entity_cleanup,
+            "relation_cleanup_difference_percent": avg_full_relation_cleanup
+            - avg_semhash_relation_cleanup,
+            "token_difference": avg_full_tokens - avg_semhash_tokens,
+        },
+    }
 
     summary = {
         "config": {
@@ -399,16 +385,18 @@ async def main_async():
         "results": all_results,
     }
 
+    # TODO: kggen requires an option to run without dspy cache
+    # TODO: kggen should get rid of dspy dependency
+    # TODO: kggen requires an option to return tokens
+    # TODO: I should be able to run dedup without crashing not passing sentenceTransformer
+    # TODO: run extract and filter ignore files were already processed, some files fail due to network or smth
+
     # Save summary
     summary_file = OUTPUT_DIR / "summary.json"
     with open(summary_file, "w") as f:
         json.dump(summary, f, indent=2)
 
     print(f"\n✅ Summary saved to {summary_file}")
-
-    print("\n" + "=" * 80)
-    print("✅ All processing complete!")
-    print("=" * 80)
 
 
 def main():
