@@ -21,13 +21,6 @@ DISAMBIG_IDS_PATH = HERE / "disambiguation_sia_ids.json"
 COMPILED_REF_WORDS_PATH = HERE / "compiled_ref_words.json"
 LOGGING_DIR = HERE / "logs"
 
-# Slurm defaults
-SLURM_TIME = "10:00:00"
-SLURM_PARTITION = "hopper-cpu"
-SLURM_CPUS_PER_TASK = 3
-SLURM_QOS = "high"
-SLURM_MEM_PER_CPU = "1950M"
-
 
 class WikipediaReader(PipelineStep):
     name = "WikipediaReader"
@@ -2072,16 +2065,13 @@ if __name__ == "__main__":
     from datatrove.pipeline.writers import JsonlWriter
     from datatrove.io import get_datafolder
 
-    print(get_datafolder(GCP_RAW_PREFIX))
     wikis = [
         wiki
         for wiki in get_datafolder(GCP_RAW_PREFIX).ls("", detail=False)
         if wiki.removesuffix("_namespace_0").endswith("wiki")
     ]
-    print(wikis)
 
     from datatrove.executor.local import LocalPipelineExecutor
-    from datatrove.executor.slurm import SlurmPipelineExecutor
 
     for wiki in wikis:
         wiki_df = get_datafolder(GCP_RAW_PREFIX + "/" + wiki)
@@ -2101,22 +2091,3 @@ if __name__ == "__main__":
             workers=os.cpu_count(),  # Use as number of parallel workers
             logging_dir=str(LOGGING_DIR / wiki),
         ).run()
-        # else:
-        #     # Slurm execution (requires HPC cluster with Slurm)
-        #     SlurmPipelineExecutor(
-        #         pipeline=[
-        #             WikipediaReader(wiki),
-        #             WikipediaParser(wiki),
-        #             JsonlWriter(f"{GCP_PARSED_PREFIX}/{wiki}"),
-        #         ],
-        #         tasks=files,
-        #         time=SLURM_TIME,
-        #         partition=SLURM_PARTITION,
-        #         cpus_per_task=SLURM_CPUS_PER_TASK,
-        #         job_name=f"wkp_{wiki}",
-        #         qos=SLURM_QOS,
-        #         logging_dir=str(LOGGING_DIR / wiki),
-        #         sbatch_args={
-        #             "mem-per-cpu": SLURM_MEM_PER_CPU,
-        #         },
-        #     ).run()
