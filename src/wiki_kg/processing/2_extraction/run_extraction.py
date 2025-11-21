@@ -4,12 +4,15 @@
 
 from datatrove.pipeline.base import PipelineStep
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---- Configuration constants ----
 # Paths/buckets
 HERE = Path(__file__).resolve().parent
-S3_RAW_PREFIX = "s3://wikipedia-bucket/wikipedia/raw_html_dumps/"
-S3_PARSED_PREFIX = "s3://wikipedia-bucket/wikipedia/parsed_html/"
+GCP_RAW_PREFIX = "gs://wikipedia-graph/wikipedia/raw_html_dumps"
+GCP_PARSED_PREFIX = "gs://wikipedia-graph/wikipedia/parsed_html"
 DISAMBIG_IDS_PATH = HERE / "disambiguation_sia_ids.json"
 COMPILED_REF_WORDS_PATH = HERE / "compiled_ref_words.json"
 LOGGING_DIR = HERE / "logs"
@@ -40,7 +43,7 @@ class WikipediaReader(PipelineStep):
         import re
         from datatrove.data import Document
 
-        wiki_df = get_datafolder(S3_RAW_PREFIX + self.wiki)
+        wiki_df = get_datafolder(GCP_RAW_PREFIX + "/" + self.wiki)
 
         with open(DISAMBIG_IDS_PATH, "r") as f:
             disambiguation_ids = set(
@@ -2073,20 +2076,25 @@ if __name__ == "__main__":
     from datatrove.pipeline.writers import JsonlWriter
     from datatrove.io import get_datafolder
 
+    print(get_datafolder(GCP_RAW_PREFIX))
     wikis = [
         wiki
-        for wiki in get_datafolder(S3_RAW_PREFIX).ls("", detail=False)
+        for wiki in get_datafolder(GCP_RAW_PREFIX).ls("", detail=False)
         if wiki.removesuffix("_namespace_0").endswith("wiki")
     ]
+    print(wikis)
     from datatrove.executor.slurm import SlurmPipelineExecutor
 
     for wiki in wikis:
-        files = len(get_datafolder(S3_RAW_PREFIX + wiki).ls("", detail=False))
+        wiki_df = get_datafolder(GCP_RAW_PREFIX + "/" + wiki)
+        print(f"{GCP_RAW_PREFIX}/{wiki}")
+        # Use underlying filesystem to avoid DirFileSystem path issues
+        files = len(wiki_df.fs.ls(wiki_df.path, detail=False))
         SlurmPipelineExecutor(
             pipeline=[
                 WikipediaReader(wiki),
                 WikipediaParser(wiki),
-                JsonlWriter(f"{S3_PARSED_PREFIX}{wiki}"),
+                JsonlWriter(f"{GCP_PARSED_PREFIX}{wiki}"),
             ],
             tasks=files,
             time=SLURM_TIME,

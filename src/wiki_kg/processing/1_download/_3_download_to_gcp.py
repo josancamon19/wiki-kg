@@ -12,7 +12,7 @@ AUTH_BASE = "https://auth.enterprise.wikimedia.com/v1"
 API_BASE = "https://api.enterprise.wikimedia.com/v2"
 
 # Configuration constants
-GCP_DESTINATION = "gs://wikipedia-graph/wikipedia/raw_html_dumps/"
+GCP_DESTINATION = "gs://wikipedia-graph/wikipedia/raw_html_dumps"
 
 # Files are relative to this script directory
 HERE = Path(__file__).resolve().parent
