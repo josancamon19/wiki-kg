@@ -1,14 +1,18 @@
 import json
+import os
 from pathlib import Path
 import requests
 from tqdm.auto import tqdm
 from datatrove.io import get_datafolder
+from dotenv import load_dotenv
+
+load_dotenv()
 
 AUTH_BASE = "https://auth.enterprise.wikimedia.com/v1"
 API_BASE = "https://api.enterprise.wikimedia.com/v2"
 
 # Configuration constants
-S3_DESTINATION = "s3://wikipedia-bucket/wikipedia/raw_html_dumps/"
+GCP_DESTINATION = "gs://wikipedia-graph/wikipedia/raw_html_dumps/"
 
 # Files are relative to this script directory
 HERE = Path(__file__).resolve().parent
@@ -36,11 +40,11 @@ def auth_headers():
     }
 
 
-out_df = get_datafolder(S3_DESTINATION)
+out_df = get_datafolder(GCP_DESTINATION)
 
 for wiki in snapshots:
     # if any(wiki['is_part_of']['identifier'].endswith(y) for y in ['wikibooks', 'wiktionary', 'wikiquote', 'wikivoyage', 'wikiversity', 'wikisource', 'wikinews']):
-    # continue
+    #   continue
 
     for chunk_idx in range(len(wiki["chunks"])):
         url = f"{API_BASE}/snapshots/{wiki['identifier']}/chunks/{wiki['chunks'][chunk_idx]}/download"

@@ -7,6 +7,7 @@ requires-python = ">=3.11"
 dependencies = [
     "datasets>=4.4.1",
     "datatrove>=0.6.0",
+    "gcsfs>=2025.10.0",
     "kg-gen @ git+https://github.com/stair-lab/kg-gen.git@feature/deduplication-options",
     "matplotlib>=3.10.7",
     "numpy>=2.0.0",

@@ -12,3 +12,4 @@ wheels/
 src/wiki_kg/processing/1_download/token.json
 src/wiki_kg/processing/1_download/*.json
 *.env
+google-credentials.json

@@ -72,7 +72,11 @@ def list_latest_ns0_snapshots():
             "size",
             "chunks",
         ],
-        "filters": [{"field": "namespace.identifier", "value": 0}],
+        "filters": [
+            {"field": "namespace.identifier", "value": 0},
+            # {"field": "in_language.identifier", "value": "en"},
+            {"field": "is_part_of.identifier", "value": "enwiki"},
+        ],
     }
     r = requests.post(
         f"{API_BASE}/snapshots", json=payload, headers=auth_headers(), timeout=120
