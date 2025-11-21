@@ -1958,23 +1958,25 @@ class WikipediaParser(PipelineStep):
         # Reset per-document flags
         self._had_math = False
         article = Article(html)
-        infoboxes = self.extract_infoboxes(article.wikistew)
+        # WikiStew.tag gives us the BeautifulSoup object
+        infoboxes = self.extract_infoboxes(article.wikistew.tag)
         if not infoboxes:
             fallback = self.extract_infoboxes_fallback(html)
             if fallback:
                 infoboxes = fallback
         document.metadata["infoboxes"] = infoboxes
 
-        plaintext = (
-            "# " + article.get_title() + "\n"
-            if article.wikistew.title is not None
-            else ""
-        )
+        # Get title if available
+        try:
+            title = article.get_title()
+            plaintext = "# " + title + "\n" if title else ""
+        except (AttributeError, TypeError):
+            plaintext = ""
         prev_heading = "_Lead"
         prev_level = 2
         last_was_header = False
         for heading, level, paragraph in self.get_plaintext(
-            article.wikistew,
+            article.wikistew.tag,
             exclude_transcluded_paragraphs=False,
             exclude_para_context=None,
             exclude_elements={
@@ -2013,81 +2015,210 @@ class WikipediaParser(PipelineStep):
         return document
 
     def run(self, data, rank=0, world_size=1):
-        from datatrove.pipeline.extractors.base import ExtractorSandbox
+        """Process documents with timeout support using signal-based approach."""
+        import signal
         from loguru import logger
 
         self._warned_error = False
-        from datatrove.data import Document
 
-        with ExtractorSandbox(
-            timeout=self.timeout,
-        ) as extractor:
-            for doc in data:
-                self.stat_update("total")
-                with self.track_time():
-                    try:
-                        parsed_document = extractor.process_document(
-                            doc, self.process_document
-                        )
-                        self.stat_update("extracted")
-                    except TimeoutError:
-                        self.stat_update("timeout")
-                        logger.warning(
-                            "⏰ Timeout while cleaning record text. Skipping record."
-                        )
-                        continue
-                    except EOFError:
-                        # Process died unexpectedly
-                        self.stat_update("broken_process")
-                        logger.warning(
-                            "Process died unexpectedly, will create new process for next document"
-                        )
-                        continue
-                    except Exception as e:
-                        self.stat_update("clean_error")
-                        if not self._warned_error:
-                            logger.warning(
-                                f'❌ Error "{e}" while cleaning record text. Skipping record. '
-                                f"This message will only appear once."
-                            )
-                            self._warned_error = True
-                        continue
+        def timeout_handler(signum, frame):
+            raise TimeoutError("Processing timeout")
 
-                if parsed_document.text:
-                    self.stat_update("forwarded")
-                    self.update_doc_stats(parsed_document)
-                    yield parsed_document
-                else:
-                    self.stat_update("dropped")
+        for doc in data:
+            self.stat_update("total")
+            with self.track_time():
+                try:
+                    # Set timeout alarm
+                    if hasattr(signal, "SIGALRM"):
+                        signal.signal(signal.SIGALRM, timeout_handler)
+                        signal.alarm(int(self.timeout))
+
+                    parsed_document = self.process_document(doc)
+
+                    # Cancel timeout alarm
+                    if hasattr(signal, "SIGALRM"):
+                        signal.alarm(0)
+
+                    self.stat_update("extracted")
+                except TimeoutError:
+                    if hasattr(signal, "SIGALRM"):
+                        signal.alarm(0)
+                    self.stat_update("timeout")
+                    logger.warning(
+                        "⏰ Timeout while cleaning record text. Skipping record."
+                    )
+                    continue
+                except Exception as e:
+                    if hasattr(signal, "SIGALRM"):
+                        signal.alarm(0)
+                    self.stat_update("clean_error")
+                    if not self._warned_error:
+                        logger.warning(
+                            f'❌ Error "{e}" while cleaning record text. Skipping record. '
+                            f"This message will only appear once."
+                        )
+                        self._warned_error = True
+                    continue
+
+            if parsed_document.text:
+                self.stat_update("forwarded")
+                self.update_doc_stats(parsed_document)
+                yield parsed_document
+            else:
+                self.stat_update("dropped")
+
+
+def process_wiki_task(task_args):
+    """Worker function to process a single wiki task in isolation."""
+    import json
+    import gcsfs
+    from loguru import logger
+    from pathlib import Path
+
+    wiki, task_id, total_tasks, logging_dir = task_args
+
+    # Setup logging for this task
+    log_file = Path(logging_dir) / "logs" / f"task_{task_id:05d}.log"
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    logger.add(str(log_file), rotation="100 MB")
+
+    try:
+        logger.info(f"Starting task {task_id}/{total_tasks} for {wiki}")
+
+        # Initialize GCS filesystem (IO isolated per process)
+        fs = gcsfs.GCSFileSystem()
+
+        # Create reader and parser for this task
+        reader = WikipediaReader(wiki)
+        parser = WikipediaParser(wiki)
+
+        # Setup stats tracking
+        stats = {
+            "total": 0,
+            "extracted": 0,
+            "timeout": 0,
+            "clean_error": 0,
+            "forwarded": 0,
+            "dropped": 0,
+        }
+
+        # Get file list for this task
+        input_path = f"{GCP_RAW_PREFIX}/{wiki}".replace("gs://", "")
+        files = sorted(fs.ls(input_path, detail=False))
+
+        if task_id >= len(files):
+            logger.info(
+                f"Task {task_id} has no file to process (only {len(files)} files)"
+            )
+            return stats
+
+        # Process only the file assigned to this task
+        file_path = files[task_id]
+        logger.info(f"Processing file: gs://{file_path}")
+
+        # Output file path
+        output_path = f"{GCP_PARSED_PREFIX}/{wiki}".replace("gs://", "")
+        output_file = (
+            f"gs://{output_path}/{Path(file_path).name.replace('.tar.gz', '.jsonl')}"
+        )
+
+        # Ensure output directory exists
+        fs.makedirs(output_path, exist_ok=True)
+
+        # Process documents from this file
+        documents_written = 0
+        with fs.open(output_file, "w") as out_f:
+            # Reader processes with rank/world_size for this specific task
+            for doc in reader.run([], rank=task_id, world_size=total_tasks):
+                stats["total"] += 1
+
+                # Parse document
+                for parsed_doc in parser.run([doc], rank=0, world_size=1):
+                    stats["forwarded"] += 1
+
+                    # Write output
+                    output_data = {
+                        "text": parsed_doc.text,
+                        "id": parsed_doc.id,
+                        "metadata": parsed_doc.metadata,
+                    }
+                    out_f.write(json.dumps(output_data) + "\n")
+                    documents_written += 1
+
+        logger.info(
+            f"Task {task_id} completed. Processed {stats['total']} documents, wrote {documents_written}"
+        )
+        return stats
+
+    except Exception as e:
+        logger.error(f"Task {task_id} failed with error: {e}")
+        import traceback
+
+        logger.error(traceback.format_exc())
+        return {"error": str(e)}
 
 
 if __name__ == "__main__":
-    from datatrove.pipeline.writers import JsonlWriter
+    import multiprocessing as mp
     from datatrove.io import get_datafolder
 
+    # Get list of wikis to process
     wikis = [
         wiki
         for wiki in get_datafolder(GCP_RAW_PREFIX).ls("", detail=False)
         if wiki.removesuffix("_namespace_0").endswith("wiki")
     ]
 
-    from datatrove.executor.local import LocalPipelineExecutor
+    num_workers = os.cpu_count() or 4
+    print(f"Using {num_workers} workers")
 
     for wiki in wikis:
         wiki_df = get_datafolder(GCP_RAW_PREFIX + "/" + wiki)
-        print(f"{GCP_RAW_PREFIX}/{wiki}")
-        # Use underlying filesystem to avoid DirFileSystem path issues
-        files = len(wiki_df.fs.ls(wiki_df.path, detail=False))
+        print(f"\n{'=' * 80}")
+        print(f"Processing: {GCP_RAW_PREFIX}/{wiki}")
+        print(f"Output: {GCP_PARSED_PREFIX}/{wiki}")
 
-        # if use_local:
-        # Local execution (no Slurm needed)
-        LocalPipelineExecutor(
-            pipeline=[
-                WikipediaReader(wiki),
-                WikipediaParser(wiki),
-                JsonlWriter(f"{GCP_PARSED_PREFIX}/{wiki}"),
-            ],
-            tasks=files,
-            workers=os.cpu_count(),  # Use as number of parallel workers
-            logging_dir=str(LOGGING_DIR / wiki),
-        ).run()
+        # Get number of files to process
+        files = len(wiki_df.fs.ls(wiki_df.path, detail=False))
+        print(f"Total files: {files}")
+
+        # Create logging directory
+        log_dir = LOGGING_DIR / wiki
+        log_dir.mkdir(parents=True, exist_ok=True)
+
+        # Create task arguments for each file
+        task_args = [(wiki, task_id, files, str(log_dir)) for task_id in range(files)]
+
+        # Process files in parallel using multiprocessing
+        print(f"Starting parallel processing with {num_workers} workers...")
+        with mp.Pool(processes=num_workers) as pool:
+            results = pool.map(process_wiki_task, task_args)
+
+        # Aggregate statistics
+        total_stats = {
+            "total": 0,
+            "extracted": 0,
+            "timeout": 0,
+            "clean_error": 0,
+            "forwarded": 0,
+            "dropped": 0,
+            "errors": 0,
+        }
+
+        for result in results:
+            if "error" in result:
+                total_stats["errors"] += 1
+            else:
+                for key in [
+                    "total",
+                    "extracted",
+                    "timeout",
+                    "clean_error",
+                    "forwarded",
+                    "dropped",
+                ]:
+                    total_stats[key] += result.get(key, 0)
+
+        print(f"\nCompleted processing {wiki}")
+        print(f"Statistics: {total_stats}")
+        print(f"{'=' * 80}\n")

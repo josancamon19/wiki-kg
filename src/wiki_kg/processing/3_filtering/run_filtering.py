@@ -4,6 +4,10 @@ from datatrove.data import Document
 from typing import Tuple
 from datatrove.pipeline.readers import JsonlReader
 from pathlib import Path
+import pandas as pd
+
+import os
+import json
 
 # ---- Configuration constants ----
 HERE = Path(__file__).resolve().parent
@@ -61,15 +65,10 @@ class LangChecker(BaseFilter):
         return True
 
 
-import pandas as pd
-
 df = pd.read_csv(LANG_SCRIPTS_CSV)
 wiki_script_mapping = {
     row["subset"]: row["scripts"] for row in df.to_dict(orient="records")
 }
-
-import os
-import json
 
 
 def is_job_complete(logging_dir):
