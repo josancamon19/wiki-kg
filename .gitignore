@@ -14,3 +14,6 @@ src/wiki_kg/processing/1_download/*.json
 *.env
 google-credentials.json
 src/wiki_kg/processing/*/logs/
+sample.json
+sample.jsonl
+cache_parquet/
