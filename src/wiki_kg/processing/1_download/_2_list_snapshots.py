@@ -4,24 +4,25 @@ import datetime as dt
 from pathlib import Path
 import requests
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 AUTH_BASE = "https://auth.enterprise.wikimedia.com/v1"
 API_BASE = "https://api.enterprise.wikimedia.com/v2"
 
-# Configuration constants (edit with real credentials and desired output filename)
-WMF_USER = "your_username"
-WMF_PASS = "your_password"
-
 # File locations are relative to this script directory
 HERE = Path(__file__).resolve().parent
-TOKEN_PATH = HERE / "wm_enterprise_token.json"
+TOKEN_PATH = HERE / "token.json"
 OUTPUT_PATH = HERE / "available_snapshots.json"
 
 
 def login_and_store() -> str:
     """Login and persist tokens to TOKEN_PATH. Returns access_token."""
-    username = WMF_USER
-    password = WMF_PASS
+    username = os.getenv("WIKIMEDIA_USERNAME")
+    password = os.getenv("WIKIMEDIA_PASSWORD")
     if not username or not password:
         print(
             "Set WMF_USER and WMF_PASS constants at the top of the script.",
