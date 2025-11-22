@@ -29,20 +29,13 @@ load_dotenv()
 # Configuration
 TARGET_LENGTH = 6200 * 4  # ~24,800 characters, mean tokens
 LENGTH_TOLERANCE = 200  # +- 50 tokens from mean
-NUM_ARTICLES = 10  # estimate with n articles
+NUM_ARTICLES = 50  # estimate with n articles
 MAX_CONCURRENT = 32  # Maximum number of articles to process in parallel
 OUTPUT_DIR = Path("analysis/kggen_estimates/articles")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-fw = load_dataset(
-    "josancamon/finewiki",
-    name="default",
-    split="en",
-    streaming=True,
-)
 
-
-def find_suitable_articles() -> List[Dict[str, Any]]:
+def find_suitable_articles(fw) -> List[Dict[str, Any]]:
     """Find articles with text length close to target_length."""
     suitable_articles = []
     min_length = TARGET_LENGTH - LENGTH_TOLERANCE
@@ -118,15 +111,19 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
         temperature=1.0,
         reasoning_effort="medium",
         api_key=os.getenv("OPENAI_API_KEY"),
+        # retrieval_model="all-MiniLM-L6-v2",
+        disable_cache=True,
     )
 
     article_id = article["id"]
-    text = article["text"]
+    text = article["text"]  # TODO: consider using title, and some metadata
 
     # === STAGE 1: EXTRACTION ===
     start_extraction = time.time()
     kg.lm.history = []
     graph_no_cluster = kg.generate(input_data=text, chunk_size=None, cluster=False)
+
+    graph_no_cluster.to_file("graph.json")
     extraction_time = time.time() - start_extraction
     extraction_tokens = extract_token_usage_from_history(kg.lm, 0)
 
@@ -135,21 +132,12 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
 
     # === STAGE 2: SEMHASH DEDUPLICATION (no tokens) ===
     start_semhash = time.time()
-    history_len_before_semhash = len(kg.lm.history)
     graph_semhash = kg.deduplicate(
         graph=graph_no_cluster, method=DeduplicateMethod.SEMHASH
     )
     semhash_time = time.time() - start_semhash
-    semhash_tokens = extract_token_usage_from_history(kg.lm, history_len_before_semhash)
 
-    # === STAGE 3: FULL DEDUPLICATION (uses tokens) ===
-    start_full = time.time()
-    history_len_before_full = len(kg.lm.history)
-    graph_full = kg.deduplicate(graph=graph_no_cluster, method=DeduplicateMethod.FULL)
-    full_time = time.time() - start_full
-    full_tokens = extract_token_usage_from_history(kg.lm, history_len_before_full)
-
-    total_time = extraction_time + semhash_time + full_time
+    total_time = extraction_time + semhash_time
 
     # Calculate cleanup percentages
     semhash_entity_cleanup = (
@@ -162,16 +150,6 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
         if relations_before > 0
         else 0
     )
-    full_entity_cleanup = (
-        (1 - len(graph_full.entities) / entities_before) * 100
-        if entities_before > 0
-        else 0
-    )
-    full_relation_cleanup = (
-        (1 - len(graph_full.relations) / relations_before) * 100
-        if relations_before > 0
-        else 0
-    )
 
     # Prepare result
     result = {
@@ -181,7 +159,6 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
         "timing": {
             "extraction_seconds": extraction_time,
             "semhash_dedup_seconds": semhash_time,
-            "full_dedup_seconds": full_time,
             "total_seconds": total_time,
         },
         "extraction": {
@@ -200,21 +177,22 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
             "edge_clusters": len(graph_semhash.edge_clusters)
             if graph_semhash.edge_clusters
             else 0,
-            "tokens": semhash_tokens,
+            "tokens": 0,
         },
-        "full_dedup": {
-            "entities": len(graph_full.entities),
-            "relations": len(graph_full.relations),
-            "entity_cleanup_percent": full_entity_cleanup,
-            "relation_cleanup_percent": full_relation_cleanup,
-            "entity_clusters": len(graph_full.entity_clusters)
-            if graph_full.entity_clusters
-            else 0,
-            "edge_clusters": len(graph_full.edge_clusters)
-            if graph_full.edge_clusters
-            else 0,
-            "tokens": full_tokens,
-        },
+        # TODO: full dedup is so fucking slow, that this doesn't make sense even for 1 article,
+        # "full_dedup": {
+        #     "entities": len(graph_full.entities),
+        #     "relations": len(graph_full.relations),
+        #     "entity_cleanup_percent": full_entity_cleanup,
+        #     "relation_cleanup_percent": full_relation_cleanup,
+        #     "entity_clusters": len(graph_full.entity_clusters)
+        #     if graph_full.entity_clusters
+        #     else 0,
+        #     "edge_clusters": len(graph_full.edge_clusters)
+        #     if graph_full.edge_clusters
+        #     else 0,
+        #     "tokens": full_tokens,
+        # },
     }
 
     return result
@@ -261,11 +239,20 @@ async def main_async():
     print("=" * 80)
     print("KGGen Estimation Script - Parallel Processing")
     print("=" * 80)
+    fw = load_dataset(
+        "josancamon/finewiki",
+        name="default",
+        split="en",
+        streaming=True,
+    )
 
-    articles = find_suitable_articles(fw, TARGET_LENGTH, LENGTH_TOLERANCE, NUM_ARTICLES)
-
+    articles = find_suitable_articles(fw)
     if len(articles) < NUM_ARTICLES:
         print(f"\n⚠️  Warning: Only found {len(articles)} articles matching criteria")
+
+    # TODO: sentence transformer fails when using multiple threads
+    # process_single_article(articles[0])
+    # return
 
     # Process articles in parallel with semaphore
     print(
@@ -385,11 +372,7 @@ async def main_async():
         "results": all_results,
     }
 
-    # TODO: kggen requires an option to run without dspy cache
-    # TODO: kggen should get rid of dspy dependency
-    # TODO: kggen requires an option to return tokens
-    # TODO: I should be able to run dedup without crashing not passing sentenceTransformer
-    # TODO: run extract and filter ignore files were already processed, some files fail due to network or smth
+    # TODO: re run extraction for snapshot 357, 86
 
     # Save summary
     summary_file = OUTPUT_DIR / "summary.json"

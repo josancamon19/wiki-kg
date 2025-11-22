@@ -17,3 +17,5 @@ src/wiki_kg/processing/*/logs/
 sample.json
 sample.jsonl
 cache_parquet/
+graph.json
+analysis/kggen_estimates/

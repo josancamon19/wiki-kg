@@ -1422,7 +1422,7 @@ wheels = [
 [[package]]
 name = "kg-gen"
 version = "0.4.0"
-source = { git = "https://github.com/stair-lab/kg-gen.git?rev=feature%2Fdeduplication-options#5ff6fc1642269e06542893922a6ed075be53b18f" }
+source = { git = "https://github.com/stair-lab/kg-gen.git?rev=feature%2Fdeduplication-options#e0cb917241654cb820f9dd3ba64c397f329fbfcd" }
 dependencies = [
     { name = "datasets" },
     { name = "dspy" },
@@ -4066,6 +4066,7 @@ dependencies = [
     { name = "requests" },
     { name = "ruff" },
     { name = "seaborn" },
+    { name = "sentence-transformers" },
     { name = "tqdm" },
     { name = "ty" },
 ]
@@ -4089,6 +4090,7 @@ requires-dist = [
     { name = "requests", specifier = ">=2.32.5" },
     { name = "ruff", specifier = ">=0.14.5" },
     { name = "seaborn", specifier = ">=0.13.0" },
+    { name = "sentence-transformers", specifier = ">=5.1.2" },
     { name = "tqdm", specifier = ">=4.67.1" },
     { name = "ty", specifier = ">=0.0.1a27" },
 ]
