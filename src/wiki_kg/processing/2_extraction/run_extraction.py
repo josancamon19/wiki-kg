@@ -2160,7 +2160,28 @@ def process_wiki_task(task_args):
 
 if __name__ == "__main__":
     import multiprocessing as mp
+    import argparse
     from datatrove.io import get_datafolder
+
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description="Process Wikipedia extraction tasks")
+    parser.add_argument(
+        "--task-ids",
+        type=str,
+        default=None,
+        help="Comma-separated list of specific task IDs to process (e.g., '21,27,30,86'). If not provided, all tasks will be processed.",
+    )
+    args = parser.parse_args()
+
+    # Parse task IDs if provided
+    target_task_ids = None
+    if args.task_ids:
+        try:
+            target_task_ids = set(int(x.strip()) for x in args.task_ids.split(","))
+            print(f"Targeting specific task IDs: {sorted(target_task_ids)}")
+        except ValueError as e:
+            print(f"Error parsing task IDs: {e}")
+            exit(1)
 
     # Get list of wikis to process
     wikis = [
@@ -2169,7 +2190,7 @@ if __name__ == "__main__":
         if wiki.removesuffix("_namespace_0").endswith("wiki")
     ]
 
-    num_workers = os.cpu_count() or 4
+    num_workers = os.cpu_count()
     print(f"Using {num_workers} workers")
 
     for wiki in wikis:
@@ -2187,7 +2208,19 @@ if __name__ == "__main__":
         log_dir.mkdir(parents=True, exist_ok=True)
 
         # Create task arguments for each file
-        task_args = [(wiki, task_id, files, str(log_dir)) for task_id in range(files)]
+        if target_task_ids:
+            # Filter to only process specified task IDs
+            valid_task_ids = [tid for tid in target_task_ids if tid < files]
+            invalid_task_ids = [tid for tid in target_task_ids if tid >= files]
+            
+            if invalid_task_ids:
+                raise ValueError(f"Task IDs {sorted(invalid_task_ids)} are out of range (max: {files-1})")
+            
+            task_args = [(wiki, task_id, files, str(log_dir)) for task_id in sorted(valid_task_ids)]
+            print(f"Processing {len(task_args)} specific tasks: {sorted(valid_task_ids)}")
+        else:
+            # Process all files
+            task_args = [(wiki, task_id, files, str(log_dir)) for task_id in range(files)]
 
         # Process files in parallel using multiprocessing
         print(f"Starting parallel processing with {num_workers} workers...")

@@ -1314,3 +1314,51 @@ EOFError: Compressed file ended before the end-of-stream marker was reached
 2025-11-22 20:29:42.264 | INFO     | __main__:process_wiki_task:2148 - Task 148 completed. Processed 15432 documents, wrote 15432
 2025-11-22 21:00:33.772 | INFO     | __main__:process_wiki_task:2148 - Task 149 completed. Processed 15283 documents, wrote 15283
 # Not completed or failed: [21, 27, 30, 86, 106, 107, 137, 138, 140, 144, 151, 185, 196, 242, 253, 286, 313, 337, 357]
+
+Targeting specific task IDs: [21, 27, 30, 86, 106, 107, 137, 138, 140, 144, 151, 185, 196, 242, 253, 286, 313, 337, 357]
+Using 88 workers
+
+================================================================================
+Processing: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0
+Output: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0
+Total files: 415
+Processing 19 specific tasks: [21, 27, 30, 86, 106, 107, 137, 138, 140, 144, 151, 185, 196, 242, 253, 286, 313, 337, 357]
+Starting parallel processing with 88 workers...
+2025-11-22 23:57:05.992 | INFO     | __main__:process_wiki_task:2086 - Starting task 21/415 for enwiki_namespace_0
+2025-11-22 23:57:05.992 | INFO     | __main__:process_wiki_task:2086 - Starting task 27/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 30/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 86/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 106/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 107/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 137/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 138/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 140/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 144/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 151/415 for enwiki_namespace_0
+2025-11-22 23:57:05.993 | INFO     | __main__:process_wiki_task:2086 - Starting task 185/415 for enwiki_namespace_0
+2025-11-22 23:57:05.994 | INFO     | __main__:process_wiki_task:2086 - Starting task 196/415 for enwiki_namespace_0
+2025-11-22 23:57:05.994 | INFO     | __main__:process_wiki_task:2086 - Starting task 242/415 for enwiki_namespace_0
+2025-11-22 23:57:05.994 | INFO     | __main__:process_wiki_task:2086 - Starting task 253/415 for enwiki_namespace_0
+2025-11-22 23:57:05.994 | INFO     | __main__:process_wiki_task:2086 - Starting task 286/415 for enwiki_namespace_0
+2025-11-22 23:57:05.994 | INFO     | __main__:process_wiki_task:2086 - Starting task 313/415 for enwiki_namespace_0
+2025-11-22 23:57:05.994 | INFO     | __main__:process_wiki_task:2086 - Starting task 337/415 for enwiki_namespace_0
+2025-11-22 23:57:05.994 | INFO     | __main__:process_wiki_task:2086 - Starting task 357/415 for enwiki_namespace_0
+2025-11-22 23:57:06.086 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_222.json.tar.gz
+2025-11-22 23:57:06.086 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_176.json.tar.gz
+2025-11-22 23:57:06.087 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_125.json.tar.gz
+2025-11-22 23:57:06.087 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_47.json.tar.gz
+2025-11-22 23:57:06.089 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_316.json.tar.gz
+2025-11-22 23:57:06.089 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_401.json.tar.gz
+2025-11-22 23:57:06.090 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_122.json.tar.gz
+2025-11-22 23:57:06.091 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_380.json.tar.gz
+2025-11-22 23:57:06.092 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_275.json.tar.gz
+2025-11-22 23:57:06.092 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_195.json.tar.gz
+2025-11-22 23:57:06.093 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_228.json.tar.gz
+2025-11-22 23:57:06.093 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_356.json.tar.gz
+2025-11-22 23:57:06.094 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_221.json.tar.gz
+2025-11-22 23:57:06.095 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_194.json.tar.gz
+2025-11-22 23:57:06.096 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_265.json.tar.gz
+2025-11-22 23:57:06.096 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_117.json.tar.gz
+2025-11-22 23:57:06.096 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_224.json.tar.gz
+2025-11-22 23:57:06.097 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_326.json.tar.gz
+2025-11-22 23:57:06.097 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_234.json.tar.gz
