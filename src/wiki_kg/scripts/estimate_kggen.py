@@ -1,13 +1,13 @@
 """
-Estimate KGGen performance on FineWiki articles.
+Estimate KGGen performance on FineWiki articles across different lengths.
 
 This script:
-1. Selects 10 articles from FineWiki with text length around 6200*4 characters (±200)
+1. Samples 2 articles every 500 chars up to 15k, then every 5k chars up to 100k
 2. Processes each article with KGGen in parallel (no chunking)
-3. Compares both deduplication methods: SEMHASH (no tokens) vs FULL (uses tokens)
-4. Tracks detailed timing for extraction, semhash dedup, and full dedup
-5. Tracks token usage for extraction and full dedup
-6. Saves results to analysis/kggen_estimates/articles/{id}.json
+3. Tracks detailed timing for extraction and deduplication
+4. Tracks token usage (total, prompt, completion)
+5. Saves results to analysis/kggen_estimates/articles/{id}.json
+6. Generates summary statistics grouped by length buckets
 """
 
 import os
@@ -27,44 +27,63 @@ from kg_gen.steps._3_deduplicate import DeduplicateMethod
 load_dotenv()
 
 # Configuration
-TARGET_LENGTH = 6200  # in characters, so tokens are TARGET_LENGTH / 4
-LENGTH_TOLERANCE = 200  # +- 50 tokens from mean
-NUM_ARTICLES = 50  # estimate with n articles
-MAX_CONCURRENT = 64  # Maximum number of articles to process in parallel
+ARTICLES_PER_BUCKET = 2  # Number of articles to sample per length bucket
+LENGTH_TOLERANCE = 50  # +- tolerance in characters for bucket matching
+MAX_CONCURRENT = 100  # Maximum number of articles to process in parallel
 OUTPUT_DIR = Path("analysis/kggen_estimates/articles")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+# Define length buckets: every 500 chars up to 15k, then every 5k chars
+LENGTH_BUCKETS = list(range(500, 15001, 500)) + list(range(20000, 100001, 5000))
+
 
 def find_suitable_articles(fw) -> List[Dict[str, Any]]:
-    """Find articles with text length close to target_length."""
-    suitable_articles = []
-    min_length = TARGET_LENGTH - LENGTH_TOLERANCE
-    max_length = TARGET_LENGTH + LENGTH_TOLERANCE
+    """Find articles for each length bucket."""
+    # Initialize buckets dictionary
+    buckets = {bucket: [] for bucket in LENGTH_BUCKETS}
+    total_needed = len(LENGTH_BUCKETS) * ARTICLES_PER_BUCKET
 
     print(
-        f"Looking for {NUM_ARTICLES} articles with length between {min_length} and {max_length} characters..."
+        f"Looking for {ARTICLES_PER_BUCKET} articles in each of {len(LENGTH_BUCKETS)} length buckets..."
     )
+    print(f"Total target: {total_needed} articles\n")
 
     for article in fw:
         text_length = len(article["text"])
 
-        if min_length <= text_length <= max_length:
-            suitable_articles.append(
-                {
-                    "id": article["id"],
-                    "title": article.get("title", "Unknown"),
-                    "text": article["text"],
-                    "length": text_length,
-                }
-            )
-            print(
-                f"  Found: {article.get('title', 'Unknown')} (ID: {article['id']}, Length: {text_length})"
-            )
+        # Find matching bucket
+        for bucket in LENGTH_BUCKETS:
+            if abs(text_length - bucket) <= LENGTH_TOLERANCE:
+                if len(buckets[bucket]) < ARTICLES_PER_BUCKET:
+                    article_data = {
+                        "id": article["id"],
+                        "title": article.get("title", "Unknown"),
+                        "text": article["text"],
+                        "length": text_length,
+                        "bucket": bucket,
+                    }
+                    buckets[bucket].append(article_data)
+                    print(
+                        f"  [{bucket:6d} chars] Found: {article.get('title', 'Unknown')[:50]} (ID: {article['id']}, Length: {text_length})"
+                    )
+                    break
 
-            if len(suitable_articles) >= NUM_ARTICLES:
-                break
+        # Check if all buckets are filled
+        if all(len(articles) >= ARTICLES_PER_BUCKET for articles in buckets.values()):
+            break
 
-    print(f"\nFound {len(suitable_articles)} suitable articles")
+    # Flatten buckets into single list
+    suitable_articles = []
+    for bucket in LENGTH_BUCKETS:
+        suitable_articles.extend(buckets[bucket])
+
+    # Print summary
+    filled_buckets = sum(
+        1 for articles in buckets.values() if len(articles) >= ARTICLES_PER_BUCKET
+    )
+    print(f"\n✓ Filled {filled_buckets}/{len(LENGTH_BUCKETS)} buckets completely")
+    print(f"✓ Found {len(suitable_articles)} total articles")
+
     return suitable_articles
 
 
@@ -113,7 +132,7 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
         api_key=os.getenv("OPENAI_API_KEY"),
         # retrieval_model="all-MiniLM-L6-v2",
         disable_cache=False,
-        max_tokens=64000,
+        max_tokens=128000,
     )
 
     article_id = article["id"]
@@ -157,6 +176,7 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
         "article_id": article_id,
         "article_title": article["title"],
         "article_length": article["length"],
+        "bucket": article.get("bucket"),
         "timing": {
             "extraction_seconds": extraction_time,
             "semhash_dedup_seconds": semhash_time,
@@ -248,8 +268,11 @@ async def main_async():
     )
 
     articles = find_suitable_articles(fw)
-    if len(articles) < NUM_ARTICLES:
-        print(f"\n⚠️  Warning: Only found {len(articles)} articles matching criteria")
+    expected_articles = len(LENGTH_BUCKETS) * ARTICLES_PER_BUCKET
+    if len(articles) < expected_articles:
+        print(
+            f"\n⚠️  Warning: Only found {len(articles)}/{expected_articles} articles matching criteria"
+        )
 
     # Process articles in parallel with semaphore
     print(
@@ -269,74 +292,15 @@ async def main_async():
 
     executor.shutdown(wait=True)
 
-    # Generate summary report
+    # Print completion summary
     print("\n" + "=" * 80)
-    print("SUMMARY REPORT - DEDUPLICATION COMPARISON")
+    print("DATA COLLECTION COMPLETE")
     print("=" * 80)
+    print(f"✅ Processed {len(all_results)} articles in {total_time:.1f}s")
+    print(f"✅ Results saved to {OUTPUT_DIR}")
+    print("\n💡 Run compute_summary.py to generate statistics from collected data")
 
-    n = len(all_results)
-
-    # Extraction stats
-    avg_extraction_time = (
-        sum(r["timing"]["extraction_seconds"] for r in all_results) / n
-    )
-    avg_entities_extracted = sum(r["extraction"]["entities"] for r in all_results) / n
-    avg_relations_extracted = sum(r["extraction"]["relations"] for r in all_results) / n
-    avg_extraction_tokens = (
-        sum(r["extraction"]["tokens"]["total_tokens"] for r in all_results) / n
-    )
-
-    # SEMHASH stats
-    avg_semhash_time = (
-        sum(r["timing"]["semhash_dedup_seconds"] for r in all_results) / n
-    )
-    avg_semhash_entities = sum(r["semhash_dedup"]["entities"] for r in all_results) / n
-    avg_semhash_relations = (
-        sum(r["semhash_dedup"]["relations"] for r in all_results) / n
-    )
-    avg_semhash_entity_cleanup = (
-        sum(r["semhash_dedup"]["entity_cleanup_percent"] for r in all_results) / n
-    )
-    avg_semhash_relation_cleanup = (
-        sum(r["semhash_dedup"]["relation_cleanup_percent"] for r in all_results) / n
-    )
-
-    stats = {
-        "total_wall_time_seconds": total_time,
-        "extraction": {
-            "avg_time_seconds": avg_extraction_time,
-            "avg_entities": avg_entities_extracted,
-            "avg_relations": avg_relations_extracted,
-            "avg_tokens": avg_extraction_tokens,
-        },
-        "semhash_dedup": {
-            "avg_time_seconds": avg_semhash_time,
-            "avg_entities": avg_semhash_entities,
-            "avg_relations": avg_semhash_relations,
-            "avg_entity_cleanup_percent": avg_semhash_entity_cleanup,
-            "avg_relation_cleanup_percent": avg_semhash_relation_cleanup,
-        },
-    }
-
-    summary = {
-        "config": {
-            "num_articles": NUM_ARTICLES,
-            "max_concurrent": MAX_CONCURRENT,
-            "target_length": TARGET_LENGTH,
-            "length_tolerance": LENGTH_TOLERANCE,
-        },
-        "total_articles_processed": len(articles),
-        "statistics": stats,
-    }
-
-    # TODO: re run extraction for snapshot 357, 86
-
-    # Save summary
-    summary_file = Path("analysis/kggen_estimates") / "summary.json"
-    with open(summary_file, "w") as f:
-        json.dump(summary, f, indent=2)
-
-    print(f"\n✅ Summary saved to {summary_file}")
+    return all_results
 
 
 def main():

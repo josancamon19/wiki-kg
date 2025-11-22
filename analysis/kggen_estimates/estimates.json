@@ -1,0 +1,217 @@
+{
+  "500": {
+    "avg_prompt_tokens": 980.0,
+    "avg_completion_tokens": 7905.5,
+    "article_count": 2
+  },
+  "1000": {
+    "avg_prompt_tokens": 1495.5,
+    "avg_completion_tokens": 9700.0,
+    "article_count": 2
+  },
+  "1500": {
+    "avg_prompt_tokens": 1582.5,
+    "avg_completion_tokens": 8945.0,
+    "article_count": 2
+  },
+  "2000": {
+    "avg_prompt_tokens": 1810.5,
+    "avg_completion_tokens": 17954.0,
+    "article_count": 2
+  },
+  "2500": {
+    "avg_prompt_tokens": 2423.0,
+    "avg_completion_tokens": 17027.5,
+    "article_count": 2
+  },
+  "3000": {
+    "avg_prompt_tokens": 2699.0,
+    "avg_completion_tokens": 14052.0,
+    "article_count": 2
+  },
+  "3500": {
+    "avg_prompt_tokens": 2945.0,
+    "avg_completion_tokens": 20136.0,
+    "article_count": 2
+  },
+  "4000": {
+    "avg_prompt_tokens": 4016.0,
+    "avg_completion_tokens": 12174.0,
+    "article_count": 2
+  },
+  "4500": {
+    "avg_prompt_tokens": 3479.0,
+    "avg_completion_tokens": 18121.5,
+    "article_count": 2
+  },
+  "5000": {
+    "avg_prompt_tokens": 4337.39,
+    "avg_completion_tokens": 20339.17,
+    "article_count": 36
+  },
+  "5500": {
+    "avg_prompt_tokens": 3697.5,
+    "avg_completion_tokens": 18532.5,
+    "article_count": 2
+  },
+  "6000": {
+    "avg_prompt_tokens": 4021.0,
+    "avg_completion_tokens": 21479.0,
+    "article_count": 1
+  },
+  "6500": {
+    "avg_prompt_tokens": 4574.0,
+    "avg_completion_tokens": 13634.0,
+    "article_count": 2
+  },
+  "7000": {
+    "avg_prompt_tokens": 4560.0,
+    "avg_completion_tokens": 27650.0,
+    "article_count": 2
+  },
+  "7500": {
+    "avg_prompt_tokens": 4445.39,
+    "avg_completion_tokens": 19639.89,
+    "article_count": 18
+  },
+  "8000": {
+    "avg_prompt_tokens": 6693.0,
+    "avg_completion_tokens": 23377.5,
+    "article_count": 2
+  },
+  "8500": {
+    "avg_prompt_tokens": 5237.0,
+    "avg_completion_tokens": 25381.0,
+    "article_count": 2
+  },
+  "9000": {
+    "avg_prompt_tokens": 5437.5,
+    "avg_completion_tokens": 24813.5,
+    "article_count": 2
+  },
+  "9500": {
+    "avg_prompt_tokens": 5259.5,
+    "avg_completion_tokens": 26661.5,
+    "article_count": 2
+  },
+  "10000": {
+    "avg_prompt_tokens": 6208.5,
+    "avg_completion_tokens": 32080.5,
+    "article_count": 2
+  },
+  "10500": {
+    "avg_prompt_tokens": 6603.0,
+    "avg_completion_tokens": 23732.5,
+    "article_count": 2
+  },
+  "11000": {
+    "avg_prompt_tokens": 6572.5,
+    "avg_completion_tokens": 18112.0,
+    "article_count": 2
+  },
+  "11500": {
+    "avg_prompt_tokens": 6502.0,
+    "avg_completion_tokens": 22497.0,
+    "article_count": 2
+  },
+  "12000": {
+    "avg_prompt_tokens": 7347.0,
+    "avg_completion_tokens": 20011.5,
+    "article_count": 2
+  },
+  "12500": {
+    "avg_prompt_tokens": 5185.0,
+    "avg_completion_tokens": 15674.0,
+    "article_count": 2
+  },
+  "13000": {
+    "avg_prompt_tokens": 6052.5,
+    "avg_completion_tokens": 17756.0,
+    "article_count": 2
+  },
+  "13500": {
+    "avg_prompt_tokens": 8213.0,
+    "avg_completion_tokens": 34517.5,
+    "article_count": 2
+  },
+  "14000": {
+    "avg_prompt_tokens": 5805.0,
+    "avg_completion_tokens": 23593.5,
+    "article_count": 2
+  },
+  "14500": {
+    "avg_prompt_tokens": 8525.0,
+    "avg_completion_tokens": 15218.0,
+    "article_count": 2
+  },
+  "15000": {
+    "avg_prompt_tokens": 8267.5,
+    "avg_completion_tokens": 16877.5,
+    "article_count": 2
+  },
+  "20000": {
+    "avg_prompt_tokens": 10425.5,
+    "avg_completion_tokens": 23450.0,
+    "article_count": 2
+  },
+  "25000": {
+    "avg_prompt_tokens": 11055.0,
+    "avg_completion_tokens": 20336.0,
+    "article_count": 2
+  },
+  "30000": {
+    "avg_prompt_tokens": 12584.0,
+    "avg_completion_tokens": 24080.5,
+    "article_count": 2
+  },
+  "35000": {
+    "avg_prompt_tokens": 20054.5,
+    "avg_completion_tokens": 25017.0,
+    "article_count": 2
+  },
+  "40000": {
+    "avg_prompt_tokens": 12673.0,
+    "avg_completion_tokens": 26673.0,
+    "article_count": 2
+  },
+  "45000": {
+    "avg_prompt_tokens": 16742.0,
+    "avg_completion_tokens": 20923.5,
+    "article_count": 2
+  },
+  "55000": {
+    "avg_prompt_tokens": 28485.5,
+    "avg_completion_tokens": 27992.5,
+    "article_count": 2
+  },
+  "60000": {
+    "avg_prompt_tokens": 23507.0,
+    "avg_completion_tokens": 14833.0,
+    "article_count": 1
+  },
+  "70000": {
+    "avg_prompt_tokens": 17338.0,
+    "avg_completion_tokens": 29643.0,
+    "article_count": 1
+  },
+  "75000": {
+    "avg_prompt_tokens": 7694.0,
+    "avg_completion_tokens": 16736.0,
+    "article_count": 1
+  },
+  "80000": {
+    "avg_prompt_tokens": 17504.0,
+    "avg_completion_tokens": 14335.0,
+    "article_count": 1
+  },
+  "90000": {
+    "avg_prompt_tokens": 37526.0,
+    "avg_completion_tokens": 9209.0,
+    "article_count": 1
+  },
+  "100000": {
+    "avg_prompt_tokens": 54701.0,
+    "avg_completion_tokens": 36704.0,
+    "article_count": 1
+  }
+}
