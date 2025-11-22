@@ -27,10 +27,10 @@ from kg_gen.steps._3_deduplicate import DeduplicateMethod
 load_dotenv()
 
 # Configuration
-TARGET_LENGTH = 6200 * 4  # ~24,800 characters, mean tokens
+TARGET_LENGTH = 6200  # in characters, so tokens are TARGET_LENGTH / 4
 LENGTH_TOLERANCE = 200  # +- 50 tokens from mean
 NUM_ARTICLES = 50  # estimate with n articles
-MAX_CONCURRENT = 32  # Maximum number of articles to process in parallel
+MAX_CONCURRENT = 64  # Maximum number of articles to process in parallel
 OUTPUT_DIR = Path("analysis/kggen_estimates/articles")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -112,7 +112,8 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
         reasoning_effort="medium",
         api_key=os.getenv("OPENAI_API_KEY"),
         # retrieval_model="all-MiniLM-L6-v2",
-        disable_cache=True,
+        disable_cache=False,
+        max_tokens=64000,
     )
 
     article_id = article["id"]
@@ -250,10 +251,6 @@ async def main_async():
     if len(articles) < NUM_ARTICLES:
         print(f"\n⚠️  Warning: Only found {len(articles)} articles matching criteria")
 
-    # TODO: sentence transformer fails when using multiple threads
-    # process_single_article(articles[0])
-    # return
-
     # Process articles in parallel with semaphore
     print(
         f"\n🚀 Processing {len(articles)} articles in parallel (max {MAX_CONCURRENT} concurrent)...\n"
@@ -303,23 +300,6 @@ async def main_async():
     avg_semhash_relation_cleanup = (
         sum(r["semhash_dedup"]["relation_cleanup_percent"] for r in all_results) / n
     )
-    avg_semhash_tokens = (
-        sum(r["semhash_dedup"]["tokens"]["total_tokens"] for r in all_results) / n
-    )
-
-    # FULL stats
-    avg_full_time = sum(r["timing"]["full_dedup_seconds"] for r in all_results) / n
-    avg_full_entities = sum(r["full_dedup"]["entities"] for r in all_results) / n
-    avg_full_relations = sum(r["full_dedup"]["relations"] for r in all_results) / n
-    avg_full_entity_cleanup = (
-        sum(r["full_dedup"]["entity_cleanup_percent"] for r in all_results) / n
-    )
-    avg_full_relation_cleanup = (
-        sum(r["full_dedup"]["relation_cleanup_percent"] for r in all_results) / n
-    )
-    avg_full_tokens = (
-        sum(r["full_dedup"]["tokens"]["total_tokens"] for r in all_results) / n
-    )
 
     stats = {
         "total_wall_time_seconds": total_time,
@@ -335,28 +315,6 @@ async def main_async():
             "avg_relations": avg_semhash_relations,
             "avg_entity_cleanup_percent": avg_semhash_entity_cleanup,
             "avg_relation_cleanup_percent": avg_semhash_relation_cleanup,
-            "avg_tokens": avg_semhash_tokens,
-        },
-        "full_dedup": {
-            "avg_time_seconds": avg_full_time,
-            "avg_entities": avg_full_entities,
-            "avg_relations": avg_full_relations,
-            "avg_entity_cleanup_percent": avg_full_entity_cleanup,
-            "avg_relation_cleanup_percent": avg_full_relation_cleanup,
-            "avg_tokens": avg_full_tokens,
-        },
-        "comparison": {
-            "time_difference_seconds": avg_full_time - avg_semhash_time,
-            "time_difference_percent": (
-                (avg_full_time - avg_semhash_time) / avg_semhash_time * 100
-            )
-            if avg_semhash_time > 0
-            else 0,
-            "entity_cleanup_difference_percent": avg_full_entity_cleanup
-            - avg_semhash_entity_cleanup,
-            "relation_cleanup_difference_percent": avg_full_relation_cleanup
-            - avg_semhash_relation_cleanup,
-            "token_difference": avg_full_tokens - avg_semhash_tokens,
         },
     }
 
@@ -369,13 +327,12 @@ async def main_async():
         },
         "total_articles_processed": len(articles),
         "statistics": stats,
-        "results": all_results,
     }
 
     # TODO: re run extraction for snapshot 357, 86
 
     # Save summary
-    summary_file = OUTPUT_DIR / "summary.json"
+    summary_file = Path("analysis/kggen_estimates") / "summary.json"
     with open(summary_file, "w") as f:
         json.dump(summary, f, indent=2)
 

@@ -18,4 +18,4 @@ sample.json
 sample.jsonl
 cache_parquet/
 graph.json
-analysis/kggen_estimates/
+analysis/kggen_estimates/articles
