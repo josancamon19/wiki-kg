@@ -70,7 +70,7 @@ def main():
 
     # Number of articles to process
     num_articles = int(1e10)
-    batch_size = 1000
+    batch_size = 10000  # Larger batches for better efficiency
 
     print("Processing articles...")
 
@@ -81,7 +81,7 @@ def main():
     with Pool(cpu_count()) as pool:
         batch_gen = batch_iterator(fw, batch_size, num_articles, sorted_buckets)
 
-        for buckets in pool.imap(process_batch, batch_gen, chunksize=1000):
+        for buckets in pool.imap(process_batch, batch_gen, chunksize=1):
             all_buckets.append(buckets)
             processed += len(buckets)
 
