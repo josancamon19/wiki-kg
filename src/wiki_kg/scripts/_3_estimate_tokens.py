@@ -7,14 +7,19 @@ import json
 
 def load_token_estimates():
     """Load the token estimates from estimates.json."""
-    estimates_path = Path(__file__).parent.parent.parent.parent / "analysis" / "kggen_estimates" / "estimates.json"
-    with open(estimates_path, 'r') as f:
+    estimates_path = (
+        Path(__file__).parent.parent.parent.parent
+        / "analysis"
+        / "kggen_estimates"
+        / "estimates.json"
+    )
+    with open(estimates_path, "r") as f:
         estimates = json.load(f)
-    
+
     # Convert bucket keys to integers and sort
     bucket_map = {int(k): v for k, v in estimates.items()}
     sorted_buckets = sorted(bucket_map.keys())
-    
+
     return bucket_map, sorted_buckets
 
 
@@ -24,7 +29,7 @@ def find_closest_bucket(char_count, sorted_buckets):
         return sorted_buckets[0]
     if char_count >= sorted_buckets[-1]:
         return sorted_buckets[-1]
-    
+
     # Find closest bucket
     closest = min(sorted_buckets, key=lambda x: abs(x - char_count))
     return closest
@@ -33,7 +38,10 @@ def find_closest_bucket(char_count, sorted_buckets):
 def process_batch(args):
     """Process a batch of texts and return bucket assignments."""
     texts, sorted_buckets = args
-    buckets = np.array([find_closest_bucket(len(text), sorted_buckets) for text in texts], dtype=np.int32)
+    buckets = np.array(
+        [find_closest_bucket(len(text), sorted_buckets) for text in texts],
+        dtype=np.int32,
+    )
     return buckets
 
 
@@ -54,7 +62,7 @@ def batch_iterator(dataset, batch_size, max_items, sorted_buckets):
 def main():
     print("Loading token estimates...")
     bucket_map, sorted_buckets = load_token_estimates()
-    
+
     print("Loading dataset...")
     fw = load_dataset(
         "HuggingFaceFW/finewiki", name="en", split="train", streaming=True
@@ -73,7 +81,7 @@ def main():
     with Pool(cpu_count()) as pool:
         batch_gen = batch_iterator(fw, batch_size, num_articles, sorted_buckets)
 
-        for buckets in pool.imap(process_batch, batch_gen, chunksize=10):
+        for buckets in pool.imap(process_batch, batch_gen, chunksize=1000):
             all_buckets.append(buckets)
             processed += len(buckets)
 
@@ -87,9 +95,9 @@ def main():
     bucket_counts = {}
     for bucket in sorted_buckets:
         bucket_counts[bucket] = int(np.sum(all_buckets == bucket))
-    
+
     total_articles = len(all_buckets)
-    
+
     # Save bucket distribution
     bucket_distribution = {
         str(bucket): {
@@ -99,18 +107,17 @@ def main():
         }
         for bucket, count in sorted(bucket_counts.items())
     }
-    
+
     output_dir = Path("analysis")
     output_dir.mkdir(exist_ok=True)
-    
+
     output_file = output_dir / "fineweb_bucket_distribution.json"
-    with open(output_file, 'w') as f:
+    with open(output_file, "w") as f:
         json.dump(bucket_distribution, f, indent=2)
-    
+
     print(f"\nDone. Processed {total_articles:,} articles")
     print(f"Saved to: {output_file}")
 
 
 if __name__ == "__main__":
     main()
-
