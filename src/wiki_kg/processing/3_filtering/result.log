@@ -1,0 +1,1258 @@
+Using 88 workers
+
+================================================================================
+Processing: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0
+Output: gs://wikipedia-graph/wikipedia/filtered_html/enwiki_namespace_0
+Scripts: ['Latn']
+Total files: 415
+Starting parallel processing with 88 workers...
+2025-11-23 04:52:46.309 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 0/415 for enwiki_namespace_0
+2025-11-23 04:52:46.309 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 2/415 for enwiki_namespace_0
+2025-11-23 04:52:46.309 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 4/415 for enwiki_namespace_0
+2025-11-23 04:52:46.310 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 6/415 for enwiki_namespace_0
+2025-11-23 04:52:46.310 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 8/415 for enwiki_namespace_0
+2025-11-23 04:52:46.310 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 10/415 for enwiki_namespace_0
+2025-11-23 04:52:46.310 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 12/415 for enwiki_namespace_0
+2025-11-23 04:52:46.310 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 14/415 for enwiki_namespace_0
+2025-11-23 04:52:46.310 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 16/415 for enwiki_namespace_0
+2025-11-23 04:52:46.310 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 18/415 for enwiki_namespace_0
+2025-11-23 04:52:46.311 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 20/415 for enwiki_namespace_0
+2025-11-23 04:52:46.311 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 22/415 for enwiki_namespace_0
+2025-11-23 04:52:46.311 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 24/415 for enwiki_namespace_0
+2025-11-23 04:52:46.311 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 26/415 for enwiki_namespace_0
+2025-11-23 04:52:46.311 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 28/415 for enwiki_namespace_0
+2025-11-23 04:52:46.311 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 30/415 for enwiki_namespace_0
+2025-11-23 04:52:46.311 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 32/415 for enwiki_namespace_0
+2025-11-23 04:52:46.311 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 34/415 for enwiki_namespace_0
+2025-11-23 04:52:46.312 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 36/415 for enwiki_namespace_0
+2025-11-23 04:52:46.312 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 38/415 for enwiki_namespace_0
+2025-11-23 04:52:46.312 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 40/415 for enwiki_namespace_0
+2025-11-23 04:52:46.312 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 42/415 for enwiki_namespace_0
+2025-11-23 04:52:46.312 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 44/415 for enwiki_namespace_0
+2025-11-23 04:52:46.312 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 46/415 for enwiki_namespace_0
+2025-11-23 04:52:46.312 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 48/415 for enwiki_namespace_0
+2025-11-23 04:52:46.312 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 50/415 for enwiki_namespace_0
+2025-11-23 04:52:46.313 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 52/415 for enwiki_namespace_0
+2025-11-23 04:52:46.313 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 54/415 for enwiki_namespace_0
+2025-11-23 04:52:46.313 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 56/415 for enwiki_namespace_0
+2025-11-23 04:52:46.314 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 68/415 for enwiki_namespace_0
+2025-11-23 04:52:46.314 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 70/415 for enwiki_namespace_0
+2025-11-23 04:52:46.314 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 60/415 for enwiki_namespace_0
+2025-11-23 04:52:46.314 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 58/415 for enwiki_namespace_0
+2025-11-23 04:52:46.314 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 74/415 for enwiki_namespace_0
+2025-11-23 04:52:46.314 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 66/415 for enwiki_namespace_0
+2025-11-23 04:52:46.314 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 64/415 for enwiki_namespace_0
+2025-11-23 04:52:46.314 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 62/415 for enwiki_namespace_0
+2025-11-23 04:52:46.315 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 78/415 for enwiki_namespace_0
+2025-11-23 04:52:46.315 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 76/415 for enwiki_namespace_0
+2025-11-23 04:52:46.315 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 80/415 for enwiki_namespace_0
+2025-11-23 04:52:46.316 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 82/415 for enwiki_namespace_0
+2025-11-23 04:52:46.316 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 86/415 for enwiki_namespace_0
+2025-11-23 04:52:46.316 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 84/415 for enwiki_namespace_0
+2025-11-23 04:52:46.316 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 90/415 for enwiki_namespace_0
+2025-11-23 04:52:46.316 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 92/415 for enwiki_namespace_0
+2025-11-23 04:52:46.316 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 88/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 94/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 96/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 100/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 102/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 72/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 104/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 98/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 106/415 for enwiki_namespace_0
+2025-11-23 04:52:46.317 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 108/415 for enwiki_namespace_0
+2025-11-23 04:52:46.319 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 112/415 for enwiki_namespace_0
+2025-11-23 04:52:46.319 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 114/415 for enwiki_namespace_0
+2025-11-23 04:52:46.319 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 110/415 for enwiki_namespace_0
+2025-11-23 04:52:46.319 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 116/415 for enwiki_namespace_0
+2025-11-23 04:52:46.319 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 118/415 for enwiki_namespace_0
+2025-11-23 04:52:46.319 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 120/415 for enwiki_namespace_0
+2025-11-23 04:52:46.319 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 122/415 for enwiki_namespace_0
+2025-11-23 04:52:46.320 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 124/415 for enwiki_namespace_0
+2025-11-23 04:52:46.320 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 126/415 for enwiki_namespace_0
+2025-11-23 04:52:46.320 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 128/415 for enwiki_namespace_0
+2025-11-23 04:52:46.320 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 130/415 for enwiki_namespace_0
+2025-11-23 04:52:46.322 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 134/415 for enwiki_namespace_0
+2025-11-23 04:52:46.322 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 132/415 for enwiki_namespace_0
+2025-11-23 04:52:46.322 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 136/415 for enwiki_namespace_0
+2025-11-23 04:52:46.322 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 138/415 for enwiki_namespace_0
+2025-11-23 04:52:46.323 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 142/415 for enwiki_namespace_0
+2025-11-23 04:52:46.323 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 144/415 for enwiki_namespace_0
+2025-11-23 04:52:46.323 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 140/415 for enwiki_namespace_0
+2025-11-23 04:52:46.323 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 150/415 for enwiki_namespace_0
+2025-11-23 04:52:46.323 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 152/415 for enwiki_namespace_0
+2025-11-23 04:52:46.323 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 154/415 for enwiki_namespace_0
+2025-11-23 04:52:46.323 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 146/415 for enwiki_namespace_0
+2025-11-23 04:52:46.324 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 148/415 for enwiki_namespace_0
+2025-11-23 04:52:46.324 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 156/415 for enwiki_namespace_0
+2025-11-23 04:52:46.324 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 158/415 for enwiki_namespace_0
+2025-11-23 04:52:46.324 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 162/415 for enwiki_namespace_0
+2025-11-23 04:52:46.324 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 164/415 for enwiki_namespace_0
+2025-11-23 04:52:46.325 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 166/415 for enwiki_namespace_0
+2025-11-23 04:52:46.326 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 168/415 for enwiki_namespace_0
+2025-11-23 04:52:46.326 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 170/415 for enwiki_namespace_0
+2025-11-23 04:52:46.327 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 172/415 for enwiki_namespace_0
+2025-11-23 04:52:46.327 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 174/415 for enwiki_namespace_0
+2025-11-23 04:52:46.328 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 160/415 for enwiki_namespace_0
+2025-11-23 04:52:46.414 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_114.json.jsonl
+2025-11-23 04:52:46.414 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_105.json.jsonl
+2025-11-23 04:52:46.415 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_181.json.jsonl
+2025-11-23 04:52:46.415 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_18.json.jsonl
+2025-11-23 04:52:46.415 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_127.json.jsonl
+2025-11-23 04:52:46.416 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_109.json.jsonl
+2025-11-23 04:52:46.417 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_116.json.jsonl
+2025-11-23 04:52:46.417 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_189.json.jsonl
+2025-11-23 04:52:46.418 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_12.json.jsonl
+2025-11-23 04:52:46.418 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_123.json.jsonl
+2025-11-23 04:52:46.418 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_158.json.jsonl
+2025-11-23 04:52:46.418 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_101.json.jsonl
+2025-11-23 04:52:46.418 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_143.json.jsonl
+2025-11-23 04:52:46.419 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_163.json.jsonl
+2025-11-23 04:52:46.419 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_14.json.jsonl
+2025-11-23 04:52:46.420 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_206.json.jsonl
+2025-11-23 04:52:46.420 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_0.json.jsonl
+2025-11-23 04:52:46.420 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_154.json.jsonl
+2025-11-23 04:52:46.420 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_149.json.jsonl
+2025-11-23 04:52:46.421 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_167.json.jsonl
+2025-11-23 04:52:46.421 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_174.json.jsonl
+2025-11-23 04:52:46.421 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_204.json.jsonl
+2025-11-23 04:52:46.421 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_132.json.jsonl
+2025-11-23 04:52:46.421 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_202.json.jsonl
+2025-11-23 04:52:46.421 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_196.json.jsonl
+2025-11-23 04:52:46.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_141.json.jsonl
+2025-11-23 04:52:46.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_118.json.jsonl
+2025-11-23 04:52:46.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_165.json.jsonl
+2025-11-23 04:52:46.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_152.json.jsonl
+2025-11-23 04:52:46.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_110.json.jsonl
+2025-11-23 04:52:46.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_251.json.jsonl
+2025-11-23 04:52:46.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_161.json.jsonl
+2025-11-23 04:52:46.423 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_156.json.jsonl
+2025-11-23 04:52:46.423 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_121.json.jsonl
+2025-11-23 04:52:46.423 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_190.json.jsonl
+2025-11-23 04:52:46.423 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_145.json.jsonl
+2025-11-23 04:52:46.423 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_176.json.jsonl
+2025-11-23 04:52:46.423 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_138.json.jsonl
+2025-11-23 04:52:46.424 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_233.json.jsonl
+2025-11-23 04:52:46.424 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_103.json.jsonl
+2025-11-23 04:52:46.424 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_130.json.jsonl
+2025-11-23 04:52:46.424 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_239.json.jsonl
+2025-11-23 04:52:46.424 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_213.json.jsonl
+2025-11-23 04:52:46.425 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_125.json.jsonl
+2025-11-23 04:52:46.425 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_170.json.jsonl
+2025-11-23 04:52:46.425 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_112.json.jsonl
+2025-11-23 04:52:46.425 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_150.json.jsonl
+2025-11-23 04:52:46.425 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_215.json.jsonl
+2025-11-23 04:52:46.426 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_185.json.jsonl
+2025-11-23 04:52:46.426 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_248.json.jsonl
+2025-11-23 04:52:46.426 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_194.json.jsonl
+2025-11-23 04:52:46.426 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_200.json.jsonl
+2025-11-23 04:52:46.427 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_217.json.jsonl
+2025-11-23 04:52:46.427 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_253.json.jsonl
+2025-11-23 04:52:46.427 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_107.json.jsonl
+2025-11-23 04:52:46.427 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_2.json.jsonl
+2025-11-23 04:52:46.427 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_224.json.jsonl
+2025-11-23 04:52:46.427 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_178.json.jsonl
+2025-11-23 04:52:46.427 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_16.json.jsonl
+2025-11-23 04:52:46.428 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_222.json.jsonl
+2025-11-23 04:52:46.428 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_147.json.jsonl
+2025-11-23 04:52:46.428 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_172.json.jsonl
+2025-11-23 04:52:46.428 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_198.json.jsonl
+2025-11-23 04:52:46.428 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_240.json.jsonl
+2025-11-23 04:52:46.428 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_220.json.jsonl
+2025-11-23 04:52:46.429 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_244.json.jsonl
+2025-11-23 04:52:46.429 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_25.json.jsonl
+2025-11-23 04:52:46.430 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_21.json.jsonl
+2025-11-23 04:52:46.431 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_237.json.jsonl
+2025-11-23 04:52:46.431 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_136.json.jsonl
+2025-11-23 04:52:46.432 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_219.json.jsonl
+2025-11-23 04:52:46.432 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_231.json.jsonl
+2025-11-23 04:52:46.433 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_228.json.jsonl
+2025-11-23 04:52:46.433 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_246.json.jsonl
+2025-11-23 04:52:46.433 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_211.json.jsonl
+2025-11-23 04:52:46.433 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_208.json.jsonl
+2025-11-23 04:52:46.434 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_129.json.jsonl
+2025-11-23 04:52:46.434 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_183.json.jsonl
+2025-11-23 04:52:46.435 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_235.json.jsonl
+2025-11-23 04:52:46.435 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_255.json.jsonl
+2025-11-23 04:52:46.436 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_10.json.jsonl
+2025-11-23 04:52:46.437 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_226.json.jsonl
+2025-11-23 04:52:46.445 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_23.json.jsonl
+2025-11-23 04:52:46.446 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_134.json.jsonl
+2025-11-23 04:52:46.453 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_187.json.jsonl
+2025-11-23 04:52:46.456 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_169.json.jsonl
+2025-11-23 04:52:46.458 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_242.json.jsonl
+2025-11-23 04:52:46.469 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_192.json.jsonl
+2025-11-23 04:52:54.843 | INFO     | __main__:process_filtering_task:149 - Task 144 completed. Processed 775 documents, kept 763
+2025-11-23 04:52:54.933 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 145/415 for enwiki_namespace_0
+2025-11-23 04:52:55.042 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_229.json.jsonl
+2025-11-23 04:52:56.811 | INFO     | __main__:process_filtering_task:149 - Task 140 completed. Processed 1231 documents, kept 1214
+2025-11-23 04:52:56.895 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 141/415 for enwiki_namespace_0
+2025-11-23 04:52:56.998 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_225.json.jsonl
+2025-11-23 04:53:01.219 | INFO     | __main__:process_filtering_task:149 - Task 138 completed. Processed 1878 documents, kept 1855
+2025-11-23 04:53:01.309 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 139/415 for enwiki_namespace_0
+2025-11-23 04:53:01.409 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_223.json.jsonl
+2025-11-23 04:53:22.454 | INFO     | __main__:process_filtering_task:149 - Task 86 completed. Processed 6209 documents, kept 6085
+2025-11-23 04:53:22.550 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 87/415 for enwiki_namespace_0
+2025-11-23 04:53:22.659 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_177.json.jsonl
+2025-11-23 04:53:29.895 | INFO     | __main__:process_filtering_task:149 - Task 30 completed. Processed 7945 documents, kept 7770
+2025-11-23 04:53:30.010 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 31/415 for enwiki_namespace_0
+2025-11-23 04:53:30.110 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_126.json.jsonl
+2025-11-23 04:53:51.809 | INFO     | __main__:process_filtering_task:149 - Task 112 completed. Processed 12472 documents, kept 8863
+2025-11-23 04:53:51.902 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 113/415 for enwiki_namespace_0
+2025-11-23 04:53:52.001 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_20.json.jsonl
+2025-11-23 04:53:54.775 | INFO     | __main__:process_filtering_task:149 - Task 0 completed. Processed 14712 documents, kept 11370
+2025-11-23 04:53:54.867 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 1/415 for enwiki_namespace_0
+2025-11-23 04:53:54.966 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_1.json.jsonl
+2025-11-23 04:53:56.361 | INFO     | __main__:process_filtering_task:149 - Task 2 completed. Processed 11979 documents, kept 9401
+2025-11-23 04:53:56.452 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 3/415 for enwiki_namespace_0
+2025-11-23 04:53:56.551 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_100.json.jsonl
+2025-11-23 04:53:57.576 | INFO     | __main__:process_filtering_task:149 - Task 46 completed. Processed 12915 documents, kept 10733
+2025-11-23 04:53:57.667 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 47/415 for enwiki_namespace_0
+2025-11-23 04:53:57.766 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_140.json.jsonl
+2025-11-23 04:54:00.687 | INFO     | __main__:process_filtering_task:149 - Task 24 completed. Processed 13495 documents, kept 11282
+2025-11-23 04:54:00.780 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 25/415 for enwiki_namespace_0
+2025-11-23 04:54:00.884 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_120.json.jsonl
+2025-11-23 04:54:05.301 | INFO     | __main__:process_filtering_task:149 - Task 106 completed. Processed 12345 documents, kept 11816
+2025-11-23 04:54:05.431 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 107/415 for enwiki_namespace_0
+2025-11-23 04:54:05.544 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_195.json.jsonl
+2025-11-23 04:54:13.814 | INFO     | __main__:process_filtering_task:149 - Task 166 completed. Processed 12997 documents, kept 12343
+2025-11-23 04:54:13.907 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 167/415 for enwiki_namespace_0
+2025-11-23 04:54:14.005 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_249.json.jsonl
+2025-11-23 04:54:15.573 | INFO     | __main__:process_filtering_task:149 - Task 120 completed. Processed 14044 documents, kept 13639
+2025-11-23 04:54:15.731 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 121/415 for enwiki_namespace_0
+2025-11-23 04:54:15.859 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_207.json.jsonl
+2025-11-23 04:54:16.217 | INFO     | __main__:process_filtering_task:149 - Task 108 completed. Processed 14902 documents, kept 14225
+2025-11-23 04:54:16.331 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 109/415 for enwiki_namespace_0
+2025-11-23 04:54:16.435 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_197.json.jsonl
+2025-11-23 04:54:18.025 | INFO     | __main__:process_filtering_task:149 - Task 164 completed. Processed 12582 documents, kept 11758
+2025-11-23 04:54:18.128 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 165/415 for enwiki_namespace_0
+2025-11-23 04:54:18.240 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_247.json.jsonl
+2025-11-23 04:54:18.467 | INFO     | __main__:process_filtering_task:149 - Task 174 completed. Processed 13376 documents, kept 13206
+2025-11-23 04:54:18.481 | INFO     | __main__:process_filtering_task:149 - Task 104 completed. Processed 13880 documents, kept 13698
+2025-11-23 04:54:18.564 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 175/415 for enwiki_namespace_0
+2025-11-23 04:54:18.581 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 105/415 for enwiki_namespace_0
+2025-11-23 04:54:18.667 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_256.json.jsonl
+2025-11-23 04:54:18.680 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_193.json.jsonl
+2025-11-23 04:54:18.788 | INFO     | __main__:process_filtering_task:149 - Task 162 completed. Processed 15256 documents, kept 14684
+2025-11-23 04:54:18.889 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 163/415 for enwiki_namespace_0
+2025-11-23 04:54:18.989 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_245.json.jsonl
+2025-11-23 04:54:20.031 | INFO     | __main__:process_filtering_task:149 - Task 126 completed. Processed 14700 documents, kept 14490
+2025-11-23 04:54:20.091 | INFO     | __main__:process_filtering_task:149 - Task 128 completed. Processed 15185 documents, kept 14669
+2025-11-23 04:54:20.126 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 127/415 for enwiki_namespace_0
+2025-11-23 04:54:20.189 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 129/415 for enwiki_namespace_0
+2025-11-23 04:54:20.227 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_212.json.jsonl
+2025-11-23 04:54:20.293 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_214.json.jsonl
+2025-11-23 04:54:22.253 | INFO     | __main__:process_filtering_task:149 - Task 92 completed. Processed 16238 documents, kept 16037
+2025-11-23 04:54:22.342 | INFO     | __main__:process_filtering_task:149 - Task 72 completed. Processed 17965 documents, kept 17706
+2025-11-23 04:54:22.343 | INFO     | __main__:process_filtering_task:149 - Task 48 completed. Processed 18604 documents, kept 18402
+2025-11-23 04:54:22.348 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 93/415 for enwiki_namespace_0
+2025-11-23 04:54:22.440 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 49/415 for enwiki_namespace_0
+2025-11-23 04:54:22.453 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 73/415 for enwiki_namespace_0
+2025-11-23 04:54:22.454 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_182.json.jsonl
+2025-11-23 04:54:22.483 | INFO     | __main__:process_filtering_task:149 - Task 130 completed. Processed 15116 documents, kept 14877
+2025-11-23 04:54:22.558 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_164.json.jsonl
+2025-11-23 04:54:22.577 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 131/415 for enwiki_namespace_0
+2025-11-23 04:54:22.598 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_142.json.jsonl
+2025-11-23 04:54:22.682 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_216.json.jsonl
+2025-11-23 04:54:22.697 | INFO     | __main__:process_filtering_task:149 - Task 122 completed. Processed 14330 documents, kept 14097
+2025-11-23 04:54:22.758 | INFO     | __main__:process_filtering_task:149 - Task 58 completed. Processed 18653 documents, kept 18383
+2025-11-23 04:54:22.798 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 123/415 for enwiki_namespace_0
+2025-11-23 04:54:22.876 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 59/415 for enwiki_namespace_0
+2025-11-23 04:54:22.895 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_209.json.jsonl
+2025-11-23 04:54:22.937 | INFO     | __main__:process_filtering_task:149 - Task 142 completed. Processed 14911 documents, kept 14741
+2025-11-23 04:54:22.976 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_151.json.jsonl
+2025-11-23 04:54:23.031 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 143/415 for enwiki_namespace_0
+2025-11-23 04:54:23.111 | INFO     | __main__:process_filtering_task:149 - Task 118 completed. Processed 15421 documents, kept 15013
+2025-11-23 04:54:23.138 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_227.json.jsonl
+2025-11-23 04:54:23.225 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 119/415 for enwiki_namespace_0
+2025-11-23 04:54:23.288 | INFO     | __main__:process_filtering_task:149 - Task 96 completed. Processed 16790 documents, kept 16533
+2025-11-23 04:54:23.331 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_205.json.jsonl
+2025-11-23 04:54:23.377 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 97/415 for enwiki_namespace_0
+2025-11-23 04:54:23.479 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_186.json.jsonl
+2025-11-23 04:54:23.516 | INFO     | __main__:process_filtering_task:149 - Task 102 completed. Processed 16190 documents, kept 16020
+2025-11-23 04:54:23.655 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 103/415 for enwiki_namespace_0
+2025-11-23 04:54:23.685 | INFO     | __main__:process_filtering_task:149 - Task 84 completed. Processed 17243 documents, kept 16959
+2025-11-23 04:54:23.692 | INFO     | __main__:process_filtering_task:149 - Task 116 completed. Processed 15606 documents, kept 15181
+2025-11-23 04:54:23.778 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 85/415 for enwiki_namespace_0
+2025-11-23 04:54:23.792 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 117/415 for enwiki_namespace_0
+2025-11-23 04:54:23.884 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_175.json.jsonl
+2025-11-23 04:54:23.901 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_203.json.jsonl
+2025-11-23 04:54:23.916 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_191.json.jsonl
+2025-11-23 04:54:23.953 | INFO     | __main__:process_filtering_task:149 - Task 100 completed. Processed 16585 documents, kept 16396
+2025-11-23 04:54:24.048 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 101/415 for enwiki_namespace_0
+2025-11-23 04:54:24.161 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_19.json.jsonl
+2025-11-23 04:54:24.469 | INFO     | __main__:process_filtering_task:149 - Task 28 completed. Processed 19310 documents, kept 18937
+2025-11-23 04:54:24.473 | INFO     | __main__:process_filtering_task:149 - Task 54 completed. Processed 18733 documents, kept 18433
+2025-11-23 04:54:24.565 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 55/415 for enwiki_namespace_0
+2025-11-23 04:54:24.580 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 29/415 for enwiki_namespace_0
+2025-11-23 04:54:24.646 | INFO     | __main__:process_filtering_task:149 - Task 134 completed. Processed 14808 documents, kept 14613
+2025-11-23 04:54:24.670 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_148.json.jsonl
+2025-11-23 04:54:24.680 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_124.json.jsonl
+2025-11-23 04:54:24.746 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 135/415 for enwiki_namespace_0
+2025-11-23 04:54:24.855 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_22.json.jsonl
+2025-11-23 04:54:25.215 | INFO     | __main__:process_filtering_task:149 - Task 56 completed. Processed 18885 documents, kept 18590
+2025-11-23 04:54:25.313 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 57/415 for enwiki_namespace_0
+2025-11-23 04:54:25.353 | INFO     | __main__:process_filtering_task:149 - Task 172 completed. Processed 13966 documents, kept 13727
+2025-11-23 04:54:25.412 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_15.json.jsonl
+2025-11-23 04:54:25.446 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 173/415 for enwiki_namespace_0
+2025-11-23 04:54:25.486 | INFO     | __main__:process_filtering_task:149 - Task 60 completed. Processed 19643 documents, kept 19434
+2025-11-23 04:54:25.548 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_254.json.jsonl
+2025-11-23 04:54:25.585 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 61/415 for enwiki_namespace_0
+2025-11-23 04:54:25.686 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_153.json.jsonl
+2025-11-23 04:54:26.140 | INFO     | __main__:process_filtering_task:149 - Task 50 completed. Processed 18743 documents, kept 18530
+2025-11-23 04:54:26.238 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 51/415 for enwiki_namespace_0
+2025-11-23 04:54:26.254 | INFO     | __main__:process_filtering_task:149 - Task 82 completed. Processed 18465 documents, kept 18158
+2025-11-23 04:54:26.350 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 83/415 for enwiki_namespace_0
+2025-11-23 04:54:26.353 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_144.json.jsonl
+2025-11-23 04:54:26.363 | INFO     | __main__:process_filtering_task:149 - Task 22 completed. Processed 18908 documents, kept 18493
+2025-11-23 04:54:26.457 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_173.json.jsonl
+2025-11-23 04:54:26.486 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 23/415 for enwiki_namespace_0
+2025-11-23 04:54:26.594 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_119.json.jsonl
+2025-11-23 04:54:26.846 | INFO     | __main__:process_filtering_task:149 - Task 76 completed. Processed 17968 documents, kept 17712
+2025-11-23 04:54:26.933 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 77/415 for enwiki_namespace_0
+2025-11-23 04:54:27.029 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_168.json.jsonl
+2025-11-23 04:54:27.244 | INFO     | __main__:process_filtering_task:149 - Task 42 completed. Processed 20418 documents, kept 20193
+2025-11-23 04:54:27.333 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 43/415 for enwiki_namespace_0
+2025-11-23 04:54:27.723 | INFO     | __main__:process_filtering_task:149 - Task 94 completed. Processed 17248 documents, kept 17002
+2025-11-23 04:54:27.754 | INFO     | __main__:process_filtering_task:149 - Task 132 completed. Processed 14193 documents, kept 13934
+2025-11-23 04:54:27.778 | INFO     | __main__:process_filtering_task:149 - Task 107 completed. Processed 3529 documents, kept 3442
+2025-11-23 04:54:27.819 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 95/415 for enwiki_namespace_0
+2025-11-23 04:54:27.825 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_137.json.jsonl
+2025-11-23 04:54:27.841 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 133/415 for enwiki_namespace_0
+2025-11-23 04:54:27.862 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 176/415 for enwiki_namespace_0
+2025-11-23 04:54:27.863 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_257.json.jsonl
+2025-11-23 04:54:27.923 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_184.json.jsonl
+2025-11-23 04:54:27.935 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_218.json.jsonl
+2025-11-23 04:54:27.983 | INFO     | __main__:process_filtering_task:149 - Task 26 completed. Processed 19586 documents, kept 19276
+2025-11-23 04:54:28.069 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 27/415 for enwiki_namespace_0
+2025-11-23 04:54:28.165 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_122.json.jsonl
+2025-11-23 04:54:28.376 | INFO     | __main__:process_filtering_task:149 - Task 114 completed. Processed 15228 documents, kept 14902
+2025-11-23 04:54:28.490 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 115/415 for enwiki_namespace_0
+2025-11-23 04:54:28.589 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_201.json.jsonl
+2025-11-23 04:54:28.607 | INFO     | __main__:process_filtering_task:149 - Task 64 completed. Processed 17651 documents, kept 17394
+2025-11-23 04:54:28.697 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 65/415 for enwiki_namespace_0
+2025-11-23 04:54:28.791 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_157.json.jsonl
+2025-11-23 04:54:28.896 | INFO     | __main__:process_filtering_task:149 - Task 88 completed. Processed 17219 documents, kept 16948
+2025-11-23 04:54:28.988 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 89/415 for enwiki_namespace_0
+2025-11-23 04:54:29.085 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_179.json.jsonl
+2025-11-23 04:54:29.788 | INFO     | __main__:process_filtering_task:149 - Task 38 completed. Processed 18036 documents, kept 17707
+2025-11-23 04:54:29.881 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 39/415 for enwiki_namespace_0
+2025-11-23 04:54:30.184 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_133.json.jsonl
+2025-11-23 04:54:30.284 | INFO     | __main__:process_filtering_task:149 - Task 110 completed. Processed 16506 documents, kept 16175
+2025-11-23 04:54:30.386 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 111/415 for enwiki_namespace_0
+2025-11-23 04:54:30.488 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_199.json.jsonl
+2025-11-23 04:54:30.807 | INFO     | __main__:process_filtering_task:149 - Task 20 completed. Processed 20437 documents, kept 20135
+2025-11-23 04:54:30.897 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 21/415 for enwiki_namespace_0
+2025-11-23 04:54:31.004 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_117.json.jsonl
+2025-11-23 04:54:31.065 | INFO     | __main__:process_filtering_task:149 - Task 4 completed. Processed 20881 documents, kept 20363
+2025-11-23 04:54:31.160 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 5/415 for enwiki_namespace_0
+2025-11-23 04:54:31.259 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_102.json.jsonl
+2025-11-23 04:54:31.267 | INFO     | __main__:process_filtering_task:149 - Task 40 completed. Processed 20492 documents, kept 20231
+2025-11-23 04:54:31.363 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 41/415 for enwiki_namespace_0
+2025-11-23 04:54:31.464 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_135.json.jsonl
+2025-11-23 04:54:32.727 | INFO     | __main__:process_filtering_task:149 - Task 32 completed. Processed 21237 documents, kept 20946
+2025-11-23 04:54:32.830 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 33/415 for enwiki_namespace_0
+2025-11-23 04:54:32.926 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_128.json.jsonl
+2025-11-23 04:54:33.144 | INFO     | __main__:process_filtering_task:149 - Task 36 completed. Processed 19755 documents, kept 19386
+2025-11-23 04:54:33.214 | INFO     | __main__:process_filtering_task:149 - Task 78 completed. Processed 18084 documents, kept 17886
+2025-11-23 04:54:33.247 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 37/415 for enwiki_namespace_0
+2025-11-23 04:54:33.310 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 79/415 for enwiki_namespace_0
+2025-11-23 04:54:33.344 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_131.json.jsonl
+2025-11-23 04:54:33.383 | INFO     | __main__:process_filtering_task:149 - Task 62 completed. Processed 19049 documents, kept 18752
+2025-11-23 04:54:33.413 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_17.json.jsonl
+2025-11-23 04:54:33.483 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 63/415 for enwiki_namespace_0
+2025-11-23 04:54:33.590 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_155.json.jsonl
+2025-11-23 04:54:34.414 | INFO     | __main__:process_filtering_task:149 - Task 80 completed. Processed 18000 documents, kept 17706
+2025-11-23 04:54:34.517 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 81/415 for enwiki_namespace_0
+2025-11-23 04:54:34.618 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_171.json.jsonl
+2025-11-23 04:54:34.854 | INFO     | __main__:process_filtering_task:149 - Task 156 completed. Processed 15740 documents, kept 15030
+2025-11-23 04:54:34.859 | INFO     | __main__:process_filtering_task:149 - Task 18 completed. Processed 20276 documents, kept 19991
+2025-11-23 04:54:34.914 | INFO     | __main__:process_filtering_task:149 - Task 52 completed. Processed 18467 documents, kept 18153
+2025-11-23 04:54:34.951 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 19/415 for enwiki_namespace_0
+2025-11-23 04:54:34.961 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 157/415 for enwiki_namespace_0
+2025-11-23 04:54:35.019 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 53/415 for enwiki_namespace_0
+2025-11-23 04:54:35.059 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_24.json.jsonl
+2025-11-23 04:54:35.122 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_146.json.jsonl
+2025-11-23 04:54:35.427 | INFO     | __main__:process_filtering_task:149 - Task 170 completed. Processed 13098 documents, kept 12871
+2025-11-23 04:54:35.526 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 171/415 for enwiki_namespace_0
+2025-11-23 04:54:35.629 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_252.json.jsonl
+2025-11-23 04:54:35.698 | INFO     | __main__:process_filtering_task:149 - Task 44 completed. Processed 18952 documents, kept 18707
+2025-11-23 04:54:35.791 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 45/415 for enwiki_namespace_0
+2025-11-23 04:54:35.898 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_139.json.jsonl
+2025-11-23 04:54:36.316 | INFO     | __main__:process_filtering_task:149 - Task 10 completed. Processed 20413 documents, kept 20143
+2025-11-23 04:54:36.420 | INFO     | __main__:process_filtering_task:149 - Task 70 completed. Processed 18226 documents, kept 17981
+2025-11-23 04:54:36.422 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 11/415 for enwiki_namespace_0
+2025-11-23 04:54:36.524 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 71/415 for enwiki_namespace_0
+2025-11-23 04:54:36.527 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_108.json.jsonl
+2025-11-23 04:54:36.627 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_162.json.jsonl
+2025-11-23 04:54:36.680 | INFO     | __main__:process_filtering_task:149 - Task 98 completed. Processed 17386 documents, kept 17127
+2025-11-23 04:54:36.774 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 99/415 for enwiki_namespace_0
+2025-11-23 04:54:36.881 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_188.json.jsonl
+2025-11-23 04:54:37.424 | INFO     | __main__:process_filtering_task:149 - Task 34 completed. Processed 20388 documents, kept 20061
+2025-11-23 04:54:37.526 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 35/415 for enwiki_namespace_0
+2025-11-23 04:54:37.628 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_13.json.jsonl
+2025-11-23 04:54:38.601 | INFO     | __main__:process_filtering_task:149 - Task 8 completed. Processed 21410 documents, kept 20979
+2025-11-23 04:54:38.694 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 9/415 for enwiki_namespace_0
+2025-11-23 04:54:38.789 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_106.json.jsonl
+2025-11-23 04:54:39.919 | INFO     | __main__:process_filtering_task:149 - Task 158 completed. Processed 15894 documents, kept 15465
+2025-11-23 04:54:40.017 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 159/415 for enwiki_namespace_0
+2025-11-23 04:54:40.051 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_115.json.jsonl
+2025-11-23 04:54:40.116 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_241.json.jsonl
+2025-11-23 04:54:41.130 | INFO     | __main__:process_filtering_task:149 - Task 141 completed. Processed 16995 documents, kept 16837
+2025-11-23 04:54:41.223 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 178/415 for enwiki_namespace_0
+2025-11-23 04:54:41.224 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_259.json.jsonl
+2025-11-23 04:54:43.072 | INFO     | __main__:process_filtering_task:149 - Task 139 completed. Processed 15282 documents, kept 15101
+2025-11-23 04:54:43.172 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 180/415 for enwiki_namespace_0
+2025-11-23 04:54:43.174 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_260.json.jsonl
+2025-11-23 04:54:45.015 | INFO     | __main__:process_filtering_task:149 - Task 6 completed. Processed 20267 documents, kept 19880
+2025-11-23 04:54:45.120 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 7/415 for enwiki_namespace_0
+2025-11-23 04:54:45.235 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_104.json.jsonl
+2025-11-23 04:54:46.203 | INFO     | __main__:process_filtering_task:149 - Task 145 completed. Processed 14812 documents, kept 14595
+2025-11-23 04:54:46.299 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 182/415 for enwiki_namespace_0
+2025-11-23 04:54:46.301 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_262.json.jsonl
+2025-11-23 04:54:47.820 | INFO     | __main__:process_filtering_task:149 - Task 124 completed. Processed 29150 documents, kept 28983
+2025-11-23 04:54:47.912 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 125/415 for enwiki_namespace_0
+2025-11-23 04:54:48.014 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_210.json.jsonl
+2025-11-23 04:54:48.328 | INFO     | __main__:process_filtering_task:149 - Task 152 completed. Processed 15417 documents, kept 15153
+2025-11-23 04:54:48.422 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 153/415 for enwiki_namespace_0
+2025-11-23 04:54:48.495 | INFO     | __main__:process_filtering_task:149 - Task 168 completed. Processed 29607 documents, kept 29409
+2025-11-23 04:54:48.517 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_236.json.jsonl
+2025-11-23 04:54:48.588 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 169/415 for enwiki_namespace_0
+2025-11-23 04:54:48.695 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_250.json.jsonl
+2025-11-23 04:54:49.447 | INFO     | __main__:process_filtering_task:149 - Task 146 completed. Processed 27482 documents, kept 27211
+2025-11-23 04:54:49.548 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 147/415 for enwiki_namespace_0
+2025-11-23 04:54:49.651 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_230.json.jsonl
+2025-11-23 04:54:50.213 | INFO     | __main__:process_filtering_task:149 - Task 68 completed. Processed 29843 documents, kept 29483
+2025-11-23 04:54:50.313 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 69/415 for enwiki_namespace_0
+2025-11-23 04:54:50.418 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_160.json.jsonl
+2025-11-23 04:54:55.436 | INFO     | __main__:process_filtering_task:149 - Task 154 completed. Processed 14728 documents, kept 13957
+2025-11-23 04:54:55.471 | INFO     | __main__:process_filtering_task:149 - Task 27 completed. Processed 5008 documents, kept 4934
+2025-11-23 04:54:55.471 | INFO     | __main__:process_filtering_task:149 - Task 90 completed. Processed 29644 documents, kept 29438
+2025-11-23 04:54:55.527 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 155/415 for enwiki_namespace_0
+2025-11-23 04:54:55.568 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 184/415 for enwiki_namespace_0
+2025-11-23 04:54:55.569 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_264.json.jsonl
+2025-11-23 04:54:55.571 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 91/415 for enwiki_namespace_0
+2025-11-23 04:54:55.636 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_238.json.jsonl
+2025-11-23 04:54:55.668 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_180.json.jsonl
+2025-11-23 04:54:58.659 | INFO     | __main__:process_filtering_task:149 - Task 74 completed. Processed 17821 documents, kept 17537
+2025-11-23 04:54:58.761 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 75/415 for enwiki_namespace_0
+2025-11-23 04:54:58.863 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_166.json.jsonl
+2025-11-23 04:55:00.403 | INFO     | __main__:process_filtering_task:149 - Task 87 completed. Processed 17322 documents, kept 17018
+2025-11-23 04:55:00.491 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 186/415 for enwiki_namespace_0
+2025-11-23 04:55:00.492 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_266.json.jsonl
+2025-11-23 04:55:01.261 | INFO     | __main__:process_filtering_task:149 - Task 66 completed. Processed 16907 documents, kept 16625
+2025-11-23 04:55:01.378 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 67/415 for enwiki_namespace_0
+2025-11-23 04:55:01.474 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_159.json.jsonl
+2025-11-23 04:55:03.912 | INFO     | __main__:process_filtering_task:149 - Task 1 completed. Processed 14779 documents, kept 11394
+2025-11-23 04:55:04.002 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 188/415 for enwiki_namespace_0
+2025-11-23 04:55:04.003 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_268.json.jsonl
+2025-11-23 04:55:07.681 | INFO     | __main__:process_filtering_task:149 - Task 150 completed. Processed 14918 documents, kept 14692
+2025-11-23 04:55:07.779 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 151/415 for enwiki_namespace_0
+2025-11-23 04:55:07.880 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_234.json.jsonl
+2025-11-23 04:55:08.421 | INFO     | __main__:process_filtering_task:149 - Task 136 completed. Processed 15192 documents, kept 14995
+2025-11-23 04:55:08.518 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 137/415 for enwiki_namespace_0
+2025-11-23 04:55:08.619 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_221.json.jsonl
+2025-11-23 04:55:16.458 | INFO     | __main__:process_filtering_task:149 - Task 31 completed. Processed 20317 documents, kept 19977
+2025-11-23 04:55:16.550 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 190/415 for enwiki_namespace_0
+2025-11-23 04:55:16.552 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_27.json.jsonl
+2025-11-23 04:55:16.790 | INFO     | __main__:process_filtering_task:149 - Task 16 completed. Processed 21526 documents, kept 20795
+2025-11-23 04:55:16.923 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 17/415 for enwiki_namespace_0
+2025-11-23 04:55:17.026 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_113.json.jsonl
+2025-11-23 04:55:19.996 | INFO     | __main__:process_filtering_task:149 - Task 14 completed. Processed 21283 documents, kept 20844
+2025-11-23 04:55:20.089 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 15/415 for enwiki_namespace_0
+2025-11-23 04:55:20.201 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_111.json.jsonl
+2025-11-23 04:55:34.997 | INFO     | __main__:process_filtering_task:149 - Task 47 completed. Processed 18323 documents, kept 18070
+2025-11-23 04:55:35.100 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 192/415 for enwiki_namespace_0
+2025-11-23 04:55:35.102 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_271.json.jsonl
+2025-11-23 04:55:36.203 | INFO     | __main__:process_filtering_task:149 - Task 160 completed. Processed 15442 documents, kept 14796
+2025-11-23 04:55:36.298 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 161/415 for enwiki_namespace_0
+2025-11-23 04:55:36.405 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_243.json.jsonl
+2025-11-23 04:55:38.416 | INFO     | __main__:process_filtering_task:149 - Task 12 completed. Processed 19867 documents, kept 19522
+2025-11-23 04:55:38.517 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 13/415 for enwiki_namespace_0
+2025-11-23 04:55:38.633 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_11.json.jsonl
+2025-11-23 04:55:39.710 | INFO     | __main__:process_filtering_task:149 - Task 25 completed. Processed 18862 documents, kept 18587
+2025-11-23 04:55:39.804 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 194/415 for enwiki_namespace_0
+2025-11-23 04:55:39.806 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_273.json.jsonl
+2025-11-23 04:55:39.848 | INFO     | __main__:process_filtering_task:149 - Task 3 completed. Processed 20048 documents, kept 19350
+2025-11-23 04:55:39.944 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 196/415 for enwiki_namespace_0
+2025-11-23 04:55:39.946 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_275.json.jsonl
+2025-11-23 04:55:40.334 | INFO     | __main__:process_filtering_task:149 - Task 35 completed. Processed 10903 documents, kept 8192
+2025-11-23 04:55:40.428 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 198/415 for enwiki_namespace_0
+2025-11-23 04:55:40.429 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_277.json.jsonl
+2025-11-23 04:55:42.959 | INFO     | __main__:process_filtering_task:149 - Task 167 completed. Processed 12735 documents, kept 12383
+2025-11-23 04:55:43.053 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 200/415 for enwiki_namespace_0
+2025-11-23 04:55:43.054 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_279.json.jsonl
+2025-11-23 04:55:45.135 | INFO     | __main__:process_filtering_task:149 - Task 137 completed. Processed 5276 documents, kept 5216
+2025-11-23 04:55:45.249 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 202/415 for enwiki_namespace_0
+2025-11-23 04:55:45.250 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_280.json.jsonl
+2025-11-23 04:55:45.699 | INFO     | __main__:process_filtering_task:149 - Task 121 completed. Processed 13657 documents, kept 13399
+2025-11-23 04:55:45.793 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 204/415 for enwiki_namespace_0
+2025-11-23 04:55:45.795 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_282.json.jsonl
+2025-11-23 04:55:48.250 | INFO     | __main__:process_filtering_task:149 - Task 109 completed. Processed 15093 documents, kept 14687
+2025-11-23 04:55:48.343 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 206/415 for enwiki_namespace_0
+2025-11-23 04:55:48.345 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_284.json.jsonl
+2025-11-23 04:55:49.534 | INFO     | __main__:process_filtering_task:149 - Task 151 completed. Processed 5683 documents, kept 5604
+2025-11-23 04:55:49.627 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 208/415 for enwiki_namespace_0
+2025-11-23 04:55:49.628 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_286.json.jsonl
+2025-11-23 04:55:51.390 | INFO     | __main__:process_filtering_task:149 - Task 165 completed. Processed 12980 documents, kept 12308
+2025-11-23 04:55:51.547 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 210/415 for enwiki_namespace_0
+2025-11-23 04:55:51.550 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_288.json.jsonl
+2025-11-23 04:55:51.892 | INFO     | __main__:process_filtering_task:149 - Task 103 completed. Processed 14685 documents, kept 14460
+2025-11-23 04:55:51.990 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 212/415 for enwiki_namespace_0
+2025-11-23 04:55:51.991 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_29.json.jsonl
+2025-11-23 04:55:52.515 | INFO     | __main__:process_filtering_task:149 - Task 57 completed. Processed 18586 documents, kept 17022
+2025-11-23 04:55:52.607 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 214/415 for enwiki_namespace_0
+2025-11-23 04:55:52.608 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_291.json.jsonl
+2025-11-23 04:55:55.683 | INFO     | __main__:process_filtering_task:149 - Task 131 completed. Processed 15193 documents, kept 14928
+2025-11-23 04:55:55.778 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 216/415 for enwiki_namespace_0
+2025-11-23 04:55:55.779 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_293.json.jsonl
+2025-11-23 04:55:56.062 | INFO     | __main__:process_filtering_task:149 - Task 129 completed. Processed 15450 documents, kept 15175
+2025-11-23 04:55:56.175 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 218/415 for enwiki_namespace_0
+2025-11-23 04:55:56.177 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_295.json.jsonl
+2025-11-23 04:55:56.857 | INFO     | __main__:process_filtering_task:149 - Task 113 completed. Processed 29745 documents, kept 29554
+2025-11-23 04:55:56.953 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 220/415 for enwiki_namespace_0
+2025-11-23 04:55:56.954 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_297.json.jsonl
+2025-11-23 04:55:57.404 | INFO     | __main__:process_filtering_task:149 - Task 105 completed. Processed 13547 documents, kept 13334
+2025-11-23 04:55:57.503 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 222/415 for enwiki_namespace_0
+2025-11-23 04:55:57.504 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_299.json.jsonl
+2025-11-23 04:55:57.566 | INFO     | __main__:process_filtering_task:149 - Task 175 completed. Processed 13758 documents, kept 13577
+2025-11-23 04:55:57.663 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 224/415 for enwiki_namespace_0
+2025-11-23 04:55:57.664 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_30.json.jsonl
+2025-11-23 04:55:57.697 | INFO     | __main__:process_filtering_task:149 - Task 119 completed. Processed 15214 documents, kept 14794
+2025-11-23 04:55:57.802 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 226/415 for enwiki_namespace_0
+2025-11-23 04:55:57.803 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_301.json.jsonl
+2025-11-23 04:55:58.831 | INFO     | __main__:process_filtering_task:149 - Task 123 completed. Processed 14310 documents, kept 14050
+2025-11-23 04:55:58.933 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 228/415 for enwiki_namespace_0
+2025-11-23 04:55:58.935 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_303.json.jsonl
+2025-11-23 04:55:59.363 | INFO     | __main__:process_filtering_task:149 - Task 49 completed. Processed 18299 documents, kept 18118
+2025-11-23 04:55:59.487 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 230/415 for enwiki_namespace_0
+2025-11-23 04:55:59.489 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_305.json.jsonl
+2025-11-23 04:56:00.231 | INFO     | __main__:process_filtering_task:149 - Task 23 completed. Processed 18094 documents, kept 17721
+2025-11-23 04:56:00.324 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 232/415 for enwiki_namespace_0
+2025-11-23 04:56:00.325 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_307.json.jsonl
+2025-11-23 04:56:00.489 | INFO     | __main__:process_filtering_task:149 - Task 97 completed. Processed 17522 documents, kept 17275
+2025-11-23 04:56:00.584 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 234/415 for enwiki_namespace_0
+2025-11-23 04:56:00.586 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_309.json.jsonl
+2025-11-23 04:56:01.325 | INFO     | __main__:process_filtering_task:149 - Task 85 completed. Processed 16940 documents, kept 16653
+2025-11-23 04:56:01.375 | INFO     | __main__:process_filtering_task:149 - Task 93 completed. Processed 17025 documents, kept 16813
+2025-11-23 04:56:01.417 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 236/415 for enwiki_namespace_0
+2025-11-23 04:56:01.419 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_310.json.jsonl
+2025-11-23 04:56:01.485 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 238/415 for enwiki_namespace_0
+2025-11-23 04:56:01.486 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_312.json.jsonl
+2025-11-23 04:56:01.637 | INFO     | __main__:process_filtering_task:149 - Task 173 completed. Processed 13350 documents, kept 13176
+2025-11-23 04:56:01.747 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 240/415 for enwiki_namespace_0
+2025-11-23 04:56:01.749 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_314.json.jsonl
+2025-11-23 04:56:03.052 | INFO     | __main__:process_filtering_task:149 - Task 73 completed. Processed 17373 documents, kept 17067
+2025-11-23 04:56:03.159 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 242/415 for enwiki_namespace_0
+2025-11-23 04:56:03.161 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_316.json.jsonl
+2025-11-23 04:56:03.163 | INFO     | __main__:process_filtering_task:149 - Task 117 completed. Processed 15377 documents, kept 14935
+2025-11-23 04:56:03.260 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 244/415 for enwiki_namespace_0
+2025-11-23 04:56:03.262 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_318.json.jsonl
+2025-11-23 04:56:04.067 | INFO     | __main__:process_filtering_task:149 - Task 83 completed. Processed 17412 documents, kept 17152
+2025-11-23 04:56:04.158 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 246/415 for enwiki_namespace_0
+2025-11-23 04:56:04.159 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_32.json.jsonl
+2025-11-23 04:56:04.195 | INFO     | __main__:process_filtering_task:149 - Task 59 completed. Processed 19009 documents, kept 18731
+2025-11-23 04:56:04.297 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 248/415 for enwiki_namespace_0
+2025-11-23 04:56:04.298 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_321.json.jsonl
+2025-11-23 04:56:04.560 | INFO     | __main__:process_filtering_task:149 - Task 29 completed. Processed 19101 documents, kept 18801
+2025-11-23 04:56:04.652 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 250/415 for enwiki_namespace_0
+2025-11-23 04:56:04.653 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_323.json.jsonl
+2025-11-23 04:56:05.765 | INFO     | __main__:process_filtering_task:149 - Task 55 completed. Processed 19129 documents, kept 18855
+2025-11-23 04:56:05.879 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 252/415 for enwiki_namespace_0
+2025-11-23 04:56:05.880 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_325.json.jsonl
+2025-11-23 04:56:05.936 | INFO     | __main__:process_filtering_task:149 - Task 127 completed. Processed 15381 documents, kept 14952
+2025-11-23 04:56:06.040 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 254/415 for enwiki_namespace_0
+2025-11-23 04:56:06.041 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_327.json.jsonl
+2025-11-23 04:56:06.812 | INFO     | __main__:process_filtering_task:149 - Task 51 completed. Processed 18734 documents, kept 18499
+2025-11-23 04:56:06.941 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 256/415 for enwiki_namespace_0
+2025-11-23 04:56:06.942 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_329.json.jsonl
+2025-11-23 04:56:07.364 | INFO     | __main__:process_filtering_task:149 - Task 61 completed. Processed 19519 documents, kept 19283
+2025-11-23 04:56:07.460 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 258/415 for enwiki_namespace_0
+2025-11-23 04:56:07.463 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_330.json.jsonl
+2025-11-23 04:56:09.156 | INFO     | __main__:process_filtering_task:149 - Task 77 completed. Processed 18186 documents, kept 17963
+2025-11-23 04:56:09.248 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 260/415 for enwiki_namespace_0
+2025-11-23 04:56:09.248 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_332.json.jsonl
+2025-11-23 04:56:10.257 | INFO     | __main__:process_filtering_task:149 - Task 39 completed. Processed 18812 documents, kept 18513
+2025-11-23 04:56:10.370 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 262/415 for enwiki_namespace_0
+2025-11-23 04:56:10.371 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_334.json.jsonl
+2025-11-23 04:56:10.642 | INFO     | __main__:process_filtering_task:149 - Task 53 completed. Processed 17945 documents, kept 17623
+2025-11-23 04:56:10.739 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 264/415 for enwiki_namespace_0
+2025-11-23 04:56:10.741 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_336.json.jsonl
+2025-11-23 04:56:11.832 | INFO     | __main__:process_filtering_task:149 - Task 65 completed. Processed 17282 documents, kept 16987
+2025-11-23 04:56:11.940 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 266/415 for enwiki_namespace_0
+2025-11-23 04:56:11.941 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_338.json.jsonl
+2025-11-23 04:56:12.898 | INFO     | __main__:process_filtering_task:149 - Task 41 completed. Processed 20329 documents, kept 20091
+2025-11-23 04:56:13.001 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 268/415 for enwiki_namespace_0
+2025-11-23 04:56:13.002 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_34.json.jsonl
+2025-11-23 04:56:13.144 | INFO     | __main__:process_filtering_task:149 - Task 99 completed. Processed 17151 documents, kept 16960
+2025-11-23 04:56:13.232 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 270/415 for enwiki_namespace_0
+2025-11-23 04:56:13.234 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_341.json.jsonl
+2025-11-23 04:56:13.241 | INFO     | __main__:process_filtering_task:149 - Task 171 completed. Processed 13614 documents, kept 13270
+2025-11-23 04:56:13.340 | INFO     | __main__:process_filtering_task:149 - Task 111 completed. Processed 16112 documents, kept 15727
+2025-11-23 04:56:13.349 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 272/415 for enwiki_namespace_0
+2025-11-23 04:56:13.350 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_343.json.jsonl
+2025-11-23 04:56:13.441 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 274/415 for enwiki_namespace_0
+2025-11-23 04:56:13.442 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_345.json.jsonl
+2025-11-23 04:56:13.484 | INFO     | __main__:process_filtering_task:149 - Task 133 completed. Processed 14608 documents, kept 14397
+2025-11-23 04:56:13.590 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 276/415 for enwiki_namespace_0
+2025-11-23 04:56:13.591 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_347.json.jsonl
+2025-11-23 04:56:15.745 | INFO     | __main__:process_filtering_task:149 - Task 89 completed. Processed 16269 documents, kept 16044
+2025-11-23 04:56:15.867 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 278/415 for enwiki_namespace_0
+2025-11-23 04:56:15.868 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_349.json.jsonl
+2025-11-23 04:56:16.839 | INFO     | __main__:process_filtering_task:149 - Task 180 completed. Processed 12239 documents, kept 12074
+2025-11-23 04:56:16.929 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 181/415 for enwiki_namespace_0
+2025-11-23 04:56:16.930 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_261.json.jsonl
+2025-11-23 04:56:17.671 | INFO     | __main__:process_filtering_task:149 - Task 5 completed. Processed 21438 documents, kept 21021
+2025-11-23 04:56:17.760 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 280/415 for enwiki_namespace_0
+2025-11-23 04:56:17.762 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_350.json.jsonl
+2025-11-23 04:56:18.138 | INFO     | __main__:process_filtering_task:149 - Task 45 completed. Processed 18971 documents, kept 18699
+2025-11-23 04:56:18.236 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 282/415 for enwiki_namespace_0
+2025-11-23 04:56:18.236 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_352.json.jsonl
+2025-11-23 04:56:18.603 | INFO     | __main__:process_filtering_task:149 - Task 63 completed. Processed 18303 documents, kept 18059
+2025-11-23 04:56:18.700 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 284/415 for enwiki_namespace_0
+2025-11-23 04:56:18.701 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_354.json.jsonl
+2025-11-23 04:56:18.909 | INFO     | __main__:process_filtering_task:149 - Task 143 completed. Processed 13852 documents, kept 13659
+2025-11-23 04:56:18.978 | INFO     | __main__:process_filtering_task:149 - Task 95 completed. Processed 17097 documents, kept 16827
+2025-11-23 04:56:19.025 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 286/415 for enwiki_namespace_0
+2025-11-23 04:56:19.026 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_356.json.jsonl
+2025-11-23 04:56:19.087 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 288/415 for enwiki_namespace_0
+2025-11-23 04:56:19.088 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_358.json.jsonl
+2025-11-23 04:56:19.317 | INFO     | __main__:process_filtering_task:149 - Task 71 completed. Processed 17861 documents, kept 17556
+2025-11-23 04:56:19.422 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 290/415 for enwiki_namespace_0
+2025-11-23 04:56:19.423 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_36.json.jsonl
+2025-11-23 04:56:19.690 | INFO     | __main__:process_filtering_task:149 - Task 182 completed. Processed 13878 documents, kept 13649
+2025-11-23 04:56:19.716 | INFO     | __main__:process_filtering_task:149 - Task 81 completed. Processed 18274 documents, kept 18005
+2025-11-23 04:56:19.786 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 183/415 for enwiki_namespace_0
+2025-11-23 04:56:19.788 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_263.json.jsonl
+2025-11-23 04:56:19.814 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 292/415 for enwiki_namespace_0
+2025-11-23 04:56:19.815 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_361.json.jsonl
+2025-11-23 04:56:20.455 | INFO     | __main__:process_filtering_task:149 - Task 125 completed. Processed 13943 documents, kept 13746
+2025-11-23 04:56:20.555 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 294/415 for enwiki_namespace_0
+2025-11-23 04:56:20.556 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_363.json.jsonl
+2025-11-23 04:56:21.095 | INFO     | __main__:process_filtering_task:149 - Task 115 completed. Processed 15721 documents, kept 15206
+2025-11-23 04:56:21.192 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 296/415 for enwiki_namespace_0
+2025-11-23 04:56:21.193 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_365.json.jsonl
+2025-11-23 04:56:21.390 | INFO     | __main__:process_filtering_task:149 - Task 33 completed. Processed 21188 documents, kept 20911
+2025-11-23 04:56:21.484 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 298/415 for enwiki_namespace_0
+2025-11-23 04:56:21.486 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_367.json.jsonl
+2025-11-23 04:56:23.540 | INFO     | __main__:process_filtering_task:149 - Task 101 completed. Processed 28923 documents, kept 28707
+2025-11-23 04:56:23.652 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 300/415 for enwiki_namespace_0
+2025-11-23 04:56:23.653 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_369.json.jsonl
+2025-11-23 04:56:24.333 | INFO     | __main__:process_filtering_task:149 - Task 135 completed. Processed 29270 documents, kept 29066
+2025-11-23 04:56:24.420 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 302/415 for enwiki_namespace_0
+2025-11-23 04:56:24.421 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_370.json.jsonl
+2025-11-23 04:56:24.657 | INFO     | __main__:process_filtering_task:149 - Task 43 completed. Processed 19392 documents, kept 19111
+2025-11-23 04:56:24.773 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 304/415 for enwiki_namespace_0
+2025-11-23 04:56:24.774 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_372.json.jsonl
+2025-11-23 04:56:25.937 | INFO     | __main__:process_filtering_task:149 - Task 184 completed. Processed 13353 documents, kept 13200
+2025-11-23 04:56:25.990 | INFO     | __main__:process_filtering_task:149 - Task 163 completed. Processed 13795 documents, kept 13179
+2025-11-23 04:56:26.055 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 185/415 for enwiki_namespace_0
+2025-11-23 04:56:26.056 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_265.json.jsonl
+2025-11-23 04:56:26.088 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 306/415 for enwiki_namespace_0
+2025-11-23 04:56:26.089 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_374.json.jsonl
+2025-11-23 04:56:26.140 | INFO     | __main__:process_filtering_task:149 - Task 11 completed. Processed 19898 documents, kept 19650
+2025-11-23 04:56:26.246 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 308/415 for enwiki_namespace_0
+2025-11-23 04:56:26.247 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_376.json.jsonl
+2025-11-23 04:56:26.342 | INFO     | __main__:process_filtering_task:149 - Task 169 completed. Processed 13244 documents, kept 12995
+2025-11-23 04:56:26.478 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 310/415 for enwiki_namespace_0
+2025-11-23 04:56:26.480 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_378.json.jsonl
+2025-11-23 04:56:29.487 | INFO     | __main__:process_filtering_task:149 - Task 196 completed. Processed 6573 documents, kept 6501
+2025-11-23 04:56:29.595 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 197/415 for enwiki_namespace_0
+2025-11-23 04:56:29.596 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_276.json.jsonl
+2025-11-23 04:56:30.093 | INFO     | __main__:process_filtering_task:149 - Task 9 completed. Processed 21642 documents, kept 21358
+2025-11-23 04:56:30.147 | INFO     | __main__:process_filtering_task:149 - Task 19 completed. Processed 20439 documents, kept 20126
+2025-11-23 04:56:30.185 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 312/415 for enwiki_namespace_0
+2025-11-23 04:56:30.186 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_38.json.jsonl
+2025-11-23 04:56:30.236 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 314/415 for enwiki_namespace_0
+2025-11-23 04:56:30.237 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_381.json.jsonl
+2025-11-23 04:56:32.189 | INFO     | __main__:process_filtering_task:149 - Task 186 completed. Processed 13338 documents, kept 13141
+2025-11-23 04:56:32.284 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 187/415 for enwiki_namespace_0
+2025-11-23 04:56:32.285 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_267.json.jsonl
+2025-11-23 04:56:33.810 | INFO     | __main__:process_filtering_task:149 - Task 188 completed. Processed 14472 documents, kept 14256
+2025-11-23 04:56:33.904 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 189/415 for enwiki_namespace_0
+2025-11-23 04:56:33.905 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_269.json.jsonl
+2025-11-23 04:56:35.022 | INFO     | __main__:process_filtering_task:149 - Task 37 completed. Processed 18278 documents, kept 17964
+2025-11-23 04:56:35.124 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 316/415 for enwiki_namespace_0
+2025-11-23 04:56:35.125 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_383.json.jsonl
+2025-11-23 04:56:35.584 | INFO     | __main__:process_filtering_task:149 - Task 155 completed. Processed 15075 documents, kept 14558
+2025-11-23 04:56:35.677 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 318/415 for enwiki_namespace_0
+2025-11-23 04:56:35.678 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_385.json.jsonl
+2025-11-23 04:56:35.703 | INFO     | __main__:process_filtering_task:149 - Task 91 completed. Processed 16017 documents, kept 15788
+2025-11-23 04:56:35.798 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 320/415 for enwiki_namespace_0
+2025-11-23 04:56:35.799 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_387.json.jsonl
+2025-11-23 04:56:36.716 | INFO     | __main__:process_filtering_task:149 - Task 7 completed. Processed 21511 documents, kept 21166
+2025-11-23 04:56:36.814 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 322/415 for enwiki_namespace_0
+2025-11-23 04:56:36.815 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_389.json.jsonl
+2025-11-23 04:56:36.869 | INFO     | __main__:process_filtering_task:149 - Task 178 completed. Processed 13541 documents, kept 13375
+2025-11-23 04:56:36.964 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 179/415 for enwiki_namespace_0
+2025-11-23 04:56:36.964 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_26.json.jsonl
+2025-11-23 04:56:37.306 | INFO     | __main__:process_filtering_task:149 - Task 286 completed. Processed 2114 documents, kept 2091
+2025-11-23 04:56:37.400 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 287/415 for enwiki_namespace_0
+2025-11-23 04:56:37.401 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_357.json.jsonl
+2025-11-23 04:56:40.864 | INFO     | __main__:process_filtering_task:149 - Task 67 completed. Processed 17767 documents, kept 17526
+2025-11-23 04:56:40.967 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 324/415 for enwiki_namespace_0
+2025-11-23 04:56:40.968 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_390.json.jsonl
+2025-11-23 04:56:42.719 | INFO     | __main__:process_filtering_task:149 - Task 157 completed. Processed 29234 documents, kept 29058
+2025-11-23 04:56:42.818 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 326/415 for enwiki_namespace_0
+2025-11-23 04:56:42.819 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_392.json.jsonl
+2025-11-23 04:56:44.617 | INFO     | __main__:process_filtering_task:149 - Task 75 completed. Processed 17410 documents, kept 17155
+2025-11-23 04:56:44.708 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 328/415 for enwiki_namespace_0
+2025-11-23 04:56:44.709 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_394.json.jsonl
+2025-11-23 04:56:46.754 | INFO     | __main__:process_filtering_task:149 - Task 148 completed. Processed 15432 documents, kept 15231
+2025-11-23 04:56:46.877 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 149/415 for enwiki_namespace_0
+2025-11-23 04:56:46.982 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_232.json.jsonl
+2025-11-23 04:56:58.022 | INFO     | __main__:process_filtering_task:149 - Task 185 completed. Processed 4326 documents, kept 4249
+2025-11-23 04:56:58.119 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 330/415 for enwiki_namespace_0
+2025-11-23 04:56:58.120 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_396.json.jsonl
+2025-11-23 04:56:58.492 | INFO     | __main__:process_filtering_task:149 - Task 176 completed. Processed 13844 documents, kept 13679
+2025-11-23 04:56:58.580 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 177/415 for enwiki_namespace_0
+2025-11-23 04:56:58.582 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_258.json.jsonl
+2025-11-23 04:57:00.760 | INFO     | __main__:process_filtering_task:149 - Task 69 completed. Processed 17789 documents, kept 17543
+2025-11-23 04:57:00.851 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 332/415 for enwiki_namespace_0
+2025-11-23 04:57:00.852 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_398.json.jsonl
+2025-11-23 04:57:02.999 | INFO     | __main__:process_filtering_task:149 - Task 17 completed. Processed 20332 documents, kept 19864
+2025-11-23 04:57:03.120 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 334/415 for enwiki_namespace_0
+2025-11-23 04:57:03.122 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_4.json.jsonl
+2025-11-23 04:57:03.672 | INFO     | __main__:process_filtering_task:149 - Task 159 completed. Processed 15425 documents, kept 15036
+2025-11-23 04:57:03.772 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 336/415 for enwiki_namespace_0
+2025-11-23 04:57:03.773 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_400.json.jsonl
+2025-11-23 04:57:06.353 | INFO     | __main__:process_filtering_task:149 - Task 147 completed. Processed 15015 documents, kept 14764
+2025-11-23 04:57:06.450 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 338/415 for enwiki_namespace_0
+2025-11-23 04:57:06.450 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_402.json.jsonl
+2025-11-23 04:57:08.688 | INFO     | __main__:process_filtering_task:149 - Task 15 completed. Processed 22195 documents, kept 21466
+2025-11-23 04:57:08.780 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 340/415 for enwiki_namespace_0
+2025-11-23 04:57:08.781 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_404.json.jsonl
+2025-11-23 04:57:10.353 | INFO     | __main__:process_filtering_task:149 - Task 13 completed. Processed 18276 documents, kept 16552
+2025-11-23 04:57:10.470 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 342/415 for enwiki_namespace_0
+2025-11-23 04:57:10.471 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_406.json.jsonl
+2025-11-23 04:57:11.676 | INFO     | __main__:process_filtering_task:149 - Task 204 completed. Processed 11551 documents, kept 11199
+2025-11-23 04:57:11.773 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 205/415 for enwiki_namespace_0
+2025-11-23 04:57:11.775 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_283.json.jsonl
+2025-11-23 04:57:11.892 | INFO     | __main__:process_filtering_task:149 - Task 198 completed. Processed 12088 documents, kept 11865
+2025-11-23 04:57:11.989 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 199/415 for enwiki_namespace_0
+2025-11-23 04:57:11.990 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_278.json.jsonl
+2025-11-23 04:57:13.239 | INFO     | __main__:process_filtering_task:149 - Task 200 completed. Processed 12399 documents, kept 12202
+2025-11-23 04:57:13.327 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 201/415 for enwiki_namespace_0
+2025-11-23 04:57:13.328 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_28.json.jsonl
+2025-11-23 04:57:13.392 | INFO     | __main__:process_filtering_task:149 - Task 192 completed. Processed 16188 documents, kept 16053
+2025-11-23 04:57:13.488 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 193/415 for enwiki_namespace_0
+2025-11-23 04:57:13.489 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_272.json.jsonl
+2025-11-23 04:57:14.685 | INFO     | __main__:process_filtering_task:149 - Task 194 completed. Processed 14422 documents, kept 14287
+2025-11-23 04:57:14.792 | INFO     | __main__:process_filtering_task:149 - Task 206 completed. Processed 11167 documents, kept 10854
+2025-11-23 04:57:14.800 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 195/415 for enwiki_namespace_0
+2025-11-23 04:57:14.801 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_274.json.jsonl
+2025-11-23 04:57:14.880 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 207/415 for enwiki_namespace_0
+2025-11-23 04:57:14.881 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_285.json.jsonl
+2025-11-23 04:57:19.853 | INFO     | __main__:process_filtering_task:149 - Task 202 completed. Processed 12586 documents, kept 12419
+2025-11-23 04:57:19.942 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 203/415 for enwiki_namespace_0
+2025-11-23 04:57:19.943 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_281.json.jsonl
+2025-11-23 04:57:20.495 | INFO     | __main__:process_filtering_task:149 - Task 161 completed. Processed 15673 documents, kept 15236
+2025-11-23 04:57:20.585 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 344/415 for enwiki_namespace_0
+2025-11-23 04:57:20.587 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_408.json.jsonl
+2025-11-23 04:57:21.930 | INFO     | __main__:process_filtering_task:149 - Task 214 completed. Processed 13077 documents, kept 12810
+2025-11-23 04:57:22.029 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 215/415 for enwiki_namespace_0
+2025-11-23 04:57:22.030 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_292.json.jsonl
+2025-11-23 04:57:23.268 | INFO     | __main__:process_filtering_task:149 - Task 190 completed. Processed 30112 documents, kept 29976
+2025-11-23 04:57:23.355 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 191/415 for enwiki_namespace_0
+2025-11-23 04:57:23.356 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_270.json.jsonl
+2025-11-23 04:57:23.641 | INFO     | __main__:process_filtering_task:149 - Task 238 completed. Processed 11102 documents, kept 10912
+2025-11-23 04:57:23.726 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 239/415 for enwiki_namespace_0
+2025-11-23 04:57:23.727 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_313.json.jsonl
+2025-11-23 04:57:26.217 | INFO     | __main__:process_filtering_task:149 - Task 210 completed. Processed 12326 documents, kept 12132
+2025-11-23 04:57:26.315 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 211/415 for enwiki_namespace_0
+2025-11-23 04:57:26.316 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_289.json.jsonl
+2025-11-23 04:57:26.817 | INFO     | __main__:process_filtering_task:149 - Task 232 completed. Processed 12034 documents, kept 11853
+2025-11-23 04:57:26.914 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 233/415 for enwiki_namespace_0
+2025-11-23 04:57:26.916 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_308.json.jsonl
+2025-11-23 04:57:27.568 | INFO     | __main__:process_filtering_task:149 - Task 240 completed. Processed 10593 documents, kept 10415
+2025-11-23 04:57:27.671 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 241/415 for enwiki_namespace_0
+2025-11-23 04:57:27.672 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_315.json.jsonl
+2025-11-23 04:57:27.705 | INFO     | __main__:process_filtering_task:149 - Task 236 completed. Processed 11551 documents, kept 11364
+2025-11-23 04:57:27.770 | INFO     | __main__:process_filtering_task:149 - Task 230 completed. Processed 11641 documents, kept 11471
+2025-11-23 04:57:27.794 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 237/415 for enwiki_namespace_0
+2025-11-23 04:57:27.795 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_311.json.jsonl
+2025-11-23 04:57:27.868 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 231/415 for enwiki_namespace_0
+2025-11-23 04:57:27.869 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_306.json.jsonl
+2025-11-23 04:57:28.036 | INFO     | __main__:process_filtering_task:149 - Task 153 completed. Processed 15395 documents, kept 15085
+2025-11-23 04:57:28.136 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 346/415 for enwiki_namespace_0
+2025-11-23 04:57:28.137 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_41.json.jsonl
+2025-11-23 04:57:29.479 | INFO     | __main__:process_filtering_task:149 - Task 234 completed. Processed 11971 documents, kept 11797
+2025-11-23 04:57:29.511 | INFO     | __main__:process_filtering_task:149 - Task 208 completed. Processed 12671 documents, kept 12456
+2025-11-23 04:57:29.572 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 235/415 for enwiki_namespace_0
+2025-11-23 04:57:29.573 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_31.json.jsonl
+2025-11-23 04:57:29.616 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 209/415 for enwiki_namespace_0
+2025-11-23 04:57:29.617 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_287.json.jsonl
+2025-11-23 04:57:30.136 | INFO     | __main__:process_filtering_task:149 - Task 216 completed. Processed 14051 documents, kept 13895
+2025-11-23 04:57:30.223 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 217/415 for enwiki_namespace_0
+2025-11-23 04:57:30.224 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_294.json.jsonl
+2025-11-23 04:57:30.247 | INFO     | __main__:process_filtering_task:149 - Task 250 completed. Processed 10877 documents, kept 10747
+2025-11-23 04:57:30.359 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 251/415 for enwiki_namespace_0
+2025-11-23 04:57:30.360 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_324.json.jsonl
+2025-11-23 04:57:30.508 | INFO     | __main__:process_filtering_task:149 - Task 218 completed. Processed 12465 documents, kept 12227
+2025-11-23 04:57:30.599 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 219/415 for enwiki_namespace_0
+2025-11-23 04:57:30.600 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_296.json.jsonl
+2025-11-23 04:57:31.243 | INFO     | __main__:process_filtering_task:149 - Task 248 completed. Processed 11146 documents, kept 11051
+2025-11-23 04:57:31.360 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 249/415 for enwiki_namespace_0
+2025-11-23 04:57:31.361 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_322.json.jsonl
+2025-11-23 04:57:31.961 | INFO     | __main__:process_filtering_task:149 - Task 222 completed. Processed 11830 documents, kept 11658
+2025-11-23 04:57:32.067 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 223/415 for enwiki_namespace_0
+2025-11-23 04:57:32.068 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_3.json.jsonl
+2025-11-23 04:57:32.173 | INFO     | __main__:process_filtering_task:149 - Task 226 completed. Processed 11726 documents, kept 11561
+2025-11-23 04:57:32.276 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 227/415 for enwiki_namespace_0
+2025-11-23 04:57:32.278 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_302.json.jsonl
+2025-11-23 04:57:32.429 | INFO     | __main__:process_filtering_task:149 - Task 220 completed. Processed 12447 documents, kept 12197
+2025-11-23 04:57:32.520 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 221/415 for enwiki_namespace_0
+2025-11-23 04:57:32.521 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_298.json.jsonl
+2025-11-23 04:57:32.795 | INFO     | __main__:process_filtering_task:149 - Task 242 completed. Processed 9209 documents, kept 9073
+2025-11-23 04:57:32.896 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 243/415 for enwiki_namespace_0
+2025-11-23 04:57:32.897 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_317.json.jsonl
+2025-11-23 04:57:33.205 | INFO     | __main__:process_filtering_task:149 - Task 254 completed. Processed 10860 documents, kept 10763
+2025-11-23 04:57:33.299 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 255/415 for enwiki_namespace_0
+2025-11-23 04:57:33.300 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_328.json.jsonl
+2025-11-23 04:57:34.270 | INFO     | __main__:process_filtering_task:149 - Task 252 completed. Processed 10872 documents, kept 10763
+2025-11-23 04:57:34.371 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 253/415 for enwiki_namespace_0
+2025-11-23 04:57:34.372 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_326.json.jsonl
+2025-11-23 04:57:34.616 | INFO     | __main__:process_filtering_task:149 - Task 256 completed. Processed 10870 documents, kept 10738
+2025-11-23 04:57:34.724 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 257/415 for enwiki_namespace_0
+2025-11-23 04:57:34.725 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_33.json.jsonl
+2025-11-23 04:57:35.077 | INFO     | __main__:process_filtering_task:149 - Task 258 completed. Processed 10962 documents, kept 10852
+2025-11-23 04:57:35.173 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 259/415 for enwiki_namespace_0
+2025-11-23 04:57:35.174 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_331.json.jsonl
+2025-11-23 04:57:35.959 | INFO     | __main__:process_filtering_task:149 - Task 276 completed. Processed 8760 documents, kept 8537
+2025-11-23 04:57:36.071 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 277/415 for enwiki_namespace_0
+2025-11-23 04:57:36.072 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_348.json.jsonl
+2025-11-23 04:57:37.147 | INFO     | __main__:process_filtering_task:149 - Task 228 completed. Processed 12022 documents, kept 11857
+2025-11-23 04:57:37.199 | INFO     | __main__:process_filtering_task:149 - Task 260 completed. Processed 11614 documents, kept 11493
+2025-11-23 04:57:37.252 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 229/415 for enwiki_namespace_0
+2025-11-23 04:57:37.253 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_304.json.jsonl
+2025-11-23 04:57:37.297 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 261/415 for enwiki_namespace_0
+2025-11-23 04:57:37.299 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_333.json.jsonl
+2025-11-23 04:57:38.033 | INFO     | __main__:process_filtering_task:149 - Task 244 completed. Processed 10896 documents, kept 10754
+2025-11-23 04:57:38.100 | INFO     | __main__:process_filtering_task:149 - Task 274 completed. Processed 9457 documents, kept 9270
+2025-11-23 04:57:38.142 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 245/415 for enwiki_namespace_0
+2025-11-23 04:57:38.143 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_319.json.jsonl
+2025-11-23 04:57:38.195 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 275/415 for enwiki_namespace_0
+2025-11-23 04:57:38.196 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_346.json.jsonl
+2025-11-23 04:57:39.973 | INFO     | __main__:process_filtering_task:149 - Task 278 completed. Processed 8898 documents, kept 8700
+2025-11-23 04:57:40.086 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 279/415 for enwiki_namespace_0
+2025-11-23 04:57:40.087 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_35.json.jsonl
+2025-11-23 04:57:41.022 | INFO     | __main__:process_filtering_task:149 - Task 266 completed. Processed 10141 documents, kept 9972
+2025-11-23 04:57:41.118 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 267/415 for enwiki_namespace_0
+2025-11-23 04:57:41.119 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_339.json.jsonl
+2025-11-23 04:57:42.234 | INFO     | __main__:process_filtering_task:149 - Task 296 completed. Processed 9367 documents, kept 9222
+2025-11-23 04:57:42.329 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 297/415 for enwiki_namespace_0
+2025-11-23 04:57:42.331 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_366.json.jsonl
+2025-11-23 04:57:43.123 | INFO     | __main__:process_filtering_task:149 - Task 253 completed. Processed 889 documents, kept 882
+2025-11-23 04:57:43.167 | INFO     | __main__:process_filtering_task:149 - Task 272 completed. Processed 9804 documents, kept 9648
+2025-11-23 04:57:43.220 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 348/415 for enwiki_namespace_0
+2025-11-23 04:57:43.222 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_411.json.jsonl
+2025-11-23 04:57:43.231 | INFO     | __main__:process_filtering_task:149 - Task 282 completed. Processed 9612 documents, kept 9493
+2025-11-23 04:57:43.275 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 273/415 for enwiki_namespace_0
+2025-11-23 04:57:43.276 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_344.json.jsonl
+2025-11-23 04:57:43.320 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 283/415 for enwiki_namespace_0
+2025-11-23 04:57:43.321 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_353.json.jsonl
+2025-11-23 04:57:43.792 | INFO     | __main__:process_filtering_task:149 - Task 284 completed. Processed 10057 documents, kept 9947
+2025-11-23 04:57:43.883 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 285/415 for enwiki_namespace_0
+2025-11-23 04:57:43.884 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_355.json.jsonl
+2025-11-23 04:57:43.994 | INFO     | __main__:process_filtering_task:149 - Task 294 completed. Processed 9509 documents, kept 9388
+2025-11-23 04:57:44.089 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 295/415 for enwiki_namespace_0
+2025-11-23 04:57:44.091 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_364.json.jsonl
+2025-11-23 04:57:44.352 | INFO     | __main__:process_filtering_task:149 - Task 280 completed. Processed 9577 documents, kept 9441
+2025-11-23 04:57:44.446 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 281/415 for enwiki_namespace_0
+2025-11-23 04:57:44.447 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_351.json.jsonl
+2025-11-23 04:57:44.484 | INFO     | __main__:process_filtering_task:149 - Task 298 completed. Processed 9315 documents, kept 9171
+2025-11-23 04:57:44.592 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 299/415 for enwiki_namespace_0
+2025-11-23 04:57:44.593 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_368.json.jsonl
+2025-11-23 04:57:44.773 | INFO     | __main__:process_filtering_task:149 - Task 308 completed. Processed 8408 documents, kept 8269
+2025-11-23 04:57:44.873 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 309/415 for enwiki_namespace_0
+2025-11-23 04:57:44.874 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_377.json.jsonl
+2025-11-23 04:57:45.202 | INFO     | __main__:process_filtering_task:149 - Task 288 completed. Processed 9627 documents, kept 9495
+2025-11-23 04:57:45.334 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 289/415 for enwiki_namespace_0
+2025-11-23 04:57:45.336 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_359.json.jsonl
+2025-11-23 04:57:45.354 | INFO     | __main__:process_filtering_task:149 - Task 292 completed. Processed 9689 documents, kept 9552
+2025-11-23 04:57:45.459 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 293/415 for enwiki_namespace_0
+2025-11-23 04:57:45.460 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_362.json.jsonl
+2025-11-23 04:57:46.648 | INFO     | __main__:process_filtering_task:149 - Task 302 completed. Processed 8408 documents, kept 8280
+2025-11-23 04:57:46.739 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 303/415 for enwiki_namespace_0
+2025-11-23 04:57:46.741 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_371.json.jsonl
+2025-11-23 04:57:46.939 | INFO     | __main__:process_filtering_task:149 - Task 300 completed. Processed 8830 documents, kept 8664
+2025-11-23 04:57:47.033 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 301/415 for enwiki_namespace_0
+2025-11-23 04:57:47.035 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_37.json.jsonl
+2025-11-23 04:57:50.357 | INFO     | __main__:process_filtering_task:149 - Task 181 completed. Processed 13292 documents, kept 13015
+2025-11-23 04:57:50.400 | INFO     | __main__:process_filtering_task:149 - Task 310 completed. Processed 7801 documents, kept 7666
+2025-11-23 04:57:50.448 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 350/415 for enwiki_namespace_0
+2025-11-23 04:57:50.449 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_413.json.jsonl
+2025-11-23 04:57:50.500 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 311/415 for enwiki_namespace_0
+2025-11-23 04:57:50.501 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_379.json.jsonl
+2025-11-23 04:57:51.962 | INFO     | __main__:process_filtering_task:149 - Task 183 completed. Processed 13337 documents, kept 13003
+2025-11-23 04:57:52.062 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 352/415 for enwiki_namespace_0
+2025-11-23 04:57:52.064 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_42.json.jsonl
+2025-11-23 04:57:53.062 | INFO     | __main__:process_filtering_task:149 - Task 318 completed. Processed 7439 documents, kept 7335
+2025-11-23 04:57:53.159 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 319/415 for enwiki_namespace_0
+2025-11-23 04:57:53.160 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_386.json.jsonl
+2025-11-23 04:57:53.160 | INFO     | __main__:process_filtering_task:149 - Task 320 completed. Processed 6655 documents, kept 6557
+2025-11-23 04:57:53.262 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 321/415 for enwiki_namespace_0
+2025-11-23 04:57:53.263 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_388.json.jsonl
+2025-11-23 04:57:53.711 | INFO     | __main__:process_filtering_task:149 - Task 264 completed. Processed 10893 documents, kept 10712
+2025-11-23 04:57:53.808 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 265/415 for enwiki_namespace_0
+2025-11-23 04:57:53.809 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_337.json.jsonl
+2025-11-23 04:57:54.048 | INFO     | __main__:process_filtering_task:149 - Task 287 completed. Processed 9468 documents, kept 9324
+2025-11-23 04:57:54.137 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 354/415 for enwiki_namespace_0
+2025-11-23 04:57:54.139 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_44.json.jsonl
+2025-11-23 04:57:54.712 | INFO     | __main__:process_filtering_task:149 - Task 324 completed. Processed 6660 documents, kept 6548
+2025-11-23 04:57:54.805 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 325/415 for enwiki_namespace_0
+2025-11-23 04:57:54.806 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_391.json.jsonl
+2025-11-23 04:57:55.352 | INFO     | __main__:process_filtering_task:149 - Task 212 completed. Processed 30078 documents, kept 29915
+2025-11-23 04:57:55.451 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 213/415 for enwiki_namespace_0
+2025-11-23 04:57:55.452 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_290.json.jsonl
+2025-11-23 04:57:55.664 | INFO     | __main__:process_filtering_task:149 - Task 322 completed. Processed 7155 documents, kept 7053
+2025-11-23 04:57:55.769 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 323/415 for enwiki_namespace_0
+2025-11-23 04:57:55.770 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_39.json.jsonl
+2025-11-23 04:57:56.265 | INFO     | __main__:process_filtering_task:149 - Task 316 completed. Processed 7480 documents, kept 7351
+2025-11-23 04:57:56.360 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 317/415 for enwiki_namespace_0
+2025-11-23 04:57:56.361 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_384.json.jsonl
+2025-11-23 04:58:01.484 | INFO     | __main__:process_filtering_task:149 - Task 270 completed. Processed 10326 documents, kept 10152
+2025-11-23 04:58:01.591 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 271/415 for enwiki_namespace_0
+2025-11-23 04:58:01.593 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_342.json.jsonl
+2025-11-23 04:58:02.485 | INFO     | __main__:process_filtering_task:149 - Task 224 completed. Processed 30025 documents, kept 29814
+2025-11-23 04:58:02.579 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 225/415 for enwiki_namespace_0
+2025-11-23 04:58:02.581 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_300.json.jsonl
+2025-11-23 04:58:04.194 | INFO     | __main__:process_filtering_task:149 - Task 328 completed. Processed 6164 documents, kept 6069
+2025-11-23 04:58:04.291 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 329/415 for enwiki_namespace_0
+2025-11-23 04:58:04.292 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_395.json.jsonl
+2025-11-23 04:58:05.261 | INFO     | __main__:process_filtering_task:149 - Task 189 completed. Processed 16135 documents, kept 16000
+2025-11-23 04:58:05.339 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 356/415 for enwiki_namespace_0
+2025-11-23 04:58:05.340 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_46.json.jsonl
+2025-11-23 04:58:05.472 | INFO     | __main__:process_filtering_task:149 - Task 262 completed. Processed 11463 documents, kept 11280
+2025-11-23 04:58:05.564 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 263/415 for enwiki_namespace_0
+2025-11-23 04:58:05.565 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_335.json.jsonl
+2025-11-23 04:58:06.634 | INFO     | __main__:process_filtering_task:149 - Task 187 completed. Processed 13934 documents, kept 13760
+2025-11-23 04:58:06.728 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 358/415 for enwiki_namespace_0
+2025-11-23 04:58:06.729 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_48.json.jsonl
+2025-11-23 04:58:06.733 | INFO     | __main__:process_filtering_task:149 - Task 79 completed. Processed 28748 documents, kept 28398
+2025-11-23 04:58:06.853 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 360/415 for enwiki_namespace_0
+2025-11-23 04:58:06.854 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_5.json.jsonl
+2025-11-23 04:58:08.118 | INFO     | __main__:process_filtering_task:149 - Task 326 completed. Processed 6504 documents, kept 6397
+2025-11-23 04:58:08.216 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 327/415 for enwiki_namespace_0
+2025-11-23 04:58:08.217 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_393.json.jsonl
+2025-11-23 04:58:08.718 | INFO     | __main__:process_filtering_task:149 - Task 334 completed. Processed 11060 documents, kept 7862
+2025-11-23 04:58:08.735 | INFO     | __main__:process_filtering_task:149 - Task 197 completed. Processed 12722 documents, kept 12534
+2025-11-23 04:58:08.818 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 335/415 for enwiki_namespace_0
+2025-11-23 04:58:08.819 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_40.json.jsonl
+2025-11-23 04:58:08.846 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 362/415 for enwiki_namespace_0
+2025-11-23 04:58:08.847 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_51.json.jsonl
+2025-11-23 04:58:10.389 | INFO     | __main__:process_filtering_task:149 - Task 330 completed. Processed 5742 documents, kept 5658
+2025-11-23 04:58:10.478 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 331/415 for enwiki_namespace_0
+2025-11-23 04:58:10.479 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_397.json.jsonl
+2025-11-23 04:58:10.587 | INFO     | __main__:process_filtering_task:149 - Task 246 completed. Processed 29358 documents, kept 28993
+2025-11-23 04:58:10.674 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 247/415 for enwiki_namespace_0
+2025-11-23 04:58:10.675 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_320.json.jsonl
+2025-11-23 04:58:12.151 | INFO     | __main__:process_filtering_task:149 - Task 336 completed. Processed 5281 documents, kept 5148
+2025-11-23 04:58:12.243 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 337/415 for enwiki_namespace_0
+2025-11-23 04:58:12.244 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_401.json.jsonl
+2025-11-23 04:58:12.294 | INFO     | __main__:process_filtering_task:149 - Task 332 completed. Processed 5645 documents, kept 5548
+2025-11-23 04:58:12.410 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 333/415 for enwiki_namespace_0
+2025-11-23 04:58:12.411 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_399.json.jsonl
+2025-11-23 04:58:14.931 | INFO     | __main__:process_filtering_task:149 - Task 304 completed. Processed 8593 documents, kept 8467
+2025-11-23 04:58:15.037 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 305/415 for enwiki_namespace_0
+2025-11-23 04:58:15.038 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_373.json.jsonl
+2025-11-23 04:58:20.372 | INFO     | __main__:process_filtering_task:149 - Task 306 completed. Processed 8400 documents, kept 8261
+2025-11-23 04:58:20.483 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 307/415 for enwiki_namespace_0
+2025-11-23 04:58:20.485 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_375.json.jsonl
+2025-11-23 04:58:20.678 | INFO     | __main__:process_filtering_task:149 - Task 340 completed. Processed 5714 documents, kept 5593
+2025-11-23 04:58:20.770 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 341/415 for enwiki_namespace_0
+2025-11-23 04:58:20.771 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_405.json.jsonl
+2025-11-23 04:58:23.664 | INFO     | __main__:process_filtering_task:149 - Task 338 completed. Processed 5577 documents, kept 5446
+2025-11-23 04:58:23.754 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 339/415 for enwiki_namespace_0
+2025-11-23 04:58:23.755 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_403.json.jsonl
+2025-11-23 04:58:24.891 | INFO     | __main__:process_filtering_task:149 - Task 268 completed. Processed 30120 documents, kept 29929
+2025-11-23 04:58:24.981 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 269/415 for enwiki_namespace_0
+2025-11-23 04:58:24.981 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_340.json.jsonl
+2025-11-23 04:58:27.393 | INFO     | __main__:process_filtering_task:149 - Task 342 completed. Processed 5630 documents, kept 5512
+2025-11-23 04:58:27.492 | INFO     | __main__:process_filtering_task:149 - Task 337 completed. Processed 1147 documents, kept 1133
+2025-11-23 04:58:27.493 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 343/415 for enwiki_namespace_0
+2025-11-23 04:58:27.494 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_407.json.jsonl
+2025-11-23 04:58:27.583 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 364/415 for enwiki_namespace_0
+2025-11-23 04:58:27.584 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_53.json.jsonl
+2025-11-23 04:58:31.477 | INFO     | __main__:process_filtering_task:149 - Task 314 completed. Processed 7435 documents, kept 7334
+2025-11-23 04:58:31.576 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 315/415 for enwiki_namespace_0
+2025-11-23 04:58:31.577 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_382.json.jsonl
+2025-11-23 04:58:34.126 | INFO     | __main__:process_filtering_task:149 - Task 312 completed. Processed 30153 documents, kept 29899
+2025-11-23 04:58:34.220 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 313/415 for enwiki_namespace_0
+2025-11-23 04:58:34.221 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_380.json.jsonl
+2025-11-23 04:58:34.682 | INFO     | __main__:process_filtering_task:149 - Task 21 completed. Processed 19261 documents, kept 18845
+2025-11-23 04:58:34.771 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 366/415 for enwiki_namespace_0
+2025-11-23 04:58:34.772 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_55.json.jsonl
+2025-11-23 04:58:35.885 | INFO     | __main__:process_filtering_task:149 - Task 223 completed. Processed 9828 documents, kept 6864
+2025-11-23 04:58:35.988 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 368/415 for enwiki_namespace_0
+2025-11-23 04:58:35.990 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_57.json.jsonl
+2025-11-23 04:58:37.476 | INFO     | __main__:process_filtering_task:149 - Task 205 completed. Processed 11302 documents, kept 10986
+2025-11-23 04:58:37.573 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 370/415 for enwiki_namespace_0
+2025-11-23 04:58:37.575 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_59.json.jsonl
+2025-11-23 04:58:39.057 | INFO     | __main__:process_filtering_task:149 - Task 199 completed. Processed 12119 documents, kept 11893
+2025-11-23 04:58:39.154 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 372/415 for enwiki_namespace_0
+2025-11-23 04:58:39.155 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_60.json.jsonl
+2025-11-23 04:58:41.325 | INFO     | __main__:process_filtering_task:149 - Task 179 completed. Processed 29681 documents, kept 29463
+2025-11-23 04:58:41.414 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 374/415 for enwiki_namespace_0
+2025-11-23 04:58:41.415 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_62.json.jsonl
+2025-11-23 04:58:48.487 | INFO     | __main__:process_filtering_task:149 - Task 239 completed. Processed 10951 documents, kept 10784
+2025-11-23 04:58:48.584 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 376/415 for enwiki_namespace_0
+2025-11-23 04:58:48.585 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_64.json.jsonl
+2025-11-23 04:58:49.271 | INFO     | __main__:process_filtering_task:149 - Task 207 completed. Processed 11527 documents, kept 11311
+2025-11-23 04:58:49.369 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 378/415 for enwiki_namespace_0
+2025-11-23 04:58:49.370 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_66.json.jsonl
+2025-11-23 04:58:51.231 | INFO     | __main__:process_filtering_task:149 - Task 290 completed. Processed 26746 documents, kept 26543
+2025-11-23 04:58:51.331 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 291/415 for enwiki_namespace_0
+2025-11-23 04:58:51.332 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_360.json.jsonl
+2025-11-23 04:58:53.124 | INFO     | __main__:process_filtering_task:149 - Task 348 completed. Processed 5827 documents, kept 5677
+2025-11-23 04:58:53.215 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 349/415 for enwiki_namespace_0
+2025-11-23 04:58:53.217 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_412.json.jsonl
+2025-11-23 04:58:53.915 | INFO     | __main__:process_filtering_task:149 - Task 241 completed. Processed 10439 documents, kept 10260
+2025-11-23 04:58:54.008 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 380/415 for enwiki_namespace_0
+2025-11-23 04:58:54.010 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_68.json.jsonl
+2025-11-23 04:58:54.883 | INFO     | __main__:process_filtering_task:149 - Task 237 completed. Processed 11475 documents, kept 11309
+2025-11-23 04:58:54.984 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 382/415 for enwiki_namespace_0
+2025-11-23 04:58:54.985 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_7.json.jsonl
+2025-11-23 04:58:57.572 | INFO     | __main__:process_filtering_task:149 - Task 249 completed. Processed 10519 documents, kept 10385
+2025-11-23 04:58:57.639 | INFO     | __main__:process_filtering_task:149 - Task 193 completed. Processed 15805 documents, kept 15612
+2025-11-23 04:58:57.685 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 384/415 for enwiki_namespace_0
+2025-11-23 04:58:57.686 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_71.json.jsonl
+2025-11-23 04:58:57.731 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 386/415 for enwiki_namespace_0
+2025-11-23 04:58:57.732 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_73.json.jsonl
+2025-11-23 04:58:58.632 | INFO     | __main__:process_filtering_task:149 - Task 195 completed. Processed 13848 documents, kept 13682
+2025-11-23 04:58:58.750 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 388/415 for enwiki_namespace_0
+2025-11-23 04:58:58.751 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_75.json.jsonl
+2025-11-23 04:58:59.319 | INFO     | __main__:process_filtering_task:149 - Task 211 completed. Processed 12020 documents, kept 11709
+2025-11-23 04:58:59.420 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 390/415 for enwiki_namespace_0
+2025-11-23 04:58:59.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_77.json.jsonl
+2025-11-23 04:58:59.946 | INFO     | __main__:process_filtering_task:149 - Task 243 completed. Processed 10514 documents, kept 10355
+2025-11-23 04:59:00.044 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 392/415 for enwiki_namespace_0
+2025-11-23 04:59:00.045 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_79.json.jsonl
+2025-11-23 04:59:00.141 | INFO     | __main__:process_filtering_task:149 - Task 191 completed. Processed 16218 documents, kept 16106
+2025-11-23 04:59:00.244 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 394/415 for enwiki_namespace_0
+2025-11-23 04:59:00.246 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_80.json.jsonl
+2025-11-23 04:59:02.031 | INFO     | __main__:process_filtering_task:149 - Task 215 completed. Processed 14153 documents, kept 13959
+2025-11-23 04:59:02.038 | INFO     | __main__:process_filtering_task:149 - Task 297 completed. Processed 9034 documents, kept 8901
+2025-11-23 04:59:02.129 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 396/415 for enwiki_namespace_0
+2025-11-23 04:59:02.131 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_82.json.jsonl
+2025-11-23 04:59:02.135 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 398/415 for enwiki_namespace_0
+2025-11-23 04:59:02.136 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_84.json.jsonl
+2025-11-23 04:59:02.568 | INFO     | __main__:process_filtering_task:149 - Task 227 completed. Processed 11650 documents, kept 11481
+2025-11-23 04:59:02.659 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 400/415 for enwiki_namespace_0
+2025-11-23 04:59:02.660 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_86.json.jsonl
+2025-11-23 04:59:03.132 | INFO     | __main__:process_filtering_task:149 - Task 285 completed. Processed 10133 documents, kept 10051
+2025-11-23 04:59:03.228 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 402/415 for enwiki_namespace_0
+2025-11-23 04:59:03.230 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_88.json.jsonl
+2025-11-23 04:59:03.233 | INFO     | __main__:process_filtering_task:149 - Task 231 completed. Processed 11290 documents, kept 11085
+2025-11-23 04:59:03.316 | INFO     | __main__:process_filtering_task:149 - Task 209 completed. Processed 12236 documents, kept 12065
+2025-11-23 04:59:03.318 | INFO     | __main__:process_filtering_task:149 - Task 283 completed. Processed 9483 documents, kept 9305
+2025-11-23 04:59:03.344 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 404/415 for enwiki_namespace_0
+2025-11-23 04:59:03.346 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_9.json.jsonl
+2025-11-23 04:59:03.412 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 406/415 for enwiki_namespace_0
+2025-11-23 04:59:03.412 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_91.json.jsonl
+2025-11-23 04:59:03.431 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 408/415 for enwiki_namespace_0
+2025-11-23 04:59:03.432 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_93.json.jsonl
+2025-11-23 04:59:03.484 | INFO     | __main__:process_filtering_task:149 - Task 259 completed. Processed 11246 documents, kept 11109
+2025-11-23 04:59:03.574 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 410/415 for enwiki_namespace_0
+2025-11-23 04:59:03.575 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_95.json.jsonl
+2025-11-23 04:59:04.535 | INFO     | __main__:process_filtering_task:149 - Task 289 completed. Processed 9718 documents, kept 9602
+2025-11-23 04:59:04.634 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 412/415 for enwiki_namespace_0
+2025-11-23 04:59:04.635 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_97.json.jsonl
+2025-11-23 04:59:04.687 | INFO     | __main__:process_filtering_task:149 - Task 275 completed. Processed 9658 documents, kept 9506
+2025-11-23 04:59:04.730 | INFO     | __main__:process_filtering_task:149 - Task 303 completed. Processed 8489 documents, kept 8344
+2025-11-23 04:59:04.797 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 414/415 for enwiki_namespace_0
+2025-11-23 04:59:04.798 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_99.json.jsonl
+2025-11-23 04:59:05.000 | INFO     | __main__:process_filtering_task:149 - Task 219 completed. Processed 11964 documents, kept 11703
+2025-11-23 04:59:05.309 | INFO     | __main__:process_filtering_task:149 - Task 350 completed. Processed 5641 documents, kept 5562
+2025-11-23 04:59:05.347 | INFO     | __main__:process_filtering_task:149 - Task 309 completed. Processed 7937 documents, kept 7814
+2025-11-23 04:59:05.382 | INFO     | __main__:process_filtering_task:149 - Task 221 completed. Processed 12294 documents, kept 12076
+2025-11-23 04:59:05.404 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 351/415 for enwiki_namespace_0
+2025-11-23 04:59:05.405 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_414.json.jsonl
+2025-11-23 04:59:05.699 | INFO     | __main__:process_filtering_task:149 - Task 251 completed. Processed 10715 documents, kept 10602
+2025-11-23 04:59:06.785 | INFO     | __main__:process_filtering_task:149 - Task 311 completed. Processed 7758 documents, kept 7642
+2025-11-23 04:59:07.416 | INFO     | __main__:process_filtering_task:149 - Task 261 completed. Processed 11386 documents, kept 11149
+2025-11-23 04:59:07.497 | INFO     | __main__:process_filtering_task:149 - Task 281 completed. Processed 9656 documents, kept 9488
+2025-11-23 04:59:07.569 | INFO     | __main__:process_filtering_task:149 - Task 203 completed. Processed 12168 documents, kept 11937
+2025-11-23 04:59:08.446 | INFO     | __main__:process_filtering_task:149 - Task 299 completed. Processed 8720 documents, kept 8598
+2025-11-23 04:59:09.366 | INFO     | __main__:process_filtering_task:149 - Task 255 completed. Processed 10782 documents, kept 10652
+2025-11-23 04:59:09.470 | INFO     | __main__:process_filtering_task:149 - Task 277 completed. Processed 9489 documents, kept 9344
+2025-11-23 04:59:10.243 | INFO     | __main__:process_filtering_task:149 - Task 273 completed. Processed 9733 documents, kept 9485
+2025-11-23 04:59:10.294 | INFO     | __main__:process_filtering_task:149 - Task 319 completed. Processed 7013 documents, kept 6885
+2025-11-23 04:59:10.406 | INFO     | __main__:process_filtering_task:149 - Task 217 completed. Processed 13168 documents, kept 12985
+2025-11-23 04:59:11.445 | INFO     | __main__:process_filtering_task:149 - Task 229 completed. Processed 11570 documents, kept 11411
+2025-11-23 04:59:11.630 | INFO     | __main__:process_filtering_task:149 - Task 233 completed. Processed 12207 documents, kept 12023
+2025-11-23 04:59:12.354 | INFO     | __main__:process_filtering_task:149 - Task 295 completed. Processed 9603 documents, kept 9456
+2025-11-23 04:59:12.802 | INFO     | __main__:process_filtering_task:149 - Task 293 completed. Processed 9676 documents, kept 9512
+2025-11-23 04:59:13.246 | INFO     | __main__:process_filtering_task:149 - Task 267 completed. Processed 10413 documents, kept 10217
+2025-11-23 04:59:13.643 | INFO     | __main__:process_filtering_task:149 - Task 325 completed. Processed 6866 documents, kept 6738
+2025-11-23 04:59:14.086 | INFO     | __main__:process_filtering_task:149 - Task 344 completed. Processed 5758 documents, kept 5655
+2025-11-23 04:59:14.169 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 345/415 for enwiki_namespace_0
+2025-11-23 04:59:14.170 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_409.json.jsonl
+2025-11-23 04:59:14.200 | INFO     | __main__:process_filtering_task:149 - Task 245 completed. Processed 10691 documents, kept 10558
+2025-11-23 04:59:15.073 | INFO     | __main__:process_filtering_task:149 - Task 360 completed. Processed 11778 documents, kept 9002
+2025-11-23 04:59:15.155 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 361/415 for enwiki_namespace_0
+2025-11-23 04:59:15.156 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_50.json.jsonl
+2025-11-23 04:59:15.222 | INFO     | __main__:process_filtering_task:149 - Task 177 completed. Processed 12961 documents, kept 12811
+2025-11-23 04:59:16.749 | INFO     | __main__:process_filtering_task:149 - Task 317 completed. Processed 7369 documents, kept 7253
+2025-11-23 04:59:18.557 | INFO     | __main__:process_filtering_task:149 - Task 329 completed. Processed 5816 documents, kept 5708
+2025-11-23 04:59:19.525 | INFO     | __main__:process_filtering_task:149 - Task 265 completed. Processed 10932 documents, kept 10570
+2025-11-23 04:59:19.784 | INFO     | __main__:process_filtering_task:149 - Task 201 completed. Processed 29901 documents, kept 29722
+2025-11-23 04:59:23.633 | INFO     | __main__:process_filtering_task:149 - Task 331 completed. Processed 5703 documents, kept 5606
+2025-11-23 04:59:25.425 | INFO     | __main__:process_filtering_task:149 - Task 271 completed. Processed 10123 documents, kept 9988
+2025-11-23 04:59:27.894 | INFO     | __main__:process_filtering_task:149 - Task 225 completed. Processed 11307 documents, kept 11137
+2025-11-23 04:59:30.445 | INFO     | __main__:process_filtering_task:149 - Task 213 completed. Processed 12070 documents, kept 11811
+2025-11-23 04:59:31.350 | INFO     | __main__:process_filtering_task:149 - Task 346 completed. Processed 29794 documents, kept 29633
+2025-11-23 04:59:31.429 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 347/415 for enwiki_namespace_0
+2025-11-23 04:59:31.430 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_410.json.jsonl
+2025-11-23 04:59:31.803 | INFO     | __main__:process_filtering_task:149 - Task 235 completed. Processed 29834 documents, kept 29639
+2025-11-23 04:59:32.356 | INFO     | __main__:process_filtering_task:149 - Task 333 completed. Processed 5419 documents, kept 5268
+2025-11-23 04:59:34.756 | INFO     | __main__:process_filtering_task:149 - Task 339 completed. Processed 5655 documents, kept 5532
+2025-11-23 04:59:36.072 | INFO     | __main__:process_filtering_task:149 - Task 263 completed. Processed 11198 documents, kept 10684
+2025-11-23 04:59:36.389 | INFO     | __main__:process_filtering_task:149 - Task 305 completed. Processed 8153 documents, kept 8001
+2025-11-23 04:59:36.815 | INFO     | __main__:process_filtering_task:149 - Task 247 completed. Processed 10867 documents, kept 10748
+2025-11-23 04:59:37.369 | INFO     | __main__:process_filtering_task:149 - Task 341 completed. Processed 5745 documents, kept 5586
+2025-11-23 04:59:40.475 | INFO     | __main__:process_filtering_task:149 - Task 257 completed. Processed 30776 documents, kept 30556
+2025-11-23 04:59:41.442 | INFO     | __main__:process_filtering_task:149 - Task 343 completed. Processed 5755 documents, kept 5654
+2025-11-23 04:59:42.462 | INFO     | __main__:process_filtering_task:149 - Task 279 completed. Processed 28215 documents, kept 28003
+2025-11-23 04:59:43.181 | INFO     | __main__:process_filtering_task:149 - Task 269 completed. Processed 10044 documents, kept 9812
+2025-11-23 04:59:46.807 | INFO     | __main__:process_filtering_task:149 - Task 301 completed. Processed 29654 documents, kept 29449
+2025-11-23 04:59:48.012 | INFO     | __main__:process_filtering_task:149 - Task 354 completed. Processed 27542 documents, kept 27319
+2025-11-23 04:59:48.091 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 355/415 for enwiki_namespace_0
+2025-11-23 04:59:48.092 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_45.json.jsonl
+2025-11-23 04:59:48.923 | INFO     | __main__:process_filtering_task:149 - Task 307 completed. Processed 8290 documents, kept 8177
+2025-11-23 04:59:50.347 | INFO     | __main__:process_filtering_task:149 - Task 352 completed. Processed 29722 documents, kept 29591
+2025-11-23 04:59:50.421 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 353/415 for enwiki_namespace_0
+2025-11-23 04:59:50.422 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_43.json.jsonl
+2025-11-23 04:59:51.041 | INFO     | __main__:process_filtering_task:149 - Task 382 completed. Processed 10431 documents, kept 7506
+2025-11-23 04:59:51.124 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 383/415 for enwiki_namespace_0
+2025-11-23 04:59:51.125 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_70.json.jsonl
+2025-11-23 04:59:51.389 | INFO     | __main__:process_filtering_task:149 - Task 351 completed. Processed 3994 documents, kept 3920
+2025-11-23 04:59:52.156 | INFO     | __main__:process_filtering_task:149 - Task 315 completed. Processed 7642 documents, kept 7516
+2025-11-23 04:59:54.541 | INFO     | __main__:process_filtering_task:149 - Task 356 completed. Processed 27222 documents, kept 27015
+2025-11-23 04:59:54.608 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 357/415 for enwiki_namespace_0
+2025-11-23 04:59:54.608 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_47.json.jsonl
+2025-11-23 05:00:00.355 | INFO     | __main__:process_filtering_task:149 - Task 404 completed. Processed 10635 documents, kept 7823
+2025-11-23 05:00:00.399 | INFO     | __main__:process_filtering_task:149 - Task 349 completed. Processed 5701 documents, kept 5575
+2025-11-23 05:00:00.444 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 405/415 for enwiki_namespace_0
+2025-11-23 05:00:00.445 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_90.json.jsonl
+2025-11-23 05:00:00.765 | INFO     | __main__:process_filtering_task:149 - Task 323 completed. Processed 30355 documents, kept 30181
+2025-11-23 05:00:05.110 | INFO     | __main__:process_filtering_task:149 - Task 291 completed. Processed 9824 documents, kept 9680
+2025-11-23 05:00:06.029 | INFO     | __main__:process_filtering_task:149 - Task 362 completed. Processed 29878 documents, kept 29717
+2025-11-23 05:00:06.107 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 363/415 for enwiki_namespace_0
+2025-11-23 05:00:06.108 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_52.json.jsonl
+2025-11-23 05:00:08.046 | INFO     | __main__:process_filtering_task:149 - Task 358 completed. Processed 29817 documents, kept 29641
+2025-11-23 05:00:08.133 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 359/415 for enwiki_namespace_0
+2025-11-23 05:00:08.134 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_49.json.jsonl
+2025-11-23 05:00:09.189 | INFO     | __main__:process_filtering_task:149 - Task 335 completed. Processed 29416 documents, kept 29249
+2025-11-23 05:00:13.734 | INFO     | __main__:process_filtering_task:149 - Task 364 completed. Processed 26142 documents, kept 25941
+2025-11-23 05:00:13.811 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 365/415 for enwiki_namespace_0
+2025-11-23 05:00:13.812 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_54.json.jsonl
+2025-11-23 05:00:15.904 | INFO     | __main__:process_filtering_task:149 - Task 345 completed. Processed 5746 documents, kept 5636
+2025-11-23 05:00:22.366 | INFO     | __main__:process_filtering_task:149 - Task 366 completed. Processed 28698 documents, kept 28529
+2025-11-23 05:00:22.441 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 367/415 for enwiki_namespace_0
+2025-11-23 05:00:22.442 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_56.json.jsonl
+2025-11-23 05:00:22.571 | INFO     | __main__:process_filtering_task:149 - Task 372 completed. Processed 26207 documents, kept 25965
+2025-11-23 05:00:22.664 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 373/415 for enwiki_namespace_0
+2025-11-23 05:00:22.665 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_61.json.jsonl
+2025-11-23 05:00:27.133 | INFO     | __main__:process_filtering_task:149 - Task 410 completed. Processed 19388 documents, kept 19088
+2025-11-23 05:00:27.233 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 411/415 for enwiki_namespace_0
+2025-11-23 05:00:27.234 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_96.json.jsonl
+2025-11-23 05:00:28.541 | INFO     | __main__:process_filtering_task:149 - Task 370 completed. Processed 29846 documents, kept 29700
+2025-11-23 05:00:28.615 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 371/415 for enwiki_namespace_0
+2025-11-23 05:00:28.616 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_6.json.jsonl
+2025-11-23 05:00:28.939 | INFO     | __main__:process_filtering_task:149 - Task 374 completed. Processed 28286 documents, kept 28022
+2025-11-23 05:00:29.024 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 375/415 for enwiki_namespace_0
+2025-11-23 05:00:29.025 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_63.json.jsonl
+2025-11-23 05:00:30.138 | INFO     | __main__:process_filtering_task:149 - Task 376 completed. Processed 26467 documents, kept 26238
+2025-11-23 05:00:30.215 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 377/415 for enwiki_namespace_0
+2025-11-23 05:00:30.215 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_65.json.jsonl
+2025-11-23 05:00:32.660 | INFO     | __main__:process_filtering_task:149 - Task 412 completed. Processed 19758 documents, kept 19396
+2025-11-23 05:00:32.737 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 413/415 for enwiki_namespace_0
+2025-11-23 05:00:32.738 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_98.json.jsonl
+2025-11-23 05:00:33.020 | INFO     | __main__:process_filtering_task:149 - Task 406 completed. Processed 20322 documents, kept 19435
+2025-11-23 05:00:33.094 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 407/415 for enwiki_namespace_0
+2025-11-23 05:00:33.095 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_92.json.jsonl
+2025-11-23 05:00:33.387 | INFO     | __main__:process_filtering_task:149 - Task 149 completed. Processed 15283 documents, kept 15063
+2025-11-23 05:00:36.394 | INFO     | __main__:process_filtering_task:149 - Task 408 completed. Processed 22287 documents, kept 21481
+2025-11-23 05:00:36.469 | INFO     | __main__:process_filtering_task:149 - Task 368 completed. Processed 27796 documents, kept 27612
+2025-11-23 05:00:36.473 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 409/415 for enwiki_namespace_0
+2025-11-23 05:00:36.474 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_94.json.jsonl
+2025-11-23 05:00:36.542 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 369/415 for enwiki_namespace_0
+2025-11-23 05:00:36.542 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_58.json.jsonl
+2025-11-23 05:00:37.243 | INFO     | __main__:process_filtering_task:149 - Task 347 completed. Processed 5965 documents, kept 5858
+2025-11-23 05:00:38.091 | INFO     | __main__:process_filtering_task:149 - Task 378 completed. Processed 30086 documents, kept 29926
+2025-11-23 05:00:38.165 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 379/415 for enwiki_namespace_0
+2025-11-23 05:00:38.166 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_67.json.jsonl
+2025-11-23 05:00:40.156 | INFO     | __main__:process_filtering_task:149 - Task 402 completed. Processed 21755 documents, kept 21237
+2025-11-23 05:00:40.229 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 403/415 for enwiki_namespace_0
+2025-11-23 05:00:40.230 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_89.json.jsonl
+2025-11-23 05:00:40.322 | INFO     | __main__:process_filtering_task:149 - Task 400 completed. Processed 22717 documents, kept 22215
+2025-11-23 05:00:40.400 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 401/415 for enwiki_namespace_0
+2025-11-23 05:00:40.401 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_87.json.jsonl
+2025-11-23 05:00:41.792 | INFO     | __main__:process_filtering_task:149 - Task 392 completed. Processed 27303 documents, kept 27121
+2025-11-23 05:00:41.872 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 393/415 for enwiki_namespace_0
+2025-11-23 05:00:41.873 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_8.json.jsonl
+2025-11-23 05:00:44.205 | INFO     | __main__:process_filtering_task:149 - Task 327 completed. Processed 6125 documents, kept 6006
+2025-11-23 05:00:46.136 | INFO     | __main__:process_filtering_task:149 - Task 384 completed. Processed 30103 documents, kept 29950
+2025-11-23 05:00:46.146 | INFO     | __main__:process_filtering_task:149 - Task 386 completed. Processed 28848 documents, kept 28649
+2025-11-23 05:00:46.223 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 385/415 for enwiki_namespace_0
+2025-11-23 05:00:46.224 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_72.json.jsonl
+2025-11-23 05:00:46.228 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 387/415 for enwiki_namespace_0
+2025-11-23 05:00:46.229 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_74.json.jsonl
+2025-11-23 05:00:46.252 | INFO     | __main__:process_filtering_task:149 - Task 388 completed. Processed 29449 documents, kept 29277
+2025-11-23 05:00:46.325 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 389/415 for enwiki_namespace_0
+2025-11-23 05:00:46.326 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_76.json.jsonl
+2025-11-23 05:00:47.603 | INFO     | __main__:process_filtering_task:149 - Task 394 completed. Processed 29076 documents, kept 28919
+2025-11-23 05:00:47.682 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 395/415 for enwiki_namespace_0
+2025-11-23 05:00:47.683 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_81.json.jsonl
+2025-11-23 05:00:47.891 | INFO     | __main__:process_filtering_task:149 - Task 398 completed. Processed 28681 documents, kept 28455
+2025-11-23 05:00:47.967 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 399/415 for enwiki_namespace_0
+2025-11-23 05:00:47.968 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_85.json.jsonl
+2025-11-23 05:00:48.754 | INFO     | __main__:process_filtering_task:149 - Task 390 completed. Processed 29151 documents, kept 28879
+2025-11-23 05:00:48.832 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 391/415 for enwiki_namespace_0
+2025-11-23 05:00:48.833 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_78.json.jsonl
+2025-11-23 05:00:56.319 | INFO     | __main__:process_filtering_task:149 - Task 396 completed. Processed 28042 documents, kept 27832
+2025-11-23 05:00:56.397 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 397/415 for enwiki_namespace_0
+2025-11-23 05:00:56.398 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_83.json.jsonl
+2025-11-23 05:00:57.202 | INFO     | __main__:process_filtering_task:149 - Task 321 completed. Processed 7065 documents, kept 6971
+2025-11-23 05:01:00.963 | INFO     | __main__:process_filtering_task:149 - Task 361 completed. Processed 29498 documents, kept 29321
+2025-11-23 05:01:14.765 | INFO     | __main__:process_filtering_task:149 - Task 357 completed. Processed 23028 documents, kept 22887
+2025-11-23 05:01:15.075 | INFO     | __main__:process_filtering_task:149 - Task 380 completed. Processed 29274 documents, kept 29067
+2025-11-23 05:01:15.152 | INFO     | __main__:process_filtering_task:81 - Starting filtering task 381/415 for enwiki_namespace_0
+2025-11-23 05:01:15.153 | INFO     | __main__:process_filtering_task:111 - Processing file: gs://wikipedia-graph/wikipedia/parsed_html/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_69.json.jsonl
+2025-11-23 05:01:23.442 | INFO     | __main__:process_filtering_task:149 - Task 371 completed. Processed 11401 documents, kept 8525
+2025-11-23 05:01:29.002 | INFO     | __main__:process_filtering_task:149 - Task 313 completed. Processed 7495 documents, kept 7371
+2025-11-23 05:01:31.967 | INFO     | __main__:process_filtering_task:149 - Task 405 completed. Processed 22613 documents, kept 22168
+2025-11-23 05:01:32.242 | INFO     | __main__:process_filtering_task:149 - Task 355 completed. Processed 29530 documents, kept 29370
+2025-11-23 05:01:33.370 | INFO     | __main__:process_filtering_task:149 - Task 383 completed. Processed 28838 documents, kept 28646
+2025-11-23 05:01:34.677 | INFO     | __main__:process_filtering_task:149 - Task 393 completed. Processed 11012 documents, kept 8494
+2025-11-23 05:01:38.395 | INFO     | __main__:process_filtering_task:149 - Task 353 completed. Processed 29323 documents, kept 29149
+2025-11-23 05:01:45.080 | INFO     | __main__:process_filtering_task:149 - Task 411 completed. Processed 18669 documents, kept 18226
+2025-11-23 05:01:46.140 | INFO     | __main__:process_filtering_task:149 - Task 363 completed. Processed 28684 documents, kept 28494
+2025-11-23 05:01:51.676 | INFO     | __main__:process_filtering_task:149 - Task 359 completed. Processed 29651 documents, kept 29458
+2025-11-23 05:01:55.698 | INFO     | __main__:process_filtering_task:149 - Task 365 completed. Processed 28064 documents, kept 27850
+2025-11-23 05:01:59.158 | INFO     | __main__:process_filtering_task:149 - Task 409 completed. Processed 20770 documents, kept 20317
+2025-11-23 05:01:59.420 | INFO     | __main__:process_filtering_task:149 - Task 367 completed. Processed 26678 documents, kept 26460
+2025-11-23 05:02:01.760 | INFO     | __main__:process_filtering_task:149 - Task 373 completed. Processed 27674 documents, kept 27254
+2025-11-23 05:02:02.220 | INFO     | __main__:process_filtering_task:149 - Task 413 completed. Processed 19870 documents, kept 19436
+2025-11-23 05:02:07.907 | INFO     | __main__:process_filtering_task:149 - Task 403 completed. Processed 21298 documents, kept 20579
+2025-11-23 05:02:10.624 | INFO     | __main__:process_filtering_task:149 - Task 375 completed. Processed 29930 documents, kept 29764
+2025-11-23 05:02:10.651 | INFO     | __main__:process_filtering_task:149 - Task 377 completed. Processed 27839 documents, kept 27651
+2025-11-23 05:02:18.717 | INFO     | __main__:process_filtering_task:149 - Task 401 completed. Processed 21980 documents, kept 21561
+2025-11-23 05:02:19.199 | INFO     | __main__:process_filtering_task:149 - Task 369 completed. Processed 29888 documents, kept 29692
+2025-11-23 05:02:20.803 | INFO     | __main__:process_filtering_task:149 - Task 379 completed. Processed 29958 documents, kept 29787
+2025-11-23 05:02:22.894 | INFO     | __main__:process_filtering_task:149 - Task 385 completed. Processed 28094 documents, kept 27903
+2025-11-23 05:02:25.469 | INFO     | __main__:process_filtering_task:149 - Task 389 completed. Processed 28085 documents, kept 27821
+2025-11-23 05:02:26.331 | INFO     | __main__:process_filtering_task:149 - Task 414 completed. Processed 19936 documents, kept 19457
+2025-11-23 05:02:27.935 | INFO     | __main__:process_filtering_task:149 - Task 391 completed. Processed 27791 documents, kept 27584
+2025-11-23 05:02:30.287 | INFO     | __main__:process_filtering_task:149 - Task 387 completed. Processed 29943 documents, kept 29784
+2025-11-23 05:02:31.330 | INFO     | __main__:process_filtering_task:149 - Task 395 completed. Processed 29378 documents, kept 29161
+2025-11-23 05:02:33.871 | INFO     | __main__:process_filtering_task:149 - Task 399 completed. Processed 27564 documents, kept 27244
+2025-11-23 05:02:45.746 | INFO     | __main__:process_filtering_task:149 - Task 397 completed. Processed 29120 documents, kept 28916
+2025-11-23 05:02:56.332 | INFO     | __main__:process_filtering_task:149 - Task 381 completed. Processed 30047 documents, kept 29905
+2025-11-23 05:03:12.058 | INFO     | __main__:process_filtering_task:149 - Task 407 completed. Processed 20139 documents, kept 18829
+
+Completed filtering enwiki_namespace_0
+Statistics: {'total': 6645119, 'kept': 6505872, 'short': 741, 'script': 138506, 'eng': 0, 'errors': 0}
+================================================================================
+
