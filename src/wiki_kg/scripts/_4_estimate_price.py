@@ -11,11 +11,19 @@ def main():
         },
         "gpt-5-mini": {
             "input": 0.125,  # $0.125 per 1M input tokens
-            "output": 1.0,   # $1.0 per 1M output tokens
+            "output": 1.0,  # $1.0 per 1M output tokens
         },
         "gpt-5": {
             "input": 0.625,  # $0.625 per 1M input tokens
-            "output": 5.0,   # $5.0 per 1M output tokens
+            "output": 5.0,  # $5.0 per 1M output tokens
+        },
+        "gpt-oss-20b-together": {
+            "input": 0.05, 
+            "output": 0.2, 
+        },
+        "gpt-oss-20b-deepinfra": {
+            "input": 0.03, 
+            "output": 0.14, 
         },
     }
 
@@ -62,7 +70,9 @@ def main():
         cost_per_article = total_cost / total_articles
 
         print(f"\n{model_name.upper()}")
-        print(f"  Pricing: ${input_price_per_1m} / ${output_price_per_1m} per 1M tokens")
+        print(
+            f"  Pricing: ${input_price_per_1m} / ${output_price_per_1m} per 1M tokens"
+        )
         print(f"  Input Cost:  ${input_cost:>15,.2f}")
         print(f"  Output Cost: ${output_cost:>15,.2f}")
         print(f"  Total Cost:  ${total_cost:>15,.2f}")
@@ -72,4 +82,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
