@@ -1362,3 +1362,86 @@ Starting parallel processing with 88 workers...
 2025-11-22 23:57:06.096 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_224.json.tar.gz
 2025-11-22 23:57:06.097 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_326.json.tar.gz
 2025-11-22 23:57:06.097 | INFO     | __main__:process_wiki_task:2117 - Processing file: gs://wikipedia-graph/wikipedia/raw_html_dumps/enwiki_namespace_0/enwiki_namespace_0_enwiki_namespace_0_chunk_234.json.tar.gz
+2025-11-23 00:02:18.439 | ERROR    | __main__:process_wiki_task:2154 - Task 86 failed with error: Compressed file ended before the end-of-stream marker was reached
+2025-11-23 00:02:18.441 | ERROR    | __main__:process_wiki_task:2157 - Traceback (most recent call last):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 2132, in process_wiki_task
+    for doc in reader.run([], rank=task_id, world_size=total_tasks):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 142, in run
+    for doc in iter_docs(iter_jsonl(filepath)):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 91, in iter_docs
+    for rec in jsonl_iter:
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 85, in iter_jsonl
+    for _i, line in enumerate(
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/tarfile.py", line 701, in readinto
+    buf = self.read(len(b))
+          ^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/tarfile.py", line 690, in read
+    b = self.fileobj.read(length)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/gzip.py", line 301, in read
+    return self._buffer.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/gzip.py", line 518, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+2025-11-23 00:02:55.517 | ERROR    | __main__:process_wiki_task:2154 - Task 30 failed with error: Compressed file ended before the end-of-stream marker was reached
+2025-11-23 00:02:55.519 | ERROR    | __main__:process_wiki_task:2157 - Traceback (most recent call last):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 2132, in process_wiki_task
+    for doc in reader.run([], rank=task_id, world_size=total_tasks):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 142, in run
+    for doc in iter_docs(iter_jsonl(filepath)):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 91, in iter_docs
+    for rec in jsonl_iter:
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 85, in iter_jsonl
+    for _i, line in enumerate(
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/tarfile.py", line 701, in readinto
+    buf = self.read(len(b))
+          ^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/tarfile.py", line 690, in read
+    b = self.fileobj.read(length)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/gzip.py", line 301, in read
+    return self._buffer.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/gzip.py", line 518, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+2025-11-23 00:04:10.413 | WARNING  | __main__:run:2047 - ⏰ Timeout while cleaning record text. Skipping record.
+2025-11-23 00:07:25.215 | ERROR    | __main__:process_wiki_task:2154 - Task 357 failed with error: Compressed file ended before the end-of-stream marker was reached
+2025-11-23 00:07:25.217 | ERROR    | __main__:process_wiki_task:2157 - Traceback (most recent call last):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 2132, in process_wiki_task
+    for doc in reader.run([], rank=task_id, world_size=total_tasks):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 142, in run
+    for doc in iter_docs(iter_jsonl(filepath)):
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 91, in iter_docs
+    for rec in jsonl_iter:
+  File "/home/joancabezas/wiki-kg/src/wiki_kg/processing/2_extraction/run_extraction.py", line 85, in iter_jsonl
+    for _i, line in enumerate(
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/tarfile.py", line 701, in readinto
+    buf = self.read(len(b))
+          ^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/tarfile.py", line 690, in read
+    b = self.fileobj.read(length)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/gzip.py", line 301, in read
+    return self._buffer.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joancabezas/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/gzip.py", line 518, in read
+    raise EOFError("Compressed file ended before the "
+EOFError: Compressed file ended before the end-of-stream marker was reached
+
+2025-11-23 02:39:20.352 | INFO     | __main__:process_wiki_task:2148 - Task 21 completed. Processed 19261 documents, wrote 19261
+2025-11-23 02:55:52.104 | INFO     | __main__:process_wiki_task:2148 - Task 313 completed. Processed 7495 documents, wrote 7495
+
+/// Note: Joan, debug remaining ones that never completed at some point, they have the same size as others, but were let run for 6 hours and nothing.
