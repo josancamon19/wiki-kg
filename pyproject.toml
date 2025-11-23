@@ -25,6 +25,7 @@ dependencies = [
     "sentence-transformers>=5.1.2",
     "tqdm>=4.67.1",
     "ty>=0.0.1a27",
+    "typer>=0.20.0",
 ]
 
 [tool.setuptools.packages.find]

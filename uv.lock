@@ -4069,6 +4069,7 @@ dependencies = [
     { name = "sentence-transformers" },
     { name = "tqdm" },
     { name = "ty" },
+    { name = "typer" },
 ]
 
 [package.metadata]
@@ -4093,6 +4094,7 @@ requires-dist = [
     { name = "sentence-transformers", specifier = ">=5.1.2" },
     { name = "tqdm", specifier = ">=4.67.1" },
     { name = "ty", specifier = ">=0.0.1a27" },
+    { name = "typer", specifier = ">=0.20.0" },
 ]
 
 [[package]]

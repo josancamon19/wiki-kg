@@ -6,7 +6,7 @@ This script:
 2. Processes each article with KGGen in parallel (no chunking)
 3. Tracks detailed timing for extraction and deduplication
 4. Tracks token usage (total, prompt, completion)
-5. Saves results to analysis/kggen_estimates/articles/{id}.json
+5. Saves results to analysis/kggen_estimates/{model}/{reasoning}_{id}.json
 6. Generates summary statistics grouped by length buckets
 """
 
@@ -15,9 +15,11 @@ import json
 import time
 import asyncio
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 from concurrent.futures import ThreadPoolExecutor
+from enum import Enum
 
+import typer
 from datasets import load_dataset
 from dotenv import load_dotenv
 from kg_gen import KGGen
@@ -26,15 +28,48 @@ from kg_gen.steps._3_deduplicate import DeduplicateMethod
 # Load environment variables
 load_dotenv()
 
+
+# Model configuration
+class ModelName(str, Enum):
+    """Supported models for knowledge graph generation."""
+
+    GPT_5_NANO = "gpt-5-nano"
+    GPT_OSS_20B = "gpt-oss-20b-together"
+
+
+class ReasoningEffort(str, Enum):
+    """Reasoning effort levels for OpenAI models."""
+
+    MINIMAL = "minimal"
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+
+
 # Configuration
 ARTICLES_PER_BUCKET = 2  # Number of articles to sample per length bucket
 LENGTH_TOLERANCE = 50  # +- tolerance in characters for bucket matching
 MAX_CONCURRENT = 100  # Maximum number of articles to process in parallel
-OUTPUT_DIR = Path("analysis/kggen_estimates/articles")
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Define length buckets: every 500 chars up to 15k, then every 5k chars
 LENGTH_BUCKETS = list(range(500, 15001, 500)) + list(range(20000, 100001, 5000))
+
+
+# Model-specific configurations
+MODEL_CONFIGS = {
+    ModelName.GPT_5_NANO: {
+        "model_name": "openai/gpt-5-nano",
+        "base_url": None,  # Uses default OpenAI API
+        "api_key_env": "OPENAI_API_KEY",
+        "supports_reasoning": True,
+    },
+    ModelName.GPT_OSS_20B: {
+        "model_name": "openai/gpt-oss-20b",
+        "base_url": "https://api.together.xyz/v1",
+        "api_key_env": "TOGETHER_API_KEY",
+        "supports_reasoning": True,
+    },
+}
 
 
 def find_suitable_articles(fw) -> List[Dict[str, Any]]:
@@ -122,18 +157,36 @@ def extract_token_usage_from_history(lm, start_idx: int = 0) -> Dict[str, int]:
     }
 
 
-def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
+def process_single_article(
+    article: Dict[str, Any],
+    model_config: Dict[str, Any],
+    reasoning_effort: Optional[str] = None,
+) -> Dict[str, Any]:
     """Process a single article without chunking, comparing both dedup methods."""
-    # Create fresh KGGen instance for this article
-    kg = KGGen(
-        model="openai/gpt-5-nano",
-        temperature=1.0,
-        reasoning_effort="medium",
-        api_key=os.getenv("OPENAI_API_KEY"),
-        # retrieval_model="all-MiniLM-L6-v2",
-        disable_cache=False,
-        max_tokens=128000,
+    # Get API key
+    api_key = model_config.get("api_key_override") or os.getenv(
+        model_config["api_key_env"]
     )
+
+    # Build KGGen kwargs
+    kg_kwargs = {
+        "model": model_config["model_name"],
+        "temperature": 1.0,
+        "api_key": api_key,
+        "disable_cache": False,
+        "max_tokens": 128000,
+    }
+
+    # Add base_url if specified
+    if model_config.get("base_url"):
+        kg_kwargs["base_url"] = model_config["base_url"]
+
+    # Add reasoning_effort if supported and specified
+    if model_config.get("supports_reasoning") and reasoning_effort:
+        kg_kwargs["reasoning_effort"] = reasoning_effort
+
+    # Create fresh KGGen instance for this article
+    kg = KGGen(**kg_kwargs)
 
     article_id = article["id"]
     text = article["text"]  # TODO: consider using title, and some metadata
@@ -200,20 +253,6 @@ def process_single_article(article: Dict[str, Any]) -> Dict[str, Any]:
             else 0,
             "tokens": 0,
         },
-        # TODO: full dedup is so fucking slow, that this doesn't make sense even for 1 article,
-        # "full_dedup": {
-        #     "entities": len(graph_full.entities),
-        #     "relations": len(graph_full.relations),
-        #     "entity_cleanup_percent": full_entity_cleanup,
-        #     "relation_cleanup_percent": full_relation_cleanup,
-        #     "entity_clusters": len(graph_full.entity_clusters)
-        #     if graph_full.entity_clusters
-        #     else 0,
-        #     "edge_clusters": len(graph_full.edge_clusters)
-        #     if graph_full.edge_clusters
-        #     else 0,
-        #     "tokens": full_tokens,
-        # },
     }
 
     return result
@@ -225,10 +264,13 @@ async def process_article_async(
     executor: ThreadPoolExecutor,
     article_num: int,
     total: int,
+    output_dir: Path,
+    model_config: Dict[str, Any],
+    reasoning_effort: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Process a single article with semaphore control."""
     article_id = str(article["id"]).split("/")[-1]
-    output_file = OUTPUT_DIR / f"{article_id}.json"
+    output_file = output_dir / f"{article_id}.json"
 
     async with semaphore:
         # Check if already processed
@@ -242,7 +284,9 @@ async def process_article_async(
         # Process in thread pool (since KGGen is synchronous)
         print(f"[{article_num}/{total}] Processing: {article['title'][:50]}...")
         loop = asyncio.get_event_loop()
-        result = await loop.run_in_executor(executor, process_single_article, article)
+        result = await loop.run_in_executor(
+            executor, process_single_article, article, model_config, reasoning_effort
+        )
 
         # Save result
         result = convert_sets_to_lists(result)
@@ -255,11 +299,30 @@ async def process_article_async(
         return result
 
 
-async def main_async():
+async def main_async(
+    model: ModelName,
+    reasoning_effort: ReasoningEffort = ReasoningEffort.MEDIUM,
+):
     """Main execution function with parallel processing."""
+    # Get model configuration
+    model_config = MODEL_CONFIGS[model]
+
+    # Determine output directory based on model and reasoning
+    output_dir = Path(
+        f"analysis/kggen_estimates/{model.value}-{reasoning_effort.value}"
+    )
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     print("=" * 80)
     print("KGGen Estimation Script - Parallel Processing")
     print("=" * 80)
+    print(f"Model: {model_config['model_name']}")
+    print(f"Reasoning Effort: {reasoning_effort.value}")
+    if model_config.get("base_url"):
+        print(f"Base URL: {model_config['base_url']}")
+    print(f"Output Directory: {output_dir}")
+    print("=" * 80)
+
     fw = load_dataset(
         "josancamon/finewiki",
         name="default",
@@ -284,7 +347,16 @@ async def main_async():
 
     start_time = time.time()
     tasks = [
-        process_article_async(article, semaphore, executor, i, len(articles))
+        process_article_async(
+            article,
+            semaphore,
+            executor,
+            i,
+            len(articles),
+            output_dir,
+            model_config,
+            reasoning_effort,
+        )
         for i, article in enumerate(articles, 1)
     ]
     all_results = await asyncio.gather(*tasks)
@@ -297,16 +369,35 @@ async def main_async():
     print("DATA COLLECTION COMPLETE")
     print("=" * 80)
     print(f"✅ Processed {len(all_results)} articles in {total_time:.1f}s")
-    print(f"✅ Results saved to {OUTPUT_DIR}")
+    print(f"✅ Results saved to {output_dir}")
     print("\n💡 Run compute_summary.py to generate statistics from collected data")
 
     return all_results
 
 
-def main():
-    """Entry point that runs the async main function."""
-    asyncio.run(main_async())
+app = typer.Typer(
+    help="Generate knowledge graphs from FineWiki articles for different models.",
+    no_args_is_help=True,
+)
+
+
+@app.command()
+def run(
+    model: ModelName = typer.Option(
+        ModelName.GPT_5_NANO,
+        "--model",
+        "-m",
+        help="Model to use for knowledge graph generation.",
+    ),
+    reasoning_effort: ReasoningEffort = typer.Option(
+        ReasoningEffort.MEDIUM,
+        "--reasoning-effort",
+        "-r",
+        help="Reasoning effort level (only for models that support it, like gpt-5-nano).",
+    ),
+):
+    asyncio.run(main_async(model, reasoning_effort))
 
 
 if __name__ == "__main__":
-    main()
+    app()

@@ -5,22 +5,11 @@ from pathlib import Path
 import json
 
 
-def load_token_estimates():
-    """Load the token estimates from estimates.json."""
-    estimates_path = (
-        Path(__file__).parent.parent.parent.parent
-        / "analysis"
-        / "kggen_estimates"
-        / "estimates.json"
-    )
-    with open(estimates_path, "r") as f:
-        estimates = json.load(f)
-
-    # Convert bucket keys to integers and sort
-    bucket_map = {int(k): v for k, v in estimates.items()}
-    sorted_buckets = sorted(bucket_map.keys())
-
-    return bucket_map, sorted_buckets
+def get_bucket_ranges():
+    """Define character length buckets."""
+    # Every 500 chars up to 15k, then every 5k chars up to 100k
+    buckets = list(range(500, 15001, 500)) + list(range(20000, 100001, 5000))
+    return sorted(buckets)
 
 
 def find_closest_bucket(char_count, sorted_buckets):
@@ -60,8 +49,8 @@ def batch_iterator(dataset, batch_size, max_items, sorted_buckets):
 
 
 def main():
-    print("Loading token estimates...")
-    bucket_map, sorted_buckets = load_token_estimates()
+    print("Loading bucket ranges...")
+    sorted_buckets = get_bucket_ranges()
 
     print("Loading dataset...")
     fw = load_dataset(
@@ -98,13 +87,9 @@ def main():
 
     total_articles = len(all_buckets)
 
-    # Save bucket distribution
+    # Save bucket distribution (only article counts)
     bucket_distribution = {
-        str(bucket): {
-            "article_count": count,
-            "avg_prompt_tokens": bucket_map[bucket]["avg_prompt_tokens"],
-            "avg_completion_tokens": bucket_map[bucket]["avg_completion_tokens"],
-        }
+        str(bucket): count
         for bucket, count in sorted(bucket_counts.items())
     }
 
