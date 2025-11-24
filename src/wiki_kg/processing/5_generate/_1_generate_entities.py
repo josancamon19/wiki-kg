@@ -222,7 +222,7 @@ def main():
 
     # Create results/entities directory structure
     entities_dir = os.path.join(RESULTS_BASE_PATH, "entities")
-    # TODO: this files shuold probably be handled in GCP using gcsfs 
+    # TODO: this files shuold probably be handled in GCP using gcsfs cause they'll not fit in github for sure
     output_path = os.path.join(entities_dir, "batch.jsonl")
 
     generate_entities_batch_file(
