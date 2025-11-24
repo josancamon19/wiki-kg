@@ -323,6 +323,7 @@ def main():
         check_status(args.batch_type)
     elif args.command == "download":
         download_results(args.batch_type)
+        # TODO: add an option to identify the failed requests, and save them in a separate file of request and another of error messages, to either just re-run, or know what to change
     else:
         parser.print_help()
 
