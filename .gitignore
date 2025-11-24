@@ -20,3 +20,4 @@ cache_parquet/
 graph.json
 analysis/kggen_estimates/articles
 analysis/kggen_estimates/*/*.json
+src/wiki_kg/processing/5_generate/results/*
