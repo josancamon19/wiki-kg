@@ -1,6 +1,3 @@
-# take the result files from entities and relations, use KGGen() to create the graphs.
-# deduplicate individually, and upload to GCP each one.
-
 import json
 from pathlib import Path
 from kg_gen import KGGen
@@ -8,6 +5,9 @@ from kg_gen.kg_gen import DeduplicateMethod
 from kg_gen.models import Graph
 import multiprocessing as mp
 from typing import Tuple
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def count_lines(file_path: Path) -> int:
@@ -92,6 +92,9 @@ def process_range(
             for relation in relations
             if relation.get("predicate") is not None
         }
+
+        if len(edges) != len(relations):
+            logger.warning(f"Expected {len(relations)} edges, got {len(edges)}")
 
         # Create graph
         graph = Graph(

@@ -3,3 +3,5 @@
 3. handle retries, and failures from batch api in specific requests
 4. handle chunking in relations
 5. ensure it works at scale, (_5_get graphs nor _6_merge are ready to be functional at scale)
+6. Small version merged_graph has a ton of entities with predicate NULL, this shouldn't happen
+7. We need to store metadata on each graph!!! to reference an article id, and a chunk where this was taken 
