@@ -2016,41 +2016,18 @@ class WikipediaParser(PipelineStep):
 
     def run(self, data, rank=0, world_size=1):
         """Process documents with timeout support using signal-based approach."""
-        import signal
+        # signal only works well linux, so wrap the timeout logic outside, in some other way
         from loguru import logger
 
         self._warned_error = False
-
-        def timeout_handler(signum, frame):
-            raise TimeoutError("Processing timeout")
 
         for doc in data:
             self.stat_update("total")
             with self.track_time():
                 try:
-                    # Set timeout alarm
-                    if hasattr(signal, "SIGALRM"):
-                        signal.signal(signal.SIGALRM, timeout_handler)
-                        signal.alarm(int(self.timeout))
-
                     parsed_document = self.process_document(doc)
-
-                    # Cancel timeout alarm
-                    if hasattr(signal, "SIGALRM"):
-                        signal.alarm(0)
-
                     self.stat_update("extracted")
-                except TimeoutError:
-                    if hasattr(signal, "SIGALRM"):
-                        signal.alarm(0)
-                    self.stat_update("timeout")
-                    logger.warning(
-                        "⏰ Timeout while cleaning record text. Skipping record."
-                    )
-                    continue
                 except Exception as e:
-                    if hasattr(signal, "SIGALRM"):
-                        signal.alarm(0)
                     self.stat_update("clean_error")
                     if not self._warned_error:
                         logger.warning(
@@ -2068,6 +2045,58 @@ class WikipediaParser(PipelineStep):
                 self.stat_update("dropped")
 
 
+def parse_document_worker(doc_and_wiki):
+    """Worker function to parse a single document with thread-based timeout."""
+    import threading
+
+    doc, wiki = doc_and_wiki
+
+    # Result container
+    result_container = {"result": None, "exception": None}
+
+    def target():
+        try:
+            # Use smaller timeout for parser internal checks
+            parser = WikipediaParser(wiki, timeout=5)
+            for parsed_doc in parser.run([doc], rank=0, world_size=1):
+                result_container["result"] = {
+                    "success": True,
+                    "data": {
+                        "text": parsed_doc.text,
+                        "id": parsed_doc.id,
+                        "metadata": parsed_doc.metadata,
+                    },
+                }
+                return
+        except Exception as e:
+            result_container["exception"] = e
+
+    # Run parsing in a separate thread
+    t = threading.Thread(target=target)
+    t.start()
+
+    # Wait for it with timeout
+    t.join(timeout=5)
+
+    if t.is_alive():
+        # Thread is still running -> Timeout!
+        # We can't easily kill threads in Python, but we can ignore the result
+        # and the worker process will eventually be recycled or finish
+        return {"success": False, "error": "timeout", "doc_id": doc.id}
+
+    if result_container["exception"]:
+        return {
+            "success": False,
+            "error": str(result_container["exception"]),
+            "doc_id": doc.id,
+        }
+
+    if result_container["result"]:
+        return result_container["result"]
+
+    return {"success": False, "error": "No output from parser", "doc_id": doc.id}
+
+
 def process_wiki_task(task_args):
     """Worker function to process a single wiki task in isolation."""
     import json
@@ -2075,7 +2104,7 @@ def process_wiki_task(task_args):
     from loguru import logger
     from pathlib import Path
 
-    wiki, task_id, total_tasks, logging_dir = task_args
+    wiki, task_id, total_tasks, logging_dir, use_parallel = task_args
 
     # Setup logging for this task
     log_file = Path(logging_dir) / "logs" / f"task_{task_id:05d}.log"
@@ -2083,14 +2112,15 @@ def process_wiki_task(task_args):
     logger.add(str(log_file), rotation="100 MB")
 
     try:
-        logger.info(f"Starting task {task_id}/{total_tasks} for {wiki}")
+        logger.info(
+            f"Starting task {task_id}/{total_tasks} for {wiki} (parallel={use_parallel})"
+        )
 
         # Initialize GCS filesystem (IO isolated per process)
         fs = gcsfs.GCSFileSystem()
 
-        # Create reader and parser for this task
+        # Create reader for this task
         reader = WikipediaReader(wiki)
-        parser = WikipediaParser(wiki)
 
         # Setup stats tracking
         stats = {
@@ -2125,29 +2155,124 @@ def process_wiki_task(task_args):
         # Ensure output directory exists
         fs.makedirs(output_path, exist_ok=True)
 
-        # Process documents from this file
-        documents_written = 0
-        with fs.open(output_file, "w") as out_f:
-            # Reader processes with rank/world_size for this specific task
-            for doc in reader.run([], rank=task_id, world_size=total_tasks):
-                stats["total"] += 1
+        if use_parallel:
+            # Parallel mode: collect all documents first, then parse in parallel
+            logger.info("Collecting documents from file...")
+            documents = []
+            try:
+                for doc in reader.run([], rank=task_id, world_size=total_tasks):
+                    documents.append(doc)
+                    stats["total"] += 1
+                    if len(documents) % 1000 == 0:
+                        logger.info(f"   Collected {len(documents)} documents")
 
-                # Parse document
-                for parsed_doc in parser.run([doc], rank=0, world_size=1):
-                    stats["forwarded"] += 1
+            except EOFError as e:
+                logger.error(f"Corrupted gzip file detected for task {task_id}: {e}")
+                logger.error(f"File: gs://{file_path}")
+                stats["corrupted_file"] = True
+                return stats
 
-                    # Write output
-                    output_data = {
-                        "text": parsed_doc.text,
-                        "id": parsed_doc.id,
-                        "metadata": parsed_doc.metadata,
-                    }
-                    out_f.write(json.dumps(output_data) + "\n")
-                    documents_written += 1
+            logger.info(
+                f"Collected {len(documents)} documents. Starting parallel parsing with {os.cpu_count()} workers..."
+            )
 
-        logger.info(
-            f"Task {task_id} completed. Processed {stats['total']} documents, wrote {documents_written}"
-        )
+            # Parse documents in parallel with progress bar
+            import multiprocessing as mp
+            from tqdm import tqdm
+
+            doc_and_wiki_pairs = [(doc, wiki) for doc in documents]
+
+            # Use imap_unordered for better performance and real-time progress
+            # chunksize helps reduce overhead for large batches
+            chunksize = max(1, len(documents) // (os.cpu_count() * 4))
+
+            # Write results with progress bar
+            documents_written = 0
+            stats["timeout_docs"] = 0
+            stats["error_docs"] = 0
+
+            with fs.open(output_file, "w") as out_f:
+                with mp.Pool(processes=os.cpu_count()) as pool:
+                    # Use imap_unordered for real-time progress and better performance
+                    parse_iterator = pool.imap_unordered(
+                        parse_document_worker, doc_and_wiki_pairs, chunksize=chunksize
+                    )
+
+                    # Process results with progress bar
+                    for result in tqdm(
+                        parse_iterator,
+                        total=len(documents),
+                        desc=f"Task {task_id}",
+                        unit="doc",
+                    ):
+                        if result.get("success"):
+                            stats["forwarded"] += 1
+                            out_f.write(json.dumps(result["data"]) + "\n")
+                            documents_written += 1
+                        else:
+                            stats["dropped"] += 1
+                            error_type = result.get("error", "unknown")
+                            if error_type == "timeout":
+                                stats["timeout_docs"] += 1
+                            else:
+                                stats["error_docs"] += 1
+
+                            # Log summary every 100 errors
+                            if (stats["timeout_docs"] + stats["error_docs"]) % 100 == 1:
+                                logger.warning(
+                                    f"Parse errors so far: {stats['timeout_docs']} timeouts, {stats['error_docs']} other errors"
+                                )
+        else:
+            documents_written = 0
+            stats["timeout_docs"] = 0
+            stats["error_docs"] = 0
+
+            with fs.open(output_file, "w") as out_f:
+                # Reader processes with rank/world_size for this specific task
+                try:
+                    # Use manual iteration to handle timeouts per doc
+                    for doc in reader.run([], rank=task_id, world_size=total_tasks):
+                        stats["total"] += 1
+
+                        # Process single doc with timeout wrapper
+                        # We pass the tuple (doc, wiki) just like the parallel version
+                        result = parse_document_worker((doc, wiki))
+
+                        if result.get("success"):
+                            stats["forwarded"] += 1
+                            out_f.write(json.dumps(result["data"]) + "\n")
+                            documents_written += 1
+                        else:
+                            stats["dropped"] += 1
+                            error_type = result.get("error", "unknown")
+                            if error_type == "timeout":
+                                stats["timeout_docs"] += 1
+                            else:
+                                stats["error_docs"] += 1
+
+                            # Log first error of each type to avoid spam
+                            if stats["timeout_docs"] == 1 and error_type == "timeout":
+                                logger.warning(
+                                    f"Task {task_id}: Encountered first timeout on document {doc.id}"
+                                )
+                            elif stats["error_docs"] == 1 and error_type != "timeout":
+                                logger.warning(
+                                    f"Task {task_id}: Encountered first error on document {doc.id}: {error_type}"
+                                )
+
+                except EOFError as e:
+                    logger.error(
+                        f"Corrupted gzip file detected for task {task_id}: {e}"
+                    )
+                    logger.error(f"File: gs://{file_path}")
+                    stats["corrupted_file"] = True
+                    return stats
+
+        # Log completion with details
+        log_msg = f"Task {task_id} completed. Processed {stats['total']} documents, wrote {documents_written}"
+        if stats.get("timeout_docs", 0) > 0 or stats.get("error_docs", 0) > 0:
+            log_msg += f" (timeouts: {stats.get('timeout_docs', 0)}, errors: {stats.get('error_docs', 0)})"
+        logger.info(log_msg)
         return stats
 
     except Exception as e:
@@ -2212,20 +2337,42 @@ if __name__ == "__main__":
             # Filter to only process specified task IDs
             valid_task_ids = [tid for tid in target_task_ids if tid < files]
             invalid_task_ids = [tid for tid in target_task_ids if tid >= files]
-            
-            if invalid_task_ids:
-                raise ValueError(f"Task IDs {sorted(invalid_task_ids)} are out of range (max: {files-1})")
-            
-            task_args = [(wiki, task_id, files, str(log_dir)) for task_id in sorted(valid_task_ids)]
-            print(f"Processing {len(task_args)} specific tasks: {sorted(valid_task_ids)}")
-        else:
-            # Process all files
-            task_args = [(wiki, task_id, files, str(log_dir)) for task_id in range(files)]
 
-        # Process files in parallel using multiprocessing
-        print(f"Starting parallel processing with {num_workers} workers...")
-        with mp.Pool(processes=num_workers) as pool:
-            results = pool.map(process_wiki_task, task_args)
+            if invalid_task_ids:
+                raise ValueError(
+                    f"Task IDs {sorted(invalid_task_ids)} are out of range (max: {files - 1})"
+                )
+
+            # When processing specific tasks, do them one at a time with parallel document parsing
+            print(
+                f"Processing {len(valid_task_ids)} specific tasks sequentially: {sorted(valid_task_ids)}"
+            )
+            print(
+                f"Each task will use all {num_workers} workers to parallelize document parsing"
+            )
+            results = []
+            for task_id in sorted(valid_task_ids):
+                print(
+                    f"\n>>> Processing task {task_id}/{files - 1} with parallel document parsing..."
+                )
+                task_args = (
+                    wiki,
+                    task_id,
+                    files,
+                    str(log_dir),
+                    True,
+                )  # use_parallel=True
+                result = process_wiki_task(task_args)
+                results.append(result)
+                print(f">>> Task {task_id} completed. Stats: {result}")
+        else:
+            # Process all files in parallel (original behavior)
+            task_args = [
+                (wiki, task_id, files, str(log_dir), False) for task_id in range(files)
+            ]  # use_parallel=False
+            print(f"Starting parallel processing with {num_workers} workers...")
+            with mp.Pool(processes=num_workers) as pool:
+                results = pool.map(process_wiki_task, task_args)
 
         # Aggregate statistics
         total_stats = {
@@ -2236,12 +2383,15 @@ if __name__ == "__main__":
             "forwarded": 0,
             "dropped": 0,
             "errors": 0,
+            "corrupted_files": 0,
         }
 
         for result in results:
             if "error" in result:
                 total_stats["errors"] += 1
             else:
+                if result.get("corrupted_file"):
+                    total_stats["corrupted_files"] += 1
                 for key in [
                     "total",
                     "extracted",

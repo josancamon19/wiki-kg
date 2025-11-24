@@ -19,7 +19,7 @@ from typing import Dict, Any, List, Optional
 from concurrent.futures import ThreadPoolExecutor
 from enum import Enum
 
-import typer
+import argparse
 from datasets import load_dataset
 from dotenv import load_dotenv
 from kg_gen import KGGen
@@ -35,6 +35,7 @@ class ModelName(str, Enum):
 
     GPT_5_NANO = "gpt-5-nano"
     GPT_OSS_20B = "gpt-oss-20b-together"
+    GPT_OSS_20B_DEEPINFRA = "gpt-oss-20b-deepinfra"
 
 
 class ReasoningEffort(str, Enum):
@@ -64,9 +65,15 @@ MODEL_CONFIGS = {
         "supports_reasoning": True,
     },
     ModelName.GPT_OSS_20B: {
-        "model_name": "openai/gpt-oss-20b",
+        "model_name": "together_ai/openai/gpt-oss-20b",
         "base_url": "https://api.together.xyz/v1",
         "api_key_env": "TOGETHER_API_KEY",
+        "supports_reasoning": True,
+    },
+    ModelName.GPT_OSS_20B_DEEPINFRA: {
+        "model_name": "deepinfra/openai/gpt-oss-20b",
+        "base_url": "https://api.deepinfra.com/v1",
+        "api_key_env": "DEEPINFRA_API_KEY",
         "supports_reasoning": True,
     },
 }
@@ -174,12 +181,12 @@ def process_single_article(
         "temperature": 1.0,
         "api_key": api_key,
         "disable_cache": False,
-        "max_tokens": 128000,
+        "max_tokens": 64000,
     }
 
     # Add base_url if specified
     if model_config.get("base_url"):
-        kg_kwargs["base_url"] = model_config["base_url"]
+        kg_kwargs["api_base"] = model_config["base_url"]
 
     # Add reasoning_effort if supported and specified
     if model_config.get("supports_reasoning") and reasoning_effort:
@@ -189,17 +196,15 @@ def process_single_article(
     kg = KGGen(**kg_kwargs)
 
     article_id = article["id"]
-    text = article["text"]  # TODO: consider using title, and some metadata
+    text = article["text"] 
 
     # === STAGE 1: EXTRACTION ===
     start_extraction = time.time()
     kg.lm.history = []
-    graph_no_cluster = kg.generate(input_data=text, chunk_size=None, cluster=False)
+    graph_no_cluster = kg.generate(input_data=text)
 
-    graph_no_cluster.to_file("graph.json")
     extraction_time = time.time() - start_extraction
     extraction_tokens = extract_token_usage_from_history(kg.lm, 0)
-
     entities_before = len(graph_no_cluster.entities)
     relations_before = len(graph_no_cluster.relations)
 
@@ -375,29 +380,37 @@ async def main_async(
     return all_results
 
 
-app = typer.Typer(
-    help="Generate knowledge graphs from FineWiki articles for different models.",
-    no_args_is_help=True,
-)
+def main():
+    """CLI entry point."""
+    parser = argparse.ArgumentParser(
+        description="Generate knowledge graphs from FineWiki articles for different models."
+    )
 
-
-@app.command()
-def run(
-    model: ModelName = typer.Option(
-        ModelName.GPT_5_NANO,
+    parser.add_argument(
         "--model",
         "-m",
+        type=str,
+        choices=[e.value for e in ModelName],
+        default=ModelName.GPT_5_NANO.value,
         help="Model to use for knowledge graph generation.",
-    ),
-    reasoning_effort: ReasoningEffort = typer.Option(
-        ReasoningEffort.MEDIUM,
+    )
+
+    parser.add_argument(
         "--reasoning-effort",
         "-r",
+        type=str,
+        choices=[e.value for e in ReasoningEffort],
+        default=ReasoningEffort.MEDIUM.value,
         help="Reasoning effort level (only for models that support it, like gpt-5-nano).",
-    ),
-):
+    )
+
+    args = parser.parse_args()
+
+    # Convert string values back to enums
+    model = ModelName(args.model)
+    reasoning_effort = ReasoningEffort(args.reasoning_effort)
     asyncio.run(main_async(model, reasoning_effort))
 
 
 if __name__ == "__main__":
-    app()
+    main()
