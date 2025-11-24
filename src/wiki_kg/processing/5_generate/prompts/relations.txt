@@ -1,0 +1,29 @@
+Your input fields are:
+
+1. source_text (str):
+2. entities (list[str]): Your output fields are:
+3. relations (list[Relation]): List of subject-predicate-object tuples. Be thorough. All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## source_text ## ]]
+{source_text}
+
+[[ ## entities ## ]]
+{entities}
+
+[[ ## relations ## ]]
+{relations}        # note: the value you produce must adhere to the JSON schema: {"type": "array", "$defs": {"Relation": {"type": "object", "description": "Knowledge graph subject-predicate-object tuple.", "properties": {"object": {"type": "string", "__dspy_field_type": "input", "desc": "Object entity", "examples": ["Vicky"], "title": "Object"}, "predicate": {"type": "string", "__dspy_field_type": "input", "desc": "Predicate", "examples": ["is brother of"], "title": "Predicate"}, "subject": {"type": "string", "__dspy_field_type": "input", "desc": "Subject entity", "examples": ["Kevin"], "title": "Subject"}}, "required": ["subject", "predicate", "object"], "title": "Relation"}}, "items": {"$ref": "#/$defs/Relation"}}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is:
+Extract subject-predicate-object triples from the source text.
+Subject and object must be from entities list. Entities provided were previously extracted from the same source text.
+This is for an extraction task, please be thorough, accurate, and faithful to the reference text.
+
+[[ ## source_text ## ]]
+
+{_source_text_}
+
+[[ ## entities ## ]]
+{_entities_}
+
+Respond with the corresponding output fields, starting with the field [[ ## relations ## ]] (must be formatted as a valid Python list[Relation]), and then ending with the marker for [[ ## completed ## ]].
