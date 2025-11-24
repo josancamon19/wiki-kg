@@ -2167,6 +2167,8 @@ def process_wiki_task(task_args):
                         logger.info(f"   Collected {len(documents)} documents")
 
             except EOFError as e:
+                # TODO: download this 3 files manually, upload to GCP, and re-run process, if the file themselves are bad from wikimedia, let F know, 
+                # - and simply not return here, process whatever was collected.
                 logger.error(f"Corrupted gzip file detected for task {task_id}: {e}")
                 logger.error(f"File: gs://{file_path}")
                 stats["corrupted_file"] = True
