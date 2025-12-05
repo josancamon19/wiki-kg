@@ -3,11 +3,35 @@ Parse entities from batch API results.
 
 Reads the batch_results.jsonl file and extracts the entities list from successful responses.
 Saves to a simplified JSONL format for downstream processing.
+Uses Google Cloud Storage for file operations.
 """
 
 import json
 import re
+import logging
+import argparse
 from pathlib import Path
+
+import gcsfs
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Configure logging
+HERE = Path(__file__).resolve().parent
+LOG_FILE = HERE / "generation.log"
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    handlers=[logging.FileHandler(LOG_FILE, mode="a"), logging.StreamHandler()],
+)
+logger = logging.getLogger(__name__)
+
+# Constants
+GCP_KG_PREFIX = "gs://wikipedia-graph/graph"
 
 
 def extract_entities_from_text(text: str) -> list[str] | None:
@@ -57,21 +81,24 @@ def extract_entities_from_text(text: str) -> list[str] | None:
         return None
 
 
-def parse_batch_results(input_file: Path, output_file: Path):
+def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSystem):
     """
     Parse batch results and extract entities.
 
     Args:
-        input_file: Path to batch_results.jsonl
-        output_file: Path to save parsed entities
+        input_file: GCS path to batch_results.jsonl
+        output_file: GCS path to save parsed entities
+        fs: GCS filesystem instance
     """
-    output_file.parent.mkdir(parents=True, exist_ok=True)
+    # Ensure output directory exists
+    output_dir = "/".join(output_file.replace("gs://", "").split("/")[:-1])
+    fs.makedirs(output_dir, exist_ok=True)
 
     successful = 0
     failed = 0
     parse_errors = 0
 
-    with open(input_file, "r") as f_in, open(output_file, "w") as f_out:
+    with fs.open(input_file, "r") as f_in, fs.open(output_file, "w") as f_out:
         for line_num, line in enumerate(f_in, 1):
             try:
                 result = json.loads(line)
@@ -83,7 +110,7 @@ def parse_batch_results(input_file: Path, output_file: Path):
                 # Check if request was successful
                 if status_code != 200:
                     failed += 1
-                    print(
+                    logger.warning(
                         f"Line {line_num}: Failed request for {custom_id}, status: {status_code}"
                     )
                     continue
@@ -103,7 +130,9 @@ def parse_batch_results(input_file: Path, output_file: Path):
 
                 if not message_content:
                     parse_errors += 1
-                    print(f"Line {line_num}: No message content found for {custom_id}")
+                    logger.warning(
+                        f"Line {line_num}: No message content found for {custom_id}"
+                    )
                     continue
 
                 # Extract entities from the text
@@ -111,7 +140,7 @@ def parse_batch_results(input_file: Path, output_file: Path):
 
                 if entities is None:
                     parse_errors += 1
-                    print(
+                    logger.warning(
                         f"Line {line_num}: Failed to extract entities for {custom_id}"
                     )
                     continue
@@ -122,33 +151,71 @@ def parse_batch_results(input_file: Path, output_file: Path):
                 successful += 1
 
             except json.JSONDecodeError as e:
-                print(f"Line {line_num}: JSON decode error: {e}")
+                logger.error(f"Line {line_num}: JSON decode error: {e}")
                 parse_errors += 1
             except Exception as e:
-                print(f"Line {line_num}: Unexpected error: {e}")
+                logger.error(f"Line {line_num}: Unexpected error: {e}")
                 parse_errors += 1
 
-    print("\nParsing complete!")
-    print(f"  Successful: {successful}")
-    print(f"  Failed requests: {failed}")
-    print(f"  Parse errors: {parse_errors}")
-    print(f"  Total processed: {successful + failed + parse_errors}")
-    print(f"\nOutput saved to: {output_file}")
+    logger.info("=" * 80)
+    logger.info("Parsing complete!")
+    logger.info(f"  Successful: {successful}")
+    logger.info(f"  Failed requests: {failed}")
+    logger.info(f"  Parse errors: {parse_errors}")
+    logger.info(f"  Total processed: {successful + failed + parse_errors}")
+    logger.info(f"  Output saved to: {output_file}")
+    logger.info("=" * 80)
 
 
 def main():
     """Main entry point."""
-    # Define paths
-    base_dir = Path(__file__).parent
-    input_file = base_dir / "results" / "entities" / "batch_results.jsonl"
-    output_file = base_dir / "results" / "entities" / "parsed_entities.jsonl"
+    parser = argparse.ArgumentParser(
+        description="Parse entities from batch API results"
+    )
+    parser.add_argument(
+        "--wiki",
+        type=str,
+        default="enwiki",
+        help="Wiki identifier (default: enwiki)",
+    )
+    parser.add_argument(
+        "--input-file",
+        type=str,
+        default=None,
+        help="GCS path to batch_results.jsonl (defaults to GCP_KG_PREFIX/{wiki}/entities/batch_results.jsonl)",
+    )
+    parser.add_argument(
+        "--output-file",
+        type=str,
+        default=None,
+        help="GCS path to save parsed entities (defaults to GCP_KG_PREFIX/{wiki}/entities/parsed_entities.jsonl)",
+    )
+    args = parser.parse_args()
 
-    if not input_file.exists():
-        print(f"Error: Input file not found: {input_file}")
+    # Initialize GCS filesystem
+    fs = gcsfs.GCSFileSystem()
+
+    # Generate default paths if not provided
+    input_file = (
+        args.input_file or f"{GCP_KG_PREFIX}/{args.wiki}/entities/batch_results.jsonl"
+    )
+    output_file = (
+        args.output_file
+        or f"{GCP_KG_PREFIX}/{args.wiki}/entities/parsed_entities.jsonl"
+    )
+
+    if not fs.exists(input_file):
+        logger.error(f"Error: Input file not found: {input_file}")
         return
 
-    print(f"Parsing entities from: {input_file}")
-    parse_batch_results(input_file, output_file)
+    logger.info(f"Script: {__file__}")
+    logger.info(f"Arguments: {vars(args)}")
+    logger.info("=" * 80)
+    logger.info(f"Parsing entities from: {input_file}")
+    logger.info(f"Output to: {output_file}")
+    logger.info("=" * 80)
+
+    parse_batch_results(input_file, output_file, fs)
 
 
 if __name__ == "__main__":
