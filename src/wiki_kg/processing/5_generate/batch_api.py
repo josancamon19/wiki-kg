@@ -2,7 +2,9 @@ import os
 import json
 import logging
 import argparse
+from pathlib import Path
 
+import gcsfs
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -10,62 +12,72 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configure logging
+HERE = Path(__file__).resolve().parent
+LOG_FILE = HERE / "generation.log"
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
+    handlers=[
+        logging.FileHandler(LOG_FILE, mode='a'),
+        logging.StreamHandler()
+    ]
 )
 logger = logging.getLogger(__name__)
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Constants
-RESULTS_BASE_PATH = os.path.join(os.path.dirname(__file__), "results")
+GCP_KG_PREFIX = "gs://wikipedia-graph/graph"
 
 
-def get_batch_paths(batch_type: str) -> dict:
+def get_batch_paths(batch_type: str, wiki: str = "enwiki") -> dict:
     """
-    Get the standard file paths for a batch type.
+    Get the standard GCS file paths for a batch type.
     
     Args:
         batch_type: Type of batch (e.g., 'entities', 'relations')
+        wiki: Wiki identifier (default: 'enwiki')
         
     Returns:
-        Dictionary with paths for batch files
+        Dictionary with GCS paths for batch files
     """
-    batch_dir = os.path.join(RESULTS_BASE_PATH, batch_type)
+    batch_dir = f"{GCP_KG_PREFIX}/{wiki}/{batch_type}"
     return {
         "dir": batch_dir,
-        "batch_file": os.path.join(batch_dir, "batch.jsonl"),
-        "info_file": os.path.join(batch_dir, "batch_info.json"),
-        "results_file": os.path.join(batch_dir, "batch_results.jsonl"),
+        "batch_file": f"{batch_dir}/batch.jsonl",
+        "info_file": f"{batch_dir}/batch_info.json",
+        "results_file": f"{batch_dir}/batch_results.jsonl",
     }
 
 
-def upload_batch(batch_type: str, force: bool = False) -> dict:
+def upload_batch(batch_type: str, wiki: str = "enwiki", force: bool = False) -> dict:
     """
-    Upload a batch file to OpenAI and create a batch job.
+    Upload a batch file from GCS to OpenAI and create a batch job.
     
     Args:
         batch_type: Type of batch (e.g., 'entities', 'relations')
+        wiki: Wiki identifier (default: 'enwiki')
         force: If True, upload even if batch info already exists
         
     Returns:
         Dictionary containing batch information
     """
-    paths = get_batch_paths(batch_type)
+    fs = gcsfs.GCSFileSystem()
+    paths = get_batch_paths(batch_type, wiki)
     
-    if not os.path.exists(paths["batch_file"]):
+    if not fs.exists(paths["batch_file"]):
         raise FileNotFoundError(
             f"Batch file not found: {paths['batch_file']}\n"
             f"Run the generation script first to create the batch file."
         )
     
     # Check if batch info already exists
-    if os.path.exists(paths["info_file"]) and not force:
-        logger.info(f"Batch info already exists for '{batch_type}'")
+    if fs.exists(paths["info_file"]) and not force:
+        logger.info(f"Batch info already exists for '{batch_type}' in wiki '{wiki}'")
         
         # Load and check existing batch status
-        with open(paths["info_file"], "r") as f:
+        with fs.open(paths["info_file"], "r") as f:
             existing_info = json.load(f)
         
         batch_id = existing_info.get("batch_id")
@@ -88,19 +100,21 @@ def upload_batch(batch_type: str, force: bool = False) -> dict:
             logger.warning(f"Could not retrieve existing batch: {e}")
             logger.info("Uploading new batch...")
     
-    # Get file stats
-    file_size = os.path.getsize(paths["batch_file"])
-    with open(paths["batch_file"], "r") as f:
+    # Get file stats from GCS
+    file_info = fs.info(paths["batch_file"])
+    file_size = file_info.get("size", 0)
+    
+    with fs.open(paths["batch_file"], "r") as f:
         num_requests = sum(1 for _ in f)
     
-    logger.info(f"Uploading batch: {batch_type}")
+    logger.info(f"Uploading batch: {batch_type} (wiki: {wiki})")
     logger.info(f"File: {paths['batch_file']}")
     logger.info(f"File size: {file_size / 1024 / 1024:.2f} MB")
     logger.info(f"Number of requests: {num_requests}")
     
-    # Step 1: Upload the file
-    logger.info("Uploading file to OpenAI...")
-    with open(paths["batch_file"], "rb") as f:
+    # Step 1: Download from GCS and upload to OpenAI
+    logger.info("Downloading from GCS and uploading to OpenAI...")
+    with fs.open(paths["batch_file"], "rb") as f:
         batch_input_file = client.files.create(file=f, purpose="batch")
     
     logger.info(f"File uploaded successfully! File ID: {batch_input_file.id}")
@@ -128,9 +142,10 @@ def upload_batch(batch_type: str, force: bool = False) -> dict:
     logger.info(f"Created at: {batch.created_at}")
     logger.info("=" * 60)
     
-    # Save batch info
+    # Save batch info to GCS
     batch_info = {
         "batch_type": batch_type,
+        "wiki": wiki,
         "batch_id": batch.id,
         "input_file_id": batch_input_file.id,
         "status": batch.status,
@@ -139,8 +154,8 @@ def upload_batch(batch_type: str, force: bool = False) -> dict:
         "description": description,
     }
     
-    with open(paths["info_file"], "w") as f:
-        json.dump(batch_info, f, indent=2)
+    with fs.open(paths["info_file"], "w") as f:
+        f.write(json.dumps(batch_info, indent=2))
     logger.info(f"Batch info saved to: {paths['info_file']}")
     
     # Check initial status
@@ -152,31 +167,33 @@ def upload_batch(batch_type: str, force: bool = False) -> dict:
     return batch_info
 
 
-def check_status(batch_type: str) -> dict:
+def check_status(batch_type: str, wiki: str = "enwiki") -> dict:
     """
     Check the status of a batch job by batch type.
     
     Args:
         batch_type: Type of batch (e.g., 'entities', 'relations')
+        wiki: Wiki identifier (default: 'enwiki')
         
     Returns:
         Dictionary with batch status information
     """
-    paths = get_batch_paths(batch_type)
+    fs = gcsfs.GCSFileSystem()
+    paths = get_batch_paths(batch_type, wiki)
     
-    if not os.path.exists(paths["info_file"]):
+    if not fs.exists(paths["info_file"]):
         raise FileNotFoundError(
-            f"Batch info not found for '{batch_type}'\n"
-            f"Upload a batch first using: python _2_upload_batch.py upload {batch_type}"
+            f"Batch info not found for '{batch_type}' in wiki '{wiki}'\n"
+            f"Upload a batch first using: python batch_api.py upload {batch_type} --wiki {wiki}"
         )
     
-    # Load batch info
-    with open(paths["info_file"], "r") as f:
+    # Load batch info from GCS
+    with fs.open(paths["info_file"], "r") as f:
         batch_info = json.load(f)
     
     batch_id = batch_info["batch_id"]
     
-    logger.info(f"Checking status for batch type: {batch_type}")
+    logger.info(f"Checking status for batch type: {batch_type} (wiki: {wiki})")
     logger.info(f"Batch ID: {batch_id}")
     
     batch = client.batches.retrieve(batch_id)
@@ -191,7 +208,7 @@ def check_status(batch_type: str) -> dict:
     if batch.status == "completed":
         logger.info("✓ Batch completed!")
         logger.info(f"Output file ID: {batch.output_file_id}")
-        logger.info(f"Download with: python _2_upload_batch.py download {batch_type}")
+        logger.info(f"Download with: python batch_api.py download {batch_type} --wiki {wiki}")
         if batch.error_file_id:
             logger.info(f"⚠ Error file ID: {batch.error_file_id}")
     elif batch.status in ["validating", "in_progress", "finalizing"]:
@@ -212,53 +229,55 @@ def check_status(batch_type: str) -> dict:
     }
 
 
-def download_results(batch_type: str) -> None:
+def download_results(batch_type: str, wiki: str = "enwiki") -> None:
     """
-    Download the results of a completed batch job.
+    Download the results of a completed batch job and save to GCS.
     
     Args:
         batch_type: Type of batch (e.g., 'entities', 'relations')
+        wiki: Wiki identifier (default: 'enwiki')
     """
-    paths = get_batch_paths(batch_type)
+    fs = gcsfs.GCSFileSystem()
+    paths = get_batch_paths(batch_type, wiki)
     
-    if not os.path.exists(paths["info_file"]):
+    if not fs.exists(paths["info_file"]):
         raise FileNotFoundError(
-            f"Batch info not found for '{batch_type}'\n"
-            f"Upload a batch first using: python _2_upload_batch.py upload {batch_type}"
+            f"Batch info not found for '{batch_type}' in wiki '{wiki}'\n"
+            f"Upload a batch first using: python batch_api.py upload {batch_type} --wiki {wiki}"
         )
     
-    # Load batch info
-    with open(paths["info_file"], "r") as f:
+    # Load batch info from GCS
+    with fs.open(paths["info_file"], "r") as f:
         batch_info = json.load(f)
     
     batch_id = batch_info["batch_id"]
     
-    logger.info(f"Retrieving batch: {batch_type}")
+    logger.info(f"Retrieving batch: {batch_type} (wiki: {wiki})")
     logger.info(f"Batch ID: {batch_id}")
     
     batch = client.batches.retrieve(batch_id)
     
     if batch.status != "completed":
         logger.warning(f"Batch is not completed yet. Current status: {batch.status}")
-        logger.info("Check status with: python _2_upload_batch.py status {batch_type}")
+        logger.info(f"Check status with: python batch_api.py status {batch_type} --wiki {wiki}")
         return
     
-    # Download output file
+    # Download output file and save to GCS
     if batch.output_file_id:
         logger.info(f"Downloading output file: {batch.output_file_id}")
         output_content = client.files.content(batch.output_file_id)
         
-        with open(paths["results_file"], "wb") as f:
+        with fs.open(paths["results_file"], "wb") as f:
             f.write(output_content.content)
         logger.info(f"✓ Results saved to: {paths['results_file']}")
     
-    # Download error file if it exists
+    # Download error file if it exists and save to GCS
     if batch.error_file_id:
         logger.info(f"Downloading error file: {batch.error_file_id}")
         error_content = client.files.content(batch.error_file_id)
         
         error_path = paths["results_file"].replace(".jsonl", "_errors.jsonl")
-        with open(error_path, "wb") as f:
+        with fs.open(error_path, "wb") as f:
             f.write(error_content.content)
         logger.info(f"⚠ Errors saved to: {error_path}")
     
@@ -269,7 +288,7 @@ def download_results(batch_type: str) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Manage OpenAI Batch API jobs by batch type (entities, relations, etc.)"
+        description="Manage OpenAI Batch API jobs with GCS storage (entities, relations, etc.)"
     )
     
     subparsers = parser.add_subparsers(dest="command", help="Command to execute")
@@ -277,12 +296,18 @@ def main():
     # Upload command
     upload_parser = subparsers.add_parser(
         "upload", 
-        help="Upload a batch file (e.g., python _2_upload_batch.py upload entities)"
+        help="Upload a batch file from GCS (e.g., python batch_api.py upload entities --wiki enwiki)"
     )
     upload_parser.add_argument(
         "batch_type",
         type=str,
         help="Type of batch to upload (e.g., 'entities', 'relations')"
+    )
+    upload_parser.add_argument(
+        "--wiki",
+        type=str,
+        default="enwiki",
+        help="Wiki identifier (default: enwiki)",
     )
     upload_parser.add_argument(
         "--force",
@@ -293,36 +318,53 @@ def main():
     # Status command
     status_parser = subparsers.add_parser(
         "status",
-        help="Check batch status (e.g., python _2_upload_batch.py status entities)"
+        help="Check batch status (e.g., python batch_api.py status entities --wiki enwiki)"
     )
     status_parser.add_argument(
         "batch_type",
         type=str,
         help="Type of batch to check (e.g., 'entities', 'relations')"
     )
+    status_parser.add_argument(
+        "--wiki",
+        type=str,
+        default="enwiki",
+        help="Wiki identifier (default: enwiki)",
+    )
     
     # Download command
     download_parser = subparsers.add_parser(
         "download",
-        help="Download batch results (e.g., python _2_upload_batch.py download entities)"
+        help="Download batch results to GCS (e.g., python batch_api.py download entities --wiki enwiki)"
     )
     download_parser.add_argument(
         "batch_type",
         type=str,
         help="Type of batch to download (e.g., 'entities', 'relations')"
     )
+    download_parser.add_argument(
+        "--wiki",
+        type=str,
+        default="enwiki",
+        help="Wiki identifier (default: enwiki)",
+    )
     
     args = parser.parse_args()
+    
+    logger.info(f"Script: {__file__}")
+    logger.info(f"Command: {args.command}")
+    logger.info(f"Arguments: {vars(args)}")
     
     if args.command == "upload":
         upload_batch(
             batch_type=args.batch_type,
+            wiki=args.wiki,
             force=getattr(args, "force", False)
         )
     elif args.command == "status":
-        check_status(args.batch_type)
+        check_status(args.batch_type, wiki=args.wiki)
     elif args.command == "download":
-        download_results(args.batch_type)
+        download_results(args.batch_type, wiki=args.wiki)
         # TODO: add an option to identify the failed requests, and save them in a separate file of request and another of error messages, to either just re-run, or know what to change
     else:
         parser.print_help()
