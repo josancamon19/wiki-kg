@@ -2,12 +2,12 @@ import json
 import os
 import logging
 import argparse
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, Iterator
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
 
 import gcsfs
-from datasets import load_dataset
+from datasets import load_dataset, DownloadConfig
 from dotenv import load_dotenv
 from kg_gen.utils.chunk_text import chunk_text
 
@@ -35,10 +35,62 @@ MAX_TOKENS = 100000
 CHUNK_THRESHOLD = int(2e5)  # Characters
 CHUNK_SIZE = int(1e5)
 TEMPERATURE = 1.0
+WRITE_BUFFER_SIZE = 512  # Number of requests to hold before flushing to GCS
 
 # Cache for prompt template
 with open(os.path.join(PROMPTS_PATH, "entities.txt"), "r") as f:
     _ENTITY_PROMPT_TEMPLATE = f.read()
+
+
+def _article_iterator(dataset, limit: Optional[int]) -> Iterator[Dict[str, Any]]:
+    """Yield at most ``limit`` articles from the dataset."""
+    if limit is None:
+        for article in dataset:
+            yield article
+    else:
+        for idx, article in enumerate(dataset):
+            if idx >= limit:
+                break
+            yield article
+
+
+def _load_finewiki_dataset(
+    *, local_dataset: bool, hf_cache_dir: Optional[str]
+):
+    """Load the FineWiki dataset either via streaming or from the local cache."""
+    dataset_kwargs = dict(name="default", split="en")
+    if hf_cache_dir:
+        dataset_kwargs["cache_dir"] = hf_cache_dir
+
+    if local_dataset:
+        logger.info(
+            "Loading dataset josancamon/finewiki from local cache%s...",
+            f" ({hf_cache_dir})" if hf_cache_dir else "",
+        )
+        download_config = DownloadConfig(local_files_only=True)
+        try:
+            return load_dataset(
+                "josancamon/finewiki",
+                streaming=False,
+                download_config=download_config,
+                **dataset_kwargs,
+            )
+        except FileNotFoundError as exc:
+            logger.error(
+                "Dataset not found in the local Hugging Face cache. "
+                "Download it first (e.g. with `datasets-cli download`) or "
+                "omit --local-dataset."
+            )
+            raise FileNotFoundError(
+                "FineWiki dataset missing from the local Hugging Face cache"
+            ) from exc
+    else:
+        logger.info("Loading dataset josancamon/finewiki via streaming...")
+        return load_dataset(
+            "josancamon/finewiki",
+            streaming=True,
+            **dataset_kwargs,
+        )
 
 
 def article_to_batch_requests(article: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -86,64 +138,41 @@ def article_to_batch_requests(article: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     return batch_requests
 
-
-def process_articles_batch(articles: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """
-    Process a batch of articles in parallel.
-    This function is called by each worker process.
-    """
-    all_requests = []
-    for article in articles:
-        requests = article_to_batch_requests(article)
-        all_requests.extend(requests)
-    return all_requests
-
-
-def write_batch_file(
-    requests: List[Dict[str, Any]], output_path: str, fs: gcsfs.GCSFileSystem
-):
-    """Write batch requests to a JSONL file on GCS."""
-    # Ensure output directory exists
-    output_dir = "/".join(output_path.replace("gs://", "").split("/")[:-1])
-    fs.makedirs(output_dir, exist_ok=True)
-
-    # Write to GCS
-    with fs.open(output_path, "w") as f:
-        for request in requests:
-            f.write(json.dumps(request) + "\n")
-    logger.info(f"Wrote {len(requests)} requests to {output_path}")
-
-
 def generate_entities_batch_file(
     output_path: str,
     wiki: str = "enwiki",
     limit: Optional[int] = None,
     force: bool = False,
     num_workers: Optional[int] = None,
+    local_dataset: bool = False,
+    hf_cache_dir: Optional[str] = None,
 ):
     """
-    Generate a single batch JSONL file containing all entity extraction requests.
-    Uses multiprocessing for parallel article processing.
-    Saves results to Google Cloud Storage.
+    Generate a batch JSONL file containing entity extraction requests and push it to GCS.
 
     Args:
-        output_path: GCS path to output JSONL file (e.g., gs://bucket/path/batch.jsonl)
-        wiki: Wiki identifier (e.g., 'enwiki')
-        limit: Maximum number of articles to process
-        force: If True, regenerate even if file exists
-        num_workers: Number of parallel workers (defaults to CPU count)
+        output_path: Destination path on GCS.
+        wiki: Wiki identifier used only for logging/output path generation.
+        limit: Maximum number of articles to process.
+        force: Regenerate even if the file already exists.
+        num_workers: Number of worker processes (defaults to cpu_count).
+        local_dataset: If True, read FineWiki from the local Hugging Face cache
+            (dataset must be downloaded beforehand).
+        hf_cache_dir: Optional Hugging Face cache directory to use when
+            ``local_dataset`` is True.
+    Returns:
+        Dict[str, int]: Counts of processed articles and generated requests.
     """
-    # Initialize GCS filesystem
     fs = gcsfs.GCSFileSystem()
 
-    # Check if file exists on GCS
     if fs.exists(output_path) and not force:
         logger.info(f"Batch file already exists: {output_path}")
         logger.info("Use --force to regenerate")
-        return
+        return {"articles": 0, "requests": 0}
 
     if num_workers is None:
         num_workers = cpu_count()
+    num_workers = max(1, num_workers)
 
     logger.info("=" * 80)
     logger.info("Starting Entity Batch File Generation")
@@ -151,80 +180,73 @@ def generate_entities_batch_file(
     logger.info(f"Wiki: {wiki}")
     logger.info(f"Model: {MODEL_NAME}, Reasoning: {REASONING_EFFORT}")
     logger.info(f"Workers: {num_workers} parallel processes")
+    logger.info(f"Dataset mode: {'local-cache' if local_dataset else 'streaming'}")
+    if local_dataset and hf_cache_dir:
+        logger.info(f"HF cache dir: {hf_cache_dir}")
     logger.info(f"Output: {output_path}")
     logger.info(f"Limit: {limit if limit else 'None (all articles)'}")
 
-    # Load dataset
-    logger.info("Loading dataset josancamon/finewiki...")
-    fw = load_dataset(
-        "josancamon/finewiki",
-        name="default",
-        split="en",
-        streaming=True,
+    dataset = _load_finewiki_dataset(
+        local_dataset=local_dataset, hf_cache_dir=hf_cache_dir
     )
+    article_iter = _article_iterator(dataset, limit)
 
-    all_requests = []
-    count = 0
-    batch_size = num_workers * 10  # Process articles in batches
+    # Prepare output file on GCS
+    output_dir = "/".join(output_path.replace("gs://", "").split("/")[:-1])
+    fs.makedirs(output_dir, exist_ok=True)
 
-    # Accumulate articles in batches for parallel processing
-    article_batch = []
+    # Heuristic chunk/log settings tuned for streaming vs local data
+    worker_chunk_size = 1 if not local_dataset else min(64, num_workers * 4)
+    log_every_articles = max(50, num_workers * 20)
 
-    with Pool(processes=num_workers) as pool:
-        for article in fw:
-            if limit and count >= limit:
-                break
+    total_articles = 0
+    total_requests = 0
+    write_buffer: List[str] = []
 
-            article_batch.append(article)
-            count += 1
+    def flush_buffer(file_obj):
+        if write_buffer:
+            file_obj.write("\n".join(write_buffer) + "\n")
+            write_buffer.clear()
 
-            # When batch is full, process it in parallel
-            if len(article_batch) >= batch_size:
-                # Split articles across workers
-                chunk_size = len(article_batch) // num_workers
-                if chunk_size == 0:
-                    chunk_size = 1
-
-                article_chunks = [
-                    article_batch[i : i + chunk_size]
-                    for i in range(0, len(article_batch), chunk_size)
-                ]
-
-                # Process chunks in parallel
-                results = pool.map(process_articles_batch, article_chunks)
-
-                # Collect results
-                for requests in results:
-                    all_requests.extend(requests)
-
+    def consume_batches(request_batches, file_obj):
+        nonlocal total_articles, total_requests
+        for requests in request_batches:
+            total_articles += 1
+            if not requests:
+                continue
+            for request in requests:
+                write_buffer.append(json.dumps(request))
+                total_requests += 1
+                if len(write_buffer) >= WRITE_BUFFER_SIZE:
+                    flush_buffer(file_obj)
+            if total_articles % log_every_articles == 0:
                 logger.info(
-                    f"Processed {count} articles, {len(all_requests)} total requests..."
+                    "Processed %d articles, %d total requests...",
+                    total_articles,
+                    total_requests,
                 )
 
-                # Clear batch
-                article_batch = []
+    with fs.open(output_path, "w") as output_file:
+        if num_workers == 1:
+            request_iter = (
+                article_to_batch_requests(article) for article in article_iter
+            )
+            consume_batches(request_iter, output_file)
+        else:
+            with Pool(processes=num_workers) as pool:
+                request_iter = pool.imap_unordered(
+                    article_to_batch_requests,
+                    article_iter,
+                    chunksize=worker_chunk_size,
+                )
+                consume_batches(request_iter, output_file)
+        flush_buffer(output_file)
 
-        # Process remaining articles
-        if article_batch:
-            chunk_size = len(article_batch) // num_workers
-            if chunk_size == 0:
-                chunk_size = 1
-
-            article_chunks = [
-                article_batch[i : i + chunk_size]
-                for i in range(0, len(article_batch), chunk_size)
-            ]
-
-            results = pool.map(process_articles_batch, article_chunks)
-
-            for requests in results:
-                all_requests.extend(requests)
-
-    # Write all requests to GCS
-    write_batch_file(all_requests, output_path, fs)
-    logger.info(f"Done. Generated {len(all_requests)} requests from {count} articles.")
+    logger.info(
+        f"Done. Generated {total_requests} requests from {total_articles} articles."
+    )
     logger.info("=" * 80)
-    return all_requests
+    return {"articles": total_articles, "requests": total_requests}
 
 
 def main():
@@ -245,6 +267,26 @@ def main():
         action="store_true",
         help="Force regeneration even if batch file exists",
     )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=None,
+        help="Number of worker processes (default: CPU count)",
+    )
+    parser.add_argument(
+        "--local-dataset",
+        action="store_true",
+        help=(
+            "Load FineWiki from the local Hugging Face cache instead of streaming. "
+            "Requires downloading the dataset beforehand."
+        ),
+    )
+    parser.add_argument(
+        "--hf-cache-dir",
+        type=str,
+        default=None,
+        help="Optional Hugging Face cache directory to use with --local-dataset",
+    )
     args = parser.parse_args()
 
     # Generate GCS path for output
@@ -254,7 +296,13 @@ def main():
     logger.info(f"Arguments: {vars(args)}")
 
     generate_entities_batch_file(
-        output_path=output_path, limit=args.limit, force=args.force, wiki=args.wiki
+        output_path=output_path,
+        limit=args.limit,
+        force=args.force,
+        wiki=args.wiki,
+        num_workers=args.workers,
+        local_dataset=args.local_dataset,
+        hf_cache_dir=args.hf_cache_dir,
     )
 
 
