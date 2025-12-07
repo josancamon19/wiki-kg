@@ -14,6 +14,8 @@ import json
 import os
 import logging
 import argparse
+import sqlite3
+import tempfile
 from typing import Dict, Any, Optional, List
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
@@ -51,22 +53,106 @@ TEMPERATURE = 1.0
 with open(os.path.join(PROMPTS_PATH, "relations.txt"), "r") as f:
     _RELATION_PROMPT_TEMPLATE = f.read()
 
-# Global entities lookup - will be populated at runtime
-_ENTITIES_LOOKUP = {}
+# Global path to SQLite database - will be set at runtime
+_ENTITIES_DB_PATH = None
+
+## ========= DB UTILS ===========
+
+
+def get_entities_from_db(article_id: str) -> Optional[List[str]]:
+    """Lookup entities from SQLite database."""
+    global _ENTITIES_DB_PATH
+    if _ENTITIES_DB_PATH is None:
+        return None
+
+    conn = sqlite3.connect(_ENTITIES_DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("SELECT entities FROM entities WHERE custom_id = ?", (article_id,))
+    row = cursor.fetchone()
+    conn.close()
+
+    if row:
+        return json.loads(row[0])
+    return None
+
+
+def build_entities_db(entities_file: str, fs: gcsfs.GCSFileSystem) -> str:
+    """
+    Build an SQLite database from entities JSONL file.
+    Returns path to the database file.
+
+    This is much more memory-efficient than loading everything into a dict -
+    SQLite uses disk-backed storage with B-tree indexes for O(log n) lookups.
+    """
+    # Create temp database file
+    db_path = tempfile.mktemp(suffix=".db")
+    logger.info(f"Building entities SQLite database at: {db_path}")
+
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    # Create table with index for fast lookups
+    cursor.execute("""
+        CREATE TABLE entities (
+            custom_id TEXT PRIMARY KEY,
+            entities TEXT
+        )
+    """)
+
+    # Insert entities in batches for better performance
+    batch_size = 10000
+    batch = []
+    count = 0
+
+    logger.info(f"Loading entities from: {entities_file}")
+    with fs.open(entities_file, "r") as f:
+        for line in f:
+            data = json.loads(line)
+            batch.append((data["custom_id"], json.dumps(data["entities"])))
+            count += 1
+
+            if len(batch) >= batch_size:
+                cursor.executemany(
+                    "INSERT INTO entities (custom_id, entities) VALUES (?, ?)", batch
+                )
+                conn.commit()
+                batch = []
+                if count % 100000 == 0:
+                    logger.info(f"  Loaded {count} entities...")
+
+    # Insert remaining
+    if batch:
+        cursor.executemany(
+            "INSERT INTO entities (custom_id, entities) VALUES (?, ?)", batch
+        )
+        conn.commit()
+
+    conn.close()
+    logger.info(f"Built entities database with {count} entries")
+    return db_path
+
+
+def get_entity_ids_from_db(db_path: str) -> set:
+    """Get all entity IDs from the database for filtering."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT custom_id FROM entities")
+    ids = {row[0] for row in cursor.fetchall()}
+    conn.close()
+    return ids
+
+
+## =========
 
 
 def article_to_batch_requests(article: Dict[str, Any]) -> Dict[str, Any] | None:
-    global _ENTITIES_LOOKUP
     text = article.get("text", "")
     if not text:
         return None
 
     article_id = str(article["id"])
-    entities = _ENTITIES_LOOKUP.get(article_id)
+    entities = get_entities_from_db(article_id)
     if not entities:
-        logger.warning(
-            f"No entities found for article {article_id}, skipping, len(entities_lookup): {len(_ENTITIES_LOOKUP)}"
-        )
         return None
 
     entities_str = json.dumps(entities)
@@ -109,22 +195,6 @@ def write_batch_file(
     logger.info(f"Wrote {len(requests)} requests to {output_path}")
 
 
-def load_entities_lookup(
-    entities_file: str, fs: gcsfs.GCSFileSystem
-) -> Dict[str, List[str]]:
-    """Load entities lookup from GCS file."""
-    entities_lookup = {}
-    logger.info(f"Loading entities from: {entities_file}")
-
-    with fs.open(entities_file, "r") as f:
-        for line in f:
-            data = json.loads(line)
-            entities_lookup[data["custom_id"]] = data["entities"]
-
-    logger.info(f"Loaded {len(entities_lookup)} entity sets")
-    return entities_lookup
-
-
 def generate_relations_batch_file(
     entities_file: str,
     output_path: str,
@@ -158,9 +228,13 @@ def generate_relations_batch_file(
     if num_workers is None:
         num_workers = cpu_count()
 
-    # Load entities lookup from GCS
-    global _ENTITIES_LOOKUP
-    _ENTITIES_LOOKUP = load_entities_lookup(entities_file, fs)
+    # Build SQLite database from entities file (memory-efficient)
+    global _ENTITIES_DB_PATH
+    _ENTITIES_DB_PATH = build_entities_db(entities_file, fs)
+
+    # Get entity IDs set for fast filtering (just IDs, not the full entities)
+    entity_ids = get_entity_ids_from_db(_ENTITIES_DB_PATH)
+    logger.info(f"Loaded {len(entity_ids)} entity IDs for filtering")
 
     logger.info("=" * 80)
     logger.info("Starting Relation Batch File Generation")
@@ -189,21 +263,47 @@ def generate_relations_batch_file(
     # Accumulate articles in batches for parallel processing
     article_batch = []
 
-    with Pool(processes=num_workers) as pool:
-        for article in fw:
-            if limit and count >= limit:
-                break
+    try:
+        with Pool(processes=num_workers) as pool:
+            for article in fw:
+                if limit and count >= limit:
+                    break
 
-            # Only process articles that have entities
-            if str(article["id"]) in _ENTITIES_LOOKUP:
-                article_batch.append(article)
-                count += 1
-            else:
-                skipped += 1
+                # Only process articles that have entities
+                if str(article["id"]) in entity_ids:
+                    article_batch.append(article)
+                    count += 1
+                else:
+                    skipped += 1
 
-            # When batch is full, process it in parallel
-            if len(article_batch) >= batch_size:
-                # Split articles across workers
+                # When batch is full, process it in parallel
+                if len(article_batch) >= batch_size:
+                    # Split articles across workers
+                    chunk_size = len(article_batch) // num_workers
+                    if chunk_size == 0:
+                        chunk_size = 1
+
+                    article_chunks = [
+                        article_batch[i : i + chunk_size]
+                        for i in range(0, len(article_batch), chunk_size)
+                    ]
+
+                    # Process chunks in parallel
+                    results = pool.map(process_articles_batch, article_chunks)
+
+                    # Collect results
+                    for requests in results:
+                        all_requests.extend(requests)
+
+                    logger.info(
+                        f"Processed {count} articles, {len(all_requests)} total requests, {skipped} skipped..."
+                    )
+
+                    # Clear batch
+                    article_batch = []
+
+            # Process remaining articles
+            if article_batch:
                 chunk_size = len(article_batch) // num_workers
                 if chunk_size == 0:
                     chunk_size = 1
@@ -213,41 +313,24 @@ def generate_relations_batch_file(
                     for i in range(0, len(article_batch), chunk_size)
                 ]
 
-                # Process chunks in parallel
                 results = pool.map(process_articles_batch, article_chunks)
 
-                # Collect results
                 for requests in results:
                     all_requests.extend(requests)
 
-                logger.info(
-                    f"Processed {count} articles, {len(all_requests)} total requests, {skipped} skipped..."
-                )
+        # Write all requests to GCS
+        write_batch_file(all_requests, output_path, fs)
+        logger.info(
+            f"Done. Generated {len(all_requests)} requests from {count} articles."
+        )
+        logger.info(f"Skipped {skipped} articles without entities.")
+        logger.info("=" * 80)
+    finally:
+        # Clean up temp database
+        if _ENTITIES_DB_PATH and os.path.exists(_ENTITIES_DB_PATH):
+            os.remove(_ENTITIES_DB_PATH)
+            logger.info("Cleaned up temporary entities database")
 
-                # Clear batch
-                article_batch = []
-
-        # Process remaining articles
-        if article_batch:
-            chunk_size = len(article_batch) // num_workers
-            if chunk_size == 0:
-                chunk_size = 1
-
-            article_chunks = [
-                article_batch[i : i + chunk_size]
-                for i in range(0, len(article_batch), chunk_size)
-            ]
-
-            results = pool.map(process_articles_batch, article_chunks)
-
-            for requests in results:
-                all_requests.extend(requests)
-
-    # Write all requests to GCS
-    write_batch_file(all_requests, output_path, fs)
-    logger.info(f"Done. Generated {len(all_requests)} requests from {count} articles.")
-    logger.info(f"Skipped {skipped} articles without entities.")
-    logger.info("=" * 80)
     return all_requests
 
 
