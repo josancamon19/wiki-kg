@@ -1,12 +1,12 @@
 import json
 import os
 import logging
-import argparse
-from typing import Dict, Any, Optional, List, Iterator
+from typing import Dict, Any, Optional, List, Iterator, Annotated
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
 
 import gcsfs
+import typer
 from datasets import load_dataset, DownloadConfig
 from dotenv import load_dotenv
 from kg_gen.utils.chunk_text import chunk_text
@@ -52,6 +52,8 @@ WRITE_BUFFER_SIZE = 512  # Number of requests to hold before flushing to GCS
 # Cache for prompt template
 with open(os.path.join(PROMPTS_PATH, "entities.txt"), "r") as f:
     _ENTITY_PROMPT_TEMPLATE = f.read()
+
+app = typer.Typer()
 
 
 def _article_iterator(dataset, limit: Optional[int]) -> Iterator[Dict[str, Any]]:
@@ -255,64 +257,36 @@ def generate_entities_batch_file(
     return {"articles": total_articles, "requests": total_requests}
 
 
-def main():
-    parser = argparse.ArgumentParser(
-        description="Generate Batch API files for Knowledge Graph extraction from FineWiki"
-    )
-    parser.add_argument(
-        "--wiki",
-        type=str,
-        default="enwiki",
-        help="Wiki identifier (default: enwiki)",
-    )
-    parser.add_argument(
-        "--model",
-        type=str,
-        default=DEFAULT_MODEL,
-        help=f"Model name to use (default: {DEFAULT_MODEL})",
-    )
-    parser.add_argument(
-        "--reasoning-effort",
-        type=str,
-        default=DEFAULT_REASONING_EFFORT,
-        choices=["minimal", "low", "medium", "high"],
-        help=f"Reasoning effort level (default: {DEFAULT_REASONING_EFFORT})",
-    )
-    parser.add_argument(
-        "--limit", type=int, default=None, help="Limit number of articles to process"
-    )
-    parser.add_argument(
-        "--force",
-        action="store_true",
-        help="Force regeneration even if batch file exists",
-    )
-    parser.add_argument(
-        "--local-dataset",
-        action="store_true",
-        help=(
-            "Load FineWiki from the local Hugging Face cache instead of streaming. "
-            "Requires downloading the dataset beforehand."
-        ),
-    )
-    args = parser.parse_args()
-
+@app.command()
+def main(
+    wiki: Annotated[str, typer.Option(help="Wiki identifier")] = "enwiki",
+    model: Annotated[str, typer.Option(help="Model name")] = DEFAULT_MODEL,
+    reasoning_effort: Annotated[str, typer.Option(help="Reasoning effort level")] = DEFAULT_REASONING_EFFORT,
+    limit: Annotated[Optional[int], typer.Option(help="Limit number of articles")] = None,
+    force: Annotated[bool, typer.Option(help="Force regeneration")] = False,
+    local_dataset: Annotated[bool, typer.Option(help="Load from local HF cache")] = False,
+):
+    """Generate Batch API files for Knowledge Graph extraction from FineWiki."""
     # Generate GCS path for output with model and limit in filename
-    filename = build_filename("batch", args.model, args.reasoning_effort, args.limit)
-    output_path = f"{GCP_KG_PREFIX}/{args.wiki}/entities/{filename}"
+    filename = build_filename("entities_batch", model, reasoning_effort, limit)
+    output_path = f"{GCP_KG_PREFIX}/{wiki}/entities/{filename}"
 
     logger.info(f"Script: {__file__}")
-    logger.info(f"Arguments: {vars(args)}")
+    logger.info(
+        f"Arguments: wiki={wiki}, model={model}, reasoning_effort={reasoning_effort}, "
+        f"limit={limit}, force={force}, local_dataset={local_dataset}"
+    )
 
     generate_entities_batch_file(
         output_path=output_path,
-        limit=args.limit,
-        force=args.force,
-        wiki=args.wiki,
-        local_dataset=args.local_dataset,
-        model=args.model,
-        reasoning_effort=args.reasoning_effort,
+        limit=limit,
+        force=force,
+        wiki=wiki,
+        local_dataset=local_dataset,
+        model=model,
+        reasoning_effort=reasoning_effort,
     )
 
 
 if __name__ == "__main__":
-    main()
+    app()

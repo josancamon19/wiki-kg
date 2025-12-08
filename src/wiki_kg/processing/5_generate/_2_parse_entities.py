@@ -9,10 +9,11 @@ Uses Google Cloud Storage for file operations.
 import json
 import re
 import logging
-import argparse
+from typing import Optional, Annotated
 from pathlib import Path
 
 import gcsfs
+import typer
 from dotenv import load_dotenv
 
 try:
@@ -44,6 +45,8 @@ logging.basicConfig(
     handlers=[logging.FileHandler(LOG_FILE, mode="a"), logging.StreamHandler()],
 )
 logger = logging.getLogger(__name__)
+
+app = typer.Typer()
 
 
 def extract_entities_from_text(text: str) -> list[str] | None:
@@ -179,81 +182,48 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
     logger.info("=" * 80)
 
 
-def main():
-    """Main entry point."""
-    parser = argparse.ArgumentParser(
-        description="Parse entities from batch API results"
-    )
-    parser.add_argument(
-        "--wiki",
-        type=str,
-        default="enwiki",
-        help="Wiki identifier (default: enwiki)",
-    )
-    parser.add_argument(
-        "--model",
-        type=str,
-        default=DEFAULT_MODEL,
-        help=f"Model name used for generation (default: {DEFAULT_MODEL})",
-    )
-    parser.add_argument(
-        "--reasoning-effort",
-        type=str,
-        default=DEFAULT_REASONING_EFFORT,
-        choices=["minimal", "low", "medium", "high"],
-        help=f"Reasoning effort level used during generation (default: {DEFAULT_REASONING_EFFORT})",
-    )
-    parser.add_argument(
-        "--limit",
-        type=int,
-        default=None,
-        help="Limit used during generation (for filename matching)",
-    )
-    parser.add_argument(
-        "--input-file",
-        type=str,
-        default=None,
-        help="GCS path to batch_results.jsonl (overrides auto-generated path)",
-    )
-    parser.add_argument(
-        "--output-file",
-        type=str,
-        default=None,
-        help="GCS path to save parsed entities (overrides auto-generated path)",
-    )
-    args = parser.parse_args()
-
-    # Initialize GCS filesystem
+@app.command()
+def main(
+    wiki: Annotated[str, typer.Option(help="Wiki identifier")] = "enwiki",
+    model: Annotated[str, typer.Option(help="Model name")] = DEFAULT_MODEL,
+    reasoning_effort: Annotated[
+        str, typer.Option(help="Reasoning effort level")
+    ] = DEFAULT_REASONING_EFFORT,
+    limit: Annotated[
+        Optional[int], typer.Option(help="Limit used during generation")
+    ] = None,
+    input_file: Annotated[
+        Optional[str], typer.Option(help="GCS path to batch_results.jsonl")
+    ] = None,
+    output_file: Annotated[
+        Optional[str], typer.Option(help="GCS path to save parsed entities")
+    ] = None,
+):
+    """Parse entities from batch API results."""
     fs = gcsfs.GCSFileSystem()
+    input_filename = build_filename("entities_batch_results", model, reasoning_effort, limit)
+    output_filename = build_filename("entities_parsed", model, reasoning_effort, limit)
 
-    # Generate default paths if not provided
-    input_filename = build_filename(
-        "batch_results", args.model, args.reasoning_effort, args.limit
-    )
-    output_filename = build_filename(
-        "parsed_entities", args.model, args.reasoning_effort, args.limit
-    )
-
-    input_file = (
-        args.input_file or f"{GCP_KG_PREFIX}/{args.wiki}/entities/{input_filename}"
-    )
-    output_file = (
-        args.output_file or f"{GCP_KG_PREFIX}/{args.wiki}/entities/{output_filename}"
+    resolved_input = input_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{input_filename}"
+    resolved_output = (
+        output_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{output_filename}"
     )
 
-    if not fs.exists(input_file):
-        logger.error(f"Error: Input file not found: {input_file}")
-        return
+    if not fs.exists(resolved_input):
+        logger.error(f"Error: Input file not found: {resolved_input}")
+        raise typer.Exit(1)
 
     logger.info(f"Script: {__file__}")
-    logger.info(f"Arguments: {vars(args)}")
+    logger.info(
+        f"Arguments: wiki={wiki}, model={model}, reasoning_effort={reasoning_effort}, limit={limit}"
+    )
     logger.info("=" * 80)
-    logger.info(f"Parsing entities from: {input_file}")
-    logger.info(f"Output to: {output_file}")
+    logger.info(f"Parsing entities from: {resolved_input}")
+    logger.info(f"Output to: {resolved_output}")
     logger.info("=" * 80)
 
-    parse_batch_results(input_file, output_file, fs)
+    parse_batch_results(resolved_input, resolved_output, fs)
 
 
 if __name__ == "__main__":
-    main()
+    app()
