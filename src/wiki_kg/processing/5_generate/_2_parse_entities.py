@@ -7,7 +7,6 @@ Uses Google Cloud Storage for file operations.
 """
 
 import json
-import re
 import logging
 from typing import Optional, Annotated
 from pathlib import Path
@@ -22,6 +21,7 @@ try:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
+        extract_entities_from_text,
     )
 except ImportError:
     from utils import (
@@ -29,6 +29,7 @@ except ImportError:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
+        extract_entities_from_text,
     )
 
 # Load environment variables
@@ -47,53 +48,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = typer.Typer()
-
-
-def extract_entities_from_text(text: str) -> list[str] | None:
-    """
-    Extract the entities list from the response text.
-
-    The text format is:
-    [[ ## entities ## ]]
-    ["entity1", "entity2", ...]
-    [[ ## completed ## ]]
-    """
-    # Find the content between markers
-    pattern = r"\[\[ ## entities ## \]\]\s*\n?(.*?)\s*\n?\[\[ ## completed ## \]\]"
-    match = re.search(pattern, text, re.DOTALL)
-
-    if not match:
-        return None
-
-    entities_text = match.group(1).strip()
-
-    # Remove any trailing comments (like "# note: the value you produce...")
-    entities_text = re.sub(r"\s*#.*$", "", entities_text, flags=re.MULTILINE)
-    entities_text = entities_text.strip()
-
-    # Remove any trailing whitespace or newlines within the JSON
-    entities_text = " ".join(entities_text.split())
-
-    # Fix question marks outside quotes (e.g., "text"? -> "text")
-    entities_text = re.sub(r'"(\?+)', r'"', entities_text)
-
-    # Fix common malformations at the end
-    # Remove trailing characters like ], ), }, etc. and rebuild proper ending
-    entities_text = entities_text.rstrip("])}\t ")
-
-    # Sometimes the model outputs wrong closing brackets
-    # Make sure it ends with ]
-    if not entities_text.endswith("]"):
-        entities_text += "]"
-
-    try:
-        # Parse the JSON array
-        entities = json.loads(entities_text)
-        return entities if isinstance(entities, list) else None
-    except json.JSONDecodeError as e:
-        print(f"Failed to parse entities JSON: {e}")
-        print(f"Text: {entities_text[:200]}")
-        return None
 
 
 def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSystem):

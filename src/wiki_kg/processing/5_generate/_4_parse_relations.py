@@ -6,7 +6,6 @@ Saves to a simplified JSONL format for downstream processing.
 """
 
 import json
-import re
 import logging
 from typing import Optional, Annotated
 from pathlib import Path
@@ -21,6 +20,7 @@ try:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
+        extract_relations_from_text,
     )
 except ImportError:
     from utils import (
@@ -28,6 +28,7 @@ except ImportError:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
+        extract_relations_from_text,
     )
 
 load_dotenv()
@@ -45,34 +46,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = typer.Typer()
-
-
-def extract_relations_from_text(text: str) -> list[dict] | None:
-    """
-    Extract the relations list from the response text.
-
-    The text format is:
-    [[ ## relations ## ]]
-    [{"subject": "...", "predicate": "...", "object": "..."}, ...]
-    [[ ## completed ## ]]
-    """
-    pattern = r"\[\[\s*##\s*relations\s*##\s*\]\]\s*\n?(.*?)\s*\n?\[\[\s*##\s*completed\s*##\s*\]\]"
-    match = re.search(pattern, text, re.DOTALL)
-
-    if not match:
-        return None
-
-    relations_text = match.group(1).strip()
-    relations_text = re.sub(r"\s*#.*$", "", relations_text, flags=re.MULTILINE)
-    relations_text = relations_text.strip()
-
-    try:
-        relations = json.loads(relations_text)
-        return relations if isinstance(relations, list) else None
-    except json.JSONDecodeError as e:
-        print(f"Failed to parse relations JSON: {e}")
-        print(f"Text preview: {relations_text[:300]}")
-        return None
 
 
 def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSystem):
