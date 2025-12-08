@@ -122,6 +122,9 @@ def process_range(
 
         edges = {r["predicate"] for r in relations if r.get("predicate") is not None}
 
+        # Create entity metadata mapping each entity to its article_id
+        entity_metadata = {entity: {custom_id} for entity in entities}
+
         graph = Graph(
             entities=set(entities),
             relations={
@@ -130,6 +133,7 @@ def process_range(
                 if r.get("predicate") is not None
             },
             edges=edges,
+            entity_metadata=entity_metadata,
         )
 
         graph = kggen.deduplicate(graph, method=DeduplicateMethod.SEMHASH)
@@ -146,6 +150,10 @@ def process_range(
                     for r in graph.relations
                 ],
                 "edges": list(graph.edges),
+                "entity_metadata": {
+                    entity: list(article_ids) 
+                    for entity, article_ids in graph.entity_metadata.items()
+                } if graph.entity_metadata else None,
             }
         )
 
