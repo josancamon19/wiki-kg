@@ -8,24 +8,38 @@ DEFAULT_MODEL = "gpt-5-nano"
 DEFAULT_REASONING_EFFORT = "minimal"
 
 
-def build_filename(
-    base: str,
+def build_subdir(
     model: str,
     reasoning_effort: str,
     limit: Optional[int] = None,
+) -> str:
+    """
+    Build a subdirectory path for model/reasoning_effort organization.
+
+    Examples:
+        >>> build_subdir("gpt-5-nano", "minimal")
+        'gpt-5-nano/minimal'
+        >>> build_subdir("gpt-5-nano", "high", limit=100)
+        'gpt-5-nano/high_l100'
+    """
+    suffix = f"_l{limit}" if limit else ""
+    return f"{model}/{reasoning_effort}{suffix}"
+
+
+def build_filename(
+    base: str,
     ext: str = ".jsonl",
 ) -> str:
     """
-    Build filename with model, reasoning effort, and optional limit suffix.
+    Build a simple filename without model/reasoning parameters.
 
     Examples:
-        >>> build_filename("batch", "gpt-5-nano", "minimal")
-        'batch_gpt-5-nano_minimal.jsonl'
-        >>> build_filename("batch", "gpt-5-nano", "high", limit=100)
-        'batch_gpt-5-nano_high_l100.jsonl'
+        >>> build_filename("batch")
+        'batch.jsonl'
+        >>> build_filename("batch_info", ext=".json")
+        'batch_info.json'
     """
-    suffix = f"_l{limit}" if limit else ""
-    return f"{base}_{model}_{reasoning_effort}{suffix}{ext}"
+    return f"{base}{ext}"
 
 
 def get_batch_paths(
@@ -48,14 +62,12 @@ def get_batch_paths(
     Returns:
         Dictionary with GCS paths for batch files
     """
-    batch_dir = f"{GCP_KG_PREFIX}/{wiki}/{batch_type}"
-    batch_filename = build_filename("batch", model, reasoning_effort, limit)
-    info_filename = build_filename("batch_info", model, reasoning_effort, limit, ext=".json")
-    results_filename = build_filename("batch_results", model, reasoning_effort, limit)
+    subdir = build_subdir(model, reasoning_effort, limit)
+    batch_dir = f"{GCP_KG_PREFIX}/{wiki}/{batch_type}/{subdir}"
 
     return {
         "dir": batch_dir,
-        "batch_file": f"{batch_dir}/{batch_filename}",
-        "info_file": f"{batch_dir}/{info_filename}",
-        "results_file": f"{batch_dir}/{results_filename}",
+        "batch_file": f"{batch_dir}/batch.jsonl",
+        "info_file": f"{batch_dir}/batch_info.json",
+        "results_file": f"{batch_dir}/batch_results.jsonl",
     }

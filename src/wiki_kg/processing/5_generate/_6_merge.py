@@ -25,14 +25,14 @@ try:
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 except ImportError:
     from utils import (
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 
 load_dotenv()
@@ -82,9 +82,14 @@ def main(
     fs = gcsfs.GCSFileSystem()
     kggen = KGGen()
 
-    graphs_dir = f"{GCP_KG_PREFIX}/{wiki}/graphs"
-    output_filename = build_filename("merged", model, reasoning_effort, limit, ext=".json")
-    output_path = f"{GCP_KG_PREFIX}/{wiki}/results/{output_filename}"
+    # Input graphs are in subfolders by model/reasoning
+    subdir = build_subdir(model, reasoning_effort, limit)
+    graphs_dir = f"{GCP_KG_PREFIX}/{wiki}/graphs/{subdir}"
+    
+    # Output uses flat naming: model-reasoning_effort-limit.json
+    limit_suffix = f"-l{limit}" if limit else ""
+    output_filename = f"{model}-{reasoning_effort}{limit_suffix}.json"
+    output_path = f"{GCP_KG_PREFIX}/{wiki}/full/{output_filename}"
 
     logger.info(f"Script: {__file__}")
     logger.info(

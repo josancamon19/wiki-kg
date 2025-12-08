@@ -413,7 +413,7 @@ def main(
     gt_reasoning: Annotated[str, typer.Argument(help="Ground truth reasoning effort")],
     opt_model: Annotated[str, typer.Argument(help="Model to optimize")],
     opt_reasoning: Annotated[str, typer.Argument(help="Target reasoning effort")],
-    limit: Annotated[int, typer.Argument(help="Number of samples")],
+    limit: Annotated[int, typer.Argument(help="Number of samples")],  # 100 optimizer
     wiki: Annotated[str, typer.Option(help="Wiki identifier")] = "enwiki",
     task: Annotated[
         str, typer.Option(help="Task: entities, relations, or both")

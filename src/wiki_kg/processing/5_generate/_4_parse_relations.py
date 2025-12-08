@@ -20,14 +20,14 @@ try:
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 except ImportError:
     from utils import (
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 
 load_dotenv()
@@ -152,12 +152,10 @@ def main(
 ):
     """Parse relations from batch API results."""
     fs = gcsfs.GCSFileSystem()
+    subdir = build_subdir(model, reasoning_effort, limit)
 
-    input_filename = build_filename("batch_results", model, reasoning_effort, limit)
-    output_filename = build_filename("parsed", model, reasoning_effort, limit)
-
-    resolved_input = input_file or f"{GCP_KG_PREFIX}/{wiki}/relations/{input_filename}"
-    resolved_output = output_file or f"{GCP_KG_PREFIX}/{wiki}/relations/{output_filename}"
+    resolved_input = input_file or f"{GCP_KG_PREFIX}/{wiki}/relations/{subdir}/batch_results.jsonl"
+    resolved_output = output_file or f"{GCP_KG_PREFIX}/{wiki}/relations/{subdir}/parsed.jsonl"
 
     if not fs.exists(resolved_input):
         logger.error(f"Error: Input file not found: {resolved_input}")

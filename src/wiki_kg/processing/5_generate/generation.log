@@ -2937,3 +2937,656 @@ Checking current status...
 2025-12-08 00:17:12 - INFO - ================================================================================
 2025-12-08 00:17:12 - INFO - Saved merged graph to gs://wikipedia-graph/graph/enwiki/merged_gpt-5-nano_minimal_l20.json
 2025-12-08 00:17:12 - INFO - ================================================================================
+2025-12-08 09:36:59 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_1_generate_entities.py
+2025-12-08 09:36:59 - INFO - Arguments: wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20, force=False, local_dataset=False
+2025-12-08 09:36:59 - INFO - ================================================================================
+2025-12-08 09:36:59 - INFO - Starting Entity Batch File Generation
+2025-12-08 09:36:59 - INFO - ================================================================================
+2025-12-08 09:36:59 - INFO - Wiki: enwiki
+2025-12-08 09:36:59 - INFO - Model: gpt-5.1, Reasoning: high
+2025-12-08 09:36:59 - INFO - Workers: 10 parallel processes
+2025-12-08 09:36:59 - INFO - Dataset mode: streaming
+2025-12-08 09:36:59 - INFO - Output: gs://wikipedia-graph/graph/enwiki/entities/batch_gpt-5.1_high_l20.jsonl
+2025-12-08 09:36:59 - INFO - Limit: 20
+2025-12-08 09:36:59 - INFO - Loading dataset josancamon/finewiki via streaming...
+2025-12-08 09:37:15 - INFO - Done. Generated 20 requests from 20 articles.
+2025-12-08 09:37:15 - INFO - ================================================================================
+2025-12-08 09:37:17 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:37:17 - INFO - Command: upload
+2025-12-08 09:37:17 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20, force=False
+2025-12-08 09:37:18 - INFO - Uploading batch: entities (wiki: enwiki)
+2025-12-08 09:37:18 - INFO - File: gs://wikipedia-graph/graph/enwiki/entities/batch_gpt-5.1_high_l20.jsonl
+2025-12-08 09:37:18 - INFO - File size: 0.10 MB
+2025-12-08 09:37:18 - INFO - Number of requests: 20
+2025-12-08 09:37:18 - INFO - Downloading from GCS and uploading to OpenAI...
+2025-12-08 09:37:19 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-12-08 09:37:19 - INFO - File uploaded successfully! File ID: file-EEN7z9rzoQzw7hLqYp8VMu
+2025-12-08 09:37:19 - INFO - Creating batch job...
+2025-12-08 09:37:20 - INFO - HTTP Request: POST https://api.openai.com/v1/batches "HTTP/1.1 200 OK"
+2025-12-08 09:37:20 - INFO - ============================================================
+2025-12-08 09:37:20 - INFO - Batch created successfully!
+2025-12-08 09:37:20 - INFO - Batch Type: entities
+2025-12-08 09:37:20 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:37:20 - INFO - Status: validating
+2025-12-08 09:37:20 - INFO - Created at: 1765215440
+2025-12-08 09:37:20 - INFO - ============================================================
+2025-12-08 09:37:21 - INFO - Batch info saved to: gs://wikipedia-graph/graph/enwiki/entities/batch_info_gpt-5.1_high_l20.json
+2025-12-08 09:37:21 - INFO - 
+Checking current status...
+2025-12-08 09:37:21 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:37:21 - INFO - Status: validating
+2025-12-08 09:37:21 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=0)
+2025-12-08 09:37:22 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:37:22 - INFO - Command: status
+2025-12-08 09:37:22 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:37:23 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 09:37:23 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:37:23 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:37:23 - INFO - ============================================================
+2025-12-08 09:37:23 - INFO - Batch Type: entities
+2025-12-08 09:37:23 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:37:23 - INFO - Status: validating
+2025-12-08 09:37:23 - INFO - Created at: 1765215440
+2025-12-08 09:37:23 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=0)
+2025-12-08 09:37:23 - INFO - ⏳ Batch is validating...
+2025-12-08 09:37:23 - INFO - ============================================================
+2025-12-08 09:37:54 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:37:54 - INFO - Command: status
+2025-12-08 09:37:54 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:37:54 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 09:37:54 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:37:54 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:37:54 - INFO - ============================================================
+2025-12-08 09:37:54 - INFO - Batch Type: entities
+2025-12-08 09:37:54 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:37:54 - INFO - Status: validating
+2025-12-08 09:37:54 - INFO - Created at: 1765215440
+2025-12-08 09:37:54 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=0)
+2025-12-08 09:37:54 - INFO - ⏳ Batch is validating...
+2025-12-08 09:37:54 - INFO - ============================================================
+2025-12-08 09:38:25 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:38:25 - INFO - Command: status
+2025-12-08 09:38:25 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:38:26 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 09:38:26 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:38:26 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:38:26 - INFO - ============================================================
+2025-12-08 09:38:26 - INFO - Batch Type: entities
+2025-12-08 09:38:26 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:38:26 - INFO - Status: in_progress
+2025-12-08 09:38:26 - INFO - Created at: 1765215440
+2025-12-08 09:38:26 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 09:38:26 - INFO - ⏳ Batch is in_progress...
+2025-12-08 09:38:26 - INFO - ============================================================
+2025-12-08 09:38:57 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:38:57 - INFO - Command: status
+2025-12-08 09:38:57 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:38:58 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 09:38:58 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:38:58 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:38:58 - INFO - ============================================================
+2025-12-08 09:38:58 - INFO - Batch Type: entities
+2025-12-08 09:38:58 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:38:58 - INFO - Status: in_progress
+2025-12-08 09:38:58 - INFO - Created at: 1765215440
+2025-12-08 09:38:58 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 09:38:58 - INFO - ⏳ Batch is in_progress...
+2025-12-08 09:38:58 - INFO - ============================================================
+2025-12-08 09:39:29 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:39:29 - INFO - Command: status
+2025-12-08 09:39:29 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:39:29 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 09:39:29 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:39:30 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:39:30 - INFO - ============================================================
+2025-12-08 09:39:30 - INFO - Batch Type: entities
+2025-12-08 09:39:30 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:39:30 - INFO - Status: in_progress
+2025-12-08 09:39:30 - INFO - Created at: 1765215440
+2025-12-08 09:39:30 - INFO - Request counts: BatchRequestCounts(completed=1, failed=0, total=20)
+2025-12-08 09:39:30 - INFO - ⏳ Batch is in_progress...
+2025-12-08 09:39:30 - INFO - ============================================================
+2025-12-08 09:40:01 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:40:01 - INFO - Command: status
+2025-12-08 09:40:01 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:40:01 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 09:40:01 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:40:01 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:40:01 - INFO - ============================================================
+2025-12-08 09:40:01 - INFO - Batch Type: entities
+2025-12-08 09:40:01 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:40:01 - INFO - Status: in_progress
+2025-12-08 09:40:01 - INFO - Created at: 1765215440
+2025-12-08 09:40:01 - INFO - Request counts: BatchRequestCounts(completed=7, failed=0, total=20)
+2025-12-08 09:40:01 - INFO - ⏳ Batch is in_progress...
+2025-12-08 09:40:01 - INFO - ============================================================
+2025-12-08 09:40:32 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:40:32 - INFO - Command: status
+2025-12-08 09:40:32 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:40:32 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 09:40:32 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:40:33 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:40:33 - INFO - ============================================================
+2025-12-08 09:40:33 - INFO - Batch Type: entities
+2025-12-08 09:40:33 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:40:33 - INFO - Status: in_progress
+2025-12-08 09:40:33 - INFO - Created at: 1765215440
+2025-12-08 09:40:33 - INFO - Request counts: BatchRequestCounts(completed=7, failed=0, total=20)
+2025-12-08 09:40:33 - INFO - ⏳ Batch is in_progress...
+2025-12-08 09:40:33 - INFO - ============================================================
+2025-12-08 09:41:04 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:41:04 - INFO - Command: status
+2025-12-08 09:41:04 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:41:04 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 09:41:04 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:41:04 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:41:04 - INFO - ============================================================
+2025-12-08 09:41:04 - INFO - Batch Type: entities
+2025-12-08 09:41:04 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:41:04 - INFO - Status: completed
+2025-12-08 09:41:04 - INFO - Created at: 1765215440
+2025-12-08 09:41:04 - INFO - Request counts: BatchRequestCounts(completed=20, failed=0, total=20)
+2025-12-08 09:41:04 - INFO - ✓ Batch completed!
+2025-12-08 09:41:04 - INFO - Output file ID: file-JSvoQveviTaKYMYoLjjNVq
+2025-12-08 09:41:04 - INFO - Download with: python batch_api.py download entities --wiki enwiki
+2025-12-08 09:41:04 - INFO - ============================================================
+2025-12-08 09:41:05 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 09:41:05 - INFO - Command: download
+2025-12-08 09:41:05 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:41:06 - INFO - Retrieving batch: entities (wiki: enwiki)
+2025-12-08 09:41:06 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 09:41:06 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 09:41:06 - INFO - Downloading output file: file-JSvoQveviTaKYMYoLjjNVq
+2025-12-08 09:41:08 - INFO - HTTP Request: GET https://api.openai.com/v1/files/file-JSvoQveviTaKYMYoLjjNVq/content "HTTP/1.1 200 OK"
+2025-12-08 09:41:08 - INFO - ✓ Results saved to: gs://wikipedia-graph/graph/enwiki/entities/batch_results_gpt-5.1_high_l20.jsonl
+2025-12-08 09:41:08 - INFO - ============================================================
+2025-12-08 09:41:08 - INFO - Download complete for 'entities'!
+2025-12-08 09:41:08 - INFO - ============================================================
+2025-12-08 09:41:09 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_2_parse_entities.py
+2025-12-08 09:41:09 - INFO - Arguments: wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 09:41:09 - INFO - ================================================================================
+2025-12-08 09:41:09 - INFO - Parsing entities from: gs://wikipedia-graph/graph/enwiki/entities/batch_results_gpt-5.1_high_l20.jsonl
+2025-12-08 09:41:09 - INFO - Output to: gs://wikipedia-graph/graph/enwiki/entities/parsed_gpt-5.1_high_l20.jsonl
+2025-12-08 09:41:09 - INFO - ================================================================================
+2025-12-08 09:41:09 - INFO - ================================================================================
+2025-12-08 09:41:09 - INFO - Parsing complete!
+2025-12-08 09:41:09 - INFO -   Successful: 20
+2025-12-08 09:41:09 - INFO -   Failed requests: 0
+2025-12-08 09:41:09 - INFO -   Parse errors: 0
+2025-12-08 09:41:09 - INFO -   Total processed: 20
+2025-12-08 09:41:09 - INFO -   Output saved to: gs://wikipedia-graph/graph/enwiki/entities/parsed_gpt-5.1_high_l20.jsonl
+2025-12-08 09:41:09 - INFO - ================================================================================
+2025-12-08 09:41:11 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_3_generate_relations.py
+2025-12-08 09:41:11 - INFO - Args: wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20, force=False
+2025-12-08 09:41:12 - INFO - Loading entities from: gs://wikipedia-graph/graph/enwiki/entities/parsed_gpt-5.1_high_l20.jsonl
+2025-12-08 09:41:12 - INFO - Loaded 20 entities
+2025-12-08 09:41:12 - INFO - Sample entity IDs: ['enwiki/73061129', 'enwiki/12023152', 'enwiki/51184']
+2025-12-08 09:41:12 - INFO - ================================================================================
+2025-12-08 09:41:12 - INFO - Starting Relation Batch File Generation
+2025-12-08 09:41:12 - INFO - Model: gpt-5.1, Reasoning: high
+2025-12-08 09:41:12 - INFO - Looking for 20 articles with entities
+2025-12-08 09:41:12 - INFO - Output: gs://wikipedia-graph/graph/enwiki/relations/batch_gpt-5.1_high_l20.jsonl
+2025-12-08 09:41:12 - INFO - ================================================================================
+2025-12-08 09:41:12 - INFO - Loading dataset josancamon/finewiki...
+2025-12-08 09:41:14 - INFO - Max scan limit: 10000 articles
+2025-12-08 09:41:16 - INFO - Dataset article ID sample: 'enwiki/15346010'
+2025-12-08 09:41:16 - INFO - Dataset article ID sample: 'enwiki/59181900'
+2025-12-08 09:41:16 - INFO - Dataset article ID sample: 'enwiki/18894890'
+2025-12-08 09:41:16 - INFO - Scanned 10 articles, found 10/20
+2025-12-08 09:41:16 - INFO - Scanned 20 articles, found 20/20
+2025-12-08 09:41:16 - INFO - Found all 20 articles
+2025-12-08 09:41:16 - INFO - Wrote 20 requests to gs://wikipedia-graph/graph/enwiki/relations/batch_gpt-5.1_high_l20.jsonl
+2025-12-08 09:41:16 - INFO - ================================================================================
+2025-12-08 10:43:46 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_1_generate_entities.py
+2025-12-08 10:43:46 - INFO - Arguments: wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20, force=False, local_dataset=False
+2025-12-08 10:43:46 - INFO - Batch file already exists: gs://wikipedia-graph/graph/enwiki/entities/batch_gpt-5.1_high_l20.jsonl
+2025-12-08 10:43:46 - INFO - Use --force to regenerate
+2025-12-08 10:43:48 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:43:48 - INFO - Command: upload
+2025-12-08 10:43:48 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20, force=False
+2025-12-08 10:43:48 - INFO - Batch info already exists for 'entities' in wiki 'enwiki'
+2025-12-08 10:43:49 - INFO - Existing batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 10:43:49 - INFO - Checking current status...
+2025-12-08 10:43:49 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 10:43:49 - INFO - Current status: completed
+2025-12-08 10:43:49 - INFO - Batch is active or completed. Skipping upload.
+2025-12-08 10:43:49 - INFO - Use: python _2_upload_batch.py upload entities --force
+2025-12-08 10:43:50 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:43:50 - INFO - Command: status
+2025-12-08 10:43:50 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 10:43:50 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 10:43:50 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 10:43:51 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 10:43:51 - INFO - ============================================================
+2025-12-08 10:43:51 - INFO - Batch Type: entities
+2025-12-08 10:43:51 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 10:43:51 - INFO - Status: completed
+2025-12-08 10:43:51 - INFO - Created at: 1765215440
+2025-12-08 10:43:51 - INFO - Request counts: BatchRequestCounts(completed=20, failed=0, total=20)
+2025-12-08 10:43:51 - INFO - ✓ Batch completed!
+2025-12-08 10:43:51 - INFO - Output file ID: file-JSvoQveviTaKYMYoLjjNVq
+2025-12-08 10:43:51 - INFO - Download with: python batch_api.py download entities --wiki enwiki
+2025-12-08 10:43:51 - INFO - ============================================================
+2025-12-08 10:43:52 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:43:52 - INFO - Command: download
+2025-12-08 10:43:52 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 10:43:52 - INFO - Retrieving batch: entities (wiki: enwiki)
+2025-12-08 10:43:52 - INFO - Batch ID: batch_69370cd0783081908fe8ba7b157e1690
+2025-12-08 10:43:52 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69370cd0783081908fe8ba7b157e1690 "HTTP/1.1 200 OK"
+2025-12-08 10:43:52 - INFO - Downloading output file: file-JSvoQveviTaKYMYoLjjNVq
+2025-12-08 10:43:53 - INFO - HTTP Request: GET https://api.openai.com/v1/files/file-JSvoQveviTaKYMYoLjjNVq/content "HTTP/1.1 200 OK"
+2025-12-08 10:43:53 - INFO - ✓ Results saved to: gs://wikipedia-graph/graph/enwiki/entities/batch_results_gpt-5.1_high_l20.jsonl
+2025-12-08 10:43:53 - INFO - ============================================================
+2025-12-08 10:43:53 - INFO - Download complete for 'entities'!
+2025-12-08 10:43:53 - INFO - ============================================================
+2025-12-08 10:43:54 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_2_parse_entities.py
+2025-12-08 10:43:54 - INFO - Arguments: wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 10:43:54 - INFO - ================================================================================
+2025-12-08 10:43:54 - INFO - Parsing entities from: gs://wikipedia-graph/graph/enwiki/entities/batch_results_gpt-5.1_high_l20.jsonl
+2025-12-08 10:43:54 - INFO - Output to: gs://wikipedia-graph/graph/enwiki/entities/parsed_gpt-5.1_high_l20.jsonl
+2025-12-08 10:43:54 - INFO - ================================================================================
+2025-12-08 10:43:55 - INFO - ================================================================================
+2025-12-08 10:43:55 - INFO - Parsing complete!
+2025-12-08 10:43:55 - INFO -   Successful: 20
+2025-12-08 10:43:55 - INFO -   Failed requests: 0
+2025-12-08 10:43:55 - INFO -   Parse errors: 0
+2025-12-08 10:43:55 - INFO -   Total processed: 20
+2025-12-08 10:43:55 - INFO -   Output saved to: gs://wikipedia-graph/graph/enwiki/entities/parsed_gpt-5.1_high_l20.jsonl
+2025-12-08 10:43:55 - INFO - ================================================================================
+2025-12-08 10:43:56 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_3_generate_relations.py
+2025-12-08 10:43:56 - INFO - Args: wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20, force=False
+2025-12-08 10:43:57 - INFO - Batch file already exists: gs://wikipedia-graph/graph/enwiki/relations/batch_gpt-5.1_high_l20.jsonl. Use --force to regenerate.
+2025-12-08 10:43:57 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:43:57 - INFO - Command: upload
+2025-12-08 10:43:57 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20, force=False
+2025-12-08 10:43:58 - INFO - Uploading batch: relations (wiki: enwiki)
+2025-12-08 10:43:58 - INFO - File: gs://wikipedia-graph/graph/enwiki/relations/batch_gpt-5.1_high_l20.jsonl
+2025-12-08 10:43:58 - INFO - File size: 0.14 MB
+2025-12-08 10:43:58 - INFO - Number of requests: 20
+2025-12-08 10:43:58 - INFO - Downloading from GCS and uploading to OpenAI...
+2025-12-08 10:43:59 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-12-08 10:43:59 - INFO - File uploaded successfully! File ID: file-NkUkwMWAMxBEJdWHq9V8jW
+2025-12-08 10:43:59 - INFO - Creating batch job...
+2025-12-08 10:44:00 - INFO - HTTP Request: POST https://api.openai.com/v1/batches "HTTP/1.1 200 OK"
+2025-12-08 10:44:00 - INFO - ============================================================
+2025-12-08 10:44:00 - INFO - Batch created successfully!
+2025-12-08 10:44:00 - INFO - Batch Type: relations
+2025-12-08 10:44:00 - INFO - Batch ID: batch_69371c7046dc819087a129b14dba00b2
+2025-12-08 10:44:00 - INFO - Status: validating
+2025-12-08 10:44:00 - INFO - Created at: 1765219440
+2025-12-08 10:44:00 - INFO - ============================================================
+2025-12-08 10:44:00 - INFO - Batch info saved to: gs://wikipedia-graph/graph/enwiki/relations/batch_info_gpt-5.1_high_l20.json
+2025-12-08 10:44:00 - INFO - 
+Checking current status...
+2025-12-08 10:44:00 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371c7046dc819087a129b14dba00b2 "HTTP/1.1 200 OK"
+2025-12-08 10:44:00 - INFO - Status: validating
+2025-12-08 10:44:00 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=0)
+2025-12-08 10:44:01 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:44:01 - INFO - Command: status
+2025-12-08 10:44:01 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 10:44:02 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-08 10:44:02 - INFO - Batch ID: batch_69371c7046dc819087a129b14dba00b2
+2025-12-08 10:44:02 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371c7046dc819087a129b14dba00b2 "HTTP/1.1 200 OK"
+2025-12-08 10:44:02 - INFO - ============================================================
+2025-12-08 10:44:02 - INFO - Batch Type: relations
+2025-12-08 10:44:02 - INFO - Batch ID: batch_69371c7046dc819087a129b14dba00b2
+2025-12-08 10:44:02 - INFO - Status: validating
+2025-12-08 10:44:02 - INFO - Created at: 1765219440
+2025-12-08 10:44:02 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=0)
+2025-12-08 10:44:02 - INFO - ⏳ Batch is validating...
+2025-12-08 10:44:02 - INFO - ============================================================
+2025-12-08 10:44:24 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_1_generate_entities.py
+2025-12-08 10:44:24 - INFO - Arguments: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20, force=False, local_dataset=False
+2025-12-08 10:44:25 - INFO - Batch file already exists: gs://wikipedia-graph/graph/enwiki/entities/batch_gpt-5-nano_minimal_l20.jsonl
+2025-12-08 10:44:25 - INFO - Use --force to regenerate
+2025-12-08 10:44:26 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:44:26 - INFO - Command: upload
+2025-12-08 10:44:26 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20, force=False
+2025-12-08 10:44:26 - INFO - Batch info already exists for 'entities' in wiki 'enwiki'
+2025-12-08 10:44:27 - INFO - Existing batch ID: batch_69368224c32c819082ee2690384f427d
+2025-12-08 10:44:27 - INFO - Checking current status...
+2025-12-08 10:44:27 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69368224c32c819082ee2690384f427d "HTTP/1.1 200 OK"
+2025-12-08 10:44:27 - INFO - Current status: completed
+2025-12-08 10:44:27 - INFO - Batch is active or completed. Skipping upload.
+2025-12-08 10:44:27 - INFO - Use: python _2_upload_batch.py upload entities --force
+2025-12-08 10:44:28 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:44:28 - INFO - Command: status
+2025-12-08 10:44:28 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:44:28 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 10:44:28 - INFO - Batch ID: batch_69368224c32c819082ee2690384f427d
+2025-12-08 10:44:28 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69368224c32c819082ee2690384f427d "HTTP/1.1 200 OK"
+2025-12-08 10:44:28 - INFO - ============================================================
+2025-12-08 10:44:28 - INFO - Batch Type: entities
+2025-12-08 10:44:28 - INFO - Batch ID: batch_69368224c32c819082ee2690384f427d
+2025-12-08 10:44:28 - INFO - Status: completed
+2025-12-08 10:44:28 - INFO - Created at: 1765179940
+2025-12-08 10:44:28 - INFO - Request counts: BatchRequestCounts(completed=20, failed=0, total=20)
+2025-12-08 10:44:28 - INFO - ✓ Batch completed!
+2025-12-08 10:44:28 - INFO - Output file ID: file-Sw8CDzVENDeH23ELXhrMTu
+2025-12-08 10:44:28 - INFO - Download with: python batch_api.py download entities --wiki enwiki
+2025-12-08 10:44:28 - INFO - ============================================================
+2025-12-08 10:44:29 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:44:29 - INFO - Command: download
+2025-12-08 10:44:29 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:44:30 - INFO - Retrieving batch: entities (wiki: enwiki)
+2025-12-08 10:44:30 - INFO - Batch ID: batch_69368224c32c819082ee2690384f427d
+2025-12-08 10:44:30 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69368224c32c819082ee2690384f427d "HTTP/1.1 200 OK"
+2025-12-08 10:44:30 - INFO - Downloading output file: file-Sw8CDzVENDeH23ELXhrMTu
+2025-12-08 10:44:30 - INFO - HTTP Request: GET https://api.openai.com/v1/files/file-Sw8CDzVENDeH23ELXhrMTu/content "HTTP/1.1 200 OK"
+2025-12-08 10:44:31 - INFO - ✓ Results saved to: gs://wikipedia-graph/graph/enwiki/entities/batch_results_gpt-5-nano_minimal_l20.jsonl
+2025-12-08 10:44:31 - INFO - ============================================================
+2025-12-08 10:44:31 - INFO - Download complete for 'entities'!
+2025-12-08 10:44:31 - INFO - ============================================================
+2025-12-08 10:44:32 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_2_parse_entities.py
+2025-12-08 10:44:32 - INFO - Arguments: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:44:32 - INFO - ================================================================================
+2025-12-08 10:44:32 - INFO - Parsing entities from: gs://wikipedia-graph/graph/enwiki/entities/batch_results_gpt-5-nano_minimal_l20.jsonl
+2025-12-08 10:44:32 - INFO - Output to: gs://wikipedia-graph/graph/enwiki/entities/parsed_gpt-5-nano_minimal_l20.jsonl
+2025-12-08 10:44:32 - INFO - ================================================================================
+2025-12-08 10:44:32 - INFO - ================================================================================
+2025-12-08 10:44:32 - INFO - Parsing complete!
+2025-12-08 10:44:32 - INFO -   Successful: 20
+2025-12-08 10:44:32 - INFO -   Failed requests: 0
+2025-12-08 10:44:32 - INFO -   Parse errors: 0
+2025-12-08 10:44:32 - INFO -   Total processed: 20
+2025-12-08 10:44:32 - INFO -   Output saved to: gs://wikipedia-graph/graph/enwiki/entities/parsed_gpt-5-nano_minimal_l20.jsonl
+2025-12-08 10:44:32 - INFO - ================================================================================
+2025-12-08 10:44:33 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:44:33 - INFO - Command: status
+2025-12-08 10:44:33 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5.1, reasoning_effort=high, limit=20
+2025-12-08 10:44:33 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-08 10:44:33 - INFO - Batch ID: batch_69371c7046dc819087a129b14dba00b2
+2025-12-08 10:44:33 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371c7046dc819087a129b14dba00b2 "HTTP/1.1 200 OK"
+2025-12-08 10:44:33 - INFO - ============================================================
+2025-12-08 10:44:33 - INFO - Batch Type: relations
+2025-12-08 10:44:33 - INFO - Batch ID: batch_69371c7046dc819087a129b14dba00b2
+2025-12-08 10:44:33 - INFO - Status: in_progress
+2025-12-08 10:44:33 - INFO - Created at: 1765219440
+2025-12-08 10:44:33 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 10:44:33 - INFO - ⏳ Batch is in_progress...
+2025-12-08 10:44:33 - INFO - ============================================================
+2025-12-08 10:44:34 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_3_generate_relations.py
+2025-12-08 10:44:34 - INFO - Args: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20, force=False
+2025-12-08 10:44:34 - INFO - Batch file already exists: gs://wikipedia-graph/graph/enwiki/relations/batch_gpt-5-nano_minimal_l20.jsonl. Use --force to regenerate.
+2025-12-08 10:44:35 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:44:35 - INFO - Command: upload
+2025-12-08 10:44:35 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20, force=False
+2025-12-08 10:44:35 - INFO - Batch info already exists for 'relations' in wiki 'enwiki'
+2025-12-08 10:44:36 - INFO - Existing batch ID: batch_693688207bac81909d7ad544a39ae6c7
+2025-12-08 10:44:36 - INFO - Checking current status...
+2025-12-08 10:44:36 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693688207bac81909d7ad544a39ae6c7 "HTTP/1.1 200 OK"
+2025-12-08 10:44:36 - INFO - Current status: completed
+2025-12-08 10:44:36 - INFO - Batch is active or completed. Skipping upload.
+2025-12-08 10:44:36 - INFO - Use: python _2_upload_batch.py upload relations --force
+2025-12-08 10:44:37 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:44:37 - INFO - Command: status
+2025-12-08 10:44:37 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:44:37 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-08 10:44:37 - INFO - Batch ID: batch_693688207bac81909d7ad544a39ae6c7
+2025-12-08 10:44:47 - INFO - Retrying request to /batches/batch_693688207bac81909d7ad544a39ae6c7 in 0.467346 seconds
+2025-12-08 10:48:59 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_1_generate_entities.py
+2025-12-08 10:48:59 - INFO - Arguments: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20, force=False, local_dataset=False
+2025-12-08 10:49:00 - INFO - ================================================================================
+2025-12-08 10:49:00 - INFO - Starting Entity Batch File Generation
+2025-12-08 10:49:00 - INFO - ================================================================================
+2025-12-08 10:49:00 - INFO - Wiki: enwiki
+2025-12-08 10:49:00 - INFO - Model: gpt-5-nano, Reasoning: minimal
+2025-12-08 10:49:00 - INFO - Workers: 10 parallel processes
+2025-12-08 10:49:00 - INFO - Dataset mode: streaming
+2025-12-08 10:49:00 - INFO - Output: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l20/batch.jsonl
+2025-12-08 10:49:00 - INFO - Limit: 20
+2025-12-08 10:49:00 - INFO - Loading dataset josancamon/finewiki via streaming...
+2025-12-08 10:49:16 - INFO - Done. Generated 20 requests from 20 articles.
+2025-12-08 10:49:16 - INFO - ================================================================================
+2025-12-08 10:49:18 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:49:18 - INFO - Command: upload
+2025-12-08 10:49:18 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20, force=False
+2025-12-08 10:49:18 - INFO - Uploading batch: entities (wiki: enwiki)
+2025-12-08 10:49:18 - INFO - File: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l20/batch.jsonl
+2025-12-08 10:49:18 - INFO - File size: 0.10 MB
+2025-12-08 10:49:18 - INFO - Number of requests: 20
+2025-12-08 10:49:18 - INFO - Downloading from GCS and uploading to OpenAI...
+2025-12-08 10:49:19 - INFO - HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
+2025-12-08 10:49:19 - INFO - File uploaded successfully! File ID: file-3k1M7T9A7neaxSnYHmbP1X
+2025-12-08 10:49:19 - INFO - Creating batch job...
+2025-12-08 10:49:20 - INFO - HTTP Request: POST https://api.openai.com/v1/batches "HTTP/1.1 200 OK"
+2025-12-08 10:49:20 - INFO - ============================================================
+2025-12-08 10:49:20 - INFO - Batch created successfully!
+2025-12-08 10:49:20 - INFO - Batch Type: entities
+2025-12-08 10:49:20 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:49:20 - INFO - Status: validating
+2025-12-08 10:49:20 - INFO - Created at: 1765219760
+2025-12-08 10:49:20 - INFO - ============================================================
+2025-12-08 10:49:20 - INFO - Batch info saved to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l20/batch_info.json
+2025-12-08 10:49:20 - INFO - 
+Checking current status...
+2025-12-08 10:49:21 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371db007bc81909ccc84845842b48f "HTTP/1.1 200 OK"
+2025-12-08 10:49:21 - INFO - Status: validating
+2025-12-08 10:49:21 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=0)
+2025-12-08 10:49:21 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:49:21 - INFO - Command: status
+2025-12-08 10:49:21 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:49:22 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 10:49:22 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:49:22 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371db007bc81909ccc84845842b48f "HTTP/1.1 200 OK"
+2025-12-08 10:49:22 - INFO - ============================================================
+2025-12-08 10:49:22 - INFO - Batch Type: entities
+2025-12-08 10:49:22 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:49:22 - INFO - Status: in_progress
+2025-12-08 10:49:22 - INFO - Created at: 1765219760
+2025-12-08 10:49:22 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 10:49:22 - INFO - ⏳ Batch is in_progress...
+2025-12-08 10:49:22 - INFO - ============================================================
+2025-12-08 10:49:53 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:49:53 - INFO - Command: status
+2025-12-08 10:49:53 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:49:53 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 10:49:53 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:49:54 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371db007bc81909ccc84845842b48f "HTTP/1.1 200 OK"
+2025-12-08 10:49:54 - INFO - ============================================================
+2025-12-08 10:49:54 - INFO - Batch Type: entities
+2025-12-08 10:49:54 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:49:54 - INFO - Status: in_progress
+2025-12-08 10:49:54 - INFO - Created at: 1765219760
+2025-12-08 10:49:54 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 10:49:54 - INFO - ⏳ Batch is in_progress...
+2025-12-08 10:49:54 - INFO - ============================================================
+2025-12-08 10:50:24 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:50:24 - INFO - Command: status
+2025-12-08 10:50:24 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:50:25 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 10:50:25 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:50:25 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371db007bc81909ccc84845842b48f "HTTP/1.1 200 OK"
+2025-12-08 10:50:25 - INFO - ============================================================
+2025-12-08 10:50:25 - INFO - Batch Type: entities
+2025-12-08 10:50:25 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:50:25 - INFO - Status: in_progress
+2025-12-08 10:50:25 - INFO - Created at: 1765219760
+2025-12-08 10:50:25 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 10:50:25 - INFO - ⏳ Batch is in_progress...
+2025-12-08 10:50:25 - INFO - ============================================================
+2025-12-08 10:50:56 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:50:56 - INFO - Command: status
+2025-12-08 10:50:56 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:51:00 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 10:51:00 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:51:00 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371db007bc81909ccc84845842b48f "HTTP/1.1 200 OK"
+2025-12-08 10:51:00 - INFO - ============================================================
+2025-12-08 10:51:00 - INFO - Batch Type: entities
+2025-12-08 10:51:00 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:51:00 - INFO - Status: in_progress
+2025-12-08 10:51:00 - INFO - Created at: 1765219760
+2025-12-08 10:51:00 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 10:51:00 - INFO - ⏳ Batch is in_progress...
+2025-12-08 10:51:00 - INFO - ============================================================
+2025-12-08 10:51:31 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:51:31 - INFO - Command: status
+2025-12-08 10:51:31 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:51:32 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 10:51:32 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:51:32 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371db007bc81909ccc84845842b48f "HTTP/1.1 200 OK"
+2025-12-08 10:51:32 - INFO - ============================================================
+2025-12-08 10:51:32 - INFO - Batch Type: entities
+2025-12-08 10:51:32 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:51:32 - INFO - Status: in_progress
+2025-12-08 10:51:32 - INFO - Created at: 1765219760
+2025-12-08 10:51:32 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 10:51:32 - INFO - ⏳ Batch is in_progress...
+2025-12-08 10:51:32 - INFO - ============================================================
+2025-12-08 10:52:03 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:52:03 - INFO - Command: status
+2025-12-08 10:52:03 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:52:04 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-08 10:52:04 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:52:04 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_69371db007bc81909ccc84845842b48f "HTTP/1.1 200 OK"
+2025-12-08 10:52:04 - INFO - ============================================================
+2025-12-08 10:52:04 - INFO - Batch Type: entities
+2025-12-08 10:52:04 - INFO - Batch ID: batch_69371db007bc81909ccc84845842b48f
+2025-12-08 10:52:04 - INFO - Status: in_progress
+2025-12-08 10:52:04 - INFO - Created at: 1765219760
+2025-12-08 10:52:04 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=20)
+2025-12-08 10:52:04 - INFO - ⏳ Batch is in_progress...
+2025-12-08 10:52:04 - INFO - ============================================================
+2025-12-08 10:52:35 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-08 10:52:35 - INFO - Command: status
+2025-12-08 10:52:35 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=20
+2025-12-08 10:53:13 - ERROR - _request non-retriable exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+Traceback (most recent call last):
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 790, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+        sock=sock,
+    ...<14 lines>...
+        assert_fingerprint=self.assert_fingerprint,
+    )
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 969, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+        sock=sock,
+    ...<8 lines>...
+        tls_in_tls=tls_in_tls,
+    )
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/util/ssl_.py", line 480, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/util/ssl_.py", line 524, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/google/auth/transport/requests.py", line 185, in __call__
+    response = self.session.request(
+        method, url, data=body, headers=headers, timeout=timeout, **kwargs
+    )
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/requests/adapters.py", line 675, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/gcsfs/retry.py", line 135, in retry_request
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/gcsfs/core.py", line 467, in _request
+    headers=self._get_headers(headers),
+            ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/gcsfs/core.py", line 444, in _get_headers
+    self.credentials.apply(out)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/gcsfs/credentials.py", line 223, in apply
+    self.maybe_refresh()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/gcsfs/credentials.py", line 211, in maybe_refresh
+    self.credentials.refresh(req)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/google/oauth2/service_account.py", line 457, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ~~~~~~~~~~~~~~~~~^
+        request, self._token_uri, assertion
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+        request,
+    ...<5 lines>...
+        },
+    )
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<6 lines>...
+        **kwargs
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+        method="POST", url=token_uri, headers=headers_to_use, body=body, **kwargs
+    )
+  File "/Users/joancabezas/Downloads/projects/ai-research/wiki-kg/.venv/lib/python3.13/site-packages/google/auth/transport/requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))

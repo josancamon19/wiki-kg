@@ -21,14 +21,14 @@ try:
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 except ImportError:
     from utils import (
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 
 load_dotenv()
@@ -191,11 +191,9 @@ def main(
     force: Annotated[bool, typer.Option(help="Force regeneration")] = False,
 ):
     """Generate Batch API files for relation extraction."""
-    entities_filename = build_filename("parsed", model, reasoning_effort, limit)
-    entities_file = f"{GCP_KG_PREFIX}/{wiki}/entities/{entities_filename}"
-
-    output_filename = build_filename("batch", model, reasoning_effort, limit)
-    output_path = f"{GCP_KG_PREFIX}/{wiki}/relations/{output_filename}"
+    subdir = build_subdir(model, reasoning_effort, limit)
+    entities_file = f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/parsed.jsonl"
+    output_path = f"{GCP_KG_PREFIX}/{wiki}/relations/{subdir}/batch.jsonl"
 
     logger.info(f"Script: {__file__}")
     logger.info(f"Args: wiki={wiki}, model={model}, reasoning_effort={reasoning_effort}, limit={limit}, force={force}")
@@ -208,6 +206,9 @@ def main(
         limit=limit,
         force=force,
     )
+
+    # Force exit to clean up streaming dataset background threads
+    raise typer.Exit(0)
 
 
 if __name__ == "__main__":

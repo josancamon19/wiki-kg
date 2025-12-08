@@ -16,14 +16,14 @@ try:
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 except ImportError:
     from utils import (
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 
 # Load environment variables
@@ -267,9 +267,9 @@ def main(
     local_dataset: Annotated[bool, typer.Option(help="Load from local HF cache")] = False,
 ):
     """Generate Batch API files for Knowledge Graph extraction from FineWiki."""
-    # Generate GCS path for output with model and limit in filename
-    filename = build_filename("batch", model, reasoning_effort, limit)
-    output_path = f"{GCP_KG_PREFIX}/{wiki}/entities/{filename}"
+    # Generate GCS path for output using subfolder structure
+    subdir = build_subdir(model, reasoning_effort, limit)
+    output_path = f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/batch.jsonl"
 
     logger.info(f"Script: {__file__}")
     logger.info(

@@ -20,14 +20,14 @@ try:
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 except ImportError:
     from utils import (
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 
 load_dotenv()
@@ -175,13 +175,11 @@ def main(
 ):
     """Generate individual knowledge graphs from entities and relations."""
     fs = gcsfs.GCSFileSystem()
+    subdir = build_subdir(model, reasoning_effort, limit)
 
-    entities_filename = build_filename("parsed", model, reasoning_effort, limit)
-    relations_filename = build_filename("parsed", model, reasoning_effort, limit)
-
-    entities_path = f"{GCP_KG_PREFIX}/{wiki}/entities/{entities_filename}"
-    relations_path = f"{GCP_KG_PREFIX}/{wiki}/relations/{relations_filename}"
-    output_dir = f"{GCP_KG_PREFIX}/{wiki}/graphs"
+    entities_path = f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/parsed.jsonl"
+    relations_path = f"{GCP_KG_PREFIX}/{wiki}/relations/{subdir}/parsed.jsonl"
+    output_dir = f"{GCP_KG_PREFIX}/{wiki}/graphs/{subdir}"
 
     logger.info(f"Script: {__file__}")
     logger.info(

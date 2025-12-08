@@ -21,14 +21,14 @@ try:
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 except ImportError:
     from utils import (
         GCP_KG_PREFIX,
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
-        build_filename,
+        build_subdir,
     )
 
 # Load environment variables
@@ -201,13 +201,10 @@ def main(
 ):
     """Parse entities from batch API results."""
     fs = gcsfs.GCSFileSystem()
-    input_filename = build_filename("batch_results", model, reasoning_effort, limit)
-    output_filename = build_filename("parsed", model, reasoning_effort, limit)
+    subdir = build_subdir(model, reasoning_effort, limit)
 
-    resolved_input = input_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{input_filename}"
-    resolved_output = (
-        output_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{output_filename}"
-    )
+    resolved_input = input_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/batch_results.jsonl"
+    resolved_output = output_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/parsed.jsonl"
 
     if not fs.exists(resolved_input):
         logger.error(f"Error: Input file not found: {resolved_input}")
