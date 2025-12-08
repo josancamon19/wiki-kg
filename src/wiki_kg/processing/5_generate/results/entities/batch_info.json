@@ -1,9 +1,0 @@
-{
-  "batch_type": "entities",
-  "batch_id": "batch_6924ad24f71c8190b94dd779f1e796ed",
-  "input_file_id": "file-9EzrsjY2SXjQRvNcLgCHFH",
-  "status": "validating",
-  "created_at": 1764011300,
-  "num_requests": 100,
-  "description": "Entities extraction batch (100 requests)"
-}

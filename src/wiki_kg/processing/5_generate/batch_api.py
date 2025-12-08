@@ -3,10 +3,24 @@ import json
 import logging
 import argparse
 from pathlib import Path
+from typing import Optional
 
 import gcsfs
 from openai import OpenAI
 from dotenv import load_dotenv
+
+try:
+    from .utils import (
+        DEFAULT_MODEL,
+        DEFAULT_REASONING_EFFORT,
+        get_batch_paths,
+    )
+except ImportError:
+    from utils import (
+        DEFAULT_MODEL,
+        DEFAULT_REASONING_EFFORT,
+        get_batch_paths,
+    )
 
 # Load environment variables
 load_dotenv()
@@ -27,44 +41,31 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Constants
-GCP_KG_PREFIX = "gs://wikipedia-graph/graph"
 
-
-def get_batch_paths(batch_type: str, wiki: str = "enwiki") -> dict:
-    """
-    Get the standard GCS file paths for a batch type.
-    
-    Args:
-        batch_type: Type of batch (e.g., 'entities', 'relations')
-        wiki: Wiki identifier (default: 'enwiki')
-        
-    Returns:
-        Dictionary with GCS paths for batch files
-    """
-    batch_dir = f"{GCP_KG_PREFIX}/{wiki}/{batch_type}"
-    return {
-        "dir": batch_dir,
-        "batch_file": f"{batch_dir}/batch.jsonl",
-        "info_file": f"{batch_dir}/batch_info.json",
-        "results_file": f"{batch_dir}/batch_results.jsonl",
-    }
-
-
-def upload_batch(batch_type: str, wiki: str = "enwiki", force: bool = False) -> dict:
+def upload_batch(
+    batch_type: str,
+    wiki: str = "enwiki",
+    model: str = DEFAULT_MODEL,
+    reasoning_effort: str = DEFAULT_REASONING_EFFORT,
+    limit: Optional[int] = None,
+    force: bool = False,
+) -> dict:
     """
     Upload a batch file from GCS to OpenAI and create a batch job.
     
     Args:
         batch_type: Type of batch (e.g., 'entities', 'relations')
         wiki: Wiki identifier (default: 'enwiki')
+        model: Model name used for generation
+        reasoning_effort: Reasoning effort level used for generation
+        limit: Optional limit used during generation
         force: If True, upload even if batch info already exists
         
     Returns:
         Dictionary containing batch information
     """
     fs = gcsfs.GCSFileSystem()
-    paths = get_batch_paths(batch_type, wiki)
+    paths = get_batch_paths(batch_type, wiki, model, reasoning_effort, limit)
     
     if not fs.exists(paths["batch_file"]):
         raise FileNotFoundError(
@@ -167,19 +168,28 @@ def upload_batch(batch_type: str, wiki: str = "enwiki", force: bool = False) -> 
     return batch_info
 
 
-def check_status(batch_type: str, wiki: str = "enwiki") -> dict:
+def check_status(
+    batch_type: str,
+    wiki: str = "enwiki",
+    model: str = DEFAULT_MODEL,
+    reasoning_effort: str = DEFAULT_REASONING_EFFORT,
+    limit: Optional[int] = None,
+) -> dict:
     """
     Check the status of a batch job by batch type.
     
     Args:
         batch_type: Type of batch (e.g., 'entities', 'relations')
         wiki: Wiki identifier (default: 'enwiki')
+        model: Model name used for generation
+        reasoning_effort: Reasoning effort level used for generation
+        limit: Optional limit used during generation
         
     Returns:
         Dictionary with batch status information
     """
     fs = gcsfs.GCSFileSystem()
-    paths = get_batch_paths(batch_type, wiki)
+    paths = get_batch_paths(batch_type, wiki, model, reasoning_effort, limit)
     
     if not fs.exists(paths["info_file"]):
         raise FileNotFoundError(
@@ -229,16 +239,25 @@ def check_status(batch_type: str, wiki: str = "enwiki") -> dict:
     }
 
 
-def download_results(batch_type: str, wiki: str = "enwiki") -> None:
+def download_results(
+    batch_type: str,
+    wiki: str = "enwiki",
+    model: str = DEFAULT_MODEL,
+    reasoning_effort: str = DEFAULT_REASONING_EFFORT,
+    limit: Optional[int] = None,
+) -> None:
     """
     Download the results of a completed batch job and save to GCS.
     
     Args:
         batch_type: Type of batch (e.g., 'entities', 'relations')
         wiki: Wiki identifier (default: 'enwiki')
+        model: Model name used for generation
+        reasoning_effort: Reasoning effort level used for generation
+        limit: Optional limit used during generation
     """
     fs = gcsfs.GCSFileSystem()
-    paths = get_batch_paths(batch_type, wiki)
+    paths = get_batch_paths(batch_type, wiki, model, reasoning_effort, limit)
     
     if not fs.exists(paths["info_file"]):
         raise FileNotFoundError(
@@ -286,6 +305,35 @@ def download_results(batch_type: str, wiki: str = "enwiki") -> None:
     logger.info("=" * 60)
 
 
+def _add_common_args(subparser):
+    """Add common arguments to a subparser."""
+    subparser.add_argument(
+        "--wiki",
+        type=str,
+        default="enwiki",
+        help="Wiki identifier (default: enwiki)",
+    )
+    subparser.add_argument(
+        "--model",
+        type=str,
+        default=DEFAULT_MODEL,
+        help=f"Model name used for generation (default: {DEFAULT_MODEL})",
+    )
+    subparser.add_argument(
+        "--reasoning-effort",
+        type=str,
+        default=DEFAULT_REASONING_EFFORT,
+        choices=["minimal", "low", "medium", "high"],
+        help=f"Reasoning effort level (default: {DEFAULT_REASONING_EFFORT})",
+    )
+    subparser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Limit used during generation (for filename matching)",
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Manage OpenAI Batch API jobs with GCS storage (entities, relations, etc.)"
@@ -296,19 +344,14 @@ def main():
     # Upload command
     upload_parser = subparsers.add_parser(
         "upload", 
-        help="Upload a batch file from GCS (e.g., python batch_api.py upload entities --wiki enwiki)"
+        help="Upload a batch file from GCS"
     )
     upload_parser.add_argument(
         "batch_type",
         type=str,
         help="Type of batch to upload (e.g., 'entities', 'relations')"
     )
-    upload_parser.add_argument(
-        "--wiki",
-        type=str,
-        default="enwiki",
-        help="Wiki identifier (default: enwiki)",
-    )
+    _add_common_args(upload_parser)
     upload_parser.add_argument(
         "--force",
         action="store_true",
@@ -318,36 +361,26 @@ def main():
     # Status command
     status_parser = subparsers.add_parser(
         "status",
-        help="Check batch status (e.g., python batch_api.py status entities --wiki enwiki)"
+        help="Check batch status"
     )
     status_parser.add_argument(
         "batch_type",
         type=str,
         help="Type of batch to check (e.g., 'entities', 'relations')"
     )
-    status_parser.add_argument(
-        "--wiki",
-        type=str,
-        default="enwiki",
-        help="Wiki identifier (default: enwiki)",
-    )
+    _add_common_args(status_parser)
     
     # Download command
     download_parser = subparsers.add_parser(
         "download",
-        help="Download batch results to GCS (e.g., python batch_api.py download entities --wiki enwiki)"
+        help="Download batch results to GCS"
     )
     download_parser.add_argument(
         "batch_type",
         type=str,
         help="Type of batch to download (e.g., 'entities', 'relations')"
     )
-    download_parser.add_argument(
-        "--wiki",
-        type=str,
-        default="enwiki",
-        help="Wiki identifier (default: enwiki)",
-    )
+    _add_common_args(download_parser)
     
     args = parser.parse_args()
     
@@ -359,12 +392,27 @@ def main():
         upload_batch(
             batch_type=args.batch_type,
             wiki=args.wiki,
-            force=getattr(args, "force", False)
+            model=args.model,
+            reasoning_effort=args.reasoning_effort,
+            limit=args.limit,
+            force=args.force,
         )
     elif args.command == "status":
-        check_status(args.batch_type, wiki=args.wiki)
+        check_status(
+            batch_type=args.batch_type,
+            wiki=args.wiki,
+            model=args.model,
+            reasoning_effort=args.reasoning_effort,
+            limit=args.limit,
+        )
     elif args.command == "download":
-        download_results(args.batch_type, wiki=args.wiki)
+        download_results(
+            batch_type=args.batch_type,
+            wiki=args.wiki,
+            model=args.model,
+            reasoning_effort=args.reasoning_effort,
+            limit=args.limit,
+        )
         # TODO: add an option to identify the failed requests, and save them in a separate file of request and another of error messages, to either just re-run, or know what to change
     else:
         parser.print_help()

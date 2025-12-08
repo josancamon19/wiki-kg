@@ -11,6 +11,21 @@ from datasets import load_dataset, DownloadConfig
 from dotenv import load_dotenv
 from kg_gen.utils.chunk_text import chunk_text
 
+try:
+    from .utils import (
+        GCP_KG_PREFIX,
+        DEFAULT_MODEL,
+        DEFAULT_REASONING_EFFORT,
+        build_filename,
+    )
+except ImportError:
+    from utils import (
+        GCP_KG_PREFIX,
+        DEFAULT_MODEL,
+        DEFAULT_REASONING_EFFORT,
+        build_filename,
+    )
+
 # Load environment variables
 load_dotenv()
 
@@ -27,10 +42,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-GCP_KG_PREFIX = "gs://wikipedia-graph/graph"
 PROMPTS_PATH = os.path.join(os.path.dirname(__file__), "prompts")
-MODEL_NAME = "gpt-5-nano"
-REASONING_EFFORT = "minimal"
 MAX_TOKENS = 100000
 CHUNK_THRESHOLD = int(2e5)  # Characters
 CHUNK_SIZE = int(1e5)
@@ -54,19 +66,12 @@ def _article_iterator(dataset, limit: Optional[int]) -> Iterator[Dict[str, Any]]
             yield article
 
 
-def _load_finewiki_dataset(
-    *, local_dataset: bool, hf_cache_dir: Optional[str]
-):
+def _load_finewiki_dataset(*, local_dataset: bool):
     """Load the FineWiki dataset either via streaming or from the local cache."""
     dataset_kwargs = dict(name="default", split="en")
-    if hf_cache_dir:
-        dataset_kwargs["cache_dir"] = hf_cache_dir
 
     if local_dataset:
-        logger.info(
-            "Loading dataset josancamon/finewiki from local cache%s...",
-            f" ({hf_cache_dir})" if hf_cache_dir else "",
-        )
+        logger.info("Loading dataset josancamon/finewiki from local cache...")
         download_config = DownloadConfig(local_files_only=True)
         try:
             return load_dataset(
@@ -93,59 +98,67 @@ def _load_finewiki_dataset(
         )
 
 
-def article_to_batch_requests(article: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """
-    Convert an article to batch API request(s) for entity extraction.
-    Returns a list of batch requests (one per chunk if article is large).
-    """
-    text = article.get("text", "")
-    if not text:
-        return []
+class ArticleProcessor:
+    """Picklable callable for converting articles to batch requests."""
 
-    article_id = str(article["id"])
+    def __init__(self, model_name: str, reasoning_effort: str):
+        self.model_name = model_name
+        self.reasoning_effort = reasoning_effort
 
-    # Determine if chunking is needed
-    if len(text) > CHUNK_THRESHOLD:
-        chunks = chunk_text(text, CHUNK_SIZE)
-        logger.info(f"Article {article_id}: chunked into {len(chunks)} pieces")
-    else:
-        chunks = [text]
+    def __call__(self, article: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """
+        Convert an article to batch API request(s) for entity extraction.
+        Returns a list of batch requests (one per chunk if article is large).
+        """
+        text = article.get("text", "")
+        if not text:
+            return []
 
-    batch_requests = []
-    for chunk_idx, chunk in enumerate(chunks):
-        # Create custom_id with article_id and chunk index
-        if len(chunks) > 1:
-            custom_id = f"{article_id}_chunk_{chunk_idx}"
+        article_id = str(article["id"])
+
+        # Determine if chunking is needed
+        if len(text) > CHUNK_THRESHOLD:
+            chunks = chunk_text(text, CHUNK_SIZE)
+            logger.info(f"Article {article_id}: chunked into {len(chunks)} pieces")
         else:
-            custom_id = str(article_id)
+            chunks = [text]
 
-        prompt = _ENTITY_PROMPT_TEMPLATE.replace("{_source_text_}", chunk)
+        batch_requests = []
+        for chunk_idx, chunk in enumerate(chunks):
+            # Create custom_id with article_id and chunk index
+            if len(chunks) > 1:
+                custom_id = f"{article_id}_chunk_{chunk_idx}"
+            else:
+                custom_id = str(article_id)
 
-        # OpenAI Batch API format
-        batch_request = {
-            "custom_id": custom_id,
-            "method": "POST",
-            "url": "/v1/responses",
-            "body": {
-                "model": MODEL_NAME,
-                "input": prompt,
-                "max_output_tokens": MAX_TOKENS,
-                "temperature": TEMPERATURE,
-                "reasoning": {"effort": REASONING_EFFORT},
-            },
-        }
-        batch_requests.append(batch_request)
+            prompt = _ENTITY_PROMPT_TEMPLATE.replace("{_source_text_}", chunk)
 
-    return batch_requests
+            # OpenAI Batch API format
+            batch_request = {
+                "custom_id": custom_id,
+                "method": "POST",
+                "url": "/v1/responses",
+                "body": {
+                    "model": self.model_name,
+                    "input": prompt,
+                    "max_output_tokens": MAX_TOKENS,
+                    "temperature": TEMPERATURE,
+                    "reasoning": {"effort": self.reasoning_effort},
+                },
+            }
+            batch_requests.append(batch_request)
+
+        return batch_requests
+
 
 def generate_entities_batch_file(
     output_path: str,
     wiki: str = "enwiki",
     limit: Optional[int] = None,
     force: bool = False,
-    num_workers: Optional[int] = None,
     local_dataset: bool = False,
-    hf_cache_dir: Optional[str] = None,
+    model: str = DEFAULT_MODEL,
+    reasoning_effort: str = DEFAULT_REASONING_EFFORT,
 ):
     """
     Generate a batch JSONL file containing entity extraction requests and push it to GCS.
@@ -155,11 +168,10 @@ def generate_entities_batch_file(
         wiki: Wiki identifier used only for logging/output path generation.
         limit: Maximum number of articles to process.
         force: Regenerate even if the file already exists.
-        num_workers: Number of worker processes (defaults to cpu_count).
         local_dataset: If True, read FineWiki from the local Hugging Face cache
             (dataset must be downloaded beforehand).
-        hf_cache_dir: Optional Hugging Face cache directory to use when
-            ``local_dataset`` is True.
+        model: Model name to use for the batch requests.
+        reasoning_effort: Reasoning effort level for the model.
     Returns:
         Dict[str, int]: Counts of processed articles and generated requests.
     """
@@ -170,25 +182,19 @@ def generate_entities_batch_file(
         logger.info("Use --force to regenerate")
         return {"articles": 0, "requests": 0}
 
-    if num_workers is None:
-        num_workers = cpu_count()
-    num_workers = max(1, num_workers)
+    num_workers = cpu_count()
 
     logger.info("=" * 80)
     logger.info("Starting Entity Batch File Generation")
     logger.info("=" * 80)
     logger.info(f"Wiki: {wiki}")
-    logger.info(f"Model: {MODEL_NAME}, Reasoning: {REASONING_EFFORT}")
+    logger.info(f"Model: {model}, Reasoning: {reasoning_effort}")
     logger.info(f"Workers: {num_workers} parallel processes")
     logger.info(f"Dataset mode: {'local-cache' if local_dataset else 'streaming'}")
-    if local_dataset and hf_cache_dir:
-        logger.info(f"HF cache dir: {hf_cache_dir}")
     logger.info(f"Output: {output_path}")
     logger.info(f"Limit: {limit if limit else 'None (all articles)'}")
 
-    dataset = _load_finewiki_dataset(
-        local_dataset=local_dataset, hf_cache_dir=hf_cache_dir
-    )
+    dataset = _load_finewiki_dataset(local_dataset=local_dataset)
     article_iter = _article_iterator(dataset, limit)
 
     # Prepare output file on GCS
@@ -226,16 +232,16 @@ def generate_entities_batch_file(
                     total_requests,
                 )
 
+    article_processor = ArticleProcessor(model, reasoning_effort)
+
     with fs.open(output_path, "w") as output_file:
         if num_workers == 1:
-            request_iter = (
-                article_to_batch_requests(article) for article in article_iter
-            )
+            request_iter = (article_processor(article) for article in article_iter)
             consume_batches(request_iter, output_file)
         else:
             with Pool(processes=num_workers) as pool:
                 request_iter = pool.imap_unordered(
-                    article_to_batch_requests,
+                    article_processor,
                     article_iter,
                     chunksize=worker_chunk_size,
                 )
@@ -260,18 +266,25 @@ def main():
         help="Wiki identifier (default: enwiki)",
     )
     parser.add_argument(
+        "--model",
+        type=str,
+        default=DEFAULT_MODEL,
+        help=f"Model name to use (default: {DEFAULT_MODEL})",
+    )
+    parser.add_argument(
+        "--reasoning-effort",
+        type=str,
+        default=DEFAULT_REASONING_EFFORT,
+        choices=["minimal", "low", "medium", "high"],
+        help=f"Reasoning effort level (default: {DEFAULT_REASONING_EFFORT})",
+    )
+    parser.add_argument(
         "--limit", type=int, default=None, help="Limit number of articles to process"
     )
     parser.add_argument(
         "--force",
         action="store_true",
         help="Force regeneration even if batch file exists",
-    )
-    parser.add_argument(
-        "--workers",
-        type=int,
-        default=None,
-        help="Number of worker processes (default: CPU count)",
     )
     parser.add_argument(
         "--local-dataset",
@@ -281,16 +294,11 @@ def main():
             "Requires downloading the dataset beforehand."
         ),
     )
-    parser.add_argument(
-        "--hf-cache-dir",
-        type=str,
-        default=None,
-        help="Optional Hugging Face cache directory to use with --local-dataset",
-    )
     args = parser.parse_args()
 
-    # Generate GCS path for output
-    output_path = f"{GCP_KG_PREFIX}/{args.wiki}/entities/batch.jsonl"
+    # Generate GCS path for output with model and limit in filename
+    filename = build_filename("batch", args.model, args.reasoning_effort, args.limit)
+    output_path = f"{GCP_KG_PREFIX}/{args.wiki}/entities/{filename}"
 
     logger.info(f"Script: {__file__}")
     logger.info(f"Arguments: {vars(args)}")
@@ -300,9 +308,9 @@ def main():
         limit=args.limit,
         force=args.force,
         wiki=args.wiki,
-        num_workers=args.workers,
         local_dataset=args.local_dataset,
-        hf_cache_dir=args.hf_cache_dir,
+        model=args.model,
+        reasoning_effort=args.reasoning_effort,
     )
 
 

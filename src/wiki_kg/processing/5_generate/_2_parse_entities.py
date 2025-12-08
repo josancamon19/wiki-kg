@@ -15,6 +15,21 @@ from pathlib import Path
 import gcsfs
 from dotenv import load_dotenv
 
+try:
+    from .utils import (
+        GCP_KG_PREFIX,
+        DEFAULT_MODEL,
+        DEFAULT_REASONING_EFFORT,
+        build_filename,
+    )
+except ImportError:
+    from utils import (
+        GCP_KG_PREFIX,
+        DEFAULT_MODEL,
+        DEFAULT_REASONING_EFFORT,
+        build_filename,
+    )
+
 # Load environment variables
 load_dotenv()
 
@@ -29,9 +44,6 @@ logging.basicConfig(
     handlers=[logging.FileHandler(LOG_FILE, mode="a"), logging.StreamHandler()],
 )
 logger = logging.getLogger(__name__)
-
-# Constants
-GCP_KG_PREFIX = "gs://wikipedia-graph/graph"
 
 
 def extract_entities_from_text(text: str) -> list[str] | None:
@@ -179,16 +191,35 @@ def main():
         help="Wiki identifier (default: enwiki)",
     )
     parser.add_argument(
+        "--model",
+        type=str,
+        default=DEFAULT_MODEL,
+        help=f"Model name used for generation (default: {DEFAULT_MODEL})",
+    )
+    parser.add_argument(
+        "--reasoning-effort",
+        type=str,
+        default=DEFAULT_REASONING_EFFORT,
+        choices=["minimal", "low", "medium", "high"],
+        help=f"Reasoning effort level used during generation (default: {DEFAULT_REASONING_EFFORT})",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Limit used during generation (for filename matching)",
+    )
+    parser.add_argument(
         "--input-file",
         type=str,
         default=None,
-        help="GCS path to batch_results.jsonl (defaults to GCP_KG_PREFIX/{wiki}/entities/batch_results.jsonl)",
+        help="GCS path to batch_results.jsonl (overrides auto-generated path)",
     )
     parser.add_argument(
         "--output-file",
         type=str,
         default=None,
-        help="GCS path to save parsed entities (defaults to GCP_KG_PREFIX/{wiki}/entities/parsed_entities.jsonl)",
+        help="GCS path to save parsed entities (overrides auto-generated path)",
     )
     args = parser.parse_args()
 
@@ -196,12 +227,18 @@ def main():
     fs = gcsfs.GCSFileSystem()
 
     # Generate default paths if not provided
+    input_filename = build_filename(
+        "batch_results", args.model, args.reasoning_effort, args.limit
+    )
+    output_filename = build_filename(
+        "parsed_entities", args.model, args.reasoning_effort, args.limit
+    )
+
     input_file = (
-        args.input_file or f"{GCP_KG_PREFIX}/{args.wiki}/entities/batch_results.jsonl"
+        args.input_file or f"{GCP_KG_PREFIX}/{args.wiki}/entities/{input_filename}"
     )
     output_file = (
-        args.output_file
-        or f"{GCP_KG_PREFIX}/{args.wiki}/entities/parsed_entities.jsonl"
+        args.output_file or f"{GCP_KG_PREFIX}/{args.wiki}/entities/{output_filename}"
     )
 
     if not fs.exists(input_file):
