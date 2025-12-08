@@ -49,9 +49,16 @@ def get_batch_paths(
         Dictionary with GCS paths for batch files
     """
     batch_dir = f"{GCP_KG_PREFIX}/{wiki}/{batch_type}"
-    batch_filename = build_filename("batch", model, reasoning_effort, limit)
-    info_filename = build_filename("batch_info", model, reasoning_effort, limit, ext=".json")
-    results_filename = build_filename("batch_results", model, reasoning_effort, limit)
+    # Include batch_type in filename for clarity
+    batch_filename = build_filename(
+        f"{batch_type}_batch", model, reasoning_effort, limit
+    )
+    info_filename = build_filename(
+        f"{batch_type}_batch_info", model, reasoning_effort, limit, ext=".json"
+    )
+    results_filename = build_filename(
+        f"{batch_type}_batch_results", model, reasoning_effort, limit
+    )
 
     return {
         "dir": batch_dir,
@@ -59,4 +66,3 @@ def get_batch_paths(
         "info_file": f"{batch_dir}/{info_filename}",
         "results_file": f"{batch_dir}/{results_filename}",
     }
-
