@@ -108,7 +108,9 @@ def process_range(
     )
 
     processed = 0
-    logger.info(f"Worker {worker_id}: Processing {len(entities_dict)} items (rows {start_idx}-{end_idx})")
+    logger.info(
+        f"Worker {worker_id}: Processing {len(entities_dict)} items (rows {start_idx}-{end_idx})"
+    )
 
     for custom_id in entities_dict.keys():
         if custom_id not in relations_dict:
@@ -122,7 +124,11 @@ def process_range(
 
         graph = Graph(
             entities=set(entities),
-            relations={(r["subject"], r["predicate"], r["object"]) for r in relations if r.get("predicate") is not None},
+            relations={
+                (r["subject"], r["predicate"], r["object"])
+                for r in relations
+                if r.get("predicate") is not None
+            },
             edges=edges,
         )
 
@@ -132,18 +138,25 @@ def process_range(
         output_path = f"{output_dir}/{custom_id.replace('/', '_')}.json"
         fs.makedirs(output_dir_clean, exist_ok=True)
 
-        graph_json = json.dumps({
-            "entities": list(graph.entities),
-            "relations": [{"subject": r[0], "predicate": r[1], "object": r[2]} for r in graph.relations],
-            "edges": list(graph.edges),
-        })
+        graph_json = json.dumps(
+            {
+                "entities": list(graph.entities),
+                "relations": [
+                    {"subject": r[0], "predicate": r[1], "object": r[2]}
+                    for r in graph.relations
+                ],
+                "edges": list(graph.edges),
+            }
+        )
 
         with fs.open(output_path, "w") as f:
             f.write(graph_json)
 
         processed += 1
         if processed % 10 == 0:
-            logger.info(f"Worker {worker_id}: Processed {processed}/{len(entities_dict)} items")
+            logger.info(
+                f"Worker {worker_id}: Processed {processed}/{len(entities_dict)} items"
+            )
 
     logger.info(f"Worker {worker_id}: Completed {processed} items")
     return processed
@@ -153,22 +166,31 @@ def process_range(
 def main(
     wiki: Annotated[str, typer.Option(help="Wiki identifier")] = "enwiki",
     model: Annotated[str, typer.Option(help="Model name")] = DEFAULT_MODEL,
-    reasoning_effort: Annotated[str, typer.Option(help="Reasoning effort")] = DEFAULT_REASONING_EFFORT,
-    limit: Annotated[Optional[int], typer.Option(help="Limit used during generation")] = None,
-    workers: Annotated[Optional[int], typer.Option(help="Number of parallel workers")] = None,
+    reasoning_effort: Annotated[
+        str, typer.Option(help="Reasoning effort")
+    ] = DEFAULT_REASONING_EFFORT,
+    limit: Annotated[
+        Optional[int], typer.Option(help="Limit used during generation")
+    ] = None,
 ):
     """Generate individual knowledge graphs from entities and relations."""
     fs = gcsfs.GCSFileSystem()
 
-    entities_filename = build_filename("entities_parsed", model, reasoning_effort, limit)
-    relations_filename = build_filename("relations_parsed", model, reasoning_effort, limit)
+    entities_filename = build_filename(
+        "entities_parsed", model, reasoning_effort, limit
+    )
+    relations_filename = build_filename(
+        "relations_parsed", model, reasoning_effort, limit
+    )
 
     entities_path = f"{GCP_KG_PREFIX}/{wiki}/entities/{entities_filename}"
     relations_path = f"{GCP_KG_PREFIX}/{wiki}/relations/{relations_filename}"
     output_dir = f"{GCP_KG_PREFIX}/{wiki}/graphs"
 
     logger.info(f"Script: {__file__}")
-    logger.info(f"Args: wiki={wiki}, model={model}, reasoning_effort={reasoning_effort}, limit={limit}, workers={workers}")
+    logger.info(
+        f"Args: wiki={wiki}, model={model}, reasoning_effort={reasoning_effort}, limit={limit}"
+    )
     logger.info("=" * 80)
     logger.info(f"Entities: {entities_path}")
     logger.info(f"Relations: {relations_path}")
@@ -186,7 +208,7 @@ def main(
     total_lines = count_lines(entities_path, fs)
     logger.info(f"Total lines: {total_lines}")
 
-    num_workers = workers or mp.cpu_count()
+    num_workers = mp.cpu_count()
     logger.info(f"Using {num_workers} workers")
 
     chunk_size = (total_lines + num_workers - 1) // num_workers
@@ -197,7 +219,9 @@ def main(
         end_idx = min((i + 1) * chunk_size, total_lines)
         if start_idx >= total_lines:
             break
-        worker_args.append((entities_path, relations_path, output_dir, start_idx, end_idx, i))
+        worker_args.append(
+            (entities_path, relations_path, output_dir, start_idx, end_idx, i)
+        )
 
     logger.info("Starting parallel processing...")
     with mp.Pool(processes=num_workers) as pool:

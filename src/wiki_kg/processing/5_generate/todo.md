@@ -1,8 +1,5 @@
-1. use gcsfs for file management instead of local
-2. log all scripts logs into a .log file in this directory, every script run should append
-3. handle retries, and failures from batch api in specific requests
-4. handle chunking in relations
-5. ensure it works at scale, (_5_get graphs nor _6_merge are ready to be functional at scale)
-6. Small version merged_graph has a ton of entities with predicate NULL, this shouldn't happen
-7. We need to store metadata on each graph!!! to reference an article id, and a chunk where this was taken 
-8. Jeppa Prompt optimization?
+1. handle retries, and failures from batch api in specific requests
+2. handle chunking in relations
+3. Small version merged_graph has a ton of entities with predicate NULL, this shouldn't happen
+4. We need to store metadata on each graph!!! to reference an article id, and a chunk where this was taken 
+5. GEPA Prompt optimization?

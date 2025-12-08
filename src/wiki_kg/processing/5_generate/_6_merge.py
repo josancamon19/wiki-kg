@@ -59,7 +59,10 @@ def load_graph_from_gcs(file_path: str, fs: gcsfs.GCSFileSystem) -> Graph:
 
     return Graph(
         entities=set(data.get("entities", [])),
-        relations={(r["subject"], r["predicate"], r["object"]) for r in data.get("relations", [])},
+        relations={
+            (r["subject"], r["predicate"], r["object"])
+            for r in data.get("relations", [])
+        },
         edges=set(data.get("edges", [])),
     )
 
@@ -68,20 +71,27 @@ def load_graph_from_gcs(file_path: str, fs: gcsfs.GCSFileSystem) -> Graph:
 def main(
     wiki: Annotated[str, typer.Option(help="Wiki identifier")] = "enwiki",
     model: Annotated[str, typer.Option(help="Model name")] = DEFAULT_MODEL,
-    reasoning_effort: Annotated[str, typer.Option(help="Reasoning effort")] = DEFAULT_REASONING_EFFORT,
-    limit: Annotated[Optional[int], typer.Option(help="Limit used during generation")] = None,
-    max_graphs: Annotated[Optional[int], typer.Option(help="Max graphs to merge (for testing)")] = None,
+    reasoning_effort: Annotated[
+        str, typer.Option(help="Reasoning effort")
+    ] = DEFAULT_REASONING_EFFORT,
+    limit: Annotated[
+        Optional[int], typer.Option(help="Limit used during generation")
+    ] = None,
 ):
     """Merge individual knowledge graphs into a single deduplicated graph."""
     fs = gcsfs.GCSFileSystem()
     kggen = KGGen()
 
     graphs_dir = f"{GCP_KG_PREFIX}/{wiki}/graphs"
-    output_filename = build_filename("merged_graph", model, reasoning_effort, limit, ext=".json")
+    output_filename = build_filename(
+        "merged_graph", model, reasoning_effort, limit, ext=".json"
+    )
     output_path = f"{GCP_KG_PREFIX}/{wiki}/{output_filename}"
 
     logger.info(f"Script: {__file__}")
-    logger.info(f"Args: wiki={wiki}, model={model}, reasoning_effort={reasoning_effort}, limit={limit}, max_graphs={max_graphs}")
+    logger.info(
+        f"Args: wiki={wiki}, model={model}, reasoning_effort={reasoning_effort}, limit={limit}"
+    )
     logger.info("=" * 80)
     logger.info(f"Graphs directory: {graphs_dir}")
     logger.info(f"Output: {output_path}")
@@ -91,9 +101,6 @@ def main(
     graphs_dir_clean = graphs_dir.replace("gs://", "")
     graph_files = fs.ls(graphs_dir_clean, detail=False)
     graph_files = [f"gs://{f}" for f in graph_files if f.endswith(".json")]
-
-    if max_graphs:
-        graph_files = graph_files[:max_graphs]
 
     logger.info(f"Found {len(graph_files)} graph files to merge")
 
@@ -115,19 +122,26 @@ def main(
     # Aggregate all graphs
     logger.info("Aggregating graphs...")
     aggregated_graph = kggen.aggregate(graphs)
-    logger.info(f"Aggregated: {len(aggregated_graph.entities)} entities, {len(aggregated_graph.relations)} relations")
+    logger.info(
+        f"Aggregated: {len(aggregated_graph.entities)} entities, {len(aggregated_graph.relations)} relations"
+    )
 
     # Deduplicate
     logger.info("Deduplicating with SEMHASH method...")
     final_graph = kggen.deduplicate(aggregated_graph, method=DeduplicateMethod.SEMHASH)
-    logger.info(f"Final: {len(final_graph.entities)} entities, {len(final_graph.relations)} relations")
+    logger.info(
+        f"Final: {len(final_graph.entities)} entities, {len(final_graph.relations)} relations"
+    )
 
     # Save
     logger.info(f"Saving merged graph to {output_path}...")
     graph_json = json.dumps(
         {
             "entities": list(final_graph.entities),
-            "relations": [{"subject": r[0], "predicate": r[1], "object": r[2]} for r in final_graph.relations],
+            "relations": [
+                {"subject": r[0], "predicate": r[1], "object": r[2]}
+                for r in final_graph.relations
+            ],
             "edges": list(final_graph.edges),
         },
         indent=2,

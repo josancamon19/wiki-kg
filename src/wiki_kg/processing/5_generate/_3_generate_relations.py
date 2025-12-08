@@ -110,6 +110,10 @@ def generate_relations_batch_file(
     # Load all entities into memory
     entities_dict = load_entities(entities_file, fs)
     entity_ids = set(entities_dict.keys())
+    
+    # Debug: show sample entity IDs
+    sample_ids = list(entity_ids)[:3]
+    logger.info(f"Sample entity IDs: {sample_ids}")
 
     logger.info("=" * 80)
     logger.info("Starting Relation Batch File Generation")
@@ -125,10 +129,20 @@ def generate_relations_batch_file(
     requests = []
     found = 0
     scanned = 0
+    
+    # Max articles to scan - if limit is set, we expect entities to be in first N articles
+    # Add buffer for safety (10x limit or 10k minimum)
+    max_scan = max(10000, (limit or 100) * 10) if limit else None
+    if max_scan:
+        logger.info(f"Max scan limit: {max_scan} articles")
 
     for article in dataset:
         scanned += 1
         article_id = str(article["id"])
+        
+        # Debug: show first few dataset article IDs
+        if scanned <= 3:
+            logger.info(f"Dataset article ID sample: '{article_id}'")
 
         if article_id in entity_ids:
             text = article.get("text", "")
@@ -139,8 +153,10 @@ def generate_relations_batch_file(
                 requests.append(req)
                 found += 1
 
-        # Progress logging
-        if scanned % 10000 == 0:
+        # Progress logging - more frequent at start
+        if scanned <= 100 and scanned % 10 == 0:
+            logger.info(f"Scanned {scanned} articles, found {found}/{len(entity_ids)}")
+        elif scanned % 10000 == 0:
             logger.info(f"Scanned {scanned} articles, found {found}/{len(entity_ids)}")
 
         # Stop conditions
@@ -149,6 +165,9 @@ def generate_relations_batch_file(
             break
         if limit and found >= limit:
             logger.info(f"Reached limit of {limit}")
+            break
+        if max_scan and scanned >= max_scan:
+            logger.warning(f"Reached max scan limit ({max_scan}), stopping. Found {found}/{len(entity_ids)}")
             break
 
     # Write output
