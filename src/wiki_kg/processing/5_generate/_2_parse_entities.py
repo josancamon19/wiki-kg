@@ -109,11 +109,14 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
     output_dir = "/".join(output_file.replace("gs://", "").split("/")[:-1])
     fs.makedirs(output_dir, exist_ok=True)
 
+    # Create failed IDs file path
+    failed_file = output_file.replace("parsed.jsonl", "failed_ids.jsonl")
+
     successful = 0
     failed = 0
     parse_errors = 0
 
-    with fs.open(input_file, "r") as f_in, fs.open(output_file, "w") as f_out:
+    with fs.open(input_file, "r") as f_in, fs.open(output_file, "w") as f_out, fs.open(failed_file, "w") as f_failed:
         for line_num, line in enumerate(f_in, 1):
             try:
                 result = json.loads(line)
@@ -128,6 +131,7 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
                     logger.warning(
                         f"Line {line_num}: Failed request for {custom_id}, status: {status_code}"
                     )
+                    f_failed.write(json.dumps({"custom_id": custom_id, "reason": "failed_request", "status_code": status_code}) + "\n")
                     continue
 
                 # Extract the message content
@@ -148,6 +152,7 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
                     logger.warning(
                         f"Line {line_num}: No message content found for {custom_id}"
                     )
+                    f_failed.write(json.dumps({"custom_id": custom_id, "reason": "no_message_content"}) + "\n")
                     continue
 
                 # Extract entities from the text
@@ -158,6 +163,7 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
                     logger.warning(
                         f"Line {line_num}: Failed to extract entities for {custom_id}"
                     )
+                    f_failed.write(json.dumps({"custom_id": custom_id, "reason": "failed_to_extract_entities"}) + "\n")
                     continue
 
                 # Write the parsed result
@@ -168,9 +174,23 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
             except json.JSONDecodeError as e:
                 logger.error(f"Line {line_num}: JSON decode error: {e}")
                 parse_errors += 1
+                # Try to get custom_id if possible
+                try:
+                    partial_result = json.loads(line) if line else {}
+                    custom_id = partial_result.get("custom_id", f"line_{line_num}")
+                except Exception:
+                    custom_id = f"line_{line_num}"
+                f_failed.write(json.dumps({"custom_id": custom_id, "reason": "json_decode_error", "error": str(e)}) + "\n")
             except Exception as e:
                 logger.error(f"Line {line_num}: Unexpected error: {e}")
                 parse_errors += 1
+                # Try to get custom_id if possible
+                try:
+                    partial_result = json.loads(line) if line else {}
+                    custom_id = partial_result.get("custom_id", f"line_{line_num}")
+                except Exception:
+                    custom_id = f"line_{line_num}"
+                f_failed.write(json.dumps({"custom_id": custom_id, "reason": "unexpected_error", "error": str(e)}) + "\n")
 
     logger.info("=" * 80)
     logger.info("Parsing complete!")
@@ -179,6 +199,7 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
     logger.info(f"  Parse errors: {parse_errors}")
     logger.info(f"  Total processed: {successful + failed + parse_errors}")
     logger.info(f"  Output saved to: {output_file}")
+    logger.info(f"  Failed IDs saved to: {failed_file}")
     logger.info("=" * 80)
 
 

@@ -404,7 +404,6 @@ def download(
         reasoning_effort=reasoning_effort,
         limit=limit,
     )
-    # TODO: add an option to identify the failed requests, and save them in a separate file of request and another of error messages, to either just re-run, or know what to change
 
 
 if __name__ == "__main__":
