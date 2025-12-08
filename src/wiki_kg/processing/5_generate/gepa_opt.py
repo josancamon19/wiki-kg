@@ -10,7 +10,6 @@ Usage:
 
 import json
 import logging
-import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Annotated, Any, Optional
@@ -25,8 +24,12 @@ from gepa import EvaluationBatch, GEPAAdapter
 
 try:
     from .utils import GCP_KG_PREFIX, build_filename
+    from ._2_parse_entities import extract_entities_from_text
+    from ._4_parse_relations import extract_relations_from_text
 except ImportError:
     from utils import GCP_KG_PREFIX, build_filename
+    from _2_parse_entities import extract_entities_from_text
+    from _4_parse_relations import extract_relations_from_text
 
 load_dotenv()
 
@@ -146,36 +149,10 @@ class EntitiesAdapter(GEPAAdapter[DataInstance, Trajectory, list[str]]):
             model=self.model,
             input=prompt,
             reasoning={"effort": self.reasoning_effort},
-            max_output_tokens=50000,
+            max_output_tokens=100000,
             temperature=1.0,
         )
         return response.output_text
-
-    def _parse_entities(self, output: str) -> list[str]:
-        """Parse entities from model output."""
-        # Look for the entities section
-        match = re.search(
-            r"\[\[\s*##\s*entities\s*##\s*\]\]\s*(.+?)(?:\[\[\s*##\s*completed\s*##\s*\]\]|$)",
-            output,
-            re.DOTALL | re.IGNORECASE,
-        )
-        if match:
-            try:
-                return json.loads(match.group(1).strip())
-            except json.JSONDecodeError:
-                pass
-
-        # Fallback: try to find any JSON array
-        arrays = re.findall(r"\[.*?\]", output, re.DOTALL)
-        for arr in arrays:
-            try:
-                parsed = json.loads(arr)
-                if isinstance(parsed, list) and all(isinstance(x, str) for x in parsed):
-                    return parsed
-            except json.JSONDecodeError:
-                continue
-
-        return []
 
     def evaluate(
         self,
@@ -196,7 +173,7 @@ class EntitiesAdapter(GEPAAdapter[DataInstance, Trajectory, list[str]]):
 
             try:
                 raw_output = self._call_model(prompt)
-                parsed = self._parse_entities(raw_output)
+                parsed = extract_entities_from_text(raw_output) or []
                 score = compute_entities_f1(parsed, instance.ground_truth)
                 error = None
             except Exception as e:
@@ -211,7 +188,7 @@ class EntitiesAdapter(GEPAAdapter[DataInstance, Trajectory, list[str]]):
             if capture_traces:
                 trajectories.append(
                     Trajectory(
-                        input_text=instance.source_text[:500],  # Truncate for reflection
+                        input_text=instance.source_text[:500],
                         prompt_used=prompt[:1000],
                         raw_output=raw_output[:1000],
                         parsed_output=parsed,
@@ -285,36 +262,6 @@ class RelationsAdapter(GEPAAdapter[DataInstance, Trajectory, list[dict]]):
         )
         return response.output_text
 
-    def _parse_relations(self, output: str) -> list[dict]:
-        """Parse relations from model output."""
-        match = re.search(
-            r"\[\[\s*##\s*relations\s*##\s*\]\]\s*(.+?)(?:\[\[\s*##\s*completed\s*##\s*\]\]|$)",
-            output,
-            re.DOTALL | re.IGNORECASE,
-        )
-        if match:
-            try:
-                return json.loads(match.group(1).strip())
-            except json.JSONDecodeError:
-                pass
-
-        # Fallback: find JSON arrays of objects
-        arrays = re.findall(r"\[.*?\]", output, re.DOTALL)
-        for arr in arrays:
-            try:
-                parsed = json.loads(arr)
-                if (
-                    isinstance(parsed, list)
-                    and parsed
-                    and isinstance(parsed[0], dict)
-                    and "subject" in parsed[0]
-                ):
-                    return parsed
-            except json.JSONDecodeError:
-                continue
-
-        return []
-
     def evaluate(
         self,
         batch: list[DataInstance],
@@ -335,7 +282,7 @@ class RelationsAdapter(GEPAAdapter[DataInstance, Trajectory, list[dict]]):
 
             try:
                 raw_output = self._call_model(prompt)
-                parsed = self._parse_relations(raw_output)
+                parsed = extract_relations_from_text(raw_output) or []
                 score = compute_relations_f1(parsed, instance.ground_truth)
                 error = None
             except Exception as e:
@@ -468,7 +415,9 @@ def main(
     opt_reasoning: Annotated[str, typer.Argument(help="Target reasoning effort")],
     limit: Annotated[int, typer.Argument(help="Number of samples")],
     wiki: Annotated[str, typer.Option(help="Wiki identifier")] = "enwiki",
-    task: Annotated[str, typer.Option(help="Task: entities, relations, or both")] = "both",
+    task: Annotated[
+        str, typer.Option(help="Task: entities, relations, or both")
+    ] = "both",
     max_iterations: Annotated[int, typer.Option(help="Max GEPA iterations")] = 10,
     train_ratio: Annotated[float, typer.Option(help="Train/val split")] = 0.8,
 ):

@@ -84,7 +84,7 @@ def main(
 
     graphs_dir = f"{GCP_KG_PREFIX}/{wiki}/graphs"
     output_filename = build_filename("merged", model, reasoning_effort, limit, ext=".json")
-    output_path = f"{GCP_KG_PREFIX}/{wiki}/{output_filename}"
+    output_path = f"{GCP_KG_PREFIX}/{wiki}/results/{output_filename}"
 
     logger.info(f"Script: {__file__}")
     logger.info(
