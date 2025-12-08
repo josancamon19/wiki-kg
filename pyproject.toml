@@ -12,6 +12,7 @@ dependencies = [
     "fasttext>=0.9.3",
     "fasttext-numpy2-wheel>=0.9.2",
     "gcsfs>=2025.10.0",
+    "gepa>=0.0.17",
     "huggingface-hub>=0.20.0",
     "kg-gen @ git+https://github.com/stair-lab/kg-gen.git",
     "litellm>=1.80.5",
