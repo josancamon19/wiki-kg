@@ -83,9 +83,7 @@ def main(
     kggen = KGGen()
 
     graphs_dir = f"{GCP_KG_PREFIX}/{wiki}/graphs"
-    output_filename = build_filename(
-        "merged_graph", model, reasoning_effort, limit, ext=".json"
-    )
+    output_filename = build_filename("merged", model, reasoning_effort, limit, ext=".json")
     output_path = f"{GCP_KG_PREFIX}/{wiki}/{output_filename}"
 
     logger.info(f"Script: {__file__}")

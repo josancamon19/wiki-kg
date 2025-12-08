@@ -201,8 +201,8 @@ def main(
 ):
     """Parse entities from batch API results."""
     fs = gcsfs.GCSFileSystem()
-    input_filename = build_filename("entities_batch_results", model, reasoning_effort, limit)
-    output_filename = build_filename("entities_parsed", model, reasoning_effort, limit)
+    input_filename = build_filename("batch_results", model, reasoning_effort, limit)
+    output_filename = build_filename("parsed", model, reasoning_effort, limit)
 
     resolved_input = input_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{input_filename}"
     resolved_output = (

@@ -153,8 +153,8 @@ def main(
     """Parse relations from batch API results."""
     fs = gcsfs.GCSFileSystem()
 
-    input_filename = build_filename("relations_batch_results", model, reasoning_effort, limit)
-    output_filename = build_filename("relations_parsed", model, reasoning_effort, limit)
+    input_filename = build_filename("batch_results", model, reasoning_effort, limit)
+    output_filename = build_filename("parsed", model, reasoning_effort, limit)
 
     resolved_input = input_file or f"{GCP_KG_PREFIX}/{wiki}/relations/{input_filename}"
     resolved_output = output_file or f"{GCP_KG_PREFIX}/{wiki}/relations/{output_filename}"

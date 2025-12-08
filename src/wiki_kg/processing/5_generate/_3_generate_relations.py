@@ -191,10 +191,10 @@ def main(
     force: Annotated[bool, typer.Option(help="Force regeneration")] = False,
 ):
     """Generate Batch API files for relation extraction."""
-    entities_filename = build_filename("entities_parsed", model, reasoning_effort, limit)
+    entities_filename = build_filename("parsed", model, reasoning_effort, limit)
     entities_file = f"{GCP_KG_PREFIX}/{wiki}/entities/{entities_filename}"
 
-    output_filename = build_filename("relations_batch", model, reasoning_effort, limit)
+    output_filename = build_filename("batch", model, reasoning_effort, limit)
     output_path = f"{GCP_KG_PREFIX}/{wiki}/relations/{output_filename}"
 
     logger.info(f"Script: {__file__}")

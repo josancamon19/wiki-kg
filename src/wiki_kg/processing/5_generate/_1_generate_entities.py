@@ -268,7 +268,7 @@ def main(
 ):
     """Generate Batch API files for Knowledge Graph extraction from FineWiki."""
     # Generate GCS path for output with model and limit in filename
-    filename = build_filename("entities_batch", model, reasoning_effort, limit)
+    filename = build_filename("batch", model, reasoning_effort, limit)
     output_path = f"{GCP_KG_PREFIX}/{wiki}/entities/{filename}"
 
     logger.info(f"Script: {__file__}")

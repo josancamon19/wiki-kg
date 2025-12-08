@@ -176,12 +176,8 @@ def main(
     """Generate individual knowledge graphs from entities and relations."""
     fs = gcsfs.GCSFileSystem()
 
-    entities_filename = build_filename(
-        "entities_parsed", model, reasoning_effort, limit
-    )
-    relations_filename = build_filename(
-        "relations_parsed", model, reasoning_effort, limit
-    )
+    entities_filename = build_filename("parsed", model, reasoning_effort, limit)
+    relations_filename = build_filename("parsed", model, reasoning_effort, limit)
 
     entities_path = f"{GCP_KG_PREFIX}/{wiki}/entities/{entities_filename}"
     relations_path = f"{GCP_KG_PREFIX}/{wiki}/relations/{relations_filename}"
