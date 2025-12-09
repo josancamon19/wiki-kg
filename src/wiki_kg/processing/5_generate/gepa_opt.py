@@ -23,13 +23,19 @@ import gepa
 from gepa import EvaluationBatch, GEPAAdapter
 
 try:
-    from .utils import GCP_KG_PREFIX, build_filename
-    from ._2_parse_entities import extract_entities_from_text
-    from ._4_parse_relations import extract_relations_from_text
+    from .utils import (
+        GCP_KG_PREFIX,
+        build_subdir,
+        extract_entities_from_text,
+        extract_relations_from_text,
+    )
 except ImportError:
-    from utils import GCP_KG_PREFIX, build_filename
-    from _2_parse_entities import extract_entities_from_text
-    from _4_parse_relations import extract_relations_from_text
+    from utils import (
+        GCP_KG_PREFIX,
+        build_subdir,
+        extract_entities_from_text,
+        extract_relations_from_text,
+    )
 
 load_dotenv()
 
@@ -367,17 +373,22 @@ def load_ground_truth(
     fs: gcsfs.GCSFileSystem,
 ) -> list[dict]:
     """Load parsed ground truth data from GCS."""
-    filename = build_filename("parsed", model, reasoning_effort, limit)
-    path = f"{GCP_KG_PREFIX}/{wiki}/{task}/{filename}"
+    subdir = build_subdir(model, reasoning_effort, limit)
+    path = f"{GCP_KG_PREFIX}/{wiki}/{task}/{subdir}/parsed.jsonl"
 
-    logger.info(f"Loading ground truth from: {path}")
+    logger.info(f"Loading {task} ground truth from: {path}")
+
+    if not fs.exists(path):
+        logger.error(f"Ground truth file not found: {path}")
+        return []
 
     data = []
     with fs.open(path, "r") as f:
         for line in f:
-            data.append(json.loads(line))
+            if line.strip():
+                data.append(json.loads(line))
 
-    logger.info(f"Loaded {len(data)} ground truth samples")
+    logger.info(f"Loaded {len(data)} {task} samples from {model}/{reasoning_effort}")
     return data
 
 
@@ -441,14 +452,27 @@ def main(
         logger.info("Optimizing ENTITIES prompt...")
 
         gt_data = load_ground_truth(wiki, gt_model, gt_reasoning, limit, "entities", fs)
-        article_ids = set(item["custom_id"] for item in gt_data)
-        articles = load_articles(article_ids, limit * 10)
+        if not gt_data:
+            logger.error("No ground truth entities data found. Skipping entities optimization.")
+        else:
+            article_ids = set(item["custom_id"] for item in gt_data)
+            logger.info(f"Ground truth entities: {len(gt_data)} samples, {len(article_ids)} unique article IDs")
+            
+            articles = load_articles(article_ids, limit * 10)
+            logger.info(f"Articles loaded: {len(articles)} / {len(article_ids)} requested")
 
-        # Build dataset
-        all_data = []
-        for item in gt_data:
-            aid = item["custom_id"]
-            if aid in articles and articles[aid]:
+            # Build dataset
+            all_data = []
+            missing_articles = 0
+            empty_articles = 0
+            for item in gt_data:
+                aid = item["custom_id"]
+                if aid not in articles:
+                    missing_articles += 1
+                    continue
+                if not articles[aid]:
+                    empty_articles += 1
+                    continue
                 all_data.append(
                     DataInstance(
                         article_id=aid,
@@ -457,31 +481,35 @@ def main(
                     )
                 )
 
-        split = int(len(all_data) * train_ratio)
-        trainset, valset = all_data[:split], all_data[split:]
-        logger.info(f"Train: {len(trainset)}, Val: {len(valset)}")
+            logger.info(f"Dataset stats: {len(all_data)} matched, {missing_articles} missing articles, {empty_articles} empty articles")
+            
+            split = int(len(all_data)/10 * train_ratio)
+            trainset, valset = all_data[:split], all_data[split:10]
+            logger.info(f"Train: {len(trainset)}, Val: {len(valset)}")
 
-        if trainset and valset:
-            adapter = EntitiesAdapter(opt_model, opt_reasoning)
-            seed = {"prompt": ENTITIES_PROMPT_TEMPLATE}
+            if trainset and valset:
+                adapter = EntitiesAdapter(opt_model, opt_reasoning)
+                seed = {"prompt": ENTITIES_PROMPT_TEMPLATE}
 
-            result = gepa.optimize(
-                seed_candidate=seed,
-                trainset=trainset,
-                valset=valset,
-                adapter=adapter,
-                reflection_lm=gt_model,
-                max_metric_calls=max_iterations * len(trainset),
-                reflection_minibatch_size=min(3, len(trainset)),
-                display_progress_bar=True,
-            )
+                result = gepa.optimize(
+                    seed_candidate=seed,
+                    trainset=trainset,
+                    valset=valset,
+                    adapter=adapter,
+                    reflection_lm=gt_model,
+                    max_metric_calls=max_iterations * len(trainset),
+                    reflection_minibatch_size=min(3, len(trainset)),
+                    display_progress_bar=True,
+                )
 
-            # Save optimized prompt
-            out_path = PROMPTS_PATH / f"entities_opt_{opt_model}_{opt_reasoning}.txt"
-            with open(out_path, "w") as f:
-                f.write(result.best_candidate["prompt"])
-            logger.info(f"Saved: {out_path}")
-            logger.info(f"Best score: {result.best_score:.4f}")
+                # Save optimized prompt
+                out_path = PROMPTS_PATH / f"entities_opt_{opt_model}_{opt_reasoning}.txt"
+                with open(out_path, "w") as f:
+                    f.write(result.best_candidate["prompt"])
+                logger.info(f"Saved: {out_path}")
+                logger.info(f"Best score: {result.best_score:.4f}")
+            else:
+                logger.warning("Insufficient data for entities optimization (need both train and val sets)")
 
     # --- RELATIONS ---
     if task in ("relations", "both"):
@@ -493,15 +521,35 @@ def main(
         gt_entities = load_ground_truth(
             wiki, gt_model, gt_reasoning, limit, "entities", fs
         )
-        entities_map = {item["custom_id"]: item["entities"] for item in gt_entities}
+        
+        if not gt_relations:
+            logger.error("No ground truth relations data found. Skipping relations optimization.")
+        elif not gt_entities:
+            logger.error("No ground truth entities data found (needed for relations). Skipping relations optimization.")
+        else:
+            entities_map = {item["custom_id"]: item["entities"] for item in gt_entities}
+            logger.info(f"Ground truth relations: {len(gt_relations)} samples")
+            logger.info(f"Ground truth entities: {len(gt_entities)} samples ({len(entities_map)} unique IDs)")
 
-        article_ids = set(item["custom_id"] for item in gt_relations)
-        articles = load_articles(article_ids, limit * 10)
+            article_ids = set(item["custom_id"] for item in gt_relations)
+            articles = load_articles(article_ids, limit * 10)
+            logger.info(f"Articles loaded: {len(articles)} / {len(article_ids)} requested")
 
-        all_data = []
-        for item in gt_relations:
-            aid = item["custom_id"]
-            if aid in articles and articles[aid] and aid in entities_map:
+            all_data = []
+            missing_articles = 0
+            empty_articles = 0
+            missing_entities = 0
+            for item in gt_relations:
+                aid = item["custom_id"]
+                if aid not in articles:
+                    missing_articles += 1
+                    continue
+                if not articles[aid]:
+                    empty_articles += 1
+                    continue
+                if aid not in entities_map:
+                    missing_entities += 1
+                    continue
                 all_data.append(
                     DataInstance(
                         article_id=aid,
@@ -511,30 +559,34 @@ def main(
                     )
                 )
 
-        split = int(len(all_data) * train_ratio)
-        trainset, valset = all_data[:split], all_data[split:]
-        logger.info(f"Train: {len(trainset)}, Val: {len(valset)}")
+            logger.info(f"Dataset stats: {len(all_data)} matched, {missing_articles} missing articles, {empty_articles} empty articles, {missing_entities} missing entities")
 
-        if trainset and valset:
-            adapter = RelationsAdapter(opt_model, opt_reasoning)
-            seed = {"prompt": RELATIONS_PROMPT_TEMPLATE}
+            split = int(len(all_data) * train_ratio)
+            trainset, valset = all_data[:split], all_data[split:]
+            logger.info(f"Train: {len(trainset)}, Val: {len(valset)}")
 
-            result = gepa.optimize(
-                seed_candidate=seed,
-                trainset=trainset,
-                valset=valset,
-                adapter=adapter,
-                reflection_lm=gt_model,
-                max_metric_calls=max_iterations * len(trainset),
-                reflection_minibatch_size=min(3, len(trainset)),
-                display_progress_bar=True,
-            )
+            if trainset and valset:
+                adapter = RelationsAdapter(opt_model, opt_reasoning)
+                seed = {"prompt": RELATIONS_PROMPT_TEMPLATE}
 
-            out_path = PROMPTS_PATH / f"relations_opt_{opt_model}_{opt_reasoning}.txt"
-            with open(out_path, "w") as f:
-                f.write(result.best_candidate["prompt"])
-            logger.info(f"Saved: {out_path}")
-            logger.info(f"Best score: {result.best_score:.4f}")
+                result = gepa.optimize(
+                    seed_candidate=seed,
+                    trainset=trainset,
+                    valset=valset,
+                    adapter=adapter,
+                    reflection_lm=gt_model,
+                    max_metric_calls=max_iterations * len(trainset),
+                    reflection_minibatch_size=min(3, len(trainset)),
+                    display_progress_bar=True,
+                )
+
+                out_path = PROMPTS_PATH / f"relations_opt_{opt_model}_{opt_reasoning}.txt"
+                with open(out_path, "w") as f:
+                    f.write(result.best_candidate["prompt"])
+                logger.info(f"Saved: {out_path}")
+                logger.info(f"Best score: {result.best_score:.4f}")
+            else:
+                logger.warning("Insufficient data for relations optimization (need both train and val sets)")
 
     logger.info("=" * 80)
     logger.info("Optimization complete!")

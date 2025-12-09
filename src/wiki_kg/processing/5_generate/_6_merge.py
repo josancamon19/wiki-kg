@@ -57,6 +57,14 @@ def load_graph_from_gcs(file_path: str, fs: gcsfs.GCSFileSystem) -> Graph:
     with fs.open(file_path, "r") as f:
         data = json.load(f)
 
+    # Load entity_metadata and convert lists back to sets
+    entity_metadata = None
+    if data.get("entity_metadata"):
+        entity_metadata = {
+            entity: set(article_ids)
+            for entity, article_ids in data["entity_metadata"].items()
+        }
+
     return Graph(
         entities=set(data.get("entities", [])),
         relations={
@@ -64,6 +72,7 @@ def load_graph_from_gcs(file_path: str, fs: gcsfs.GCSFileSystem) -> Graph:
             for r in data.get("relations", [])
         },
         edges=set(data.get("edges", [])),
+        entity_metadata=entity_metadata,
     )
 
 
@@ -138,17 +147,23 @@ def main(
 
     # Save
     logger.info(f"Saving merged graph to {output_path}...")
-    graph_json = json.dumps(
-        {
-            "entities": list(final_graph.entities),
-            "relations": [
-                {"subject": r[0], "predicate": r[1], "object": r[2]}
-                for r in final_graph.relations
-            ],
-            "edges": list(final_graph.edges),
-        },
-        indent=2,
-    )
+    graph_dict = {
+        "entities": list(final_graph.entities),
+        "relations": [
+            {"subject": r[0], "predicate": r[1], "object": r[2]}
+            for r in final_graph.relations
+        ],
+        "edges": list(final_graph.edges),
+    }
+    
+    # Include entity_metadata if present (convert sets to lists for JSON serialization)
+    if final_graph.entity_metadata:
+        graph_dict["entity_metadata"] = {
+            entity: list(article_ids)
+            for entity, article_ids in final_graph.entity_metadata.items()
+        }
+    
+    graph_json = json.dumps(graph_dict, indent=2)
 
     output_dir = "/".join(output_path.replace("gs://", "").split("/")[:-1])
     fs.makedirs(output_dir, exist_ok=True)
