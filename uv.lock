@@ -1388,7 +1388,7 @@ wheels = [
 [[package]]
 name = "kg-gen"
 version = "0.4.0"
-source = { git = "https://github.com/stair-lab/kg-gen.git?rev=hotfix%2Fallowed-openai-params#544471b0b34c4d216e7862a057c6332935e5c9a1" }
+source = { git = "https://github.com/stair-lab/kg-gen.git?rev=hotfix%2Freasoning-effort-param#39acdc6e9c88e58baf14f90adfbbacb50f760818" }
 dependencies = [
     { name = "datasets" },
     { name = "dspy-ai" },
@@ -3998,7 +3998,7 @@ requires-dist = [
     { name = "gcsfs", specifier = ">=2025.10.0" },
     { name = "gepa", specifier = ">=0.0.17" },
     { name = "huggingface-hub", specifier = ">=0.20.0" },
-    { name = "kg-gen", git = "https://github.com/stair-lab/kg-gen.git?rev=hotfix%2Fallowed-openai-params" },
+    { name = "kg-gen", git = "https://github.com/stair-lab/kg-gen.git?rev=hotfix%2Freasoning-effort-param" },
     { name = "litellm", specifier = ">=1.80.5" },
     { name = "matplotlib", specifier = ">=3.10.7" },
     { name = "mwparserfromhtml", specifier = ">=2.0.0" },

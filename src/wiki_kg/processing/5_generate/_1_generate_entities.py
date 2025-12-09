@@ -205,7 +205,7 @@ def generate_entities_batch_file(
 
     # Heuristic chunk/log settings tuned for streaming vs local data
     worker_chunk_size = 1 if not local_dataset else min(64, num_workers * 4)
-    log_every_articles = max(50, num_workers * 20)
+    log_every_articles = 10 if not local_dataset else max(50, num_workers * 20)  # More frequent logging for streaming
 
     total_articles = 0
     total_requests = 0

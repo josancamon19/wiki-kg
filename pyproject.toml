@@ -14,7 +14,7 @@ dependencies = [
     "gcsfs>=2025.10.0",
     "gepa>=0.0.17",
     "huggingface-hub>=0.20.0",
-    "kg-gen @ git+https://github.com/stair-lab/kg-gen.git@hotfix/allowed-openai-params",
+    "kg-gen @ git+https://github.com/stair-lab/kg-gen.git@hotfix/reasoning-effort-param",
     "litellm>=1.80.5",
     "matplotlib>=3.10.7",
     "mwparserfromhtml>=2.0.0",

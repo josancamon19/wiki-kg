@@ -19,15 +19,22 @@ for arg in "$@"; do
     fi
 done
 
+# Confirm if processing all articles
+if [ -z "$LIMIT" ]; then
+    echo "WARNING: No limit specified. This will process ALL articles."
+    read -p "Do you want to continue? (yes/no): " confirmation
+    if [ "$confirmation" != "yes" ]; then
+        echo "Aborted."
+        exit 0
+    fi
+fi
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../../.." && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
 cd "$SCRIPT_DIR"
 
-# Set GCS credentials if not already set
-if [ -z "$GOOGLE_APPLICATION_CREDENTIALS" ] && [ -f "$PROJECT_ROOT/google-credentials.json" ]; then
-    export GOOGLE_APPLICATION_CREDENTIALS="$PROJECT_ROOT/google-credentials.json"
-    echo "Using credentials: $GOOGLE_APPLICATION_CREDENTIALS"
-fi
+# Use service account credentials instead of GCE default credentials
+export GOOGLE_APPLICATION_CREDENTIALS="$PROJECT_ROOT/google-credentials.json"
 
 # Build common args
 COMMON_ARGS="--model $MODEL --reasoning-effort $REASONING_EFFORT"
