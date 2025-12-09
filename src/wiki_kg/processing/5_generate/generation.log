@@ -9298,3 +9298,118 @@ Checking current status...
 2025-12-09 11:37:44 - INFO - Loaded 99 entities samples from gpt-5.1/high
 2025-12-09 11:37:44 - INFO - Ground truth entities: 99 samples, 99 unique article IDs
 2025-12-09 11:37:46 - INFO - Loading articles for 99 IDs...
+2025-12-09 11:37:54 - INFO - Loaded 99 articles
+2025-12-09 11:37:54 - INFO - Articles loaded: 99 / 99 requested
+2025-12-09 11:37:54 - INFO - Dataset stats: 99 matched, 0 missing articles, 0 empty articles
+2025-12-09 11:37:54 - INFO - Train: 7, Val: 3
+2025-12-09 11:38:13 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:38:34 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:38:56 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:39:20 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:39:37 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:39:50 - INFO - Retrying request to /chat/completions in 0.440989 seconds
+2025-12-09 11:40:08 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:40:26 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:40:52 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:41:30 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:42:12 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:42:29 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:42:48 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:43:01 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:43:22 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:43:37 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:44:03 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:44:22 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:44:46 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:45:03 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:45:04 - INFO - Retrying request to /chat/completions in 0.387723 seconds
+2025-12-09 11:45:26 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:45:39 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:45:58 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:46:15 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 11:46:32 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 11:46:37 - INFO - Saved: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/prompts/entities_opt_gpt-5-nano_minimal.txt
+2025-12-09 12:01:02 - INFO - ================================================================================
+2025-12-09 12:01:02 - INFO - GEPA Prompt Optimization - Entities
+2025-12-09 12:01:02 - INFO - Ground truth: gpt-5.1 (high)
+2025-12-09 12:01:02 - INFO - Optimize for: gpt-5-nano (minimal)
+2025-12-09 12:01:02 - INFO - Limit: 100
+2025-12-09 12:01:02 - INFO - ================================================================================
+2025-12-09 12:01:02 - INFO - Loading entities ground truth from: gs://wikipedia-graph/graph/enwiki/entities/gpt-5.1/high_l100/parsed.jsonl
+2025-12-09 12:01:03 - INFO - Loaded 99 entities samples from gpt-5.1/high
+2025-12-09 12:01:03 - INFO - Ground truth entities: 99 samples, 99 unique article IDs
+2025-12-09 12:01:04 - INFO - Loading articles for 99 IDs...
+2025-12-09 12:01:12 - INFO - Loaded 99 articles
+2025-12-09 12:01:12 - INFO - Articles loaded: 99 / 99 requested
+2025-12-09 12:01:12 - INFO - Dataset stats: 99 matched, 0 missing articles, 0 empty articles
+2025-12-09 12:01:12 - INFO - Train: 8, Val: 2
+2025-12-09 12:01:33 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:01:53 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:02:04 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:02:26 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:02:38 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:02:54 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:03:11 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:03:42 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:03:56 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:04:23 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:04:35 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:04:57 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:05:13 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:05:36 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:05:56 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:06:22 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:06:52 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:07:25 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:07:39 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:08:05 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:08:22 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:08:42 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:08:55 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:09:17 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:09:33 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:10:00 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:10:07 - INFO - Saved optimized prompt: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/prompts/entities_opt_gpt-5-nano_minimal.txt
+2025-12-09 12:10:07 - INFO - Best score: 0.5877
+2025-12-09 12:10:07 - INFO - ================================================================================
+2025-12-09 12:10:07 - INFO - Optimization complete!
+2025-12-09 12:10:07 - INFO - ================================================================================
+2025-12-09 12:10:53 - INFO - ================================================================================
+2025-12-09 12:10:53 - INFO - GEPA Prompt Optimization - Entities
+2025-12-09 12:10:53 - INFO - Ground truth: gpt-5.1 (high)
+2025-12-09 12:10:53 - INFO - Optimize for: gpt-5-nano (minimal)
+2025-12-09 12:10:53 - INFO - Limit: 100
+2025-12-09 12:10:53 - INFO - ================================================================================
+2025-12-09 12:10:53 - INFO - Loading entities ground truth from: gs://wikipedia-graph/graph/enwiki/entities/gpt-5.1/high_l100/parsed.jsonl
+2025-12-09 12:10:53 - INFO - Loaded 99 entities samples from gpt-5.1/high
+2025-12-09 12:10:53 - INFO - Ground truth entities: 99 samples, 99 unique article IDs
+2025-12-09 12:10:54 - INFO - Loading articles for 99 IDs...
+2025-12-09 12:11:00 - INFO - Loaded 99 articles
+2025-12-09 12:11:00 - INFO - Articles loaded: 99 / 99 requested
+2025-12-09 12:11:00 - INFO - Dataset stats: 99 matched, 0 missing articles, 0 empty articles
+2025-12-09 12:11:00 - INFO - Train: 8, Val: 2

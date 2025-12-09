@@ -17,6 +17,7 @@ dependencies = [
     "kg-gen @ git+https://github.com/stair-lab/kg-gen.git@hotfix/reasoning-effort-param",
     "litellm>=1.80.5",
     "matplotlib>=3.10.7",
+    "mlflow>=3.7.0",
     "mwparserfromhtml>=2.0.0",
     "numpy>=2.0.0",
     "pyarrow>=22.0.0",
