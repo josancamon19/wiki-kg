@@ -9413,3 +9413,189 @@ LiteLLM completion() model= gpt-5.1; provider = openai
 2025-12-09 12:11:00 - INFO - Articles loaded: 99 / 99 requested
 2025-12-09 12:11:00 - INFO - Dataset stats: 99 matched, 0 missing articles, 0 empty articles
 2025-12-09 12:11:00 - INFO - Train: 8, Val: 2
+2025-12-09 12:13:32 - INFO - ================================================================================
+2025-12-09 12:13:32 - INFO - GEPA Prompt Optimization - Entities
+2025-12-09 12:13:32 - INFO - Ground truth: gpt-5.1 (high)
+2025-12-09 12:13:32 - INFO - Optimize for: gpt-5-nano (minimal)
+2025-12-09 12:13:32 - INFO - Limit: 100
+2025-12-09 12:13:32 - INFO - ================================================================================
+2025-12-09 12:13:32 - INFO - Loading entities ground truth from: gs://wikipedia-graph/graph/enwiki/entities/gpt-5.1/high_l100/parsed.jsonl
+2025-12-09 12:13:33 - INFO - Loaded 99 entities samples from gpt-5.1/high
+2025-12-09 12:13:33 - INFO - Ground truth entities: 99 samples, 99 unique article IDs
+2025-12-09 12:13:34 - INFO - Loading articles for 99 IDs...
+2025-12-09 12:13:39 - INFO - Loaded 99 articles
+2025-12-09 12:13:39 - INFO - Articles loaded: 99 / 99 requested
+2025-12-09 12:13:39 - INFO - Dataset stats: 99 matched, 0 missing articles, 0 empty articles
+2025-12-09 12:13:39 - INFO - Train: 79, Val: 20
+2025-12-09 12:15:38 - INFO - ================================================================================
+2025-12-09 12:15:38 - INFO - GEPA Prompt Optimization - Entities
+2025-12-09 12:15:38 - INFO - Ground truth: gpt-5.1 (high)
+2025-12-09 12:15:38 - INFO - Optimize for: gpt-5-nano (minimal)
+2025-12-09 12:15:38 - INFO - Limit: 100
+2025-12-09 12:15:38 - INFO - ================================================================================
+2025-12-09 12:15:38 - INFO - Loading entities ground truth from: gs://wikipedia-graph/graph/enwiki/entities/gpt-5.1/high_l100/parsed.jsonl
+2025-12-09 12:15:38 - INFO - Loaded 99 entities samples from gpt-5.1/high
+2025-12-09 12:15:38 - INFO - Ground truth entities: 99 samples, 99 unique article IDs
+2025-12-09 12:15:40 - INFO - Loading articles for 99 IDs...
+2025-12-09 12:15:45 - INFO - Loaded 99 articles
+2025-12-09 12:15:45 - INFO - Articles loaded: 99 / 99 requested
+2025-12-09 12:15:45 - INFO - Dataset stats: 99 matched, 0 missing articles, 0 empty articles
+2025-12-09 12:15:45 - INFO - Train: 79, Val: 20
+2025-12-09 12:17:09 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:17:24 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:17:47 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:18:08 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:18:26 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:18:46 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:18:58 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:19:18 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:19:30 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:19:56 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:20:10 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:20:40 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:20:53 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:21:15 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:21:25 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:21:46 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:22:01 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:22:21 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:22:35 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:22:53 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:23:11 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:23:32 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:23:43 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:23:56 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:24:10 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:24:29 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:24:46 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:25:04 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:25:19 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:25:37 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:25:52 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:26:27 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:27:10 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:27:31 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:28:33 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:28:48 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:29:23 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:29:38 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:30:06 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:30:26 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:31:07 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:31:27 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:31:50 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:32:23 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:32:39 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:32:57 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:33:07 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:33:28 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:33:43 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:33:59 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:34:09 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:34:28 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:34:50 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:35:08 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:35:23 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:35:44 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:35:58 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:36:23 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:36:52 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:37:15 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:37:33 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:37:52 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:38:06 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:38:28 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:38:42 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:38:59 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:39:12 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:39:42 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:39:53 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:40:17 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:41:38 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:41:55 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:42:11 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:42:30 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:42:45 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:43:10 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:44:34 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:44:56 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:45:35 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:46:08 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:46:21 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:46:41 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:46:53 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:47:16 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:47:34 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:48:12 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:48:21 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:48:56 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:49:07 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:49:32 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:49:50 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:50:13 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:50:29 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:50:58 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:51:16 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:51:57 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:52:14 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:52:41 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:52:59 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:53:25 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:53:35 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:53:52 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:54:06 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai
+2025-12-09 12:54:25 - INFO - Wrapper: Completed Call, calling success_handler
+2025-12-09 12:54:40 - INFO - 
+LiteLLM completion() model= gpt-5.1; provider = openai

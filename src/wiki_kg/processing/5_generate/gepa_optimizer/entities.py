@@ -28,13 +28,13 @@ mlflow.set_experiment("gepa-optimizer")
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
 try:
-    from .utils import (
+    from ..utils import (
         GCP_KG_PREFIX,
         build_subdir,
         extract_entities_from_text,
     )
 except ImportError:
-    from utils import (
+    from ..utils import (
         GCP_KG_PREFIX,
         build_subdir,
         extract_entities_from_text,
@@ -341,7 +341,7 @@ def main(
     random.seed(42)
     random.shuffle(all_data)
 
-    all_data = all_data[:10]
+    # all_data = all_data[:10]
 
     split = int(len(all_data) * train_ratio)
     trainset, valset = all_data[:split], all_data[split:]
@@ -391,3 +391,5 @@ def main(
 
 if __name__ == "__main__":
     app()
+    # if it doesn't result in anything better, try with dspy
+    # I think it will get better, problem is, this fucking dspy structure, why not xml
