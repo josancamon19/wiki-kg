@@ -27,6 +27,8 @@ mlflow.dspy.autolog(
     log_evals=True,  # Track evaluation results
     log_traces_from_compile=True,  # Track program traces during optimization
 )
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
+mlflow.set_experiment("gepa-optimize")
 
 
 try:
@@ -105,12 +107,10 @@ def entities_f1(example, pred, trace=None, pred_name=None, pred_trace=None):
 
 
 def load_ground_truth(
-    wiki: str,
-    model: str,
-    reasoning_effort: str,
-    limit: Optional[int],
-    fs: gcsfs.GCSFileSystem,
+    wiki: str, model: str, reasoning_effort: str, limit: Optional[int]
 ) -> list[dict]:
+    fs = gcsfs.GCSFileSystem()
+
     """Load parsed ground truth data from GCS."""
     subdir = build_subdir(model, reasoning_effort, limit)
     path = f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/parsed.jsonl"
@@ -187,7 +187,6 @@ def main(
     auto: Annotated[
         str, typer.Option(help="GEPA auto budget: light, medium, heavy")
     ] = "light",
-    num_threads: Annotated[int, typer.Option(help="Number of parallel threads")] = 8,
 ):
     """
     Optimize entity extraction prompts using DSPy GEPA.
@@ -202,20 +201,17 @@ def main(
     logger.info(f"Auto budget: {auto}")
     logger.info("=" * 80)
 
-    # Load data
-    fs = gcsfs.GCSFileSystem()
-    gt_data = load_ground_truth(wiki, gt_model, gt_reasoning, limit, fs)
-    if not gt_data:
-        return
+    threads = 100
+    gt_data = load_ground_truth(wiki, gt_model, gt_reasoning, limit)
+    assert len(gt_data) > 0, "gt_data empty"
 
     article_ids = set(item["custom_id"] for item in gt_data)
     articles = load_articles(article_ids, limit * 10)
 
     all_data = build_dataset(gt_data, articles)
-    if len(all_data) < 5:
-        logger.error(f"Insufficient data: {len(all_data)} examples")
-        return
+    assert len(all_data) >= 5, "Insufficient data"
 
+    all_data = all_data[:10]
     # Split data
     random.seed(42)
     random.shuffle(all_data)
@@ -237,7 +233,7 @@ def main(
         temperature=1.0,
         api_key=api_key,
         model_type="responses",
-        reasoning={"effort": "medium"},
+        # reasoning={"effort": "medium"},
     )
 
     dspy.configure(lm=student_lm)
@@ -249,8 +245,7 @@ def main(
     evaluator = dspy.Evaluate(
         devset=valset,
         metric=entities_f1,
-        num_threads=num_threads,
-        display_progress=True,
+        display_progress=True,  # ,num_threads=threads
     )
     baseline = evaluator(program)
     logger.info(f"Baseline F1: {baseline.score:.4f}")
@@ -260,8 +255,7 @@ def main(
     optimizer = dspy.GEPA(
         metric=entities_f1,
         auto=auto,
-        reflection_lm=reflection_lm,
-        num_threads=num_threads,
+        reflection_lm=reflection_lm,  # , num_threads=threads
     )
     optimized = optimizer.compile(program, trainset=trainset, valset=valset)
 
