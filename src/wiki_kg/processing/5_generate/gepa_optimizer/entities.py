@@ -19,8 +19,25 @@ import dspy
 import gcsfs
 import typer
 from dotenv import load_dotenv
+
 from kg_gen.steps._1_get_entities import TextEntities
 import mlflow
+
+
+# class TextEntities(dspy.Signature):
+#     """
+#     Your task is to extract the key entities from the wikipedia article contents. The extracted entities are subjects or objects.
+#     The entities selected will be used to create a knowledge graph. Please be concise and accurate.
+
+#     The entities should:
+#     1. Have a stable identity
+#     2. Be possible to referenc independently
+
+#     """
+
+#     source_text: str = dspy.InputField(desc="Wikipedia article contents")
+#     entities: list[str] = dspy.OutputField(desc="List of key entities", required=True)
+
 
 mlflow.dspy.autolog(
     log_compiles=True,  # Track optimization process
@@ -183,7 +200,7 @@ def main(
     opt_reasoning: Annotated[str, typer.Argument(help="Target reasoning effort")],
     limit: Annotated[int, typer.Argument(help="Number of samples")],
     wiki: Annotated[str, typer.Option(help="Wiki identifier")] = "enwiki",
-    train_ratio: Annotated[float, typer.Option(help="Train/val split")] = 0.8,
+    train_ratio: Annotated[float, typer.Option(help="Train/val split")] = 0.75,
     auto: Annotated[
         str, typer.Option(help="GEPA auto budget: light, medium, heavy")
     ] = "light",
@@ -211,7 +228,7 @@ def main(
     all_data = build_dataset(gt_data, articles)
     assert len(all_data) >= 5, "Insufficient data"
 
-    all_data = all_data[:10]
+    all_data = all_data[:50]
     # Split data
     random.seed(42)
     random.shuffle(all_data)
@@ -233,7 +250,7 @@ def main(
         temperature=1.0,
         api_key=api_key,
         model_type="responses",
-        # reasoning={"effort": "medium"},
+        reasoning={"effort": "medium"},
     )
 
     dspy.configure(lm=student_lm)
@@ -243,19 +260,16 @@ def main(
 
     logger.info("Evaluating baseline...")
     evaluator = dspy.Evaluate(
-        devset=valset,
-        metric=entities_f1,
-        display_progress=True,  # ,num_threads=threads
+        devset=valset, metric=entities_f1, display_progress=True, num_threads=threads
     )
     baseline = evaluator(program)
     logger.info(f"Baseline F1: {baseline.score:.4f}")
+    # return
 
     # Optimize with GEPA
     logger.info(f"Running GEPA optimization (auto={auto})...")
     optimizer = dspy.GEPA(
-        metric=entities_f1,
-        auto=auto,
-        reflection_lm=reflection_lm,  # , num_threads=threads
+        metric=entities_f1, auto=auto, reflection_lm=reflection_lm, num_threads=threads
     )
     optimized = optimizer.compile(program, trainset=trainset, valset=valset)
 
