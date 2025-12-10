@@ -19,33 +19,12 @@ import dspy
 import gcsfs
 import typer
 from dotenv import load_dotenv
+from dspy.teleprompt.gepa.gepa_utils import ScoreWithFeedback
 
 from kg_gen.steps._1_get_entities import TextEntities
 import mlflow
 
 
-# class TextEntities(dspy.Signature):
-#     """
-#     Your task is to extract the key entities from the wikipedia article contents. The extracted entities are subjects or objects.
-#     The entities selected will be used to create a knowledge graph. Please be concise and accurate.
-
-#     The entities should:
-#     1. Have a stable identity
-#     2. Be possible to referenc independently
-
-#     """
-
-#     source_text: str = dspy.InputField(desc="Wikipedia article contents")
-#     entities: list[str] = dspy.OutputField(desc="List of key entities", required=True)
-
-
-mlflow.dspy.autolog(
-    log_compiles=True,  # Track optimization process
-    log_evals=True,  # Track evaluation results
-    log_traces_from_compile=True,  # Track program traces during optimization
-)
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
-mlflow.set_experiment("gepa-optimize")
 
 
 try:
@@ -93,31 +72,98 @@ class EntityExtractor(dspy.Module):
 
 def entities_f1(example, pred, trace=None, pred_name=None, pred_trace=None):
     """
-    Compute F1 score for entity extraction.
+    Compute F1 score for entity extraction with feedback for GEPA optimization.
 
-    GEPA requires metrics to accept 5 arguments.
+    Returns a ScoreWithFeedback object as expected by GEPA.
     """
     gold = example.entities
-    predicted = pred.entities if hasattr(pred, "entities") else []
+
+    # Handle parsing errors
+    if not hasattr(pred, "entities"):
+        return ScoreWithFeedback(
+            score=0.0,
+            feedback="PARSING ERROR: Output missing 'entities' field. Must return a list of entity strings.",
+        )
+
+    predicted = pred.entities
 
     if predicted is None:
-        predicted = []
+        return ScoreWithFeedback(
+            score=0.0,
+            feedback="PARSING ERROR: 'entities' is null. Must return a list of entity strings.",
+        )
 
-    gold_set = set(e.lower().strip() for e in gold)
-    pred_set = set(e.lower().strip() for e in predicted)
+    if not isinstance(predicted, list):
+        return ScoreWithFeedback(
+            score=0.0,
+            feedback=f"PARSING ERROR: 'entities' is {type(predicted).__name__}, expected list.",
+        )
 
+    # Check for non-string items
+    invalid_items = [e for e in predicted if not isinstance(e, str)]
+    if invalid_items:
+        return ScoreWithFeedback(
+            score=0.0,
+            feedback=f"PARSING ERROR: 'entities' contains non-string items: {invalid_items[:3]}",
+        )
+
+    # Normalize for comparison (lowercase, stripped)
+    gold_normalized = {e.lower().strip(): e for e in gold}
+    pred_normalized = {e.lower().strip(): e for e in predicted}
+
+    gold_set = set(gold_normalized.keys())
+    pred_set = set(pred_normalized.keys())
+
+    # Calculate sets
+    true_positives = gold_set & pred_set
+    false_negatives = gold_set - pred_set
+    false_positives = pred_set - gold_set
+
+    # Edge cases
     if not gold_set and not pred_set:
-        return 1.0
-    if not gold_set or not pred_set:
-        return 0.0
+        return ScoreWithFeedback(
+            score=1.0, feedback="Correct: no entities expected, none extracted."
+        )
 
-    tp = len(gold_set & pred_set)
-    precision = tp / len(pred_set) if pred_set else 0
-    recall = tp / len(gold_set) if gold_set else 0
+    if not pred_set:
+        missing = [gold_normalized[e] for e in false_negatives]
+        return ScoreWithFeedback(
+            score=0.0, feedback=f"No entities extracted. MISSING: {missing}"
+        )
 
-    if precision + recall == 0:
-        return 0.0
-    return 2 * precision * recall / (precision + recall)
+    if not gold_set:
+        extra = [pred_normalized[e] for e in false_positives]
+        return ScoreWithFeedback(
+            score=0.0,
+            feedback=f"Extracted {len(extra)} entities when none expected. EXTRA: {extra}",
+        )
+
+    # Calculate F1
+    tp = len(true_positives)
+    precision = tp / len(pred_set)
+    recall = tp / len(gold_set)
+    f1 = (
+        2 * precision * recall / (precision + recall)
+        if (precision + recall) > 0
+        else 0.0
+    )
+
+    # Build concise feedback
+    parts = [f"F1={f1:.2f} P={precision:.2f} R={recall:.2f}"]
+
+    if true_positives:
+        correct = [gold_normalized[e] for e in true_positives]
+        parts.append(f"CORRECT: {correct}")
+
+    if false_negatives:
+        missing = [gold_normalized[e] for e in false_negatives]
+        parts.append(f"MISSING: {missing}")
+
+    if false_positives:
+        extra = [pred_normalized[e] for e in false_positives]
+        parts.append(f"EXTRA: {extra}")
+
+    return ScoreWithFeedback(score=f1, feedback=" | ".join(parts))
 
 
 # --- Data Loading ---
@@ -218,7 +264,7 @@ def main(
     logger.info(f"Auto budget: {auto}")
     logger.info("=" * 80)
 
-    threads = 100
+    threads = 64
     gt_data = load_ground_truth(wiki, gt_model, gt_reasoning, limit)
     assert len(gt_data) > 0, "gt_data empty"
 
@@ -250,10 +296,19 @@ def main(
         temperature=1.0,
         api_key=api_key,
         model_type="responses",
-        reasoning={"effort": "medium"},
+        # reasoning={"effort": "medium"},
     )
 
     dspy.configure(lm=student_lm)
+
+    mlflow.dspy.autolog(
+        log_compiles=True,
+        log_evals=True,
+        log_traces_from_compile=True,
+        log_traces_from_eval=True,
+    )
+    mlflow.set_tracking_uri("http://127.0.0.1:5000")
+    mlflow.set_experiment("gepa-optimize-4")
 
     # Create program
     program = EntityExtractor()
@@ -265,11 +320,25 @@ def main(
     baseline = evaluator(program)
     logger.info(f"Baseline F1: {baseline.score:.4f}")
     # return
+    # return
 
     # Optimize with GEPA
     logger.info(f"Running GEPA optimization (auto={auto})...")
     optimizer = dspy.GEPA(
-        metric=entities_f1, auto=auto, reflection_lm=reflection_lm, num_threads=threads
+        metric=entities_f1,
+        auto=auto,
+        reflection_lm=reflection_lm,
+        num_threads=threads,
+        track_stats=True,
+        log_dir=HERE / "gepa_logs" / f"{opt_model}_{opt_reasoning}",
+        # kwargs gepa
+        # track_best_outputs=True,
+        # display_progress_bar=True,
+        # use_mlflow=True,
+        # gepa_kwargs={
+        #     "mlflow_tracking_uri": "http://127.0.0.1:5000",
+        #     "mlflow_experiment_name": "gepa-optimize-2",
+        # },
     )
     optimized = optimizer.compile(program, trainset=trainset, valset=valset)
 

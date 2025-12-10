@@ -22,3 +22,10 @@ analysis/kggen_estimates/articles
 analysis/kggen_estimates/*/*.json
 src/wiki_kg/processing/5_generate/results/*
 result.json
+src/wiki_kg/processing/5_generate/gepa_optimizer/gepa_logs/
+src/wiki_kg/processing/5_generate/gepa_optimizer/optimized/
+src/wiki_kg/processing/5_generate/gepa_optimizer/generation.log
+mlartifacts/
+*.json
+*.jsonl
+mlflow.db
