@@ -50,7 +50,7 @@ class ReasoningEffort(str, Enum):
 # Configuration
 ARTICLES_PER_BUCKET = 2  # Number of articles to sample per length bucket
 LENGTH_TOLERANCE = 50  # +- tolerance in characters for bucket matching
-MAX_CONCURRENT = 100  # Maximum number of articles to process in parallel
+MAX_CONCURRENT = 50  # Maximum number of articles to process in parallel
 
 # Define length buckets: every 500 chars up to 15k, then every 5k chars
 LENGTH_BUCKETS = list(range(500, 15001, 500)) + list(range(20000, 100001, 5000))
@@ -168,6 +168,7 @@ def process_single_article(
     article: Dict[str, Any],
     model_config: Dict[str, Any],
     reasoning_effort: Optional[str] = None,
+    no_dspy: bool = False,
 ) -> Dict[str, Any]:
     """Process a single article without chunking, comparing both dedup methods."""
     # Get API key
@@ -196,12 +197,12 @@ def process_single_article(
     kg = KGGen(**kg_kwargs)
 
     article_id = article["id"]
-    text = article["text"] 
+    text = article["text"]
 
     # === STAGE 1: EXTRACTION ===
     start_extraction = time.time()
     kg.lm.history = []
-    graph_no_cluster = kg.generate(input_data=text)
+    graph_no_cluster = kg.generate(input_data=text, no_dspy=no_dspy)
 
     extraction_time = time.time() - start_extraction
     extraction_tokens = extract_token_usage_from_history(kg.lm, 0)
@@ -272,6 +273,7 @@ async def process_article_async(
     output_dir: Path,
     model_config: Dict[str, Any],
     reasoning_effort: Optional[str] = None,
+    no_dspy: bool = False,
 ) -> Dict[str, Any]:
     """Process a single article with semaphore control."""
     article_id = str(article["id"]).split("/")[-1]
@@ -290,7 +292,12 @@ async def process_article_async(
         print(f"[{article_num}/{total}] Processing: {article['title'][:50]}...")
         loop = asyncio.get_event_loop()
         result = await loop.run_in_executor(
-            executor, process_single_article, article, model_config, reasoning_effort
+            executor,
+            process_single_article,
+            article,
+            model_config,
+            reasoning_effort,
+            no_dspy,
         )
 
         # Save result
@@ -307,14 +314,16 @@ async def process_article_async(
 async def main_async(
     model: ModelName,
     reasoning_effort: ReasoningEffort = ReasoningEffort.MEDIUM,
+    no_dspy: bool = False,
 ):
     """Main execution function with parallel processing."""
     # Get model configuration
     model_config = MODEL_CONFIGS[model]
 
-    # Determine output directory based on model and reasoning
+    # Determine output directory based on model, reasoning, and no_dspy flag
     output_dir = Path(
         f"analysis/kggen_estimates/{model.value}-{reasoning_effort.value}"
+        + ("-no-dspy" if no_dspy else "")
     )
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -323,6 +332,7 @@ async def main_async(
     print("=" * 80)
     print(f"Model: {model_config['model_name']}")
     print(f"Reasoning Effort: {reasoning_effort.value}")
+    print(f"No DSPy Mode: {no_dspy}")
     if model_config.get("base_url"):
         print(f"Base URL: {model_config['base_url']}")
     print(f"Output Directory: {output_dir}")
@@ -361,6 +371,7 @@ async def main_async(
             output_dir,
             model_config,
             reasoning_effort,
+            no_dspy,
         )
         for i, article in enumerate(articles, 1)
     ]
@@ -404,12 +415,18 @@ def main():
         help="Reasoning effort level (only for models that support it, like gpt-5-nano).",
     )
 
+    parser.add_argument(
+        "--no-dspy",
+        action="store_true",
+        help="Use direct LiteLLM prompts instead of DSPy (saves results in a separate directory).",
+    )
+
     args = parser.parse_args()
 
     # Convert string values back to enums
     model = ModelName(args.model)
     reasoning_effort = ReasoningEffort(args.reasoning_effort)
-    asyncio.run(main_async(model, reasoning_effort))
+    asyncio.run(main_async(model, reasoning_effort, args.no_dspy))
 
 
 if __name__ == "__main__":

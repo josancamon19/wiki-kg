@@ -13,6 +13,7 @@ from pathlib import Path
 import gcsfs
 import typer
 from dotenv import load_dotenv
+from pydantic import BaseModel, ValidationError
 
 try:
     from .utils import (
@@ -20,7 +21,6 @@ try:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
-        extract_relations_from_text,
     )
 except ImportError:
     from utils import (
@@ -28,8 +28,19 @@ except ImportError:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
-        extract_relations_from_text,
     )
+
+
+class RelationItem(BaseModel):
+    """A single relation triple."""
+    subject: str
+    predicate: str
+    object: str
+
+
+class RelationsResponse(BaseModel):
+    """Structured response for relation extraction."""
+    relations: list[RelationItem]
 
 load_dotenv()
 
@@ -77,13 +88,13 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
                 body = response.get("body", {})
                 output = body.get("output", [])
 
+                # Get the message content from the last output item (following kg_gen pattern)
                 message_content = None
-                for item in output:
-                    if item.get("type") == "message":
-                        content = item.get("content", [])
-                        if content and len(content) > 0:
-                            message_content = content[0].get("text")
-                            break
+                if output:
+                    last_output = output[-1]
+                    content = last_output.get("content", [])
+                    if content:
+                        message_content = content[0].get("text")
 
                 if not message_content:
                     parse_errors += 1
@@ -91,12 +102,17 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
                     f_failed.write(json.dumps({"custom_id": custom_id, "reason": "no_message_content"}) + "\n")
                     continue
 
-                relations = extract_relations_from_text(message_content)
-
-                if relations is None:
+                # Parse relations using Pydantic validation (following kg_gen pattern)
+                try:
+                    parsed = RelationsResponse.model_validate_json(message_content)
+                    relations = [
+                        {"subject": r.subject, "predicate": r.predicate, "object": r.object}
+                        for r in parsed.relations
+                    ]
+                except ValidationError as e:
                     parse_errors += 1
-                    logger.warning(f"Line {line_num}: Failed to extract relations for {custom_id}")
-                    f_failed.write(json.dumps({"custom_id": custom_id, "reason": "failed_to_extract_relations"}) + "\n")
+                    logger.warning(f"Line {line_num}: Failed to validate relations for {custom_id}: {e}")
+                    f_failed.write(json.dumps({"custom_id": custom_id, "reason": "validation_error", "error": str(e)}) + "\n")
                     continue
 
                 output_data = {"custom_id": custom_id, "relations": relations}

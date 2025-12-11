@@ -14,6 +14,7 @@ from pathlib import Path
 import gcsfs
 import typer
 from dotenv import load_dotenv
+from pydantic import BaseModel, ValidationError
 
 try:
     from .utils import (
@@ -21,7 +22,6 @@ try:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
-        extract_entities_from_text,
     )
 except ImportError:
     from utils import (
@@ -29,8 +29,14 @@ except ImportError:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
-        extract_entities_from_text,
     )
+
+
+class EntitiesResponse(BaseModel):
+    """Structured response for entity extraction."""
+
+    entities: list[str]
+
 
 # Load environment variables
 load_dotenv()
@@ -70,7 +76,11 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
     failed = 0
     parse_errors = 0
 
-    with fs.open(input_file, "r") as f_in, fs.open(output_file, "w") as f_out, fs.open(failed_file, "w") as f_failed:
+    with (
+        fs.open(input_file, "r") as f_in,
+        fs.open(output_file, "w") as f_out,
+        fs.open(failed_file, "w") as f_failed,
+    ):
         for line_num, line in enumerate(f_in, 1):
             try:
                 result = json.loads(line)
@@ -85,39 +95,62 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
                     logger.warning(
                         f"Line {line_num}: Failed request for {custom_id}, status: {status_code}"
                     )
-                    f_failed.write(json.dumps({"custom_id": custom_id, "reason": "failed_request", "status_code": status_code}) + "\n")
+                    f_failed.write(
+                        json.dumps(
+                            {
+                                "custom_id": custom_id,
+                                "reason": "failed_request",
+                                "status_code": status_code,
+                            }
+                        )
+                        + "\n"
+                    )
                     continue
 
                 # Extract the message content
                 body = response.get("body", {})
                 output = body.get("output", [])
 
-                # Find the message in the output
+                # Get the message content from the last output item (following kg_gen pattern)
                 message_content = None
-                for item in output:
-                    if item.get("type") == "message":
-                        content = item.get("content", [])
-                        if content and len(content) > 0:
-                            message_content = content[0].get("text")
-                            break
+                if output:
+                    last_output = output[-1]
+                    content = last_output.get("content", [])
+                    if content:
+                        message_content = content[0].get("text")
 
                 if not message_content:
                     parse_errors += 1
                     logger.warning(
                         f"Line {line_num}: No message content found for {custom_id}"
                     )
-                    f_failed.write(json.dumps({"custom_id": custom_id, "reason": "no_message_content"}) + "\n")
+                    f_failed.write(
+                        json.dumps(
+                            {"custom_id": custom_id, "reason": "no_message_content"}
+                        )
+                        + "\n"
+                    )
                     continue
 
-                # Extract entities from the text
-                entities = extract_entities_from_text(message_content)
-
-                if entities is None:
+                # Parse entities using Pydantic validation (following kg_gen pattern)
+                try:
+                    parsed = EntitiesResponse.model_validate_json(message_content)
+                    entities = parsed.entities
+                except ValidationError as e:
                     parse_errors += 1
                     logger.warning(
-                        f"Line {line_num}: Failed to extract entities for {custom_id}"
+                        f"Line {line_num}: Failed to validate entities for {custom_id}: {e}"
                     )
-                    f_failed.write(json.dumps({"custom_id": custom_id, "reason": "failed_to_extract_entities"}) + "\n")
+                    f_failed.write(
+                        json.dumps(
+                            {
+                                "custom_id": custom_id,
+                                "reason": "validation_error",
+                                "error": str(e),
+                            }
+                        )
+                        + "\n"
+                    )
                     continue
 
                 # Write the parsed result
@@ -134,7 +167,16 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
                     custom_id = partial_result.get("custom_id", f"line_{line_num}")
                 except Exception:
                     custom_id = f"line_{line_num}"
-                f_failed.write(json.dumps({"custom_id": custom_id, "reason": "json_decode_error", "error": str(e)}) + "\n")
+                f_failed.write(
+                    json.dumps(
+                        {
+                            "custom_id": custom_id,
+                            "reason": "json_decode_error",
+                            "error": str(e),
+                        }
+                    )
+                    + "\n"
+                )
             except Exception as e:
                 logger.error(f"Line {line_num}: Unexpected error: {e}")
                 parse_errors += 1
@@ -144,7 +186,16 @@ def parse_batch_results(input_file: str, output_file: str, fs: gcsfs.GCSFileSyst
                     custom_id = partial_result.get("custom_id", f"line_{line_num}")
                 except Exception:
                     custom_id = f"line_{line_num}"
-                f_failed.write(json.dumps({"custom_id": custom_id, "reason": "unexpected_error", "error": str(e)}) + "\n")
+                f_failed.write(
+                    json.dumps(
+                        {
+                            "custom_id": custom_id,
+                            "reason": "unexpected_error",
+                            "error": str(e),
+                        }
+                    )
+                    + "\n"
+                )
 
     logger.info("=" * 80)
     logger.info("Parsing complete!")
@@ -178,8 +229,12 @@ def main(
     fs = gcsfs.GCSFileSystem()
     subdir = build_subdir(model, reasoning_effort, limit)
 
-    resolved_input = input_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/batch_results.jsonl"
-    resolved_output = output_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/parsed.jsonl"
+    resolved_input = (
+        input_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/batch_results.jsonl"
+    )
+    resolved_output = (
+        output_file or f"{GCP_KG_PREFIX}/{wiki}/entities/{subdir}/parsed.jsonl"
+    )
 
     if not fs.exists(resolved_input):
         logger.error(f"Error: Input file not found: {resolved_input}")

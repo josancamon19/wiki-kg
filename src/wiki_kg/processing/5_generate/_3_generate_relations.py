@@ -6,15 +6,15 @@ for articles that have entities.
 """
 
 import json
-import os
 import logging
-from typing import Dict, Any, Optional, Annotated
+from typing import Dict, Any, Optional, Annotated, List
 from pathlib import Path
 
 import gcsfs
 import typer
 from datasets import load_dataset
 from dotenv import load_dotenv
+from kg_gen.steps._2_get_relations import _load_relations_prompt, _create_relations_model
 
 try:
     from .utils import (
@@ -46,12 +46,24 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-PROMPTS_PATH = os.path.join(os.path.dirname(__file__), "prompts")
 MAX_TOKENS = 100000
 TEMPERATURE = 1.0
 
-with open(os.path.join(PROMPTS_PATH, "relations.txt"), "r") as f:
-    RELATION_PROMPT_TEMPLATE = f.read()
+# Load prompt template from kg_gen package
+_RELATION_SYSTEM_PROMPT = _load_relations_prompt()
+
+
+def _create_relations_schema(entities: List[str]) -> Dict[str, Any]:
+    """Create a JSON schema for relations with entity constraints using kg_gen's model."""
+    _, RelationsResponse = _create_relations_model(entities)
+    schema = RelationsResponse.model_json_schema()
+    schema["additionalProperties"] = False
+    # Also set additionalProperties on nested objects
+    if "$defs" in schema:
+        for def_schema in schema["$defs"].values():
+            if def_schema.get("type") == "object":
+                def_schema["additionalProperties"] = False
+    return schema
 
 app = typer.Typer()
 
@@ -75,19 +87,47 @@ def make_batch_request(
     model: str,
     reasoning_effort: str,
 ) -> Dict[str, Any]:
-    """Create a single batch API request."""
-    prompt = RELATION_PROMPT_TEMPLATE.replace("{_source_text_}", text)
-    prompt = prompt.replace("{_entities_}", json.dumps(entities))
+    """Create a single batch API request with system/user messages and structured output."""
+    # Build user prompt with entities and text tags (matching kg_gen format)
+    entities_str = "\n".join(f"- {e}" for e in entities)
+    user_prompt = f"""
+Here is the list of entities that were previously extracted from the source text:
+
+<entities>
+{entities_str}
+</entities>
+
+Here is the source text to analyze:
+
+<text>
+{text}
+</text>
+"""
+    
+    # Create schema with entity constraints
+    schema = _create_relations_schema(entities)
+    
     return {
         "custom_id": article_id,
         "method": "POST",
         "url": "/v1/responses",
         "body": {
             "model": model,
-            "input": prompt,
+            "input": [
+                {"role": "system", "content": _RELATION_SYSTEM_PROMPT},
+                {"role": "user", "content": user_prompt},
+            ],
             "max_output_tokens": MAX_TOKENS,
             "temperature": TEMPERATURE,
             "reasoning": {"effort": reasoning_effort},
+            "text": {
+                "format": {
+                    "type": "json_schema",
+                    "name": "relations_response",
+                    "schema": schema,
+                    "strict": True,
+                }
+            },
         },
     }
 

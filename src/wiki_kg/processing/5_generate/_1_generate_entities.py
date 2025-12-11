@@ -1,5 +1,4 @@
 import json
-import os
 import logging
 from typing import Dict, Any, Optional, List, Iterator, Annotated
 from multiprocessing import Pool, cpu_count
@@ -10,6 +9,7 @@ import typer
 from datasets import load_dataset, DownloadConfig
 from dotenv import load_dotenv
 from kg_gen.utils.chunk_text import chunk_text
+from kg_gen.steps._1_get_entities import EntitiesResponse, _load_entities_prompt
 
 try:
     from .utils import (
@@ -42,16 +42,18 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-PROMPTS_PATH = os.path.join(os.path.dirname(__file__), "prompts")
 MAX_TOKENS = 100000
 CHUNK_THRESHOLD = int(2e5)  # Characters
 CHUNK_SIZE = int(1e5)
 TEMPERATURE = 1.0
 WRITE_BUFFER_SIZE = 512  # Number of requests to hold before flushing to GCS
 
-# Cache for prompt template
-with open(os.path.join(PROMPTS_PATH, "entities.txt"), "r") as f:
-    _ENTITY_PROMPT_TEMPLATE = f.read()
+# Load prompt template from kg_gen package
+_ENTITY_SYSTEM_PROMPT = _load_entities_prompt()
+
+# Build schema from kg_gen's EntitiesResponse model
+_ENTITIES_SCHEMA = EntitiesResponse.model_json_schema()
+_ENTITIES_SCHEMA["additionalProperties"] = False
 
 app = typer.Typer()
 
@@ -133,19 +135,37 @@ class ArticleProcessor:
             else:
                 custom_id = str(article_id)
 
-            prompt = _ENTITY_PROMPT_TEMPLATE.replace("{_source_text_}", chunk)
+            # Build user prompt with article tags (matching kg_gen format)
+            user_prompt = f"""
+Here is the text to extract entities from:
 
-            # OpenAI Batch API format
+<article>
+{chunk}
+</article>
+"""
+
+            # OpenAI Batch API format with system/user messages and structured output
             batch_request = {
                 "custom_id": custom_id,
                 "method": "POST",
                 "url": "/v1/responses",
                 "body": {
                     "model": self.model_name,
-                    "input": prompt,
+                    "input": [
+                        {"role": "system", "content": _ENTITY_SYSTEM_PROMPT},
+                        {"role": "user", "content": user_prompt},
+                    ],
                     "max_output_tokens": MAX_TOKENS,
                     "temperature": TEMPERATURE,
                     "reasoning": {"effort": self.reasoning_effort},
+                    "text": {
+                        "format": {
+                            "type": "json_schema",
+                            "name": "entities_response",
+                            "schema": _ENTITIES_SCHEMA,
+                            "strict": True,
+                        }
+                    },
                 },
             }
             batch_requests.append(batch_request)
