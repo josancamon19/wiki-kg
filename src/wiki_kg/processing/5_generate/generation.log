@@ -10596,3 +10596,746 @@ Checking current status...
 2025-12-10 20:34:55 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
 2025-12-10 20:34:55 - INFO - ⏳ Batch is in_progress...
 2025-12-10 20:34:55 - INFO - ============================================================
+2025-12-10 20:35:26 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:35:26 - INFO - Command: status
+2025-12-10 20:35:26 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:35:26 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:35:26 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:35:27 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:35:27 - INFO - ============================================================
+2025-12-10 20:35:27 - INFO - Batch Type: relations
+2025-12-10 20:35:27 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:35:27 - INFO - Status: in_progress
+2025-12-10 20:35:27 - INFO - Created at: 1765427441
+2025-12-10 20:35:27 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:35:27 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:35:27 - INFO - ============================================================
+2025-12-10 20:35:57 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:35:57 - INFO - Command: status
+2025-12-10 20:35:57 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:35:58 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:35:58 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:35:58 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:35:58 - INFO - ============================================================
+2025-12-10 20:35:58 - INFO - Batch Type: relations
+2025-12-10 20:35:58 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:35:58 - INFO - Status: in_progress
+2025-12-10 20:35:58 - INFO - Created at: 1765427441
+2025-12-10 20:35:58 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:35:58 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:35:58 - INFO - ============================================================
+2025-12-10 20:36:29 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:36:29 - INFO - Command: status
+2025-12-10 20:36:29 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:36:29 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:36:29 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:36:29 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:36:29 - INFO - ============================================================
+2025-12-10 20:36:29 - INFO - Batch Type: relations
+2025-12-10 20:36:29 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:36:29 - INFO - Status: in_progress
+2025-12-10 20:36:29 - INFO - Created at: 1765427441
+2025-12-10 20:36:29 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:36:29 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:36:29 - INFO - ============================================================
+2025-12-10 20:37:00 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:37:00 - INFO - Command: status
+2025-12-10 20:37:00 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:37:01 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:37:01 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:37:01 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:37:01 - INFO - ============================================================
+2025-12-10 20:37:01 - INFO - Batch Type: relations
+2025-12-10 20:37:01 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:37:01 - INFO - Status: in_progress
+2025-12-10 20:37:01 - INFO - Created at: 1765427441
+2025-12-10 20:37:01 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:37:01 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:37:01 - INFO - ============================================================
+2025-12-10 20:37:31 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:37:31 - INFO - Command: status
+2025-12-10 20:37:31 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:37:32 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:37:32 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:37:32 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:37:32 - INFO - ============================================================
+2025-12-10 20:37:32 - INFO - Batch Type: relations
+2025-12-10 20:37:32 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:37:32 - INFO - Status: in_progress
+2025-12-10 20:37:32 - INFO - Created at: 1765427441
+2025-12-10 20:37:32 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:37:32 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:37:32 - INFO - ============================================================
+2025-12-10 20:38:03 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:38:03 - INFO - Command: status
+2025-12-10 20:38:03 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:38:03 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:38:03 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:38:03 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:38:03 - INFO - ============================================================
+2025-12-10 20:38:03 - INFO - Batch Type: relations
+2025-12-10 20:38:03 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:38:03 - INFO - Status: in_progress
+2025-12-10 20:38:03 - INFO - Created at: 1765427441
+2025-12-10 20:38:03 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:38:03 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:38:03 - INFO - ============================================================
+2025-12-10 20:38:34 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:38:34 - INFO - Command: status
+2025-12-10 20:38:34 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:38:34 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:38:34 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:38:35 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:38:35 - INFO - ============================================================
+2025-12-10 20:38:35 - INFO - Batch Type: relations
+2025-12-10 20:38:35 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:38:35 - INFO - Status: in_progress
+2025-12-10 20:38:35 - INFO - Created at: 1765427441
+2025-12-10 20:38:35 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:38:35 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:38:35 - INFO - ============================================================
+2025-12-10 20:39:05 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:39:05 - INFO - Command: status
+2025-12-10 20:39:05 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:39:06 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:39:06 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:39:06 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:39:06 - INFO - ============================================================
+2025-12-10 20:39:06 - INFO - Batch Type: relations
+2025-12-10 20:39:06 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:39:06 - INFO - Status: in_progress
+2025-12-10 20:39:06 - INFO - Created at: 1765427441
+2025-12-10 20:39:06 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:39:06 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:39:06 - INFO - ============================================================
+2025-12-10 20:39:37 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-10 20:39:37 - INFO - Command: status
+2025-12-10 20:39:37 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-10 20:39:37 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-10 20:39:37 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:39:37 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-10 20:39:37 - INFO - ============================================================
+2025-12-10 20:39:37 - INFO - Batch Type: relations
+2025-12-10 20:39:37 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-10 20:39:37 - INFO - Status: in_progress
+2025-12-10 20:39:37 - INFO - Created at: 1765427441
+2025-12-10 20:39:37 - INFO - Request counts: BatchRequestCounts(completed=0, failed=0, total=100)
+2025-12-10 20:39:37 - INFO - ⏳ Batch is in_progress...
+2025-12-10 20:39:37 - INFO - ============================================================
+2025-12-11 14:22:12 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_1_generate_entities.py
+2025-12-11 14:22:12 - INFO - Arguments: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100, force=False, local_dataset=False
+2025-12-11 14:22:12 - INFO - Batch file already exists: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/batch.jsonl
+2025-12-11 14:22:12 - INFO - Use --force to regenerate
+2025-12-11 14:22:13 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:13 - INFO - Command: upload
+2025-12-11 14:22:13 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100, force=False
+2025-12-11 14:22:14 - INFO - Batch info already exists for 'entities' in wiki 'enwiki'
+2025-12-11 14:22:14 - INFO - Existing batch ID: batch_693a454ccf6081909d71935a30d34a66
+2025-12-11 14:22:14 - INFO - Checking current status...
+2025-12-11 14:22:15 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a454ccf6081909d71935a30d34a66 "HTTP/1.1 200 OK"
+2025-12-11 14:22:15 - INFO - Current status: completed
+2025-12-11 14:22:15 - INFO - Batch is active or completed. Skipping upload.
+2025-12-11 14:22:15 - INFO - Use: python _2_upload_batch.py upload entities --force
+2025-12-11 14:22:15 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:15 - INFO - Command: status
+2025-12-11 14:22:15 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:16 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-11 14:22:16 - INFO - Batch ID: batch_693a454ccf6081909d71935a30d34a66
+2025-12-11 14:22:16 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a454ccf6081909d71935a30d34a66 "HTTP/1.1 200 OK"
+2025-12-11 14:22:16 - INFO - ============================================================
+2025-12-11 14:22:16 - INFO - Batch Type: entities
+2025-12-11 14:22:16 - INFO - Batch ID: batch_693a454ccf6081909d71935a30d34a66
+2025-12-11 14:22:16 - INFO - Status: completed
+2025-12-11 14:22:16 - INFO - Created at: 1765426508
+2025-12-11 14:22:16 - INFO - Request counts: BatchRequestCounts(completed=100, failed=0, total=100)
+2025-12-11 14:22:16 - INFO - ✓ Batch completed!
+2025-12-11 14:22:16 - INFO - Output file ID: file-DkM866cCqMGejU3b9ELos1
+2025-12-11 14:22:16 - INFO - Download with: python batch_api.py download entities --wiki enwiki
+2025-12-11 14:22:16 - INFO - ============================================================
+2025-12-11 14:22:17 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:17 - INFO - Command: download
+2025-12-11 14:22:17 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:17 - INFO - Retrieving batch: entities (wiki: enwiki)
+2025-12-11 14:22:17 - INFO - Batch ID: batch_693a454ccf6081909d71935a30d34a66
+2025-12-11 14:22:18 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a454ccf6081909d71935a30d34a66 "HTTP/1.1 200 OK"
+2025-12-11 14:22:18 - INFO - Downloading output file: file-DkM866cCqMGejU3b9ELos1
+2025-12-11 14:22:18 - INFO - HTTP Request: GET https://api.openai.com/v1/files/file-DkM866cCqMGejU3b9ELos1/content "HTTP/1.1 200 OK"
+2025-12-11 14:22:19 - INFO - ✓ Results saved to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/batch_results.jsonl
+2025-12-11 14:22:19 - INFO - ============================================================
+2025-12-11 14:22:19 - INFO - Download complete for 'entities'!
+2025-12-11 14:22:19 - INFO - ============================================================
+2025-12-11 14:22:20 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_2_parse_entities.py
+2025-12-11 14:22:20 - INFO - Arguments: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:20 - INFO - ================================================================================
+2025-12-11 14:22:20 - INFO - Parsing entities from: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/batch_results.jsonl
+2025-12-11 14:22:20 - INFO - Output to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/parsed.jsonl
+2025-12-11 14:22:20 - INFO - ================================================================================
+2025-12-11 14:22:21 - INFO - ================================================================================
+2025-12-11 14:22:21 - INFO - Parsing complete!
+2025-12-11 14:22:21 - INFO -   Successful: 100
+2025-12-11 14:22:21 - INFO -   Failed requests: 0
+2025-12-11 14:22:21 - INFO -   Parse errors: 0
+2025-12-11 14:22:21 - INFO -   Total processed: 100
+2025-12-11 14:22:21 - INFO -   Output saved to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/parsed.jsonl
+2025-12-11 14:22:21 - INFO -   Failed IDs saved to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/failed_ids.jsonl
+2025-12-11 14:22:21 - INFO - ================================================================================
+2025-12-11 14:22:38 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_1_generate_entities.py
+2025-12-11 14:22:38 - INFO - Arguments: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100, force=False, local_dataset=False
+2025-12-11 14:22:38 - INFO - Batch file already exists: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/batch.jsonl
+2025-12-11 14:22:38 - INFO - Use --force to regenerate
+2025-12-11 14:22:39 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:39 - INFO - Command: upload
+2025-12-11 14:22:39 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100, force=False
+2025-12-11 14:22:40 - INFO - Batch info already exists for 'entities' in wiki 'enwiki'
+2025-12-11 14:22:40 - INFO - Existing batch ID: batch_693a454ccf6081909d71935a30d34a66
+2025-12-11 14:22:40 - INFO - Checking current status...
+2025-12-11 14:22:40 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a454ccf6081909d71935a30d34a66 "HTTP/1.1 200 OK"
+2025-12-11 14:22:40 - INFO - Current status: completed
+2025-12-11 14:22:40 - INFO - Batch is active or completed. Skipping upload.
+2025-12-11 14:22:40 - INFO - Use: python _2_upload_batch.py upload entities --force
+2025-12-11 14:22:41 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:41 - INFO - Command: status
+2025-12-11 14:22:41 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:41 - INFO - Checking status for batch type: entities (wiki: enwiki)
+2025-12-11 14:22:41 - INFO - Batch ID: batch_693a454ccf6081909d71935a30d34a66
+2025-12-11 14:22:42 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a454ccf6081909d71935a30d34a66 "HTTP/1.1 200 OK"
+2025-12-11 14:22:42 - INFO - ============================================================
+2025-12-11 14:22:42 - INFO - Batch Type: entities
+2025-12-11 14:22:42 - INFO - Batch ID: batch_693a454ccf6081909d71935a30d34a66
+2025-12-11 14:22:42 - INFO - Status: completed
+2025-12-11 14:22:42 - INFO - Created at: 1765426508
+2025-12-11 14:22:42 - INFO - Request counts: BatchRequestCounts(completed=100, failed=0, total=100)
+2025-12-11 14:22:42 - INFO - ✓ Batch completed!
+2025-12-11 14:22:42 - INFO - Output file ID: file-DkM866cCqMGejU3b9ELos1
+2025-12-11 14:22:42 - INFO - Download with: python batch_api.py download entities --wiki enwiki
+2025-12-11 14:22:42 - INFO - ============================================================
+2025-12-11 14:22:42 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:42 - INFO - Command: download
+2025-12-11 14:22:42 - INFO - Arguments: batch_type=entities, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:43 - INFO - Retrieving batch: entities (wiki: enwiki)
+2025-12-11 14:22:43 - INFO - Batch ID: batch_693a454ccf6081909d71935a30d34a66
+2025-12-11 14:22:43 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a454ccf6081909d71935a30d34a66 "HTTP/1.1 200 OK"
+2025-12-11 14:22:43 - INFO - Downloading output file: file-DkM866cCqMGejU3b9ELos1
+2025-12-11 14:22:43 - INFO - HTTP Request: GET https://api.openai.com/v1/files/file-DkM866cCqMGejU3b9ELos1/content "HTTP/1.1 200 OK"
+2025-12-11 14:22:44 - INFO - ✓ Results saved to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/batch_results.jsonl
+2025-12-11 14:22:44 - INFO - ============================================================
+2025-12-11 14:22:44 - INFO - Download complete for 'entities'!
+2025-12-11 14:22:44 - INFO - ============================================================
+2025-12-11 14:22:45 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_2_parse_entities.py
+2025-12-11 14:22:45 - INFO - Arguments: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:45 - INFO - ================================================================================
+2025-12-11 14:22:45 - INFO - Parsing entities from: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/batch_results.jsonl
+2025-12-11 14:22:45 - INFO - Output to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/parsed.jsonl
+2025-12-11 14:22:45 - INFO - ================================================================================
+2025-12-11 14:22:46 - INFO - ================================================================================
+2025-12-11 14:22:46 - INFO - Parsing complete!
+2025-12-11 14:22:46 - INFO -   Successful: 100
+2025-12-11 14:22:46 - INFO -   Failed requests: 0
+2025-12-11 14:22:46 - INFO -   Parse errors: 0
+2025-12-11 14:22:46 - INFO -   Total processed: 100
+2025-12-11 14:22:46 - INFO -   Output saved to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/parsed.jsonl
+2025-12-11 14:22:46 - INFO -   Failed IDs saved to: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/failed_ids.jsonl
+2025-12-11 14:22:46 - INFO - ================================================================================
+2025-12-11 14:22:51 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_3_generate_relations.py
+2025-12-11 14:22:51 - INFO - Args: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100, force=False
+2025-12-11 14:22:51 - INFO - Batch file already exists: gs://wikipedia-graph/graph/enwiki/relations/gpt-5-nano/minimal_l100/batch.jsonl. Use --force to regenerate.
+2025-12-11 14:22:53 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:53 - INFO - Command: upload
+2025-12-11 14:22:53 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100, force=False
+2025-12-11 14:22:53 - INFO - Batch info already exists for 'relations' in wiki 'enwiki'
+2025-12-11 14:22:53 - INFO - Existing batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-11 14:22:53 - INFO - Checking current status...
+2025-12-11 14:22:53 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-11 14:22:53 - INFO - Current status: completed
+2025-12-11 14:22:53 - INFO - Batch is active or completed. Skipping upload.
+2025-12-11 14:22:53 - INFO - Use: python _2_upload_batch.py upload relations --force
+2025-12-11 14:22:54 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:54 - INFO - Command: status
+2025-12-11 14:22:54 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:54 - INFO - Checking status for batch type: relations (wiki: enwiki)
+2025-12-11 14:22:54 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-11 14:22:55 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-11 14:22:55 - INFO - ============================================================
+2025-12-11 14:22:55 - INFO - Batch Type: relations
+2025-12-11 14:22:55 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-11 14:22:55 - INFO - Status: completed
+2025-12-11 14:22:55 - INFO - Created at: 1765427441
+2025-12-11 14:22:55 - INFO - Request counts: BatchRequestCounts(completed=99, failed=1, total=100)
+2025-12-11 14:22:55 - INFO - ✓ Batch completed!
+2025-12-11 14:22:55 - INFO - Output file ID: file-FnkPkVDP8WaZj5dhyfqvp9
+2025-12-11 14:22:55 - INFO - Download with: python batch_api.py download relations --wiki enwiki
+2025-12-11 14:22:55 - INFO - ⚠ Error file ID: file-LNi7oCkGsTxddcUM9GN2HX
+2025-12-11 14:22:55 - INFO - ============================================================
+2025-12-11 14:22:55 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/batch_api.py
+2025-12-11 14:22:55 - INFO - Command: download
+2025-12-11 14:22:55 - INFO - Arguments: batch_type=relations, wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:55 - INFO - Retrieving batch: relations (wiki: enwiki)
+2025-12-11 14:22:55 - INFO - Batch ID: batch_693a48f1aa548190b4bf535d126a867f
+2025-12-11 14:22:56 - INFO - HTTP Request: GET https://api.openai.com/v1/batches/batch_693a48f1aa548190b4bf535d126a867f "HTTP/1.1 200 OK"
+2025-12-11 14:22:56 - INFO - Downloading output file: file-FnkPkVDP8WaZj5dhyfqvp9
+2025-12-11 14:22:56 - INFO - HTTP Request: GET https://api.openai.com/v1/files/file-FnkPkVDP8WaZj5dhyfqvp9/content "HTTP/1.1 200 OK"
+2025-12-11 14:22:57 - INFO - ✓ Results saved to: gs://wikipedia-graph/graph/enwiki/relations/gpt-5-nano/minimal_l100/batch_results.jsonl
+2025-12-11 14:22:57 - INFO - Downloading error file: file-LNi7oCkGsTxddcUM9GN2HX
+2025-12-11 14:22:57 - INFO - HTTP Request: GET https://api.openai.com/v1/files/file-LNi7oCkGsTxddcUM9GN2HX/content "HTTP/1.1 200 OK"
+2025-12-11 14:22:57 - INFO - ⚠ Errors saved to: gs://wikipedia-graph/graph/enwiki/relations/gpt-5-nano/minimal_l100/batch_results_errors.jsonl
+2025-12-11 14:22:57 - INFO - ============================================================
+2025-12-11 14:22:57 - INFO - Download complete for 'relations'!
+2025-12-11 14:22:57 - INFO - ============================================================
+2025-12-11 14:22:58 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_4_parse_relations.py
+2025-12-11 14:22:58 - INFO - Args: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:22:58 - INFO - ================================================================================
+2025-12-11 14:22:58 - INFO - Parsing relations from: gs://wikipedia-graph/graph/enwiki/relations/gpt-5-nano/minimal_l100/batch_results.jsonl
+2025-12-11 14:22:58 - INFO - Output to: gs://wikipedia-graph/graph/enwiki/relations/gpt-5-nano/minimal_l100/parsed.jsonl
+2025-12-11 14:22:58 - INFO - ================================================================================
+2025-12-11 14:22:59 - INFO - ================================================================================
+2025-12-11 14:22:59 - INFO - Parsing complete!
+2025-12-11 14:22:59 - INFO -   Successful: 99
+2025-12-11 14:22:59 - INFO -   Failed requests: 0
+2025-12-11 14:22:59 - INFO -   Parse errors: 0
+2025-12-11 14:22:59 - INFO -   Total processed: 99
+2025-12-11 14:22:59 - INFO -   Output saved to: gs://wikipedia-graph/graph/enwiki/relations/gpt-5-nano/minimal_l100/parsed.jsonl
+2025-12-11 14:22:59 - INFO -   Failed IDs saved to: gs://wikipedia-graph/graph/enwiki/relations/gpt-5-nano/minimal_l100/failed_ids.jsonl
+2025-12-11 14:22:59 - INFO - ================================================================================
+2025-12-11 14:23:04 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_5_get_graphs.py
+2025-12-11 14:23:04 - INFO - Args: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:23:04 - INFO - ================================================================================
+2025-12-11 14:23:04 - INFO - Entities: gs://wikipedia-graph/graph/enwiki/entities/gpt-5-nano/minimal_l100/parsed.jsonl
+2025-12-11 14:23:04 - INFO - Relations: gs://wikipedia-graph/graph/enwiki/relations/gpt-5-nano/minimal_l100/parsed.jsonl
+2025-12-11 14:23:04 - INFO - Output: gs://wikipedia-graph/graph/enwiki/graphs/gpt-5-nano/minimal_l100
+2025-12-11 14:23:04 - INFO - ================================================================================
+2025-12-11 14:23:05 - INFO - Counting total lines...
+2025-12-11 14:23:05 - INFO - Total lines: 100
+2025-12-11 14:23:05 - INFO - Using 10 workers
+2025-12-11 14:23:05 - INFO - Starting parallel processing...
+2025-12-11 14:23:16 - INFO - Worker 0: Processing 10 items (rows 0-10)
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - Worker 9: Processing 10 items (rows 90-100)
+2025-12-11 14:23:16 - WARNING - Worker 9: No relations found for enwiki/517080
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - Worker 1: Processing 10 items (rows 10-20)
+2025-12-11 14:23:16 - INFO - Worker 3: Processing 10 items (rows 30-40)
+2025-12-11 14:23:16 - INFO - Worker 4: Processing 10 items (rows 40-50)
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - Worker 8: Processing 10 items (rows 80-90)
+2025-12-11 14:23:16 - WARNING - Worker 8: No relations found for enwiki/1290014
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - Worker 6: Processing 10 items (rows 60-70)
+2025-12-11 14:23:16 - INFO - Worker 2: Processing 10 items (rows 20-30)
+2025-12-11 14:23:16 - INFO - Worker 5: Processing 10 items (rows 50-60)
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:16 - INFO - Worker 7: Processing 10 items (rows 70-80)
+2025-12-11 14:23:16 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:16 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:18 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:18 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:19 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:19 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:20 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:20 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - WARNING - Worker 7: No relations found for enwiki/41306595
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:21 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:21 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - WARNING - Worker 8: No relations found for enwiki/49048669
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:22 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:22 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:23 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:23 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:24 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:24 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:25 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:25 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:26 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:26 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - Worker 8: Completed 8 items
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - WARNING - Worker 7: No relations found for enwiki/27970195
+2025-12-11 14:23:27 - INFO - Worker 7: Completed 8 items
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:27 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:27 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:28 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:28 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - Worker 9: Completed 9 items
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - WARNING - Worker 6: No relations found for enwiki/54181182
+2025-12-11 14:23:29 - INFO - Worker 6: Completed 9 items
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:29 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:29 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:30 - INFO - Worker 1: Processed 10/10 items
+2025-12-11 14:23:30 - INFO - Worker 1: Completed 10 items
+2025-12-11 14:23:30 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:30 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:30 - INFO - Worker 0: Processed 10/10 items
+2025-12-11 14:23:30 - INFO - Worker 0: Completed 10 items
+2025-12-11 14:23:30 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:30 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:30 - INFO - Worker 2: Processed 10/10 items
+2025-12-11 14:23:30 - INFO - Worker 2: Completed 10 items
+2025-12-11 14:23:30 - INFO - Worker 4: Processed 10/10 items
+2025-12-11 14:23:30 - INFO - Worker 4: Completed 10 items
+2025-12-11 14:23:30 - INFO - Worker 3: Processed 10/10 items
+2025-12-11 14:23:30 - INFO - Worker 3: Completed 10 items
+2025-12-11 14:23:31 - INFO - Worker 5: Processed 10/10 items
+2025-12-11 14:23:31 - INFO - Worker 5: Completed 10 items
+2025-12-11 14:23:31 - INFO - ================================================================================
+2025-12-11 14:23:31 - INFO - Total processed: 94 graphs
+2025-12-11 14:23:31 - INFO - Saved to: gs://wikipedia-graph/graph/enwiki/graphs/gpt-5-nano/minimal_l100
+2025-12-11 14:23:31 - INFO - ================================================================================
+2025-12-11 14:23:38 - INFO - Script: /Users/joancabezas/Downloads/projects/ai-research/wiki-kg/src/wiki_kg/processing/5_generate/_6_merge.py
+2025-12-11 14:23:38 - INFO - Args: wiki=enwiki, model=gpt-5-nano, reasoning_effort=minimal, limit=100
+2025-12-11 14:23:38 - INFO - ================================================================================
+2025-12-11 14:23:38 - INFO - Graphs directory: gs://wikipedia-graph/graph/enwiki/graphs/gpt-5-nano/minimal_l100
+2025-12-11 14:23:38 - INFO - Output: gs://wikipedia-graph/graph/enwiki/full/gpt-5-nano-minimal-l100.json
+2025-12-11 14:23:38 - INFO - ================================================================================
+2025-12-11 14:23:39 - INFO - Found 94 graph files to merge
+2025-12-11 14:23:47 - INFO - Successfully loaded 94 graphs
+2025-12-11 14:23:47 - INFO - Aggregating graphs...
+2025-12-11 14:23:47 - INFO - Aggregated: 2825 entities, 1316 relations
+2025-12-11 14:23:47 - INFO - Deduplicating with SEMHASH method...
+2025-12-11 14:23:47 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:47 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:48 - INFO - No cached model found for minishlab/potion-base-8M, loading from local or hub.
+2025-12-11 14:23:48 - INFO - Folder does not exist locally, attempting to use huggingface hub.
+2025-12-11 14:23:48 - INFO - Final: 2818 entities, 1316 relations
+2025-12-11 14:23:48 - INFO - Saving merged graph to gs://wikipedia-graph/graph/enwiki/full/gpt-5-nano-minimal-l100.json...
+2025-12-11 14:23:49 - INFO - ================================================================================
+2025-12-11 14:23:49 - INFO - Saved merged graph to gs://wikipedia-graph/graph/enwiki/full/gpt-5-nano-minimal-l100.json
+2025-12-11 14:23:49 - INFO - ================================================================================

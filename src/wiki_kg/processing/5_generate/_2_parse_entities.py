@@ -14,7 +14,8 @@ from pathlib import Path
 import gcsfs
 import typer
 from dotenv import load_dotenv
-from pydantic import BaseModel, ValidationError
+from pydantic import ValidationError
+from kg_gen.steps._1_get_entities import EntitiesResponse
 
 try:
     from .utils import (
@@ -30,12 +31,6 @@ except ImportError:
         DEFAULT_REASONING_EFFORT,
         build_subdir,
     )
-
-
-class EntitiesResponse(BaseModel):
-    """Structured response for entity extraction."""
-
-    entities: list[str]
 
 
 # Load environment variables

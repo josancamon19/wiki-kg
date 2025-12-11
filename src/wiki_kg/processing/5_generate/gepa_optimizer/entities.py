@@ -90,7 +90,7 @@ def load_base_system_prompt() -> str:
         return fallback.read_text()
 
 
-def entities_f1(gold: list[str], predicted: list[str]) -> tuple[float, str]:
+def entities_f1(gold: list[str], predicted: list[str]):  # TODO: -> ScoreWithFeedback:
     """Compute F1 and concise feedback for entity extraction."""
     gold_normalized = {e.lower().strip(): e for e in gold}
     pred_normalized = {e.lower().strip(): e for e in predicted}
@@ -128,6 +128,13 @@ def entities_f1(gold: list[str], predicted: list[str]) -> tuple[float, str]:
 
 
 # --- GEPA Adapter ---
+
+# TODO: probably just return the metric
+# TODO: mipro, run default concepts, set it all to 0-shot, 3 iterations.
+# TODO: kg issue itself? exp 40-75% mipro, f1 metric
+# TODO: do manually, if you see a prompt doing much better, just copy and paste it.
+# -- log all the data in json files, to compare if dataset if it's correct. (always has gotten better, basic config)
+# 
 
 
 class EntitiesAdapter(GEPAAdapter[EntitiesSample, EntitiesTrajectory, EntitiesRollout]):

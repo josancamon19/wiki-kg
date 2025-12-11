@@ -22,6 +22,7 @@ try:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
+        load_entities_map,
     )
 except ImportError:
     from utils import (
@@ -29,6 +30,7 @@ except ImportError:
         DEFAULT_MODEL,
         DEFAULT_REASONING_EFFORT,
         build_subdir,
+        load_entities_map,
     )
 
 load_dotenv()
@@ -66,18 +68,6 @@ def _create_relations_schema(entities: List[str]) -> Dict[str, Any]:
     return schema
 
 app = typer.Typer()
-
-
-def load_entities(entities_file: str, fs: gcsfs.GCSFileSystem) -> Dict[str, list]:
-    """Load entities from JSONL into a dict: article_id -> entities list."""
-    logger.info(f"Loading entities from: {entities_file}")
-    entities = {}
-    with fs.open(entities_file, "r") as f:
-        for line in f:
-            data = json.loads(line)
-            entities[data["custom_id"]] = data["entities"]
-    logger.info(f"Loaded {len(entities)} entities")
-    return entities
 
 
 def make_batch_request(
@@ -148,8 +138,10 @@ def generate_relations_batch_file(
         return
 
     # Load all entities into memory
-    entities_dict = load_entities(entities_file, fs)
+    logger.info(f"Loading entities from: {entities_file}")
+    entities_dict = load_entities_map(entities_file, fs)
     entity_ids = set(entities_dict.keys())
+    logger.info(f"Loaded {len(entities_dict)} entities")
     
     # Debug: show sample entity IDs
     sample_ids = list(entity_ids)[:3]

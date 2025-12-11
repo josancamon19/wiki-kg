@@ -1701,7 +1701,7 @@ wheels = [
 [[package]]
 name = "kg-gen"
 version = "0.4.0"
-source = { git = "https://github.com/stair-lab/kg-gen.git?rev=hotfix%2Freasoning-effort-param#988c452e40eb5c7457fb86a5f744582f258d5bf6" }
+source = { git = "https://github.com/stair-lab/kg-gen.git?rev=hotfix%2Freasoning-effort-param#d858bfddf99601c64360e613f23347c989a11278" }
 dependencies = [
     { name = "datasets" },
     { name = "dspy-ai" },
