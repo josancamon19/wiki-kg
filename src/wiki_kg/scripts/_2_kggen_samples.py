@@ -15,6 +15,7 @@ import json
 import time
 import asyncio
 import contextvars
+import traceback
 from dataclasses import dataclass
 from contextlib import contextmanager
 from pathlib import Path
@@ -355,6 +356,7 @@ def process_single_article(
 
     # Prepare result
     result = {
+        "status": "ok",
         "article_id": article_id,
         "article_title": article["title"],
         "article_length": article["length"],
@@ -414,23 +416,47 @@ async def process_article_async(
         # Process in thread pool (since KGGen is synchronous)
         print(f"[{article_num}/{total}] Processing: {article['title'][:50]}...")
         loop = asyncio.get_event_loop()
-        result = await loop.run_in_executor(
-            executor,
-            process_single_article,
-            article,
-            model_config,
-            reasoning_effort,
-            no_dspy,
-        )
+        try:
+            result = await loop.run_in_executor(
+                executor,
+                process_single_article,
+                article,
+                model_config,
+                reasoning_effort,
+                no_dspy,
+            )
+        except Exception as e:
+            # Never crash the whole run due to a single bad article / provider hiccup.
+            err_tb = "".join(
+                traceback.format_exception(type(e), e, getattr(e, "__traceback__", None))
+            )
+            result = {
+                "status": "failed",
+                "article_id": article.get("id"),
+                "article_title": article.get("title", "Unknown"),
+                "article_length": article.get("length"),
+                "bucket": article.get("bucket"),
+                "error": {
+                    "type": type(e).__name__,
+                    "message": str(e),
+                    "traceback": err_tb,
+                },
+            }
 
         # Save result
         result = convert_sets_to_lists(result)
         with open(output_file, "w") as f:
             json.dump(result, f, indent=2)
 
-        print(
-            f"[{article_num}/{total}] ✓ {article['title'][:50]} - {result['timing']['total_seconds']:.1f}s"
-        )
+        if result.get("status") == "ok":
+            print(
+                f"[{article_num}/{total}] ✓ {article['title'][:50]} - {result['timing']['total_seconds']:.1f}s"
+            )
+        else:
+            err = result.get("error", {})
+            print(
+                f"[{article_num}/{total}] ✗ {article['title'][:50]} - {err.get('type', 'Error')}: {err.get('message', '')}"
+            )
         return result
 
 
@@ -507,7 +533,14 @@ async def main_async(
     print("\n" + "=" * 80)
     print("DATA COLLECTION COMPLETE")
     print("=" * 80)
-    print(f"✅ Processed {len(all_results)} articles in {total_time:.1f}s")
+    ok_count = sum(1 for r in all_results if isinstance(r, dict) and r.get("status") == "ok")
+    fail_count = sum(
+        1 for r in all_results if isinstance(r, dict) and r.get("status") == "failed"
+    )
+    print(
+        f"✅ Processed {len(all_results)} articles in {total_time:.1f}s "
+        f"({ok_count} ok, {fail_count} failed)"
+    )
     print(f"✅ Results saved to {output_dir}")
     print("\n💡 Run compute_summary.py to generate statistics from collected data")
 
