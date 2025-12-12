@@ -20,6 +20,8 @@ cache_parquet/
 graph.json
 analysis/kggen_estimates/articles
 analysis/kggen_estimates/*/*.json
+# Cached articles for kggen_samples script
+analysis/articles_cache.json
 src/wiki_kg/processing/5_generate/results/*
 result.json
 src/wiki_kg/processing/5_generate/gepa_optimizer/gepa_logs/

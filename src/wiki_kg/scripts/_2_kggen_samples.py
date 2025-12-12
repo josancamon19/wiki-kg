@@ -32,6 +32,9 @@ from kg_gen.steps._3_deduplicate import DeduplicateMethod
 # Load environment variables
 load_dotenv()
 
+# Cache configuration
+ARTICLES_CACHE_PATH = Path("analysis/articles_cache.json")
+
 
 # Model configuration
 class ModelName(str, Enum):
@@ -45,6 +48,7 @@ class ModelName(str, Enum):
 class ReasoningEffort(str, Enum):
     """Reasoning effort levels for OpenAI models."""
 
+    NONE = "none"
     MINIMAL = "minimal"
     LOW = "low"
     MEDIUM = "medium"
@@ -82,6 +86,57 @@ MODEL_CONFIGS = {
         "supports_reasoning": True,
     },
 }
+
+
+def load_articles_from_cache() -> Optional[List[Dict[str, Any]]]:
+    """Load articles from cache if available and valid."""
+    if not ARTICLES_CACHE_PATH.exists():
+        return None
+
+    try:
+        with open(ARTICLES_CACHE_PATH, "r") as f:
+            cache_data = json.load(f)
+
+        # Validate cache has expected structure
+        if not isinstance(cache_data, dict):
+            return None
+
+        cached_buckets = cache_data.get("length_buckets")
+        cached_articles_per_bucket = cache_data.get("articles_per_bucket")
+        articles = cache_data.get("articles")
+
+        # Check if cache matches current configuration
+        if (
+            cached_buckets == LENGTH_BUCKETS
+            and cached_articles_per_bucket == ARTICLES_PER_BUCKET
+            and isinstance(articles, list)
+            and len(articles) > 0
+        ):
+            print(f"✓ Loaded {len(articles)} articles from cache ({ARTICLES_CACHE_PATH})")
+            return articles
+
+        print("Cache configuration mismatch, will refetch articles...")
+        return None
+
+    except (json.JSONDecodeError, KeyError) as e:
+        print(f"Cache invalid ({e}), will refetch articles...")
+        return None
+
+
+def save_articles_to_cache(articles: List[Dict[str, Any]]) -> None:
+    """Save articles to cache for future runs."""
+    ARTICLES_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    cache_data = {
+        "length_buckets": LENGTH_BUCKETS,
+        "articles_per_bucket": ARTICLES_PER_BUCKET,
+        "articles": articles,
+    }
+
+    with open(ARTICLES_CACHE_PATH, "w") as f:
+        json.dump(cache_data, f, indent=2)
+
+    print(f"✓ Saved {len(articles)} articles to cache ({ARTICLES_CACHE_PATH})")
 
 
 def find_suitable_articles(fw) -> List[Dict[str, Any]]:
@@ -487,14 +542,28 @@ async def main_async(
     print(f"Output Directory: {output_dir}")
     print("=" * 80)
 
-    fw = load_dataset(
-        "josancamon/finewiki",
-        name="default",
-        split="en",
-        streaming=True,
-    )
+    if reasoning_effort == ReasoningEffort.NONE:
+        reasoning_effort = None
 
-    articles = find_suitable_articles(fw)
+    # Try loading articles from cache first
+    articles = load_articles_from_cache()
+
+    if articles is None:
+        # Cache miss - fetch from HuggingFace dataset
+        print("Fetching articles from HuggingFace dataset...")
+        fw = load_dataset(
+            "josancamon/finewiki",
+            name="default",
+            split="en",
+            streaming=True,
+        )
+
+        articles = find_suitable_articles(fw)
+
+        # Save to cache for future runs
+        if articles:
+            save_articles_to_cache(articles)
+
     expected_articles = len(LENGTH_BUCKETS) * ARTICLES_PER_BUCKET
     if len(articles) < expected_articles:
         print(

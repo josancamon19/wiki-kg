@@ -8,6 +8,8 @@ def main():
     model_pricing = {
         "gpt-5-nano-medium": {"input": 0.025, "output": 0.20},
         "gpt-5-nano-minimal": {"input": 0.025, "output": 0.20},
+        "gpt-5-nano-minimal-no-dspy": {"input": 0.025, "output": 0.20},
+        "gpt-5-nano-none-no-dspy": {"input": 0.025, "output": 0.20},
         "gpt-5-mini": {
             "input": 0.125,  # $0.125 per 1M input tokens
             "output": 1.0,  # $1.0 per 1M output tokens
@@ -28,6 +30,10 @@ def main():
 
     # Load bucket distribution (article counts per bucket)
     bucket_file = Path("analysis/fineweb_bucket_distribution.json")
+    if not bucket_file.exists():
+        print(f"❌ Missing bucket distribution: {bucket_file}")
+        print("   Generate it first by running: src/wiki_kg/scripts/_4_estimate_tokens.py")
+        return
     with open(bucket_file, "r") as f:
         article_counts = json.load(f)
 
