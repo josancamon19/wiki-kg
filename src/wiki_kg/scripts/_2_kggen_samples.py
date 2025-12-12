@@ -14,6 +14,9 @@ import os
 import json
 import time
 import asyncio
+import contextvars
+from dataclasses import dataclass
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from concurrent.futures import ThreadPoolExecutor
@@ -54,6 +57,7 @@ MAX_CONCURRENT = 50  # Maximum number of articles to process in parallel
 
 # Define length buckets: every 500 chars up to 15k, then every 5k chars
 LENGTH_BUCKETS = list(range(500, 15001, 500)) + list(range(20000, 100001, 5000))
+# LENGTH_BUCKETS = list(range(500, 2001, 500))
 
 
 # Model-specific configurations
@@ -141,6 +145,120 @@ def convert_sets_to_lists(obj: Any) -> Any:
         return obj
 
 
+@dataclass
+class TokenUsage:
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    total_tokens: int = 0
+
+    def add(self, usage: Any) -> None:
+        """Add tokens from a LiteLLM/OpenAI usage payload."""
+        if not usage:
+            return
+
+        def _get_any(obj: Any, keys: List[str]) -> Any:
+            if isinstance(obj, dict):
+                for k in keys:
+                    if k in obj and obj[k] is not None:
+                        return obj[k]
+                return None
+            for k in keys:
+                val = getattr(obj, k, None)
+                if val is not None:
+                    return val
+            return None
+
+        # LiteLLM normalizes to OpenAI-ish names, but Responses API uses input/output.
+        prompt = _get_any(usage, ["prompt_tokens", "input_tokens"])
+        completion = _get_any(usage, ["completion_tokens", "output_tokens"])
+        total = _get_any(usage, ["total_tokens"])
+
+        prompt_i = int(prompt or 0)
+        completion_i = int(completion or 0)
+        total_i = int(total or (prompt_i + completion_i) or 0)
+
+        self.prompt_tokens += prompt_i
+        self.completion_tokens += completion_i
+        self.total_tokens += total_i
+
+    def to_dict(self) -> Dict[str, int]:
+        return {
+            "prompt_tokens": int(self.prompt_tokens),
+            "completion_tokens": int(self.completion_tokens),
+            "total_tokens": int(self.total_tokens),
+        }
+
+
+_LITELLM_USAGE_ACCUM: contextvars.ContextVar[Optional[TokenUsage]] = (
+    contextvars.ContextVar("litellm_usage_accum", default=None)
+)
+_LITELLM_PATCHED = False
+_ORIG_LITELLM_RESPONSES = None
+_ORIG_LITELLM_COMPLETION = None
+
+
+def _install_litellm_token_tracker() -> None:
+    """
+    Monkeypatch LiteLLM call sites used by KGGen `no_dspy=True` so we can
+    aggregate `response.usage` the same way we do for DSPy history.
+    """
+    global _LITELLM_PATCHED, _ORIG_LITELLM_RESPONSES, _ORIG_LITELLM_COMPLETION
+    if _LITELLM_PATCHED:
+        return
+
+    import litellm  # imported lazily to keep script import time low
+
+    _ORIG_LITELLM_RESPONSES = litellm.responses
+    _ORIG_LITELLM_COMPLETION = getattr(litellm, "completion", None)
+
+    def _record_usage(resp: Any) -> None:
+        accum = _LITELLM_USAGE_ACCUM.get()
+        if accum is None:
+            return
+
+        usage = getattr(resp, "usage", None)
+        if usage is None and isinstance(resp, dict):
+            usage = resp.get("usage")
+        accum.add(usage)
+
+    def wrapped_responses(*args, **kwargs):
+        resp = _ORIG_LITELLM_RESPONSES(*args, **kwargs)
+        _record_usage(resp)
+        return resp
+
+    litellm.responses = wrapped_responses
+
+    # Some versions/paths may call `litellm.completion()` instead of `responses()`
+    if _ORIG_LITELLM_COMPLETION is not None:
+
+        def wrapped_completion(*args, **kwargs):
+            resp = _ORIG_LITELLM_COMPLETION(*args, **kwargs)
+            _record_usage(resp)
+            return resp
+
+        litellm.completion = wrapped_completion
+
+    _LITELLM_PATCHED = True
+
+
+@contextmanager
+def track_litellm_tokens() -> TokenUsage:
+    """
+    Context manager to collect LiteLLM token usage for the current call.
+
+    Note: this tracks calls made in the *current thread*. If KGGen internally
+    spawns threads (e.g., due to automatic chunking), those calls may not be
+    attributed to this accumulator.
+    """
+    _install_litellm_token_tracker()
+    accum = TokenUsage()
+    token = _LITELLM_USAGE_ACCUM.set(accum)
+    try:
+        yield accum
+    finally:
+        _LITELLM_USAGE_ACCUM.reset(token)
+
+
 def extract_token_usage_from_history(lm, start_idx: int = 0) -> Dict[str, int]:
     """Extract token usage from dspy LM history starting from a specific index."""
     total_prompt_tokens = 0
@@ -202,10 +320,15 @@ def process_single_article(
     # === STAGE 1: EXTRACTION ===
     start_extraction = time.time()
     kg.lm.history = []
-    graph_no_cluster = kg.generate(input_data=text, no_dspy=no_dspy)
+    if no_dspy:
+        with track_litellm_tokens() as litellm_usage:
+            graph_no_cluster = kg.generate(input_data=text, no_dspy=True)
+        extraction_tokens = litellm_usage.to_dict()
+    else:
+        graph_no_cluster = kg.generate(input_data=text, no_dspy=False)
+        extraction_tokens = extract_token_usage_from_history(kg.lm, 0)
 
     extraction_time = time.time() - start_extraction
-    extraction_tokens = extract_token_usage_from_history(kg.lm, 0)
     entities_before = len(graph_no_cluster.entities)
     relations_before = len(graph_no_cluster.relations)
 
